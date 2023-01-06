@@ -1,0 +1,53 @@
+
+
+
+
+table,td,th{
+	border-collapse: collapse; 
+	font-size: calc(3vw + 2px);
+   
+}
+
+
+th {
+	font-weight: 500;
+	padding-top: 10px;
+    padding-bottom: 5px;
+    
+    
+    text-align: center;
+	background: #22b573;
+	color: #fff;
+	
+}
+
+table {
+	width: 100%;
+    table-layout: fixed;
+
+       margin-top: 50px;
+
+}
+
+
+.table thead th {
+	border: none;
+	background: #d8d8d8;
+	width: 100%;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+.table tbody td {
+	text-align: center;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	padding: 3px 0;
+	
+    
+   
+}
+
+
+
+
