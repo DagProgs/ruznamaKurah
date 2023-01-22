@@ -58,9 +58,9 @@ async function checkOnline(req) {
         if (cachedRes) {
             return cachedRes;
         } else if (req.url.indexOf('.html') !== -1) {
-            return caches.match('offline.html');
+            return caches.match('./offline.html');
         } else {
-            return caches.match('images/no-image.png');
+            return caches.match('offline.html');
         }
     }
 }
