@@ -1,8 +1,8 @@
 {
   "name": "Курахский район",
   "short_name": "Рузнама",
-  "theme_color": "rgba(0,0,0,0.5)",
-  "background_color": "rgba(0,0,0,0.5)",
+  "theme_color": "#1c6758",
+  "background_color": "#1c6758",
   "display": "standalone",
   "start_url": ".",
   "icons": [
