@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+	<link rel="manifest" href="manifest.json">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Рузнама">
+	<meta name="apple-mobile-web-app-title" content="Рузнама">
+	<meta name="theme-color" content="#1c6758">
+	
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-384x384.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+	<meta name="apple-mobile-web-app-status-bar" content="#1c6758" />
+    <script src="db/ruznama_k.db"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Курахский р-он</title>
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="text_fon">
+                <h1 class="header_text" id="navbartext">Рузнама</h1>
+                <a href="year.html"><img src="img/calendarnext.svg" alt=""></a>
+                <div class="header_fon"></div>
+            </div>
+            <div class="text_line">
+                <p class="header_subtext" id="navbarsubtext">Курахский р-он</p>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="prayer_times_muslim">
+                <div class="box_muslim">
+                    <div class="fajr" id="fajr">Фаджр</div>
+                    <div class="descr" id="fajrru">Время утреннего намаза</div>
+                    <div class="clock" id="fajrtime">00:00</div>
+                </div>
+                <div class="box_muslim">
+                    <div class="shuruk" id="shuruk">Шурук</div>
+                    <div class="descr" id="shurukru">Восход солнца</div>
+                    <div class="clock" id="shuruktime">00:00</div>
+                </div>
+                <div class="box_muslim">
+                    <div class="zuhr" id="zuhr">Зухр</div>
+                    <div class="descr" id="zuhrru">Время полуденного намаза</div>
+                    <div class="clock" id="zuhrtime">00:00</div>
+                </div>
+                <div class="box_muslim">
+                    <div class="asr" id="asr">Аср</div>
+                    <div class="descr" id="asrru">Время предвечернего намаза</div>
+                    <div class="clock" id="asrtime">00:00</div>
+                </div>
+                <div class="box_muslim">
+                    <div class="magrib" id="magrib">Магриб</div>
+                    <div class="descr" id="magribru">Время вечернего намаза</div>
+                    <div class="clock" id="magribtime">00:00</div>
+                </div>
+                <div class="box_muslim">
+                    <div class="isha" id="isha">Иша</div>
+                    <div class="descr" id="isharu">Время ночного намаза</div>
+                    <div class="clock" id="ishatime">00:00</div>
+                </div>
+            </div>
+        </main>
+        <div class="dt_line"></div>
+        <div class="date_time">
+            <div class="dt">
+                <div class="dt_dy">
+                    <div class="dt_day" id="dtday">Понедельник</div>
+                    <div class="dt_year" id="dtyear">01 Январь 2022 г</div>
+                </div>
+                <div class="dt_time">
+                    <p id="dttime">00:00:00</p>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="table">
+                <table>
+                    <tr>
+                        <th scope="col">Чис.</th>
+                        <th scope="col">Фаджр</th>
+                        <th scope="col">Шурук</th>
+                        <th scope="col">Зухр</th>
+                        <th scope="col">Аср</th>
+                        <th scope="col">Магриб</th>
+                        <th scope="col">Иша</th>
+                    </tr>
+                    <script>
+
+                        var date = new Date()
+                        var month = date.getMonth() + 1
+                        var day = date.getDate()
+                        var cure = month;
+
+                        if (cure == "1") {
+
+
+                            for (x = 0; x < january.length; x++) {
+                                var serializedUser = JSON.stringify(january[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "2") {
+
+
+                            for (x = 0; x < february.length; x++) {
+                                var serializedUser = JSON.stringify(february[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "3") {
+
+
+                            for (x = 0; x < march.length; x++) {
+                                var serializedUser = JSON.stringify(march[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "4") {
+
+
+                            for (x = 0; x < april.length; x++) {
+                                var serializedUser = JSON.stringify(april[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "5") {
+
+
+                            for (x = 0; x < may.length; x++) {
+                                var serializedUser = JSON.stringify(may[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "6") {
+
+
+                            for (x = 0; x < june.length; x++) {
+                                var serializedUser = JSON.stringify(june[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "7") {
+
+
+                            for (x = 0; x < july.length; x++) {
+                                var serializedUser = JSON.stringify(july[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "8") {
+
+
+                            for (x = 0; x < august.length; x++) {
+                                var serializedUser = JSON.stringify(august[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "9") {
+
+
+                            for (x = 0; x < september.length; x++) {
+                                var serializedUser = JSON.stringify(september[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+                        if (cure == "10") {
+
+
+                            for (x = 0; x < october.length; x++) {
+                                var serializedUser = JSON.stringify(october[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "11") {
+
+
+                            for (x = 0; x < november.length; x++) {
+                                var serializedUser = JSON.stringify(november[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+
+                        if (cure == "12") {
+
+
+                            for (x = 0; x < december.length; x++) {
+                                var serializedUser = JSON.stringify(december[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+
+                    </script>
+
+                </table>
+
+            </div>
+        </footer>
+
+    </div>
+<script src="app.js"></script>
+<script src="main.js"></script>
+    <script src="js/titles.js"></script>
+    <script src="js/date.js"></script>
+</body>
+
+</html>
