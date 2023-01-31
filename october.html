@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Рузнама Курахский район</title>
+<meta name="author" content="DagProgs">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/ruznama.css" rel="stylesheet">
+<link href="css/october.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./db/ruznama_k.db"></script></head>
+<body>
+<div id="wb_id_wrapper">
+<div id="id_wrapper">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_header">
+<div id="id_header">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_headerbox">
+<div id="id_headerbox">
+<div class="col-1">
+<div id="wb_id_back" style="display:inline-block;width:40px;height:50px;text-align:center;z-index:0;">
+<a href="./index.html"><div id="id_back"><i class="id_back"></i></div></a>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_ruznama" style="display:inline-block;width:100%;z-index:1;">
+<h1 id="id_ruznama">Октябрь</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_main">
+<div id="id_main">
+<div class="row">
+<div class="col-1">
+<div class="wrapper">
+    <div class="app">
+        <div class="content">
+            <div class="table">
+			<table>
+				<tr>
+					<th scope="col">Чис.</th>
+					<th scope="col">Фаджр</th>
+					<th scope="col">Вос.</th>
+					<th scope="col">Зухр</th>
+					<th scope="col">Аср</th>
+					<th scope="col">Магриб</th>
+					<th scope="col">Иша</th>
+				</tr>
+			<script>
+				for(x = 0; x < october.length; x++) {
+				var serializedUser = JSON.stringify(october[x]);
+				var user = JSON.parse(serializedUser);
+				
+				document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+				
+				
+				}
+			
+			
+			</script>
+			</table>
+			
+			
+		</div>    
+        </div>    
+    </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,754 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Рузнама Курахский район</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Рузнама">
+	<meta name="apple-mobile-web-app-title" content="Рузнама">
+	<meta name="theme-color" content="#1c6758">
+	
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-384x384.png" />
+	<link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+	<meta name="apple-mobile-web-app-status-bar" content="#1c6758" />
+
+<meta name="author" content="DagProgs">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/ruznama.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/wb.panel.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./db/ruznama_k.db"></script><script src="js/wwb18.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("#Layer1").panel({animate: true, animationDuration: 200, animationEasing: 'linear', dismissible: true, display: 'overlay', position: 'left'});
+   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
+});
+$(window).on('load', function()
+{
+   $('#preloader').remove();
+});
+</script>
+</head>
+<body>
+<div id="Layer1" style="text-align:left;">
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+<div id="wb_LayoutGrid2">
+<div id="LayoutGrid2">
+<div class="col-1">
+<div id="wb_Icon1" style="display:inline-block;width:30px;height:40px;text-align:center;z-index:188;">
+<a href="#" onclick="ShowObjectWithEffect('wb_Icon1', 0, 'fade', 1);ShowObjectWithEffect('wb_id_header', 1, 'fade', 1);ShowObjectWithEffect('wb_id_ruznama', 1, 'fade', 1);ShowObjectWithEffect('wb_id_menu', 1, 'fade', 1);HidePanel('Layer1', event);return false;"><div id="Icon1"><i class="fa fa-times-circle-o"></i></div></a>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<div id="wb_Heading1" style="display:inline-block;width:100%;z-index:189;">
+<h2 id="Heading1" class="priyertimes">Месяца</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid3">
+<div id="LayoutGrid3">
+<div class="row">
+<div class="col-1">
+<div id="wb_LayoutGrid4">
+<div id="LayoutGrid4">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading2" style="display:inline-block;width:100%;z-index:191;">
+<h2 id="Heading2" class="priyertimes"><a href="./january.html">Январь</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid6">
+<div id="LayoutGrid6">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading3" style="display:inline-block;width:100%;z-index:192;">
+<h2 id="Heading3" class="priyertimes"><a href="./february.html">Февраль</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid7">
+<div id="LayoutGrid7">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading4" style="display:inline-block;width:100%;z-index:193;">
+<h2 id="Heading4" class="priyertimes"><a href="./march.html">Март</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid8">
+<div id="LayoutGrid8">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading5" style="display:inline-block;width:100%;z-index:194;">
+<h2 id="Heading5" class="priyertimes"><a href="./april.html">Апрель</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid9">
+<div id="LayoutGrid9">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading6" style="display:inline-block;width:100%;z-index:195;">
+<h2 id="Heading6" class="priyertimes"><a href="./may.html">Май</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid10">
+<div id="LayoutGrid10">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading7" style="display:inline-block;width:100%;z-index:196;">
+<h2 id="Heading7" class="priyertimes"><a href="./june.html">Июнь</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid11">
+<div id="LayoutGrid11">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading8" style="display:inline-block;width:100%;z-index:197;">
+<h2 id="Heading8" class="priyertimes"><a href="./july.html">Июль</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid12">
+<div id="LayoutGrid12">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading9" style="display:inline-block;width:100%;z-index:198;">
+<h2 id="Heading9" class="priyertimes"><a href="./august.html">Август</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid13">
+<div id="LayoutGrid13">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading10" style="display:inline-block;width:100%;z-index:199;">
+<h2 id="Heading10" class="priyertimes"><a href="./september.html">Сентябрь</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid14">
+<div id="LayoutGrid14">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading11" style="display:inline-block;width:100%;z-index:200;">
+<h2 id="Heading11" class="priyertimes"><a href="./october.html">Октябрь</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid15">
+<div id="LayoutGrid15">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading12" style="display:inline-block;width:100%;z-index:201;">
+<h2 id="Heading12" class="priyertimes"><a href="./november.html">Ноябрь</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid5">
+<div id="LayoutGrid5">
+<div class="row">
+<div class="col-1">
+<div id="wb_Heading13" style="display:inline-block;width:100%;z-index:202;">
+<h2 id="Heading13" class="priyertimes"><a href="./december.html">Декабрь</a></h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_wrapper">
+<div id="id_wrapper">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_header">
+<div id="id_header">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_headerbox">
+<div id="id_headerbox">
+<div class="col-1">
+<div id="wb_id_menu" style="display:inline-block;width:40px;height:50px;text-align:center;z-index:0;">
+<a href="#" onclick="ShowPanel('Layer1', event);ShowObjectWithEffect('wb_Icon1', 1, 'fade', 1);return false;"><div id="id_menu"><i class="id_menu"></i></div></a>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_ruznama" style="display:inline-block;width:100%;z-index:1;">
+<h1 id="id_ruznama">Рузнама</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_main">
+<div id="id_main">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_mainbox1">
+<div id="id_mainbox1">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_id_mainbox7">
+<div id="id_mainbox7">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_icon_fajr" style="display:inline-block;width:45px;height:50px;text-align:center;z-index:3;" class="iconsfonts">
+<div id="id_icon_fajr"><i class="id_icon_fajr"></i></div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_mainbox13">
+<div id="id_mainbox13">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_text_fajr" style="display:inline-block;width:100%;z-index:4;">
+<h2 id="id_text_fajr" class="priyertimes">Фаджр</h2>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_description1" class="descr">
+<p>Время утреннего намаза</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_id_timer1" style="display:inline-block;width:100%;z-index:7;">
+<h2 id="id_timer1" class="priyertimes">00:00</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_mainbox2">
+<div id="id_mainbox2">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_id_mainbox8">
+<div id="id_mainbox8">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_icon_sunrise" style="display:inline-block;width:45px;height:50px;text-align:center;z-index:9;" class="iconsfonts">
+<div id="id_icon_sunrise"><i class="id_icon_sunrise"></i></div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_mainbox14">
+<div id="id_mainbox14">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_text_sunrise" style="display:inline-block;width:100%;z-index:10;">
+<h2 id="id_text_sunrise" class="priyertimes">Шурук</h2>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_description2" class="descr">
+<p>Восход солнца</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_id_timer2" style="display:inline-block;width:100%;z-index:13;">
+<h2 id="id_timer2" class="priyertimes">00:00</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_mainbox3">
+<div id="id_mainbox3">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_id_mainbox9">
+<div id="id_mainbox9">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_icon_dhuhr" style="display:inline-block;width:45px;height:50px;text-align:center;z-index:15;" class="iconsfonts">
+<div id="id_icon_dhuhr"><i class="id_icon_dhuhr"></i></div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_mainbox15">
+<div id="id_mainbox15">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_text_dhuhr" style="display:inline-block;width:100%;z-index:16;">
+<h2 id="id_text_dhuhr" class="priyertimes">Зухр</h2>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_description3" class="descr">
+<p>Время полуденного намаза</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_id_timer3" style="display:inline-block;width:100%;z-index:19;">
+<h2 id="id_timer3" class="priyertimes">00:00</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_mainbox4">
+<div id="id_mainbox4">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_id_mainbox10">
+<div id="id_mainbox10">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_icon_asr" style="display:inline-block;width:45px;height:50px;text-align:center;z-index:21;" class="iconsfonts">
+<div id="id_icon_asr"><i class="id_icon_asr"></i></div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_mainbox16">
+<div id="id_mainbox16">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_text_asr" style="display:inline-block;width:100%;z-index:22;">
+<h2 id="id_text_asr" class="priyertimes">Аср</h2>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_description4" class="descr">
+<p>Время предвечернего намаза</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_id_timer4" style="display:inline-block;width:100%;z-index:25;">
+<h2 id="id_timer4" class="priyertimes">00:00</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_mainbox5">
+<div id="id_mainbox5">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_id_mainbox11">
+<div id="id_mainbox11">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_icon_maghrib" style="display:inline-block;width:45px;height:50px;text-align:center;z-index:27;" class="iconsfonts">
+<div id="id_icon_maghrib"><i class="id_icon_maghrib"></i></div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_mainbox17">
+<div id="id_mainbox17">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_text_maghrib" style="display:inline-block;width:100%;z-index:28;">
+<h2 id="id_text_maghrib" class="priyertimes">Магриб</h2>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_description5" class="descr">
+<p>Время вечернего намаза</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_id_timer5" style="display:inline-block;width:100%;z-index:31;">
+<h2 id="id_timer5" class="priyertimes">00:00</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_mainbox6">
+<div id="id_mainbox6">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_id_mainbox12">
+<div id="id_mainbox12">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_icon_isha" style="display:inline-block;width:45px;height:50px;text-align:center;z-index:33;" class="iconsfonts">
+<div id="id_icon_isha"><i class="id_icon_isha"></i></div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_mainbox18">
+<div id="id_mainbox18">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_text_isha" style="display:inline-block;width:100%;z-index:34;">
+<h2 id="id_text_isha" class="priyertimes">Иша</h2>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_description6" class="descr">
+<p>Время ночного намаза</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_id_timer6" style="display:inline-block;width:100%;z-index:37;">
+<h2 id="id_timer6" class="priyertimes">00:00</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_timedate">
+<div id="id_timedate">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_timedate_box">
+<div id="id_timedate_box">
+<div class="col-1">
+<div class="col-1-padding">
+<div class="wrapper">
+        <main class="main">
+            <div class="date_time">
+                <div class="dt">
+                    <div class="dt_dy">
+                        <div class="dt_day" id="dtday">Понедельник</div>
+                        <div class="dt_year" id="dtyear">01 Январь 2022 г</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<script src="js/script.js"></script>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<div class="clock"></div>
+<script>
+
+let clock = document.querySelector('.clock');
+
+function time() {
+	let date = new Date();
+	let hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+	let min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+	let sec = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+	
+	clock.innerHTML = `${hours}:${min}:${sec}`;
+}
+
+setInterval(time, 1000);
+
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_ruznamamount_box">
+<div id="id_ruznamamount_box">
+<div class="col-1">
+<div class="wrapper">
+        <footer class="footer">
+            <div class="table">
+                <table>
+                    <tr>
+                        <th scope="col">Чис.</th>
+                        <th scope="col">Фаджр</th>
+                        <th scope="col">Шурук</th>
+                        <th scope="col">Зухр</th>
+                        <th scope="col">Аср</th>
+                        <th scope="col">Магриб</th>
+                        <th scope="col">Иша</th>
+                    </tr>
+                    <script>
+
+                        var date = new Date()
+                        var month = date.getMonth() + 1
+                        var day = date.getDate()
+                        var cure = month;
+
+                        if (cure == "1") {
+
+
+                            for (x = 0; x < january.length; x++) {
+                                var serializedUser = JSON.stringify(january[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "2") {
+
+
+                            for (x = 0; x < february.length; x++) {
+                                var serializedUser = JSON.stringify(february[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "3") {
+
+
+                            for (x = 0; x < march.length; x++) {
+                                var serializedUser = JSON.stringify(march[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "4") {
+
+
+                            for (x = 0; x < april.length; x++) {
+                                var serializedUser = JSON.stringify(april[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "5") {
+
+
+                            for (x = 0; x < may.length; x++) {
+                                var serializedUser = JSON.stringify(may[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "6") {
+
+
+                            for (x = 0; x < june.length; x++) {
+                                var serializedUser = JSON.stringify(june[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "7") {
+
+
+                            for (x = 0; x < july.length; x++) {
+                                var serializedUser = JSON.stringify(july[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "8") {
+
+
+                            for (x = 0; x < august.length; x++) {
+                                var serializedUser = JSON.stringify(august[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "9") {
+
+
+                            for (x = 0; x < september.length; x++) {
+                                var serializedUser = JSON.stringify(september[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+                        if (cure == "10") {
+
+
+                            for (x = 0; x < october.length; x++) {
+                                var serializedUser = JSON.stringify(october[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+                        if (cure == "11") {
+
+
+                            for (x = 0; x < november.length; x++) {
+                                var serializedUser = JSON.stringify(november[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+
+                        if (cure == "12") {
+
+
+                            for (x = 0; x < december.length; x++) {
+                                var serializedUser = JSON.stringify(december[x]);
+                                var user = JSON.parse(serializedUser);
+
+
+                                document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+                            };
+                        };
+
+
+                    </script>
+
+                </table>
+
+            </div>
+        </footer>
+    </div>
+
+<script src="js/script.js"></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="app.js"></script>
+<script src="main.js"></script>
+<div id="preloader"></div>
+</body>
+</html>
