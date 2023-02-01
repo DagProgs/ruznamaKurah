@@ -1,6 +1,6 @@
 
-const staticCacheName = 'static-cache-v0';
-const dynamicCacheName = 'dynamic-cache-v0';
+const staticCacheName = 'static-cache-v1';
+const dynamicCacheName = 'dynamic-cache-v1';
 
 const staticAssets = [
     './',
@@ -37,6 +37,7 @@ const staticAssets = [
 	'./css/Untitled1.css',
     './js/app.js',
     './js/main.js',
+	'./js/date.js',
 	'./js/jquery-3.6.0.min.js',
 	'./js/jquery-ui.min.js',
 	'./js/wb.cookie.min.js',
