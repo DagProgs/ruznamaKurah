@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Рузнама Курахский район</title>
+
+<meta name="description" content="Test Super Cool PWA">
+    <meta name="theme-color" content="#5b86a1">
+    <link rel="icon" type="image/png" href="./images/icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="./images/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#5b86a1">
+    <link rel="manifest" href="./manifest.json">
+
+<meta name="author" content="DagProgs">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/Untitled1.css" rel="stylesheet">
+<link href="css/january.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./db/ruznama_k.db"></script></head>
+<body class="fon">
+<div id="wb_id_wrapperapp">
+<div id="id_wrapperapp">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_header" class="HeaderFon">
+<div id="id_header">
+<div class="row">
+<div class="col-1">
+<div id="wb_id_header_box">
+<div id="id_header_box">
+<div class="col-1">
+<div id="wb_id_menu_back" style="display:inline-block;width:25px;height:40px;text-align:center;z-index:0;">
+<a href="./index.html"><svg id="id_menu_back" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M259 461 L926 461 C940 461, 951 466, 961 475 C971 485, 976 497, 976 511 C976 525, 971 536, 961 546 C951 556, 940 561, 926 561 L255 561 L312 601 C324 609, 330 618, 333 633 C335 646, 332 659, 325 670 C317 682, 306 688, 292 691 C279 693, 266 690, 255 683 L70 553 C65 549, 60 544, 56 539 C53 534, 50 527, 49 521 C48 514, 48 508, 50 501 C51 495, 54 489, 58 483 C63 476, 69 471, 76 467 L256 341 C267 333, 279 331, 293 333 C307 336, 317 342, 325 354 C333 365, 336 378, 333 391 C331 406, 324 416, 313 423 L259 461Z "/>
+</svg>
+</a>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_id_ruznama" style="display:inline-block;width:100%;z-index:1;">
+<h1 id="id_ruznama">Январь</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_id_mountmain">
+<div id="id_mountmain">
+<div class="row">
+<div class="col-1">
+<div class="wrappermounts">
+    <div class="appmounts">
+        <div class="content">
+            <div class="table">
+			<table>
+				<tr>
+					<th scope="col">Чис.</th>
+					<th scope="col">Фаджр</th>
+					<th scope="col">Шурук</th>
+					<th scope="col">Зухр</th>
+					<th scope="col">Аср</th>
+					<th scope="col">Магриб</th>
+					<th scope="col">Иша</th>
+				</tr>
+			<script>
+				for(x = 0; x < january.length; x++) {
+				var serializedUser = JSON.stringify(january[x]);
+				var user = JSON.parse(serializedUser);
+				
+				document.write("<tr><td>" + user.date + "</td><td>" + user.fajr + "</td><td>" + user.sunrise + "</td><td>" + user.dhuhr + "</td><td>" + user.asr + "</td><td>" + user.maghrib + "</td><td>" + user.isha + "</td></tr>");
+				
+				
+				}
+			
+			
+			</script>
+			</table>
+			
+			
+		</div>    
+        </div>    
+    </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="./js/app.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
