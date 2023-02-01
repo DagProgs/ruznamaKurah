@@ -1,7 +1,8 @@
-const staticCacheName = 's-app-v25'
-const dynamicCacheName = 'd-app-v25'
+const staticCacheName = 's-app-v26'
+const dynamicCacheName = 'd-app-v26'
 
 const assetUrls = [
+'./',
   'index.html',
   'js/date.js',
   'db/ruznama_k.db',
