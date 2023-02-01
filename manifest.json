@@ -4,7 +4,7 @@
   "theme_color": "#181832",
   "background_color": "#181832",
   "display": "standalone",
-  "start_url": ".",
+  "start_url": "https://github.com/DagProgs/ruznamaKurah",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
