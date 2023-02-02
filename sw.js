@@ -1,6 +1,6 @@
 
-const staticCacheName = 'static-cache-v6';
-const dynamicCacheName = 'dynamic-cache-v6';
+const staticCacheName = 'static-cache-v7';
+const dynamicCacheName = 'dynamic-cache-v7';
 
 const staticAssets = [
     './',
