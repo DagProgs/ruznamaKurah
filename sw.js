@@ -1,6 +1,6 @@
 
-const staticCacheName = 'static-cache-v10';
-const dynamicCacheName = 'dynamic-cache-v10';
+const staticCacheName = 'static-cache-v11';
+const dynamicCacheName = 'dynamic-cache-v11';
 
 const staticAssets = [
     './',
@@ -34,17 +34,14 @@ const staticAssets = [
 	'./css/november.css',
 	'./css/october.css',
 	'./css/september.css',
-	'./css/Untitled1.css',
+	'./css/Ruznama2023.css',
     './js/app.js',
     './js/main.js',
-	'./js/date.js',
 	'./js/jquery-3.6.0.min.js',
 	'./js/jquery-ui.min.js',
-	'./js/wb.cookie.min.js',
-	'./js/wb.panel.min.js',
-	'./js/wb.rotate.min.js',
+	'./js/dayruznama.js',
+	'./js/script.js.js',
 	'./js/wwb18.min.js',
-	'./db/ruznama_k.db',
     './images/no-image.jpg'
 ];
 
