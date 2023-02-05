@@ -1,6 +1,6 @@
 
-const staticCacheName = 'static-cache-v12';
-const dynamicCacheName = 'dynamic-cache-v12';
+const staticCacheName = 'static-cache-v13';
+const dynamicCacheName = 'dynamic-cache-v13';
 
 const staticAssets = [
     './',
@@ -34,7 +34,7 @@ const staticAssets = [
 	'./css/november.css',
 	'./css/october.css',
 	'./css/september.css',
-	'./css/Ruznama2023.css',
+	'./css/Untitled1.css',
     './js/app.js',
     './js/main.js',
 	'./js/jquery-3.6.0.min.js',

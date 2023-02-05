@@ -1,8 +1,8 @@
 {
   "name": "Курахский р-он",
   "short_name": "Рузнама",
-  "theme_color": "#181832",
-  "background_color": "#181832",
+  "theme_color": "#005982",
+  "background_color": "#005982",
   "display": "standalone",
   "orientation": "portrait",
   "start_url": ".",
