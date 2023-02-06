@@ -1,0 +1,1714 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+html, body, #container
+{
+   width: 100%;
+   height: 100%;
+}
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+}
+#wb_Ruznama
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama
+{
+   box-sizing: border-box;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#Ruznama > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#Ruznama > .row > .col-1
+{
+   float: left;
+}
+#Ruznama > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: left;
+}
+#Ruznama:before,
+#Ruznama:after,
+#Ruznama .row:before,
+#Ruznama .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama:after,
+#Ruznama .row:after
+{
+   clear: both;
+}
+@media (max-width: 320px)
+{
+#Ruznama > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Ruznama1
+{
+   clear: both;
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 7777;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama1
+{
+   box-sizing: border-box;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama1 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#Ruznama1 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#Ruznama1 > .row > .col-1
+{
+   float: left;
+}
+#Ruznama1 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: left;
+}
+#Ruznama1:before,
+#Ruznama1:after,
+#Ruznama1 .row:before,
+#Ruznama1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama1:after,
+#Ruznama1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 320px)
+{
+#Ruznama1 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Ruznama2
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama2
+{
+   box-sizing: border-box;
+   padding: 150px 0 0 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama2 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#Ruznama2 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#Ruznama2 > .row > .col-1
+{
+   float: left;
+}
+#Ruznama2 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: left;
+}
+#Ruznama2:before,
+#Ruznama2:after,
+#Ruznama2 .row:before,
+#Ruznama2 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama2:after,
+#Ruznama2 .row:after
+{
+   clear: both;
+}
+@media (max-width: 320px)
+{
+#Ruznama2 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Ruznama3
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama3
+{
+   box-sizing: border-box;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama3 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#Ruznama3 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#Ruznama3 > .row > .col-1
+{
+   float: left;
+}
+#Ruznama3 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: left;
+}
+#Ruznama3:before,
+#Ruznama3:after,
+#Ruznama3 .row:before,
+#Ruznama3 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama3:after,
+#Ruznama3 .row:after
+{
+   clear: both;
+}
+@media (max-width: 320px)
+{
+#Ruznama3 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Ruznama4
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama4
+{
+   box-sizing: border-box;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama4 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#Ruznama4 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#Ruznama4 > .row > .col-1
+{
+   float: left;
+}
+#Ruznama4 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#Ruznama4:before,
+#Ruznama4:after,
+#Ruznama4 .row:before,
+#Ruznama4 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama4:after,
+#Ruznama4 .row:after
+{
+   clear: both;
+}
+@media (max-width: 320px)
+{
+#Ruznama4 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    overflow: hidden;
+    
+}
+
+.header {
+    position: fixed;
+    width: 100vw;
+    min-width: 310px;
+}
+
+.h_fon {
+    width: 100vw;
+    height: 140px;
+    background-color: #005982;
+}
+
+.h_textheader {
+    position: relative;
+    left: 15px;
+    top: 20px;
+}
+
+.h_textheader h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.h_localicontext {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 23px;
+    left: 158px;
+	right: 0;
+}
+
+.h_loc {
+    display: flex;
+
+
+}
+
+.h_loc svg {
+    display: flex;
+    width: 10px;
+    height: 10px;
+}
+
+.h_subtext {
+    display: flex;
+    position: relative;
+    left: 5px;
+	
+}
+
+.h_subtext h3 {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    color: #ffffffa8;
+    font-weight: normal;
+	width: 100px;
+}
+
+.h_calendariconsubtext {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 15px;
+    top: 35px;
+}
+
+.h_calendaricon {
+    display: flex;
+    align-items: center;
+}
+
+.h_calendaricon svg {
+    display: flex;
+    width: 20px;
+    height: 20px;
+
+}
+
+
+
+
+.h_subtextdate {
+    display: flex;
+    position: relative;
+    left: 10px;
+    min-width: 310px;
+    align-items: center;
+}
+
+.h_subtextdate h2 {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: #ffffffa8;
+    font-weight: normal;
+    line-height: 130%;
+}
+
+
+.h_clockiconsubtext {
+    display: flex;
+    position: relative;
+    left: 15px;
+    top: 50px;
+    align-items: center;
+}
+
+.h_clockicon {
+    display: flex;
+
+}
+
+.h_clockicon svg {
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+
+.h_subtextclock {
+    display: flex;
+    position: relative;
+    left: 10px;
+
+}
+
+.h_subtextclock h2 {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    color: #ffffffa8;
+    font-weight: normal;
+}
+
+
+.my-date {
+    position: relative;
+    top: -7px;
+
+}
+
+.greg-date {
+    flex-direction: column;
+}
+
+.hijri-date {
+    position: absolute;
+    top: 17px;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header_dayruznama {
+    position: relative;
+    overflow: hidden;
+}
+
+.dayruznama_box {
+    display: block;
+    width: 100vw;
+    height: 60px;
+}
+
+.icontextdescrtime {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 60px;
+    font-family: Verdana;
+}
+
+.dayruznama_icon {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    margin: 0 15px;
+}
+
+.textdescr {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100vw;
+}
+
+.dayruznama_text {
+    display: flex;
+}
+
+.dayruznama_text h2 {
+font-family: Verdana;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #005982;
+}
+
+.dayruznama_descr {
+    display: flex;
+    font-size: 10px;
+    color: #005982;
+}
+
+.dayruznama_time {
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.dayruznama_time h2 {
+	font-family: Verdana;
+    font-size: 18px;
+    color: #005982;
+}
+
+.dayruznama_icon svg {
+    width: 30px;
+    height: auto;
+    fill: #005982;
+}
+
+
+.topnav {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #ffffff;
+    position: relative;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+
+.topnav a {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+
+.topnav a.icon {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 40px;
+    right: 0;
+    top: 0;
+}
+
+
+.topnav a:hover {
+    display: flex;
+    align-items: center;
+    background-color: rgba(226,226,226,0.00);
+    color: #ffffff;
+height: 50px
+}
+
+.topnav1 {
+    height: 50px;
+
+}
+
+.iconbottom svg {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: auto;
+}
+
+.cls-1 {
+    stroke: #005982;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3px;
+}
+
+.mylinkstext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mylinkstext h3 {
+font-family: Verdana;
+    display: flex;
+    font-size: 20px;
+    width: 100%;
+    justify-content: center;
+    color: #005982;
+    padding: 10px 0 5px;
+    border-bottom: 1px solid #005982;
+}
+
+.mylinkstext h4 {
+font-family: Arial;
+    padding: 10px 0 20px;
+    display: flex;
+    font-size: 15px;
+    text-align: justify;
+    color: #005982;
+}
+
+.mylinkstext .imgdescr {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    margin-top: 10px;
+}
+
+:root {
+	--white: #ffffff;
+	--header: #005982;
+	--text: #005982;
+	--subtext: #005982;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+.wrappermount {
+	overflow: hidden;
+}
+
+body {
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+	color: #8f8f8f;
+}
+
+
+.footermount {
+    position: relative;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    min-width: 320px;
+}
+
+table,
+td,
+th {
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: var(--subtext);
+}
+
+table tr th {
+    font-size: calc(2vw + 6px);
+    padding: 10px 2px;
+    color: var(--white);
+    background-color: var(--header);
+    border: 0;
+}
+
+table tr td {
+    font-size: calc(3vw + 2px);
+    text-align: center;
+    padding: 5px 1px;
+    border: 0px;
+}
+
+
+tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.myclosed {
+    color: var(--text);
+    .background-color: #f0f0f0;
+    font-weight: bold;
+
+}
+#Button1
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button1:focus
+{
+   outline: 0;
+}
+#wb_Ruznama5
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama5
+{
+   box-sizing: border-box;
+   padding: 10px 15px 10px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama5 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#Ruznama5 > .row > .col-1, #Ruznama5 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#Ruznama5 > .row > .col-1, #Ruznama5 > .row > .col-2
+{
+   float: left;
+}
+#Ruznama5 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: left;
+}
+#Ruznama5 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: right;
+}
+#Ruznama5:before,
+#Ruznama5:after,
+#Ruznama5 .row:before,
+#Ruznama5 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama5:after,
+#Ruznama5 .row:after
+{
+   clear: both;
+}
+@media (max-width: 310px)
+{
+#Ruznama5 > .row > .col-1, #Ruznama5 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#Button2
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button2:focus
+{
+   outline: 0;
+}
+#wb_Ruznama6
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama6
+{
+   box-sizing: border-box;
+   padding: 10px 15px 10px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama6 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#Ruznama6 > .row > .col-1, #Ruznama6 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#Ruznama6 > .row > .col-1, #Ruznama6 > .row > .col-2
+{
+   float: left;
+}
+#Ruznama6 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: left;
+}
+#Ruznama6 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: right;
+}
+#Ruznama6:before,
+#Ruznama6:after,
+#Ruznama6 .row:before,
+#Ruznama6 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama6:after,
+#Ruznama6 .row:after
+{
+   clear: both;
+}
+@media (max-width: 310px)
+{
+#Ruznama6 > .row > .col-1, #Ruznama6 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#Button3
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button3:focus
+{
+   outline: 0;
+}
+#Button4
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button4:focus
+{
+   outline: 0;
+}
+#wb_Ruznama7
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama7
+{
+   box-sizing: border-box;
+   padding: 10px 15px 10px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama7 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#Ruznama7 > .row > .col-1, #Ruznama7 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#Ruznama7 > .row > .col-1, #Ruznama7 > .row > .col-2
+{
+   float: left;
+}
+#Ruznama7 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: left;
+}
+#Ruznama7 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: right;
+}
+#Ruznama7:before,
+#Ruznama7:after,
+#Ruznama7 .row:before,
+#Ruznama7 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama7:after,
+#Ruznama7 .row:after
+{
+   clear: both;
+}
+@media (max-width: 310px)
+{
+#Ruznama7 > .row > .col-1, #Ruznama7 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#Button5
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button5:focus
+{
+   outline: 0;
+}
+#Button6
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button6:focus
+{
+   outline: 0;
+}
+#wb_Ruznama8
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama8
+{
+   box-sizing: border-box;
+   padding: 10px 15px 10px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama8 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#Ruznama8 > .row > .col-1, #Ruznama8 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#Ruznama8 > .row > .col-1, #Ruznama8 > .row > .col-2
+{
+   float: left;
+}
+#Ruznama8 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: left;
+}
+#Ruznama8 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: right;
+}
+#Ruznama8:before,
+#Ruznama8:after,
+#Ruznama8 .row:before,
+#Ruznama8 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama8:after,
+#Ruznama8 .row:after
+{
+   clear: both;
+}
+@media (max-width: 310px)
+{
+#Ruznama8 > .row > .col-1, #Ruznama8 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#Button7
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button7:focus
+{
+   outline: 0;
+}
+#Button8
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button8:focus
+{
+   outline: 0;
+}
+#wb_Ruznama9
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama9
+{
+   box-sizing: border-box;
+   padding: 10px 15px 10px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama9 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#Ruznama9 > .row > .col-1, #Ruznama9 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#Ruznama9 > .row > .col-1, #Ruznama9 > .row > .col-2
+{
+   float: left;
+}
+#Ruznama9 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: left;
+}
+#Ruznama9 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: right;
+}
+#Ruznama9:before,
+#Ruznama9:after,
+#Ruznama9 .row:before,
+#Ruznama9 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama9:after,
+#Ruznama9 .row:after
+{
+   clear: both;
+}
+@media (max-width: 310px)
+{
+#Ruznama9 > .row > .col-1, #Ruznama9 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#Button9
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button9:focus
+{
+   outline: 0;
+}
+#Button10
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button10:focus
+{
+   outline: 0;
+}
+#wb_Ruznama10
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama10
+{
+   box-sizing: border-box;
+   padding: 10px 15px 10px 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama10 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#Ruznama10 > .row > .col-1, #Ruznama10 > .row > .col-2
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#Ruznama10 > .row > .col-1, #Ruznama10 > .row > .col-2
+{
+   float: left;
+}
+#Ruznama10 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: left;
+}
+#Ruznama10 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 50%;
+   text-align: right;
+}
+#Ruznama10:before,
+#Ruznama10:after,
+#Ruznama10 .row:before,
+#Ruznama10 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama10:after,
+#Ruznama10 .row:after
+{
+   clear: both;
+}
+@media (max-width: 310px)
+{
+#Ruznama10 > .row > .col-1, #Ruznama10 > .row > .col-2
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#Button11
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button11:focus
+{
+   outline: 0;
+}
+#Button12
+{
+   box-sizing: border-box;
+   line-height: 66px;
+   text-decoration: none;
+   vertical-align: top;
+   border: 1px solid #2E6DA4;
+   border-radius: 20px;
+   background-color: #3370B7;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   padding: 1px 6px 1px 6px;
+   text-align: center;
+   -webkit-appearance: none;
+   margin: 0;
+}
+}
+#Button12:focus
+{
+   outline: 0;
+}
+#wb_Ruznama11
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#Ruznama11
+{
+   box-sizing: border-box;
+   padding: 0 15px 0 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#Ruznama11 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#Ruznama11 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#Ruznama11 > .row > .col-1
+{
+   float: left;
+}
+#Ruznama11 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: left;
+}
+#Ruznama11:before,
+#Ruznama11:after,
+#Ruznama11 .row:before,
+#Ruznama11 .row:after
+{
+   display: table;
+   content: " ";
+}
+#Ruznama11:after,
+#Ruznama11 .row:after
+{
+   clear: both;
+}
+@media (max-width: 310px)
+{
+#Ruznama11 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_telegram
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #245580;
+   border-radius: 0px;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   line-height: 30px;
+   vertical-align: top;
+   flex-grow: 0;
+   flex-shrink: 0;
+   align-self: auto;
+}
+#telegram
+{
+   overflow: visible;
+   vertical-align: top;
+   width: 100%;
+   height: 100%;
+}
+#telegram
+{
+   fill: #005982;
+   display: inline-block;
+   font-size: 30px;
+   vertical-align: middle;
+   width: 30px;
+}
+#wb_telegram:hover #telegram
+{
+   fill: #005982;
+}
+#wb_DagProgs
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   margin: 0;
+   padding: 0;
+   text-align: left;
+   flex-grow: 0;
+   flex-shrink: 0;
+   align-self: auto;
+}
+#DagProgs
+{
+   color: #005982;
+   font-family: Arial;
+   font-weight: bold;
+   font-style: normal;
+   font-size: 16px;
+   margin: 0;
+   text-align: left;
+}
+#DagProgs a
+{
+   color: inherit;
+   text-decoration: none;
+}
+#RuznamaButton
+{
+   display: flex;
+   position: relative;
+   padding: 10px 10px 10px 10px;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
+   align-content: flex-start;
+   margin: 0;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   font-size: 0;
+}
+.mylinkstext h4 {
+font-family: Verdana;
+font-style: normal;
+}
