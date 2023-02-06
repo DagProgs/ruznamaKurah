@@ -414,8 +414,9 @@ body
     align-items: center;
     position: relative;
     top: 23px;
-    left: 158px;
-	right: 0;
+    left: 150px;
+	
+	
 }
 
 .h_loc {
@@ -434,6 +435,7 @@ body
     display: flex;
     position: relative;
     left: 5px;
+	
 }
 
 .h_subtext h3 {
@@ -442,6 +444,7 @@ body
     font-size: 10px;
     color: #ffffffa8;
     font-weight: normal;
+	width: 100%;
 }
 
 .h_calendariconsubtext {
@@ -459,8 +462,8 @@ body
 
 .h_calendaricon svg {
     display: flex;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 
 }
 
