@@ -414,7 +414,7 @@ body
     align-items: center;
     position: relative;
     top: 23px;
-    padding-left: 158px;
+    left: 150px;
 	
 	
 }
@@ -444,7 +444,7 @@ body
     font-size: 10px;
     color: #ffffffa8;
     font-weight: normal;
-	width: 100px;
+	width: 100%;
 }
 
 .h_calendariconsubtext {
