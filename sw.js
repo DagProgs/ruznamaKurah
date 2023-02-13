@@ -1,21 +1,22 @@
-const staticCacheName = 'static-kurahruznama-v0';
-const dynamicCacheName = 'dynamic-kurahruznama-v0';
+const staticCacheName = 'static-kurahruznama-v1';
+const dynamicCacheName = 'dynamic-kurahruznama-v1';
 
 const staticAssets = [
-    'index.html',
-    'offline.html',
-	'css/font-awesome.min.css',
-	'css/index.css',
-	'css/RuznamaKurakh_end.css',
-    'js/app.js',
-    'js/main.js',
-	'js/jquery.hijri.date.min.js',
-	'js/jquery-3.6.0.min.js',
-	'js/jquery-ui.min.js',
-	'js/dayruznama.js',
-	'js/script.js.js',
-	'js/wwb18.min.js',
-    'images/no-image.jpg'
+	'./',
+    './index.html',
+    './offline.html',
+	'./css/font-awesome.min.css',
+	'./css/index.css',
+	'./css/RuznamaKurakh_end.css',
+    './js/app.js',
+    './js/main.js',
+	'./js/jquery.hijri.date.min.js',
+	'./js/jquery-3.6.0.min.js',
+	'./js/jquery-ui.min.js',
+	'./js/dayruznama.js',
+	'./js/script.js.js',
+	'./js/wwb18.min.js',
+    './images/no-image.jpg'
 ];
 
 self.addEventListener('install', async event => {
@@ -56,9 +57,9 @@ async function checkOnline(req) {
         if (cachedRes) {
             return cachedRes;
         } else if (req.url.indexOf('.html') !== -1) {
-            return caches.match('offline.html');
+            return caches.match('./offline.html');
         } else {
-            return caches.match('images/no-image.jpg');
+            return caches.match('./images/no-image.jpg');
         }
     }
 }
