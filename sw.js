@@ -1,5 +1,5 @@
-const staticCacheName = 'static-kurahruznama-v2';
-const dynamicCacheName = 'dynamic-kurahruznama-v2';
+const staticCacheName = 'static-kurahruznama-v4'
+const dynamicCacheName = 'dynamic-kurahruznama-v4'
 
 const staticAssets = [
 	'./',
@@ -18,6 +18,30 @@ const staticAssets = [
 	'./js/wwb18.min.js',
     './images/no-image.jpg'
 ];
+
+self.addEventListener('install', event => {
+    console.log('install');
+    event.waitUntil(
+        Promise.all([
+            // caches.open('one')
+            caches.open('two')
+                .then(cache => cache.addAll(toCaches)) //Может быть возвращаемое значение, я не знаю
+                .then(ok => console.log('add all ok'), e => console.log(e))
+            ,
+            //  Очистить старые версии
+            caches.keys().then(function (cacheList) {
+                return Promise.all(
+                    cacheList.map(function (cacheName) {
+                        if (cacheName !== 'two') {
+                            console.log('Очистить',cacheName);
+                            return caches.delete(cacheName);
+                        }
+                    })
+                );
+            })
+        ])
+    );
+});
 
 self.addEventListener('install', async event => {
     const cache = await caches.open(staticCacheName);
