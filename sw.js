@@ -1,6 +1,6 @@
 
 
-const dynamicCacheName = 'dynamic-kurahruznama-v5';
+const dynamicCacheName = 'dynamic-kurahruznama-v6';
 
 const dynamicAssets = [
     './',
