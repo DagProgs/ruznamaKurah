@@ -1,5 +1,5 @@
-const staticCacheName = 'static-kurahruznama-v10'
-const dynamicCacheName = 'dynamic-kurahruznama-v10'
+const staticCacheName = 'static-kurahruznama-v11'
+const dynamicCacheName = 'dynamic-kurahruznama-v11'
 
 const staticAssets = [
 	'./',
