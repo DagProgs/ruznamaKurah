@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ruznamakurah-v1.0.0';
+const CACHE_NAME = 'ruznamakurah-v1.1.0';
 const cacheList = [
     'index.html',
     'offline.html',
