@@ -1,5 +1,9 @@
-var urlsToCache = [
-	'./',
+
+const staticCacheName = 'static-kurahruznama-v0';
+const dynamicCacheName = 'dynamic-kurahruznama-v0';
+
+const staticAssets = [
+    './',
     './index.html',
     './offline.html',
 	'./css/font-awesome.min.css',
@@ -16,49 +20,47 @@ var urlsToCache = [
     './images/no-image.jpg'
 ];
 
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('my-cache')
-      .then(function(cache) {
-        return cache.addAll(urlsToCache);
-      })
-  );
+self.addEventListener('install', async event => {
+    const cache = await caches.open(staticCacheName);
+    await cache.addAll(staticAssets);
+    console.log('Service worker has been installed');
 });
 
-self.addEventListener('activate', event => {
-
-var validCaches = ['home-cache-v2', 'articles-cache-v2'];
-
-  event.waitUntil(
-    caches.keys().then(keys => 
-    Promise.all(keys.map(key => {
-        if (validCaches.indexOf(key) === -1) {
-          return caches.delete(key);
+self.addEventListener('activate', async event => {
+    const cachesKeys = await caches.keys();
+    const checkKeys = cachesKeys.map(async key => {
+        if (![staticCacheName, dynamicCacheName].includes(key)) {
+            await caches.delete(key);
         }
-      })
-    )).then(() => {
-      // We successfully deleted all the obsolete caches
-    })
-  );
+    });
+    await Promise.all(checkKeys);
+    console.log('Service worker has been activated');
 });
 
-navigator.serviceWorker.getRegistration()
-   .then(function(registration) {
-       if(registration){
-          registration.unregister()
-          .then(
-               function(success) {
-                 if ('caches' in window) {
-    caches.keys()
-      .then(function(keyList) {
-          return Promise.all(keyList.map(function(key) {
-              return caches.delete(key);
-          }));
-      })
+self.addEventListener('fetch', event => {
+    console.log(`Trying to fetch ${event.request.url}`);
+    event.respondWith(checkCache(event.request));
+});
+
+async function checkCache(req) {
+    const cachedResponse = await caches.match(req);
+    return cachedResponse || checkOnline(req);
 }
-                });
-          }
-    });
 
-
-
+async function checkOnline(req) {
+    const cache = await caches.open(dynamicCacheName);
+    try {
+        const res = await fetch(req);
+        await cache.put(req, res.clone());
+        return res;
+    } catch (error) {
+        const cachedRes = await cache.match(req);
+        if (cachedRes) {
+            return cachedRes;
+        } else if (req.url.indexOf('.html') !== -1) {
+            return caches.match('offline.html');
+        } else {
+            return caches.match('images/no-image.jpg');
+        }
+    }
+}
