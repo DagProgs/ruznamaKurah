@@ -5,7 +5,7 @@ let toCaches = [
 self.addEventListener('install', event => {
     console.log('install');
     event.waitUntil(
-        caches.open('tri')
+        caches.open('od')
             .then(cache => cache.addAll(toCaches)) // Может быть возвращаемое значение, я не знаю
             .then(ok => console.log('add all ok'), e => console.log(e))
     );
@@ -43,7 +43,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         Promise.all([
             // caches.open('one')
-            caches.open('tri')
+            caches.open('od')
                 .then(cache => cache.addAll(toCaches)) //Может быть возвращаемое значение, я не знаю
                 .then(ok => console.log('add all ok'), e => console.log(e))
             ,
@@ -51,7 +51,7 @@ self.addEventListener('install', event => {
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'tri') {
+                        if (cacheName !== 'od') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }
@@ -63,14 +63,14 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-    console.log('tri now ready to handle fetches!');
+    console.log('od now ready to handle fetches!');
     event.waitUntil(
         Promise.all([
             // Очищаем старую версию
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'tri') {
+                        if (cacheName !== 'od') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }

@@ -1,13 +1,16 @@
-window.addEventListener('load', () => {
+navigator.serviceWorker
+    .register('./sw.js')
+    .then(function (reg) {
+        console.log('Service Worker Registered');
+    });
 
-    if ('serviceWorker' in navigator){
-
-        navigator.serviceWorker.register('./sw.js')
-            .then(registration => {
-                console.log('Service worker successfully registered', registration);
-            })
-            .catch(error => {
-                console.log('Service worker registration failed', error);
-            });
-    }
-});
+setTimeout(() => {
+    const img = new Image();
+    img.src = 'img/icons/icon-512x512.png';
+    document.body.appendChild(img);
+}, 1000);
+setTimeout(() => {
+    const img = new Image();
+    img.src = 'img/rolling-dots.gif';
+    document.body.appendChild(img);
+}, 1000);
