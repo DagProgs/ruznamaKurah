@@ -25,7 +25,7 @@ this.addEventListener('install', function (event) {
 });
 
 // Внимание: ваши данные могут отличаться! Настройте удаление старого кэша
-const CACHE_PREFIX = 'ruznamakurah1';
+const CACHE_PREFIX = 'ruznamakurah';
 
 this.addEventListener('activate', function (event) {
     event.waitUntil(
@@ -44,5 +44,48 @@ this.addEventListener('fetch', function (event) {
         caches.match(event.request, { ignoreSearch: true }).then(function(response) {
             return response || fetch(event.request);
         })
+    );
+});
+
+// Внимание: ваши данные могут отличаться!
+this.addEventListener('fetch', function (event) {
+    if (
+        event.request.method !== 'GET' ||
+        event.request.url.indexOf('http://') === 0 ||
+        event.request.url.indexOf('an.yandex.ru') !== -1
+    ) {
+        return;
+    }
+
+    event.respondWith(
+        caches.match(event.request, { ignoreSearch: true }).then(function(response) {
+            return response || fetch(event.request);
+        })
+    );
+});
+
+// Внимание: ваши данные могут отличаться!
+this.addEventListener('fetch', function (event) {
+    if (
+        event.request.method !== 'GET' ||
+        event.request.url.indexOf('http://') === 0 ||
+        event.request.url.indexOf('an.yandex.ru') !== -1
+    ) {
+        return;
+    }
+    const cachedResponsePromise = caches.match(event.request, { ignoreSearch: true });
+
+    event.respondWith(
+        fetch(event.request).then(response => {
+            if (response.ok) {
+                return caches
+                    .open(CACHE_NAME)
+                    .then(cache => {
+                        return cache.put(event.request, response).then(() => response.clone());
+                    });
+            } else {
+                return cachedResponsePromise;
+            }
+        }).catch(() => cachedResponsePromise)
     );
 });
