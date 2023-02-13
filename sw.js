@@ -1,5 +1,5 @@
 //cache name
-const CACHE_NAME = "kurahruznama-v0";
+const CACHE_NAME = "kurahruznama-v1";
 //we want to cache the next files
 const cacheAssets = [
 	'./',
