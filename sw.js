@@ -1,8 +1,8 @@
 
-const staticCacheName = 'static-kurahruznama-v3';
-const dynamicCacheName = 'dynamic-kurahruznama-v3';
 
-const staticAssets = [
+const dynamicCacheName = 'dynamic-kurahruznama-v4';
+
+const dynamicAssets = [
     './',
     './index.html',
     './offline.html',
@@ -21,15 +21,15 @@ const staticAssets = [
 ];
 
 self.addEventListener('install', async event => {
-    const cache = await caches.open(staticCacheName);
-    await cache.addAll(staticAssets);
+    const cache = await caches.open(dynamicCacheName);
+    await cache.addAll(dynamicAssets);
     console.log('Service worker has been installed');
 });
 
 self.addEventListener('activate', async event => {
     const cachesKeys = await caches.keys();
     const checkKeys = cachesKeys.map(async key => {
-        if (![staticCacheName].includes(key)) {
+        if (![dynamicCacheName].includes(key)) {
             await caches.delete(key);
         }
     });
