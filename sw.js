@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ruznamakurah-v1.1.0';
+const CACHE_NAME = 'ruznamakurah-v1.1.1';
 const cacheList = [
     'index.html',
     'offline.html',
@@ -25,7 +25,7 @@ this.addEventListener('install', function (event) {
 });
 
 // Внимание: ваши данные могут отличаться! Настройте удаление старого кэша
-const CACHE_PREFIX = 'ruznamakurah';
+const CACHE_PREFIX = 'ruznamakurah1';
 
 this.addEventListener('activate', function (event) {
     event.waitUntil(
