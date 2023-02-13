@@ -1,4 +1,4 @@
-const staticCacheName = 'kurahruznama-static-v1';
+const staticCacheName = 'kurahruznama-static-v2';
 const assets = [
   '/',
     '/index.html',
@@ -14,7 +14,7 @@ const assets = [
 	'/js/dayruznama.js',
 	'/js/script.js.js',
 	'/js/wwb18.min.js',
-    '/images/no-image.jpg'
+    '/images/no-image.jpg',
 ];
 
 // событие install
