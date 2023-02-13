@@ -5,7 +5,7 @@
   "background_color": "#004b74",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": ".",
+  "start_url": "/index.html",
   "icons": [
     {
       "src": "img/icons/icon-72x72.png",
@@ -47,6 +47,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }
