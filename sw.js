@@ -1,5 +1,5 @@
-const staticCacheName = 'static-kurahruznama-v13'
-const dynamicCacheName = 'dynamic-kurahruznama-v13'
+const staticCacheName = 'static-kurahruznama-v14'
+const dynamicCacheName = 'dynamic-kurahruznama-v14'
 
 const staticAssets = [
 	'./',
@@ -29,7 +29,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         Promise.all([
             // caches.open('one')
-            caches.open('three')
+            caches.open('foo')
                 .then(cache => cache.addAll(toCaches)) //Может быть возвращаемое значение, я не знаю
                 .then(ok => console.log('add all ok'), e => console.log(e))
             ,
@@ -37,7 +37,7 @@ self.addEventListener('install', event => {
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'three') {
+                        if (cacheName !== 'foo') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }
@@ -49,14 +49,14 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-    console.log('three now ready to handle fetches!');
+    console.log('foo now ready to handle fetches!');
     event.waitUntil(
         Promise.all([
             // Очищаем старую версию
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'three') {
+                        if (cacheName !== 'foo') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }
