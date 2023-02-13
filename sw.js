@@ -1,6 +1,6 @@
 
 
-const dynamicCacheName = 'dynamic-kurahruznama-v6';
+const cacheNameToKeep = 'kurahruznama-v0';
 
 const dynamicAssets = [
     './',
@@ -20,47 +20,16 @@ const dynamicAssets = [
     './images/no-image.jpg'
 ];
 
-self.addEventListener('install', async event => {
-    const cache = await caches.open(dynamicCacheName);
-    await cache.addAll(dynamicAssets);
-    console.log('Service worker has been installed');
+//Deletion should only occur at the activate event
+self.addEventListener('activate', event => {
+    var cacheKeeplist = [cacheName];
+    event.waitUntil(
+        caches.keys().then( keyList => {
+            return Promise.all(keyList.map( key => {
+                if (cacheKeeplist.indexOf(key) === -1) {
+                    return caches.delete(key);
+                }
+            }));
+        })
+.then(self.clients.claim())); //this line is important in some contexts
 });
-
-self.addEventListener('activate', async event => {
-    const cachesKeys = await caches.keys();
-    const checkKeys = cachesKeys.map(async key => {
-        if (![dynamicCacheName].includes(key)) {
-            await caches.delete(key);
-        }
-    });
-    await Promise.all(checkKeys);
-    console.log('Service worker has been activated');
-});
-
-self.addEventListener('fetch', event => {
-    console.log(`Trying to fetch ${event.request.url}`);
-    event.respondWith(checkCache(event.request));
-});
-
-async function checkCache(req) {
-    const cachedResponse = await caches.match(req);
-    return cachedResponse || checkOnline(req);
-}
-
-async function checkOnline(req) {
-    const cache = await caches.open(dynamicCacheName);
-    try {
-        const res = await fetch(req);
-        await cache.put(req, res.clone());
-        return res;
-    } catch (error) {
-        const cachedRes = await cache.match(req);
-        if (cachedRes) {
-            return cachedRes;
-        } else if (req.url.indexOf('.html') !== -1) {
-            return caches.match('./offline.html');
-        } else {
-            return caches.match('./images/no-image.jpg');
-        }
-    }
-}
