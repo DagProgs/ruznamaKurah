@@ -1,5 +1,5 @@
-const staticCacheName = 'static-kurahruznama-v4'
-const dynamicCacheName = 'dynamic-kurahruznama-v4'
+const staticCacheName = 'static-kurahruznama-v5'
+const dynamicCacheName = 'dynamic-kurahruznama-v5'
 
 const staticAssets = [
 	'./',
@@ -42,6 +42,26 @@ self.addEventListener('install', event => {
         ])
     );
 });
+
+self.addEventListener('activate', event => {
+    console.log('two now ready to handle fetches!');
+    event.waitUntil(
+        Promise.all([
+            // Очищаем старую версию
+            caches.keys().then(function (cacheList) {
+                return Promise.all(
+                    cacheList.map(function (cacheName) {
+                        if (cacheName !== 'two') {
+                            console.log('Очистить',cacheName);
+                            return caches.delete(cacheName);
+                        }
+                    })
+                );
+            })
+        ])
+    );
+});
+
 
 self.addEventListener('install', async event => {
     const cache = await caches.open(staticCacheName);
