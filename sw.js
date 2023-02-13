@@ -1,5 +1,5 @@
-const staticCacheName = 'static-kurahruznama-v8'
-const dynamicCacheName = 'dynamic-kurahruznama-v8'
+const staticCacheName = 'static-kurahruznama-v9'
+const dynamicCacheName = 'dynamic-kurahruznama-v9'
 
 const staticAssets = [
 	'./',
@@ -24,7 +24,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         Promise.all([
             // caches.open('one')
-            caches.open('dynamicCacheName')
+            caches.open('staticCacheName')
                 .then(cache => cache.addAll(toCaches)) //Может быть возвращаемое значение, я не знаю
                 .then(ok => console.log('add all ok'), e => console.log(e))
             ,
@@ -32,7 +32,7 @@ self.addEventListener('install', event => {
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'dynamicCacheName') {
+                        if (cacheName !== 'staticCacheName') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }
@@ -51,7 +51,7 @@ self.addEventListener('activate', event => {
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'dynamicCacheName') {
+                        if (cacheName !== 'staticCacheName' 'dynamicCacheName') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }
