@@ -1,20 +1,20 @@
-const staticCacheName = 'kurahruznama-static-v0';
+const staticCacheName = 'kurahruznama-static-v1';
 const assets = [
-  './',
-    './index.html',
-    './offline.html',
-	'./css/font-awesome.min.css',
-	'./css/index.css',
-	'./css/RuznamaKurakh_end.css',
-    './js/app.js',
-    './js/main.js',
-	'./js/jquery.hijri.date.min.js',
-	'./js/jquery-3.6.0.min.js',
-	'./js/jquery-ui.min.js',
-	'./js/dayruznama.js',
-	'./js/script.js.js',
-	'./js/wwb18.min.js',
-    './images/no-image.jpg'
+  '/',
+    '/index.html',
+    '/offline.html',
+	'/css/font-awesome.min.css',
+	'/css/index.css',
+	'/css/RuznamaKurakh_end.css',
+    '/js/app.js',
+    '/js/main.js',
+	'/js/jquery.hijri.date.min.js',
+	'/js/jquery-3.6.0.min.js',
+	'/js/jquery-ui.min.js',
+	'/js/dayruznama.js',
+	'/js/script.js.js',
+	'/js/wwb18.min.js',
+    '/images/no-image.jpg'
 ];
 
 // событие install
