@@ -1,6 +1,6 @@
 
 
-const cacheNameToKeep = 'kurahruznama-v1';
+const cacheNameToKeep = 'kurahruznama-v2';
 
 //Deletion should only occur at the activate event
 self.addEventListener('activate', event => {
