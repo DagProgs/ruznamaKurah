@@ -1,44 +1,28 @@
+const staticCacheName = 'static-kurahruznama-v10'
+const dynamicCacheName = 'dynamic-kurahruznama-v10'
 
-
-
-
-
-let toCaches = [
-    pre + 'index.html',
-    pre + 'offline.html',
+const staticAssets = [
+	'./',
+    './index.html',
+    './offline.html',
+	'./css/font-awesome.min.css',
+	'./css/index.css',
+	'./css/RuznamaKurakh_end.css',
+    './js/app.js',
+    './js/main.js',
+	'./js/jquery.hijri.date.min.js',
+	'./js/jquery-3.6.0.min.js',
+	'./js/jquery-ui.min.js',
+	'./js/dayruznama.js',
+	'./js/script.js.js',
+	'./js/wwb18.min.js',
+    './images/no-image.jpg'
 ];
-self.addEventListener('install', event => {
-    console.log('install');
-    event.waitUntil(
-        caches.open('one')
-            .then(cache => cache.addAll(toCaches)) // Может быть возвращаемое значение, я не знаю
-            .then(ok => console.log('add all ok'), e => console.log(e))
-    );
-});
 
-self.addEventListener('activate', event => {
-    console.log('one now ready to handle fetches!');
-});
 
-self.addEventListener('fetch', event => {
-    console.log(`fetch`, event.request.url);
-    caches.keys().then(ks => console.log(ks));
-    if (event.request.url.includes('zhaomin')) {
-        event.respondWith(caches.match(pre + 'img/xiaolongnv.jpg'));
-    } else {
-        event.respondWith(
-            caches.match(event.request).then(function (response) {
-                if (response) {
-                    console.log('Есть', event.request.url);
-                    return response;
-                } else {
-                    console.log("Нет", event.request.url);
-                    return fetch(event.request);
-                }
-            })
-        );
-    }
-});
+
+
+
 
 self.addEventListener('install', event => {
     console.log('install');
