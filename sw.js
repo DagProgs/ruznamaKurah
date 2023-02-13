@@ -1,5 +1,5 @@
-const staticCacheName = 'static-kurahruznama-v12'
-const dynamicCacheName = 'dynamic-kurahruznama-v12'
+const staticCacheName = 'static-kurahruznama-v13'
+const dynamicCacheName = 'dynamic-kurahruznama-v13'
 
 const staticAssets = [
 	'./',
@@ -29,7 +29,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         Promise.all([
             // caches.open('one')
-            caches.open('static-kurahruznama-v12')
+            caches.open('two')
                 .then(cache => cache.addAll(toCaches)) //Может быть возвращаемое значение, я не знаю
                 .then(ok => console.log('add all ok'), e => console.log(e))
             ,
