@@ -29,7 +29,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         Promise.all([
             // caches.open('one')
-            caches.open('two')
+            caches.open('odin')
                 .then(cache => cache.addAll(toCaches)) //Может быть возвращаемое значение, я не знаю
                 .then(ok => console.log('add all ok'), e => console.log(e))
             ,
@@ -37,7 +37,7 @@ self.addEventListener('install', event => {
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'two') {
+                        if (cacheName !== 'odin') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }
@@ -49,14 +49,14 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-    console.log('two now ready to handle fetches!');
+    console.log('odin now ready to handle fetches!');
     event.waitUntil(
         Promise.all([
             // Очищаем старую версию
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'two') {
+                        if (cacheName !== 'odin') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }
