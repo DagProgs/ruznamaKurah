@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-v3';
-const assets = [
+const CACHE_NAME = 'ruznamakurah-v1.0.0';
+const cacheList = [
     'index.html',
     'offline.html',
 	'css/font-awesome.min.css',
@@ -13,36 +13,36 @@ const assets = [
 	'js/dayruznama.js',
 	'js/script.js.js',
 	'js/wwb18.min.js',
-    'images/no-image.jpg',
+    'images/no-image.jpg'
 ];
 
-// событие install
-self.addEventListener('install', evt => {
-  evt.waitUntil(
-    caches.open(staticCacheName).then((cache) => {
-      console.log('caching shell assets');
-      cache.addAll(assets);
-    })
-  );
+this.addEventListener('install', function (event) {
+    event.waitUntil(
+        caches.open(CACHE_NAME).then(cache => {
+            return cache.addAll(cacheList);
+        })
+    );
 });
 
-// событие activate
-self.addEventListener('activate', evt => {
-  evt.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(keys
-        .filter(key => key !== staticCacheName)
-        .map(key => caches.delete(key))
-      );
-    })
-  );
+// Внимание: ваши данные могут отличаться! Настройте удаление старого кэша
+const CACHE_PREFIX = 'ruznamakurah';
+
+this.addEventListener('activate', function (event) {
+    event.waitUntil(
+        caches.keys().then(keyList => {
+            return Promise.all(keyList.map(key => {
+                if (key.indexOf(CACHE_PREFIX) === 0 && key !== CACHE_NAME) {
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
 });
 
-// событие fetch
-self.addEventListener('fetch', evt => {
-  evt.respondWith(
-    caches.match(evt.request).then(cacheRes => {
-      return cacheRes || fetch(evt.request);
-    })
-  );
+this.addEventListener('fetch', function (event) {
+    event.respondWith(
+        caches.match(event.request, { ignoreSearch: true }).then(function(response) {
+            return response || fetch(event.request);
+        })
+    );
 });
