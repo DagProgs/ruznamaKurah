@@ -1,6 +1,6 @@
 
-const staticCacheName = 'static-kurahruznama-v1';
-const dynamicCacheName = 'dynamic-kurahruznama-v1';
+const staticCacheName = 'static-kurahruznama-v2';
+const dynamicCacheName = 'dynamic-kurahruznama-v2';
 
 const staticAssets = [
     './',
@@ -48,7 +48,7 @@ async function checkCache(req) {
 }
 
 async function checkOnline(req) {
-    const cache = await caches.open(staticCacheName);
+    const cache = await caches.open(dynamicCacheName);
     try {
         const res = await fetch(req);
         await cache.put(req, res.clone());
