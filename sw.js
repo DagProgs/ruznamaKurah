@@ -1,5 +1,5 @@
-const staticCacheName = 'static-kurahruznama-v16'
-const dynamicCacheName = 'dynamic-kurahruznama-v16'
+const staticCacheName = 'static-kurahruznama-v17'
+const dynamicCacheName = 'dynamic-kurahruznama-v17'
 
 const staticAssets = [
 	'./',
@@ -29,7 +29,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         Promise.all([
             // caches.open('one')
-            caches.open('odin')
+            caches.open('dva')
                 .then(cache => cache.addAll(toCaches)) //Может быть возвращаемое значение, я не знаю
                 .then(ok => console.log('add all ok'), e => console.log(e))
             ,
@@ -37,7 +37,7 @@ self.addEventListener('install', event => {
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'odin') {
+                        if (cacheName !== 'dva') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }
@@ -49,14 +49,14 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-    console.log('odin now ready to handle fetches!');
+    console.log('dva now ready to handle fetches!');
     event.waitUntil(
         Promise.all([
             // Очищаем старую версию
             caches.keys().then(function (cacheList) {
                 return Promise.all(
                     cacheList.map(function (cacheName) {
-                        if (cacheName !== 'odin') {
+                        if (cacheName !== 'dva') {
                             console.log('Очистить',cacheName);
                             return caches.delete(cacheName);
                         }
@@ -66,51 +66,3 @@ self.addEventListener('activate', event => {
         ])
     );
 });
-
-
-
-
-self.addEventListener('install', async event => {
-    const cache = await caches.open(staticCacheName);
-    await cache.addAll(staticAssets);
-    console.log('Service worker has been installed');
-});
-
-self.addEventListener('activate', async event => {
-    const cachesKeys = await caches.keys();
-    const checkKeys = cachesKeys.map(async key => {
-        if (![staticCacheName, dynamicCacheName].includes(key)) {
-            await caches.delete(key);
-        }
-    });
-    await Promise.all(checkKeys);
-    console.log('Service worker has been activated');
-});
-
-self.addEventListener('fetch', event => {
-    console.log(`Trying to fetch ${event.request.url}`);
-    event.respondWith(checkCache(event.request));
-});
-
-async function checkCache(req) {
-    const cachedResponse = await caches.match(req);
-    return cachedResponse || checkOnline(req);
-}
-
-async function checkOnline(req) {
-    const cache = await caches.open(dynamicCacheName);
-    try {
-        const res = await fetch(req);
-        await cache.put(req, res.clone());
-        return res;
-    } catch (error) {
-        const cachedRes = await cache.match(req);
-        if (cachedRes) {
-            return cachedRes;
-        } else if (req.url.indexOf('.html') !== -1) {
-            return caches.match('./offline.html');
-        } else {
-            return caches.match('./images/no-image.jpg');
-        }
-    }
-}
