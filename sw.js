@@ -1,5 +1,7 @@
-const CACHE_NAME = 'ruznamakurah-v1.1.1';
-const cacheList = [
+const staticCacheName = 'static-kurahruznama-v0';
+const dynamicCacheName = 'dynamic-kurahruznama-v0';
+
+const staticAssets = [
     'index.html',
     'offline.html',
 	'css/font-awesome.min.css',
@@ -16,76 +18,47 @@ const cacheList = [
     'images/no-image.jpg'
 ];
 
-this.addEventListener('install', function (event) {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then(cache => {
-            return cache.addAll(cacheList);
-        })
-    );
+self.addEventListener('install', async event => {
+    const cache = await caches.open(staticCacheName);
+    await cache.addAll(staticAssets);
+    console.log('Service worker has been installed');
 });
 
-// Внимание: ваши данные могут отличаться! Настройте удаление старого кэша
-const CACHE_PREFIX = 'ruznamakurah';
-
-this.addEventListener('activate', function (event) {
-    event.waitUntil(
-        caches.keys().then(keyList => {
-            return Promise.all(keyList.map(key => {
-                if (key.indexOf(CACHE_PREFIX) === 0 && key !== CACHE_NAME) {
-                    return caches.delete(key);
-                }
-            }));
-        })
-    );
+self.addEventListener('activate', async event => {
+    const cachesKeys = await caches.keys();
+    const checkKeys = cachesKeys.map(async key => {
+        if (![staticCacheName, dynamicCacheName].includes(key)) {
+            await caches.delete(key);
+        }
+    });
+    await Promise.all(checkKeys);
+    console.log('Service worker has been activated');
 });
 
-this.addEventListener('fetch', function (event) {
-    event.respondWith(
-        caches.match(event.request, { ignoreSearch: true }).then(function(response) {
-            return response || fetch(event.request);
-        })
-    );
+self.addEventListener('fetch', event => {
+    console.log(`Trying to fetch ${event.request.url}`);
+    event.respondWith(checkCache(event.request));
 });
 
-// Внимание: ваши данные могут отличаться!
-this.addEventListener('fetch', function (event) {
-    if (
-        event.request.method !== 'GET' ||
-        event.request.url.indexOf('http://') === 0 ||
-        event.request.url.indexOf('an.yandex.ru') !== -1
-    ) {
-        return;
+async function checkCache(req) {
+    const cachedResponse = await caches.match(req);
+    return cachedResponse || checkOnline(req);
+}
+
+async function checkOnline(req) {
+    const cache = await caches.open(dynamicCacheName);
+    try {
+        const res = await fetch(req);
+        await cache.put(req, res.clone());
+        return res;
+    } catch (error) {
+        const cachedRes = await cache.match(req);
+        if (cachedRes) {
+            return cachedRes;
+        } else if (req.url.indexOf('.html') !== -1) {
+            return caches.match('offline.html');
+        } else {
+            return caches.match('images/no-image.jpg');
+        }
     }
-
-    event.respondWith(
-        caches.match(event.request, { ignoreSearch: true }).then(function(response) {
-            return response || fetch(event.request);
-        })
-    );
-});
-
-// Внимание: ваши данные могут отличаться!
-this.addEventListener('fetch', function (event) {
-    if (
-        event.request.method !== 'GET' ||
-        event.request.url.indexOf('http://') === 0 ||
-        event.request.url.indexOf('an.yandex.ru') !== -1
-    ) {
-        return;
-    }
-    const cachedResponsePromise = caches.match(event.request, { ignoreSearch: true });
-
-    event.respondWith(
-        fetch(event.request).then(response => {
-            if (response.ok) {
-                return caches
-                    .open(CACHE_NAME)
-                    .then(cache => {
-                        return cache.put(event.request, response).then(() => response.clone());
-                    });
-            } else {
-                return cachedResponsePromise;
-            }
-        }).catch(() => cachedResponsePromise)
-    );
-});
+}
