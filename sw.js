@@ -2,7 +2,7 @@ const staticCacheName = 'sKR1'
 const dynamicCacheName = 'dKR1'
 
 const staticAssets = [
-	// './',
+	'./',
     './index.html',
     './offline.html',
 	'./css/menu.css',
