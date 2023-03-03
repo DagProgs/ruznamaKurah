@@ -1,5 +1,5 @@
-const staticCacheName = 'sKR2'
-const dynamicCacheName = 'dKR2'
+const staticCacheName = 'sKR3'
+const dynamicCacheName = 'dKR3'
 
 const staticAssets = [
 	'./',
