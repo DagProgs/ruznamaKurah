@@ -81,6 +81,32 @@ $(window).on('load', function()
 </head>
 
 <body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBDhjVkCJ6FX7FpQ-EoHW4lC1qaAuVY4f4",
+    authDomain: "dagpr-f442b.firebaseapp.com",
+    projectId: "dagpr-f442b",
+    storageBucket: "dagpr-f442b.appspot.com",
+    messagingSenderId: "1036420872305",
+    appId: "1:1036420872305:web:83b6c929db10eee042c3d0",
+    measurementId: "G-N6WC89QW9E"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+
     <div class="wrapper">
         <div id="progress_line"></div>
         <header class="header">
