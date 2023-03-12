@@ -1,4 +1,4 @@
-const cacheName = "ruznamak0"; // Change value to force update
+const cacheName = "ruznamak1"; // Change value to force update
 
 self.addEventListener("install", event => {
 	// Kick out the old service worker
@@ -8,10 +8,10 @@ self.addEventListener("install", event => {
 		caches.open(cacheName).then(cache => {
 			return cache.addAll([
 				"/",
-				"index.html",
-				"offline.html",
-				"js/dayruznama.js",
-				"js/daymount.js",
+				"/index.html",
+				"/offline.html",
+				"/js/dayruznama.js",
+				"/js/daymount.js",
 				
 			]);
 		})
