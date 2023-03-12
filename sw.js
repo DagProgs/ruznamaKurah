@@ -1,8 +1,8 @@
-const staticCacheName = "site-static-v9";
-const dynamicCacheName = "site-dynamic-v9";
+const staticCacheName = "site-static-v10";
+const dynamicCacheName = "site-dynamic-v11";
 const assets = [
   "/",
-  "/index.html",
+  "/index.html"
 ];
 
 //Cache size limit function
