@@ -1,65 +1,51 @@
-const staticCacheName = 'sKR12'
-const dynamicCacheName = 'dKR12'
+const cacheName = "ruznamak0"; // Change value to force update
 
-const staticAssets = [
-	'./',
-    './index.html',
-    './offline.html',
-	'./css/menu.css',
-	'./css/style.css',
-    './js/app.js',
-    './js/ar.js',
-	'./js/jquery.hijri.date.min.js',
-	'./js/jquery-3.6.0.min.js',
-	'./js/clock.js',
-	'./js/dayruznama.js',
-	'./js/menu.js',
-	'./js/mount.js',
-	'./js/ru.js',
-	'./js/script.js.js'
-];
+self.addEventListener("install", event => {
+	// Kick out the old service worker
+	self.skipWaiting();
 
-self.addEventListener('install', async event => {
-    const cache = await caches.open(staticCacheName);
-    await cache.addAll(staticAssets);
-    console.log('Service worker has been installed');
+	event.waitUntil(
+		caches.open(cacheName).then(cache => {
+			return cache.addAll([
+				"/",
+				"index.html",
+				"offline.html",
+				"js/dayruznama.js",
+				"js/daymount.js",
+				
+			]);
+		})
+	);
 });
 
-self.addEventListener('activate', async event => {
-    const cachesKeys = await caches.keys();
-    const checkKeys = cachesKeys.map(async key => {
-        if (![staticCacheName, dynamicCacheName].includes(key)) {
-            await caches.delete(key);
-        }
-    });
-    await Promise.all(checkKeys);
-    console.log('Service worker has been activated');
+self.addEventListener("activate", event => {
+	// Delete any non-current cache
+	event.waitUntil(
+		caches.keys().then(keys => {
+			Promise.all(
+				keys.map(key => {
+					if (![cacheName].includes(key)) {
+						return caches.delete(key);
+					}
+				})
+			)
+		})
+	);
 });
 
-self.addEventListener('fetch', event => {
-    console.log(`Trying to fetch ${event.request.url}`);
-    event.respondWith(checkCache(event.request));
+// Offline-first, cache-first strategy
+// Kick off two asynchronous requests, one to the cache and one to the network
+// If there's a cached version available, use it, but fetch an update for next time.
+// Gets data on screen as quickly as possible, then updates once the network has returned the latest data. 
+self.addEventListener("fetch", event => {
+	event.respondWith(
+		caches.open(cacheName).then(cache => {
+			return cache.match(event.request).then(response => {
+				return response || fetch(event.request).then(networkResponse => {
+					cache.put(event.request, networkResponse.clone());
+					return networkResponse;
+				});
+			})
+		})
+	);
 });
-
-async function checkCache(req) {
-    const cachedResponse = await caches.match(req);
-    return cachedResponse || checkOnline(req);
-}
-
-async function checkOnline(req) {
-    const cache = await caches.open(dynamicCacheName);
-    try {
-        const res = await fetch(req);
-        await cache.put(req, res.clone());
-        return res;
-    } catch (error) {
-        const cachedRes = await cache.match(req);
-        if (cachedRes) {
-            return cachedRes;
-        } else if (req.url.indexOf('.html') !== -1) {
-            return caches.match('./offline.html');
-        } else {
-            return caches.match('./images/no-image.jpg');
-        }
-    }
-}
