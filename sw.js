@@ -1,51 +1,36 @@
-const cacheName = "ruznamak1"; // Change value to force update
-
-self.addEventListener("install", event => {
-	// Kick out the old service worker
-	self.skipWaiting();
-
-	event.waitUntil(
-		caches.open(cacheName).then(cache => {
-			return cache.addAll([
-				"/",
-				"/index.html",
-				"/offline.html",
-				"/js/dayruznama.js",
-				"/js/daymount.js",
-				
-			]);
-		})
-	);
+self.addEventListener('install', function(e) {
+    console.log('[Service Worker] Install');
 });
 
-self.addEventListener("activate", event => {
-	// Delete any non-current cache
-	event.waitUntil(
-		caches.keys().then(keys => {
-			Promise.all(
-				keys.map(key => {
-					if (![cacheName].includes(key)) {
-						return caches.delete(key);
-					}
-				})
-			)
-		})
-	);
+var cacheName = 'v1';
+var appShellFiles = [
+    './',
+    './index.html',
+    './js/dayruznama.js',
+    './js/daymount.js',
+];
+
+self.addEventListener('install', function(e) {
+    console.log('[Service Worker] Install');
+    e.waitUntil(
+        caches.open(cacheName).then(function(cache) {
+            console.log('[Service Worker] Caching all: app shell and content');
+            return cache.addAll(appShellFiles);
+        })
+    );
 });
 
-// Offline-first, cache-first strategy
-// Kick off two asynchronous requests, one to the cache and one to the network
-// If there's a cached version available, use it, but fetch an update for next time.
-// Gets data on screen as quickly as possible, then updates once the network has returned the latest data. 
-self.addEventListener("fetch", event => {
-	event.respondWith(
-		caches.open(cacheName).then(cache => {
-			return cache.match(event.request).then(response => {
-				return response || fetch(event.request).then(networkResponse => {
-					cache.put(event.request, networkResponse.clone());
-					return networkResponse;
-				});
-			})
-		})
-	);
+self.addEventListener('fetch', function(e) {
+    e.respondWith(
+        caches.match(e.request).then(function(r) {
+            console.log('[Service Worker] Fetching resource: '+e.request.url);
+            return r || fetch(e.request).then(function(response) {
+                return caches.open(cacheName).then(function(cache) {
+                    console.log('[Service Worker] Caching new resource: '+e.request.url);
+                    cache.put(e.request, response.clone());
+                    return response;
+                });
+            });
+        })
+    );
 });

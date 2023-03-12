@@ -12,12 +12,10 @@
     <script src="js/db/ruznama_k.db"></script>
     <title>Рузнама</title>
 	<script>
-		if ("serviceWorker" in navigator) {
-			window.addEventListener("load", () => {
-				navigator.serviceWorker && navigator.serviceWorker.register("./sw.js");
-			});
-		}
-	</script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        };
+    </script>
 	
 	<script>
 $(document).ready(function()
