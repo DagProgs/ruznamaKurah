@@ -1,0 +1,282 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+#progress_line {
+    position: fixed;
+    left: 0;
+    top: 55px;
+    width: 0%;
+    height: 1px;
+    background: #7fa9df;
+    z-index: 30;
+}
+
+.scroll {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    transition-duration: 0.1s;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 140px;
+    z-index: 4;
+    background-color: #003780;
+}
+
+.box {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    min-width: 320px;
+    max-width: 1080px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.header-bg {
+    height: 140px;
+    background-color: #003780;
+}
+
+.header-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 15px;
+    height: 60px;
+}
+
+.text-ruznama {
+    color: #fff;
+    font-size: 2em;
+}
+
+.text-loc {
+    font-size: .8em;
+    font-weight: normal;
+    padding-top: 5px;
+}
+
+.header-subtext {
+    margin: 0 15px;
+}
+
+.header-calendar {
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+}
+
+.calendar-ru,
+.calendar-ar {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 1em;
+}
+
+.header-clock {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.clock {
+    font-size: 1.5em;
+}
+
+.text-loc,
+.calendar-ru,
+.calendar-ar,
+.clock {
+    color: #7fa9df;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-width: 320px;
+    max-width: 1080px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 140px;
+}
+
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    min-width: 320px;
+    height: 60px;
+    padding: 0 15px;
+}
+
+.section-box {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.prayer-times-name {
+    margin-left: 10px;
+    height: 45px;
+}
+
+.svg-box {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #003780;
+    border-radius: 5px;
+}
+
+.name-text {
+    font-size: 1.8em;
+}
+
+.descr-text {
+    font-size: .8em;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.clock-text {
+    font-size: 1.8em;
+}
+
+.clock-text,
+.descr-text,
+.name-text {
+    color: #003780;
+}
+
+.inform-time {
+    position: fixed;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 45px;
+}
+
+.bottom_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #003780;
+    border-radius: 100px;
+    font-size: 1.2em;
+    white-space: nowrap;
+    background-color: #f1f1f1;
+    height: 45px;
+    width: 250px;
+}
+
+.city_info {
+    display: none;
+}
+
+
+/* */
+table {
+    width: 100vw;
+    min-width: 320px;
+    margin-bottom: 60px;
+}
+
+table,
+td,
+th {
+    border-collapse: collapse;
+}
+
+table tr th {
+    font-size: calc(2vw + 6px);
+    padding: 10px 2px;
+    color: #fff;
+    background-color: #002364;
+    border: 0;
+}
+
+table tr td {
+    font-size: calc(3vw + 2px);
+    text-align: center;
+    padding: 5px 1px;
+    border: 0px;
+}
+
+tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.table, tr {
+    color: #a6bbe0;
+}
+
+.myclosed {
+    color: #002364;
+    font-weight: bold;
+}
+
+.text_mounts {
+    display: flex;
+    align-items: center;
+    height: 35px;
+}
+
+.text_mounts p {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #002364;
+    text-align: center;
+    width: 100vw;
+    
+}
+
+.box_mounts {
+    height: auto;
+    padding: 5px 0;
+    background-color: #002364;
+}
+
+.box_textmount {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: #002364;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding-left: 15px;
+    margin: 5px 40px;
+    border-radius: 10px;
+}
+
+.box_textmount h2 {
+    color: #fff;
+    font-size: 20px;
+}
