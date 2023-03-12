@@ -1,8 +1,21 @@
-const staticCacheName = "site-static-v16";
-const dynamicCacheName = "site-dynamic-v17";
+const staticCacheName = "site-static-v17";
+const dynamicCacheName = "site-dynamic-v18";
 const assets = [
   "/",
-  "/index.html"
+  "/index.html",
+  '/offline.html',
+	'/css/font-awesome.min.css',
+	'/css/index.css',
+	'/css/RuznamaKurakh_end.css',
+    '/js/app.js',
+    '/js/main.js',
+	'/js/jquery.hijri.date.min.js',
+	'/js/jquery-3.6.0.min.js',
+	'/js/jquery-ui.min.js',
+	'/js/dayruznama.js',
+	'/js/script.js.js',
+	'/js/wwb18.min.js',
+    '/images/no-image.jpg'
 ];
 
 //Cache size limit function
@@ -72,3 +85,4 @@ self.addEventListener("fetch", (evt) => {
     );
   }
 });
+

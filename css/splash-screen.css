@@ -1,9 +1,0 @@
-#preloader {
-    background: #FFFFFF url("../img/bouncing-dot.gif") no-repeat center center;
-    top: 0;
-    bottom: 0;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: 99999;
-}
