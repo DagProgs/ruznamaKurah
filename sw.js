@@ -1,7 +1,9 @@
-const staticCacheName = "s-ruznamakurah-v115";
-const dynamicCacheName = "d-ruznamakurah-v116";
+const staticCacheName = "s-ruznamakurah-v117";
+const dynamicCacheName = "d-ruznamakurah-v118";
 const assets = [
-	"/index.html"
+	"./",
+	"/index.html",
+	"/offline.html"
 ];
 
 //Cache size limit function
