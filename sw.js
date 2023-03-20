@@ -1,5 +1,5 @@
-const staticCacheName = "s-ruznamakurah-v107";
-const dynamicCacheName = "d-ruznamakurah-v108";
+const staticCacheName = "s-ruznamakurah-v110";
+const dynamicCacheName = "d-ruznamakurah-v111";
 const assets = [
 	"/index.html"
 ];
