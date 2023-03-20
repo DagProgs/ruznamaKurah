@@ -2,6 +2,7 @@
   "name": "Курахский район",
   "short_name": "Рузнама Курахский р-он",
   "description": "Времена Намазов для Курахского района",
+  "version": "2.0.0",
   "theme_color": "#007558",
   "background_color": "#007558",
   "display": "standalone",
