@@ -1,5 +1,5 @@
-const staticCacheName = "ruznamakurah-v119";
-const dynamicCacheName = "ruznamakurah-v120";
+const staticCacheName = "ruznamakurah-v120";
+const dynamicCacheName = "ruznamakurah-v121";
 const assets = [
 	"./",
 	"/index.html",
@@ -11,7 +11,7 @@ const limitCacheSize = (name, size) => {
   caches.open(name).then((cache) => {
     cache.keys().then((keys) => {
       if (keys.length > size) {
-        cache.delete(keys[1]).then(limitCacheSize(name, size));
+        cache.delete(keys[0]).then(limitCacheSize(name, size));
       }
     });
   });
