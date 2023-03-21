@@ -1,5 +1,5 @@
-const staticCacheName = "srk-v5";
-const dynamicCacheName = "drk-v6";
+const staticCacheName = "srk-v6";
+const dynamicCacheName = "drk-v7";
 const assets = [
 	"/index.html",
 	"/offline.html"
@@ -17,13 +17,10 @@ const limitCacheSize = (name, size) => {
 };
 
 // Install event
-self.addEventListener("install", (event) => {
-  //Cache the static pages
-  event.waitUntil(
-    caches.open(staticCacheName).then((cache) => {
-      cache.addAll(assets);
-    })
-  );
+self.addEventListener('install', async event => {
+    const cache = await caches.open(staticCacheName);
+    await cache.addAll(staticAssets);
+    console.log('Service worker has been installed');
 });
 
 // Activate event
