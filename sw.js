@@ -1,5 +1,5 @@
-const staticCacheName = "srk-v2";
-const dynamicCacheName = "drk-v3";
+const staticCacheName = "srk-v3";
+const dynamicCacheName = "drk-v4";
 const assets = [
 	"./",
 	"/index.html",
@@ -18,9 +18,9 @@ const limitCacheSize = (name, size) => {
 };
 
 // Install event
-self.addEventListener("install", (evt) => {
+self.addEventListener("install", (event) => {
   //Cache the static pages
-  evt.waitUntil(
+  event.waitUntil(
     caches.open(staticCacheName).then((cache) => {
       cache.addAll(assets);
     })
@@ -28,8 +28,8 @@ self.addEventListener("install", (evt) => {
 });
 
 // Activate event
-self.addEventListener("activate", (evt) => {
-  evt.waitUntil(
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
     //Get the cached keys and see if there is older version of cache
     caches.keys().then((keys) => {
       //Find and separate the old caches and delete them
@@ -43,21 +43,21 @@ self.addEventListener("activate", (evt) => {
 });
 
 // Fetch event
-self.addEventListener("fetch", (evt) => {
-  if (evt.request.url.indexOf("firestore.googleapis.com") === -1) {
-    evt.respondWith(
+self.addEventListener("fetch", (event) => {
+  if (event.request.url.indexOf("firestore.googleapis.com") === -1) {
+    event.respondWith(
       //See if the requested page is already in the cached version or not
       caches
-        .match(evt.request)
+        .match(event.request)
         .then((cacheRes) => {
           return (
             //If already cached show the cached version
             cacheRes ||
             //If not cached, fetch from the server
-            fetch(evt.request).then(async (fetchRes) => {
+            fetch(event.request).then(async (fetchRes) => {
               //Cache the fetched page for future
               const cache = await caches.open(dynamicCacheName);
-              cache.put(evt.request.url, fetchRes.clone());
+              cache.put(event.request.url, fetchRes.clone());
               limitCacheSize(dynamicCacheName, 20);
               //Display the fetched page
               return fetchRes;
@@ -66,7 +66,7 @@ self.addEventListener("fetch", (evt) => {
         })
         .catch(() => {
           //To display fallback page to not available html pages (This avoids showing fallback page if image was not cached of that page)
-          if (evt.request.url.indexOf(".html") > -1) {
+          if (event.request.url.indexOf(".html") > -1) {
            return caches.match("/offline.html");
           }
         })
