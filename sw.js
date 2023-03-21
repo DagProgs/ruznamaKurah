@@ -1,5 +1,5 @@
 //cache name
-const CACHE_NAME = "mullinstack.com-v2";
+const CACHE_NAME = "mullinstack.com-v3";
 //we want to cache the next files
 const cacheAssets = ["index.html", "offline.html", "js/main.js"];
 //Install event
