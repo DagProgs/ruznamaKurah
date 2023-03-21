@@ -1,71 +1,51 @@
-const staticCacheName = "srk-v6";
-const dynamicCacheName = "drk-v7";
-const assets = [
-	"/index.html",
-	"/offline.html"
-];
+const staticCacheName = 'srk-v0';
+const dynamicCacheName = 'drk-v1';
 
-//Cache size limit function
-const limitCacheSize = (name, size) => {
-  caches.open(name).then((cache) => {
-    cache.keys().then((keys) => {
-      if (keys.length > size) {
-        cache.delete(keys[0]).then(limitCacheSize(name, size));
-      }
-    });
-  });
-};
+const staticAssets = [
+  './index.html'
+]
 
-// Install event
 self.addEventListener('install', async event => {
     const cache = await caches.open(staticCacheName);
     await cache.addAll(staticAssets);
     console.log('Service worker has been installed');
 });
 
-// Activate event
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    //Get the cached keys and see if there is older version of cache
-    caches.keys().then((keys) => {
-      //Find and separate the old caches and delete them
-      return Promise.all(
-        keys
-          .filter((key) => key !== staticCacheName && key !== dynamicCacheName)
-          .map((key) => caches.delete(key))
-      );
-    })
-  );
+self.addEventListener('activate', async event => {
+    const cachesKeys = await caches.keys();
+    const checkKeys = cachesKeys.map(async key => {
+        if (![staticCacheName, dynamicCacheName].includes(key)) {
+            await caches.delete(key);
+        }
+    });
+    await Promise.all(checkKeys);
+    console.log('Service worker has been activated');
 });
 
-// Fetch event
-self.addEventListener("fetch", (event) => {
-  if (event.request.url.indexOf("firestore.googleapis.com") === -1) {
-    event.respondWith(
-      //See if the requested page is already in the cached version or not
-      caches
-        .match(event.request)
-        .then((cacheRes) => {
-          return (
-            //If already cached show the cached version
-            cacheRes ||
-            //If not cached, fetch from the server
-            fetch(event.request).then(async (fetchRes) => {
-              //Cache the fetched page for future
-              const cache = await caches.open(dynamicCacheName);
-              cache.put(event.request.url, fetchRes.clone());
-              limitCacheSize(dynamicCacheName, 20);
-              //Display the fetched page
-              return fetchRes;
-            })
-          );
-        })
-        .catch(() => {
-          //To display fallback page to not available html pages (This avoids showing fallback page if image was not cached of that page)
-          if (event.request.url.indexOf(".html") > -1) {
-           return caches.match("/offline.html");
-          }
-        })
-    );
-  }
+self.addEventListener('fetch', event => {
+    console.log(`Trying to fetch ${event.request.url}`);
+    event.respondWith(checkCache(event.request));
 });
+
+async function checkCache(req) {
+    const cachedResponse = await caches.match(req);
+    return cachedResponse || checkOnline(req);
+}
+
+async function checkOnline(req) {
+    const cache = await caches.open(dynamicCacheName);
+    try {
+        const res = await fetch(req);
+        await cache.put(req, res.clone());
+        return res;
+    } catch (error) {
+        const cachedRes = await cache.match(req);
+        if (cachedRes) {
+            return cachedRes;
+        } else if (req.url.indexOf('.html') !== -1) {
+            return caches.match('/offline.html');
+        } else {
+            return caches.match('/offline.html');
+        }
+    }
+}
