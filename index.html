@@ -31,31 +31,9 @@
     <link rel="apple-touch-icon" href="img/icons/icon-384x384.png" />
     <link rel="apple-touch-icon" href="img/icons/icon-512x512.png" />
     <script>
-        /**
- * Registering the Service Worker (SW)
- */
-//Check support for the SW
-if ("serviceWorker" in navigator) {
-  console.log("Service worker supported");
-  //registered once  the page is loaded
-  //so, we add the load event Listener
-  window.addEventListener("load", () => {
-    //Registering the service worker
-    navigator.serviceWorker
-      .register("./sw.js")
-      .then(registration => {
-        //Registration was succesfully
-        console.log(
-          `Service Worker succesfully registered, scope ${registration.scope}`
-        );
-      })
-      .catch(error => {
-        //Registration failed
-        console.log(`There was an error while registering: ${error}`);
-      });
-  });
-}
-
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        };
     </script>
     <script>
         $(document).ready(function () {
