@@ -1,5 +1,5 @@
-const staticCacheName = "srk-v3";
-const dynamicCacheName = "drk-v4";
+const staticCacheName = "srk-v4";
+const dynamicCacheName = "drk-v5";
 const assets = [
 	"./",
 	"/index.html",
@@ -44,7 +44,7 @@ self.addEventListener("activate", (event) => {
 
 // Fetch event
 self.addEventListener("fetch", (event) => {
-  if (event.request.url.indexOf("firestore.googleapis.com") === -1) {
+  if (event.request.url.indexOf("https://dagprogs.github.io/ruznamaKurah/") === -1) {
     event.respondWith(
       //See if the requested page is already in the cached version or not
       caches
