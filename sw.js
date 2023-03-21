@@ -1,51 +1,75 @@
-//cache name
-const CACHE_NAME = "mullinstack.com-v3";
-//we want to cache the next files
-const cacheAssets = ["index.html", "offline.html", "js/main.js"];
-//Install event
-self.addEventListener("install", e => {
-  console.log("Service Worker Installed");
-  e.waitUntil(
-    caches
-      .open(CACHE_NAME)
-      .then(cache => {
-        console.log("From service worker:caching files");
-        cache.addAll(cacheAssets);
-      })
-      .then(() => {
-        self.skipWaiting();
-      })
+const staticCacheName = "srk-v1";
+const dynamicCacheName = "drk-v2";
+const assets = [
+	"./",
+	"/index.html",
+	"/offline.html"
+];
+
+//Cache size limit function
+const limitCacheSize = (name, size) => {
+  caches.open(name).then((cache) => {
+    cache.keys().then((keys) => {
+      if (keys.length > size) {
+        cache.delete(keys[0]).then(limitCacheSize(name, size));
+      }
+    });
+  });
+};
+
+// Install event
+self.addEventListener("install", (evt) => {
+  //Cache the static pages
+  evt.waitUntil(
+    caches.open(staticCacheName).then((cache) => {
+      cache.addAll(assets);
+    })
   );
 });
-//Active event
-self.addEventListener("activate", e => {
-  console.log("Service Worker activated");
-  e.waitUntil(
-    caches.keys().then(cacheNames => {
+
+// Activate event
+self.addEventListener("activate", (evt) => {
+  evt.waitUntil(
+    //Get the cached keys and see if there is older version of cache
+    caches.keys().then((keys) => {
+      //Find and separate the old caches and delete them
       return Promise.all(
-        cacheNames.map(cache => {
-          if (cache !== CACHE_NAME) {
-            console.log("Cleaning up old cache");
-            return caches.delete(cache);
-          }
-        })
+        keys
+          .filter((key) => key !== staticCacheName && key !== dynamicCacheName)
+          .map((key) => caches.delete(key))
       );
     })
   );
 });
 
-//Fetch event
-self.addEventListener("fetch", e => {
-  console.log("fetching cached content");
-  e.respondWith(
-    fetch(e.request)
-      .then(res => {
-        const copyCache = res.clone();
-        caches.open(cacheName).then(cache => {
-          cache.put(e.request, copyCache);
-        });
-        return res;
-      })
-      .catch(error => caches.match(e.request).then(res => res))
-  );
+// Fetch event
+self.addEventListener("fetch", (evt) => {
+  if (evt.request.url.indexOf("firestore.googleapis.com") === -1) {
+    evt.respondWith(
+      //See if the requested page is already in the cached version or not
+      caches
+        .match(evt.request)
+        .then((cacheRes) => {
+          return (
+            //If already cached show the cached version
+            cacheRes ||
+            //If not cached, fetch from the server
+            fetch(evt.request).then(async (fetchRes) => {
+              //Cache the fetched page for future
+              const cache = await caches.open(dynamicCacheName);
+              cache.put(evt.request.url, fetchRes.clone());
+              limitCacheSize(dynamicCacheName, 20);
+              //Display the fetched page
+              return fetchRes;
+            })
+          );
+        })
+        .catch(() => {
+          //To display fallback page to not available html pages (This avoids showing fallback page if image was not cached of that page)
+          if (evt.request.url.indexOf(".html") > -1) {
+           return caches.match("/offline.html");
+          }
+        })
+    );
+  }
 });
