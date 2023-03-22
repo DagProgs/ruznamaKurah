@@ -1,13 +1,13 @@
-"start_url": "./index.html",
-"lang": "ru-RU",
-"scope": "/",
-"display": "standalone",
-"orientation": "portrait",
-"serviceworker": {
-    "src": "sw.js",
-    "scope": "/"
-	},
-"icons": [
+{
+  "name": "Курахский район",
+  "short_name": "Рузнама Курахский р-он",
+  "description": "Времена Намазов для Курахского района",
+  "theme_color": "#007558",
+  "background_color": "#007558",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "./index.html",
+  "icons": [
     {
       "src": "img/icons/icon-72x72.png",
       "sizes": "72x72",
@@ -48,11 +48,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-]
-"name": "Курахский район",
-"short_name": "Рузнама Курахский р-он",
-"description": "Времена Намазов для Курахского района",
-"version": "3.0.0",
-"theme_color": "#007558",
-"background_color": "#007558"
+  ]
 }
