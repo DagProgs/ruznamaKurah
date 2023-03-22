@@ -36,7 +36,7 @@
     ></script>
     <script type="module">
 
-import {Workbox} from 'workbox-window.prod.mjs';
+import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
 
 if ('serviceWorker' in navigator) {
 
@@ -44,7 +44,7 @@ if ('serviceWorker' in navigator) {
 
   wb.addEventListener('installed', event => {
     if (event.isUpdate) {
-      if (confirm(`Мы только что обновили версию приложения! Чтобы получить обновления, нажмите на кнопку OK`)) {
+      if (confirm(`New content is available!. Click OK to refresh`)) {
         window.location.reload();
       }
     } else {
@@ -61,7 +61,7 @@ if ('serviceWorker' in navigator) {
     <div class="wrapper">
         <header class="header">
             <div class="header-bg">
-                <h1>Рузнама 2023</h1>
+                <h1>Рузнама</h1>
                 <h3>Курахский район</h3>
             </div>
             <div class="data-clock">
