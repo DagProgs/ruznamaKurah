@@ -1,6 +1,5 @@
-const staticCacheName = 'srk-v0';
-const dynamicCacheName = 'drk-v1';
-
+const staticCacheName = 'srk-v1';
+const dynamicCacheName = 'drk-v2
 const staticAssets = [
 	'./',
 	'./index.html',

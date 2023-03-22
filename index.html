@@ -28,19 +28,13 @@
     <link rel="apple-touch-icon" href="img/icons/icon-192x192.png" />
     <link rel="apple-touch-icon" href="img/icons/icon-384x384.png" />
     <link rel="apple-touch-icon" href="img/icons/icon-512x512.png" />
-	<script
-      async
-      src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
-      integrity="sha384-uONtBTCBzHKF84F6XvyC8S0gL8HTkAPeCyBNvfLfsqHh+Kd6s/kaS4BdmNQ5ktp1"
-      crossorigin="anonymous"
-    ></script>
 	<script type="module">
 
 import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
 
 if ('serviceWorker' in navigator) {
 
-  const wb = new Workbox('sw-workbox.js');
+  const wb = new Workbox('./sw.js');
 
   wb.addEventListener('installed', event => {
     if (event.isUpdate) {
