@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 10px;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    width: 100vw;
+    min-width: 300px;
+    height: 120px;
+    background-color: #00753f;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+
+.header-bg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    margin: 0 15px;
+}
+
+.header-bg h1 {
+    color: #fff;
+    font-size: 2.5em;
+}
+
+.header-bg h3 {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: normal;
+    padding-top: 7px;
+}
+
+.data-clock {
+    margin: 0 15px;
+}
+
+.data-clock h2 {
+    color: #fff;
+    line-height: 1.5;
+    font-size: 1.3em;
+    font-weight: normal;
+}
+
+.data-clock h2+h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.main {
+    padding-top: 130px;
+    min-width: 320px;
+    width: 100vw;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 15px;
+    height: 60px;
+}
+
+.section h2 {
+    font-size: 2em;
+    color: #00753f;
+}
+
+.box {
+    display: flex;
+}
+
+.box1 {
+    margin: 0 10px;
+}
+
+.box1 h2 {
+    font-size: 2em;
+    color: #00753f;
+}
+
+.box1 h3 {
+    font-size: .9em;
+    font-weight: normal;
+    color: #00753f;
+}
+
+.svg {
+    border: 1px solid #00753f;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    fill: #00753f;
+}
+
+.section2 .mount-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 40px;
+    border: 1px solid #00753f;
+    border-left: none;
+    border-right: none;
+    font-size: 2.2em;
+    color: #00753f;
+}
+
+table {
+    width: 100vw;
+    min-width: 320px;
+}
+
+table,
+td,
+th {
+    border-collapse: collapse;
+}
+
+table tr th {
+    font-size: calc(2vw + 6px);
+    padding: 10px 2px;
+    color: #fff;
+    background-color: #00753f;
+    border: 0;
+}
+
+table tr td {
+    font-size: calc(3vw + 2px);
+    text-align: center;
+    padding: 5px 1px;
+    border: 0px;
+}
+
+tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.table,
+tr {
+    color: #7fb6a8;
+}
+
+.myclosed {
+    color: #00753f;
+    font-weight: bold;
+}
+
+.accordion .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion .accordion-item button[aria-expanded='true'] {
+    border-bottom: 1px solid #007558;
+}
+
+.accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 15px 0;
+    color: #007558;
+    font-size: 2.2em;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+    cursor: pointer;
+    color: #007558;
+}
+
+.accordion button:hover::after,
+.accordion button:focus::after {
+    cursor: pointer;
+    color: #007558;
+    border: 1px solid #007558;
+}
+
+.accordion button .accordion-title {
+    margin: 0 15px;
+}
+
+.accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+    margin: 0 15px;
+}
+
+.accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+}
+
+.accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+}
+
+.accordion button[aria-expanded='true'] {
+    color: #007558;
+}
+
+.accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+}
+
+.accordion button[aria-expanded='true']+.accordion-content {
+    opacity: 1;
+    max-height: 200vh;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.accordion .accordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+}
