@@ -28,11 +28,7 @@
     <link rel="apple-touch-icon" href="img/icons/icon-192x192.png" />
     <link rel="apple-touch-icon" href="img/icons/icon-384x384.png" />
     <link rel="apple-touch-icon" href="img/icons/icon-512x512.png" />
-	<script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js');
-        };
-    </script>
+	
 </head>
 <body>
     <div class="wrapper">
@@ -654,5 +650,20 @@
     </script>
     <script src="js/dayruznama.js"></script>
     <script src="js/accordion.js"></script>
+	<script>
+      let root = document.getElementById('root')
+      function clearCache() {
+         root.innerHTML = 'Cache cleared using navigator.serviceWorker.getRegistrations()'
+         if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+            .getRegistrations()
+            .then(function (registrations) {
+               for (let registration of registrations) {
+                  registration.unregister()
+               }
+            })
+         }
+      }
+   </script>
 </body>
 </html>
