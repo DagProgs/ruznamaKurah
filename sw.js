@@ -1,5 +1,5 @@
-const staticCacheName = "s-ruznamakurah-v501";
-const dynamicCacheName = "d-ruznamakurah-v502";
+const staticCacheName = "s-ruznamakurah-v502";
+const dynamicCacheName = "d-ruznamakurah-v503";
 const assets = [
   './',
   './index.html',
@@ -58,7 +58,7 @@ self.addEventListener("fetch", (evt) => {
               //Cache the fetched page for future
               const cache = await caches.open(dynamicCacheName);
               cache.put(evt.request.url, fetchRes.clone());
-              limitCacheSize(dynamicCacheName, 20);
+              limitCacheSize(dynamicCacheName, 0);
               //Display the fetched page
               return fetchRes;
             })
