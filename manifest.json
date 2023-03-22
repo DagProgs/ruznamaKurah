@@ -7,7 +7,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "https://dagprogs.github.io/ruznamaKurah/",
   "icons": [
     {
       "src": "img/icons/icon-72x72.png",
