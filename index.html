@@ -46,7 +46,7 @@ if ('serviceWorker' in navigator) {
 
   wb.addEventListener('installed', event => {
     if (event.isUpdate) {
-      if (confirm(`Мы только что обновили версию приложения! Чтобы получить обновления, нажмите на кнопку OK`)) {
+      if (confirm(`New content is available!. Click OK to refresh`)) {
         window.location.reload();
       }
     } else {

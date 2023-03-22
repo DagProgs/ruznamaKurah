@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "1bf39bf874fa624cfe3337cdbea92984"
+    "revision": "419d461416fd0a1991948cb13681b190"
   },
   {
     "url": "css/style.css",
