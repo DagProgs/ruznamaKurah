@@ -1,7 +1,7 @@
 //cache name
-const CACHE_NAME = "ruznamakurah-v5";
+const CACHE_NAME = "ruznamakurah-v6";
 //we want to cache the next files
-const cacheAssets = ["index.html"];
+const cacheAssets = ["index.html", "css/style.css"];
 //Install event
 self.addEventListener("install", e => {
   console.log("Service Worker Installed");
