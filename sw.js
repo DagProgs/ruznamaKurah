@@ -1,5 +1,5 @@
-const staticCacheName = 's-ruznamakurah-v18';
-const dynamicCacheName = 'd-ruznamakurah-v18';
+const staticCacheName = 's-ruznamakurah-v19';
+const dynamicCacheName = 'd-ruznamakurah-v19';
 const staticAssets = [
 	'./',
 	'./index.html',

@@ -1,12 +1,9 @@
 {
+  "lang": "ru",
+  "dir": "ltr",
   "name": "Курахский район",
   "short_name": "Рузнама Курахский р-он",
   "description": "Времена Намазов для Курахского района",
-  "theme_color": "#007558",
-  "background_color": "#007558",
-  "display": "standalone",
-  "orientation": "portrait",
-  "start_url": "./index.html",
   "icons": [
 	{
       "src": "img/icons/android-launchericon-48-48.png",
@@ -44,5 +41,12 @@
       "type": "image/png",
 	  "purpose": "any"
     }
-  ]
+  ],
+  "scope": "/",
+  "id": "ruznamakurah",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#007558",
+  "background_color": "#007558"
 }
