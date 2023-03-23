@@ -1,51 +1,57 @@
-//cache name
-const CACHE_NAME = "ruznamakurah-v7";
-//we want to cache the next files
-const cacheAssets = ["index.html", "css/style.css"];
-//Install event
-self.addEventListener("install", e => {
-  console.log("Service Worker Installed");
-  e.waitUntil(
-    caches
-      .open(CACHE_NAME)
-      .then(cache => {
-        console.log("From service worker:caching files");
-        cache.addAll(cacheAssets);
-      })
-      .then(() => {
-        self.skipWaiting();
-      })
-  );
-});
-//Active event
-self.addEventListener("activate", e => {
-  console.log("Service Worker activated");
-  e.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cache => {
-          if (cache !== CACHE_NAME) {
-            console.log("Cleaning up old cache");
-            return caches.delete(cache);
-          }
-        })
-      );
-    })
-  );
+const staticCacheName = 's-ruznamakurah-v10';
+const dynamicCacheName = 'd-ruznamakurah-v10';
+const staticAssets = [
+	'./',
+	'./index.html',
+	'./offline.html',
+	'./accordion.js',
+	'./dayruznama.js',
+	'./jquery-3.6.0.min.js',
+	'./js/sb/ruznama_k.db',
+	'./css/style.css'
+]
+
+self.addEventListener('install', async event => {
+    const cache = await caches.open(staticCacheName);
+    await cache.addAll(staticAssets);
+    console.log('Service worker has been installed');
 });
 
-//Fetch event
-self.addEventListener("fetch", e => {
-  console.log("fetching cached content");
-  e.respondWith(
-    fetch(e.request)
-      .then(res => {
-        const copyCache = res.clone();
-        caches.open(cacheName).then(cache => {
-          cache.put(e.request, copyCache);
-        });
-        return res;
-      })
-      .catch(error => caches.match(e.request).then(res => res))
-  );
+self.addEventListener('activate', async event => {
+    const cachesKeys = await caches.keys();
+    const checkKeys = cachesKeys.map(async key => {
+        if (![staticCacheName, dynamicCacheName].includes(key)) {
+            await caches.delete(key);
+        }
+    });
+    await Promise.all(checkKeys);
+    console.log('Service worker has been activated');
 });
+
+self.addEventListener('fetch', event => {
+    console.log(`Trying to fetch ${event.request.url}`);
+    event.respondWith(checkCache(event.request));
+});
+
+async function checkCache(req) {
+    const cachedResponse = await caches.match(req);
+    return cachedResponse || checkOnline(req);
+}
+
+async function checkOnline(req) {
+    const cache = await caches.open(dynamicCacheName);
+    try {
+        const res = await fetch(req);
+        await cache.put(req, res.clone());
+        return res;
+    } catch (error) {
+        const cachedRes = await cache.match(req);
+        if (cachedRes) {
+            return cachedRes;
+        } else if (req.url.indexOf('.html') !== -1) {
+            return caches.match('/offline.html');
+        } else {
+            return caches.match('/img/icons/icon-512x512.png');
+        }
+    }
+}
