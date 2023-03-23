@@ -1,77 +1,51 @@
-const addResourcesToCache = async (resources) => {
-  const cache = await caches.open("v2");
-  await cache.addAll(resources);
-};
-
-const putInCache = async (request, response) => {
-  const cache = await caches.open("v2");
-  await cache.put(request, response);
-};
-
-const cacheFirst = async ({ request, preloadResponsePromise, fallbackUrl }) => {
-  // First try to get the resource from the cache
-  const responseFromCache = await caches.match(request);
-  if (responseFromCache) {
-    return responseFromCache;
-  }
-
-  // Next try to use (and cache) the preloaded response, if it's there
-  const preloadResponse = await preloadResponsePromise;
-  if (preloadResponse) {
-    console.info("using preload response", preloadResponse);
-    putInCache(request, preloadResponse.clone());
-    return preloadResponse;
-  }
-
-  // Next try to get the resource from the network
-  try {
-    const responseFromNetwork = await fetch(request);
-    // response may be used only once
-    // we need to save clone to put one copy in cache
-    // and serve second one
-    putInCache(request, responseFromNetwork.clone());
-    return responseFromNetwork;
-  } catch (error) {
-    const fallbackResponse = await caches.match(fallbackUrl);
-    if (fallbackResponse) {
-      return fallbackResponse;
-    }
-    // when even the fallback response is not available,
-    // there is nothing we can do, but we must always
-    // return a Response object
-    return new Response("Network error happened", {
-      status: 408,
-      headers: { "Content-Type": "text/plain" },
-    });
-  }
-};
-
-// Enable navigation preload
-const enableNavigationPreload = async () => {
-  if (self.registration.navigationPreload) {
-    await self.registration.navigationPreload.enable();
-  }
-};
-
-self.addEventListener("activate", (event) => {
-  event.waitUntil(enableNavigationPreload());
+//cache name
+const CACHE_NAME = "ruznamakurah-v5";
+//we want to cache the next files
+const cacheAssets = ["index.html"];
+//Install event
+self.addEventListener("install", e => {
+  console.log("Service Worker Installed");
+  e.waitUntil(
+    caches
+      .open(CACHE_NAME)
+      .then(cache => {
+        console.log("From service worker:caching files");
+        cache.addAll(cacheAssets);
+      })
+      .then(() => {
+        self.skipWaiting();
+      })
+  );
 });
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    addResourcesToCache([
-      "/",
-      "/index.html",
-    ])
+//Active event
+self.addEventListener("activate", e => {
+  console.log("Service Worker activated");
+  e.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cache => {
+          if (cache !== CACHE_NAME) {
+            console.log("Cleaning up old cache");
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
   );
 });
 
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    cacheFirst({
-      request: event.request,
-      preloadResponsePromise: event.preloadResponse,
-      fallbackUrl: "/img/icons/icon-512x512.png",
-    })
+//Fetch event
+self.addEventListener("fetch", e => {
+  console.log("fetching cached content");
+  e.respondWith(
+    fetch(e.request)
+      .then(res => {
+        const copyCache = res.clone();
+        caches.open(cacheName).then(cache => {
+          cache.put(e.request, copyCache);
+        });
+        return res;
+      })
+      .catch(error => caches.match(e.request).then(res => res))
   );
 });
