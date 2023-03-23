@@ -1,5 +1,5 @@
-const staticCacheName = 'srk-v3';
-const dynamicCacheName = 'drk-v4';
+const staticCacheName = 'srk-v5';
+const dynamicCacheName = 'drk-v5';
 const staticAssets = [
 	'./',
 	'./index.html',
@@ -28,30 +28,18 @@ self.addEventListener('activate', async event => {
     console.log('Service worker has been activated');
 });
 
+
 self.addEventListener('fetch', event => {
-    console.log(`Trying to fetch ${event.request.url}`);
-    event.respondWith(checkCache(event.request));
+	event.respondWith((async () => {
+	
+	const r = await caches.match(event.request);
+	if (r) { return r; }
+	
+	
+	const response = await fetch(e.request);
+	const cache = await caches.open(cacheName);
+	cache.put(e.request, response.clone());
+	return response;
+	
+	})());
 });
-
-async function checkCache(req) {
-    const cachedResponse = await caches.match(req);
-    return cachedResponse || checkOnline(req);
-}
-
-async function checkOnline(req) {
-    const cache = await caches.open(dynamicCacheName);
-    try {
-        const res = await fetch(req);
-        await cache.put(req, res.clone());
-        return res;
-    } catch (error) {
-        const cachedRes = await cache.match(req);
-        if (cachedRes) {
-            return cachedRes;
-        } else if (req.url.indexOf('.html') !== -1) {
-            return caches.match('/offline.html');
-        } else {
-            return caches.match('/img/icons/icon-512x512.png');
-        }
-    }
-}
