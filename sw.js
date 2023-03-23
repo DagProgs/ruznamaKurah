@@ -1,5 +1,5 @@
 //cache name
-const CACHE_NAME = "ruznamakurah-v6";
+const CACHE_NAME = "ruznamakurah-v7";
 //we want to cache the next files
 const cacheAssets = ["index.html", "css/style.css"];
 //Install event
