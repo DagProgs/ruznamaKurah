@@ -43,9 +43,9 @@
 	  "purpose": "any"
     }
   ],
-  "scope": "/",
+  "scope": "https://dagprogs.github.io/ruznamaKurah/mycategory/index.html",
   "id": "ruznamakurah",
-  "start_url": ".",
+  "start_url": "https://dagprogs.github.io/ruznamaKurah/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#007558",
