@@ -41,18 +41,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
   },
   {
-    "url": "app.js",
-    "revision": "3789e76d2fef65ca2f7a83346a1f835e"
-  },
-  {
-    "url": "polyfills.js",
-    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
-  },
-  {
-    "url": "runtime.js",
-    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
-  },
-  {
     "url": "img/icons/android-launchericon-144-144.png",
     "revision": "8aa0c04fd358d0ac0dea4d360e5fb419"
   },
