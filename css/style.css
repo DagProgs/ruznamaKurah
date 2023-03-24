@@ -1,121 +1,174 @@
-* {
+*,
+*::after,
+*::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Verdana, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 10px;
+}
+
+#preloader {
+   background: #FFFFFF url("../img/rolling-dots.gif") no-repeat center center;
+   bottom: 0;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 99999;
 }
 
 .wrapper {
     overflow: hidden;
 }
 
-.header {
+.header-bg {
     position: fixed;
+    top: 0;
     width: 100vw;
-    min-width: 300px;
-    height: 120px;
-    background-color: #00753f;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-    z-index: 1;
+    min-width: 320px;
+    height: 150px;
+    background-color: #007558;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    z-index: 5;
 }
 
-.header-bg {
+.header-text {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
     margin: 0 15px;
+    height: 60px;
 }
 
-.header-bg h1 {
+.ruznama {
     color: #fff;
     font-size: 2.5em;
 }
 
-.header-bg h3 {
+.localization {
     color: #fff;
     font-size: 1.2em;
     font-weight: normal;
-    padding-top: 7px;
+    padding-top: 6px;
 }
 
-.data-clock {
+.header-subtext {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
     margin: 0 15px;
 }
 
-.data-clock h2 {
+.data-ru {
     color: #fff;
-    line-height: 1.5;
-    font-size: 1.3em;
-    font-weight: normal;
+    padding-bottom: 2px;
 }
 
-.data-clock h2+h2 {
-    font-size: 2em;
+.data-ar {
+    color: #fff;
+}
+
+.clock-info {
+    position: relative;
+}
+
+.clock-info img {
+    position: absolute;
+    top: 2px;
+    margin-top: 5px;
+    padding: 3px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.clock {
+    color: #fff;
+    font-size: 1.9em;
+    padding: 5px 0;
+}
+
+.bottom_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #007558;
     font-weight: bold;
+    font-size: 1.5em;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.choose_place {
+    display: none;
 }
 
 .main {
-    padding-top: 130px;
-    min-width: 320px;
-    width: 100vw;
+    padding-top: 160px;
+    margin: 0 15px;
+    min-width: 280px;
 }
 
-.section {
+.pnt svg {
+    fill: #007558;
+}
+
+.time_line_cont .pnt {
+    background: transparent;
+    width: 45px;
+    height: 45px;
+    border: 3px solid transparent;
+}
+
+.pnt.active {
+    border: 2px solid #007558;
+    border-radius: 10px;
+}
+
+.container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 15px;
-    height: 60px;
-}
-
-.section h2 {
-    font-size: 2em;
-    color: #00753f;
+    margin: 10px 0;
 }
 
 .box {
     display: flex;
 }
 
-.box1 {
-    margin: 0 10px;
+.container h2 {
+    font-size: 2.3em;
 }
 
-.box1 h2 {
-    font-size: 2em;
-    color: #00753f;
+.container h2,
+h3 {
+    color: #007558;
 }
 
-.box1 h3 {
+.prayer-times-day {
+    padding-left: 10px;
+    line-height: 1.4;
+}
+
+.prayer-times-day h3 {
     font-size: .9em;
     font-weight: normal;
-    color: #00753f;
 }
 
-.svg {
-    border: 1px solid #00753f;
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
-    fill: #00753f;
-}
-
-.section2 .mount-section {
+.text_mounts {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 40px;
-    border: 1px solid #00753f;
-    border-left: none;
-    border-right: none;
+    height: 35px;
+    background-color: #007558;
     font-size: 2.2em;
-    color: #00753f;
+    font-weight: bold;
+    color: #fff;
 }
 
 table {
@@ -133,7 +186,7 @@ table tr th {
     font-size: calc(2vw + 6px);
     padding: 10px 2px;
     color: #fff;
-    background-color: #00753f;
+    background-color: #007558;
     border: 0;
 }
 
@@ -158,9 +211,10 @@ tr {
 }
 
 .myclosed {
-    color: #00753f;
+    color: #007558;
     font-weight: bold;
 }
+
 
 .accordion .accordion-item {
     border-bottom: 1px solid #e5e5e5;
@@ -263,3 +317,4 @@ tr {
     font-weight: 300;
     margin: 2em 0;
 }
+

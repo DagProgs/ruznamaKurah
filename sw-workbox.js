@@ -22,47 +22,83 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "4250d320ea4c0c655f0a7495a385def3"
+    "revision": "05feeffb2c678a1385d3b3e99d6084b6"
   },
   {
     "url": "css/style.css",
-    "revision": "365ad46ea4ecf2497897b116869a9a06"
+    "revision": "039b3b792ccf1cc864d7f3ecffe4c1a9"
   },
   {
     "url": "js/accordion.js",
     "revision": "7b6c7076f2a35632b36f49d6e7f2b099"
   },
   {
+    "url": "js/data-ru.clock.js",
+    "revision": "d6b5e942b5cee2a7f7470c49bee1348a"
+  },
+  {
     "url": "js/dayruznama.js",
-    "revision": "ac964b7f0da9833ef244841320d561a2"
+    "revision": "bee1b709a4beb0625c72bb63f1d42b8b"
+  },
+  {
+    "url": "js/hijri.js",
+    "revision": "22160ccd8745afbf08d7653b08b4f5df"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
     "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
   },
   {
-    "url": "img/icons/android-launchericon-144-144.png",
-    "revision": "8aa0c04fd358d0ac0dea4d360e5fb419"
+    "url": "js/jquery.hijri.date.min.js",
+    "revision": "e1382399f8832a5378e2e1df0f833225"
   },
   {
-    "url": "img/icons/android-launchericon-192-192.png",
-    "revision": "a5f847807405588c9f1c38eac93b6768"
+    "url": "js/prayer.times.linear.colors.js",
+    "revision": "1e05f29099ad0d1fb5f2e2ea1afa854b"
   },
   {
-    "url": "img/icons/android-launchericon-48-48.png",
-    "revision": "abb95a38dee43c83fa11948b30f1c746"
+    "url": "img/icons/icon-128x128.png",
+    "revision": "25c8eb241d5e0c913da717f6007736b2"
   },
   {
-    "url": "img/icons/android-launchericon-512-512.png",
-    "revision": "4f684c9918e559764f3aa80e96e73eb8"
+    "url": "img/icons/icon-144x144.png",
+    "revision": "6e606e6871ccc1fdc7222dee1d72d42e"
   },
   {
-    "url": "img/icons/android-launchericon-72-72.png",
-    "revision": "b46ad7977dcc7e574313611f982960c4"
+    "url": "img/icons/icon-152x152.png",
+    "revision": "33b8202ee77c28c332a4fa3efee61d34"
   },
   {
-    "url": "img/icons/android-launchericon-96-96.png",
-    "revision": "8cbdc0671faead1df83d006a1443f6f4"
+    "url": "img/icons/icon-192x192.png",
+    "revision": "c5d401eb140c47f0d0a1b8880b5c8b49"
+  },
+  {
+    "url": "img/icons/icon-384x384.png",
+    "revision": "47f069d621e0e363d1f0b560be4335dc"
+  },
+  {
+    "url": "img/icons/icon-48x48.png",
+    "revision": "89428bb1e2be1296fb147effedac4a0f"
+  },
+  {
+    "url": "img/icons/icon-512x512.png",
+    "revision": "84f212482ada6ec3913a2a76d4b89c0d"
+  },
+  {
+    "url": "img/icons/icon-72x72.png",
+    "revision": "9c82c0475577731db0e52b9fa62e8c05"
+  },
+  {
+    "url": "img/icons/icon-96x96.png",
+    "revision": "9815fb3c4b57df1e8cda23d01fc66078"
+  },
+  {
+    "url": "img/rolling-dots.gif",
+    "revision": "c8b0d07f8a41e35a693cb7e36811eb88"
+  },
+  {
+    "url": "img/update.svg",
+    "revision": "dd0041bacce10287c9794f63fb667e7d"
   }
 ]);
 
