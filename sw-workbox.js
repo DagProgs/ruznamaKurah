@@ -41,6 +41,10 @@ workbox.precaching.precacheAndRoute([
     "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
   },
   {
+    "url": "manifest.json",
+    "revision": "661e14611186664e6670c4f4c4e131ed"
+  },
+  {
     "url": "img/icons/android-launchericon-144-144.png",
     "revision": "8aa0c04fd358d0ac0dea4d360e5fb419"
   },
