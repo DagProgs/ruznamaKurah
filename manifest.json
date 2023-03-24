@@ -43,7 +43,7 @@
 	  "purpose": "any"
     }
   ],
-  "scope": "https://dagprogs.github.io/ruznamaKurah/mycategory/",
+  "scope": "https://dagprogs.github.io/ruznamaKurah/",
   "id": "ruznamakurah",
   "start_url": "https://dagprogs.github.io/ruznamaKurah/",
   "display": "standalone",
