@@ -22,39 +22,23 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "2dc680466cbf150ea79ca1a6b1e0f5b9"
+    "revision": "087a9957e390252470432004c59646cc"
   },
   {
     "url": "css/style.css",
-    "revision": "039b3b792ccf1cc864d7f3ecffe4c1a9"
+    "revision": "365ad46ea4ecf2497897b116869a9a06"
   },
   {
     "url": "js/accordion.js",
     "revision": "7b6c7076f2a35632b36f49d6e7f2b099"
   },
   {
-    "url": "js/data-ru.clock.js",
-    "revision": "d6b5e942b5cee2a7f7470c49bee1348a"
-  },
-  {
     "url": "js/dayruznama.js",
-    "revision": "bee1b709a4beb0625c72bb63f1d42b8b"
-  },
-  {
-    "url": "js/hijri.js",
-    "revision": "22160ccd8745afbf08d7653b08b4f5df"
+    "revision": "ac964b7f0da9833ef244841320d561a2"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
     "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
-  },
-  {
-    "url": "js/jquery.hijri.date.min.js",
-    "revision": "e1382399f8832a5378e2e1df0f833225"
-  },
-  {
-    "url": "js/prayer.times.linear.colors.js",
-    "revision": "1e05f29099ad0d1fb5f2e2ea1afa854b"
   },
   {
     "url": "img/icons/icon-128x128.png",
@@ -78,7 +62,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "img/icons/icon-384x384.png",
-    "revision": "bf5614f15535811ed34cb7c4a8f9101a"
+    "revision": "47f069d621e0e363d1f0b560be4335dc"
   },
   {
     "url": "img/icons/icon-48x48.png",
@@ -95,14 +79,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "img/icons/icon-96x96.png",
     "revision": "9815fb3c4b57df1e8cda23d01fc66078"
-  },
-  {
-    "url": "img/rolling-dots.gif",
-    "revision": "c8b0d07f8a41e35a693cb7e36811eb88"
-  },
-  {
-    "url": "img/update.svg",
-    "revision": "dd0041bacce10287c9794f63fb667e7d"
   }
 ]);
 
