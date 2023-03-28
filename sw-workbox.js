@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "49dce88021fcb75955e538248e7c20b7"
+    "revision": "730c27feb28bfed3b21e8195cff75c64"
   },
   {
     "url": "css/style.css",
-    "revision": "039b3b792ccf1cc864d7f3ecffe4c1a9"
+    "revision": "cd043c6e38a7144810e317cb3f344ea6"
   },
   {
     "url": "js/accordion.js",
@@ -59,6 +59,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/db/ruznama_k.db",
     "revision": "de460c0d225b60cf38d9b38e3d99fdc8"
+  },
+  {
+    "url": "img/hiasan.png",
+    "revision": "68a642d1aa582d801540584db10abe19"
   },
   {
     "url": "img/icons/icon-128x128.png",
