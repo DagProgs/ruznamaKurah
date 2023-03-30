@@ -317,30 +317,3 @@ tr {
     font-weight: 300;
     margin: 2em 0;
 }
-
-.decoration {
-    position: fixed;
-    top: -50px;
-    left: 0;
-    height: 130px;
-    width: 100vw;
-    background: url(../img/hiasan.png);
-    background-size: 80px;
-    background-repeat: repeat-x;
-    animation: animateDecoration 20s linear infinite;
-	z-index: 10;
-}
-
-@keyframes animateDecoration {
-    0% {
-        background-position: 10px;
-    }
-
-    50% {
-        background-position: 300px;
-    }
-
-    100% {
-        background-position: 10px;
-    }
-}
