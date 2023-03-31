@@ -1,19 +1,26 @@
-const shareBtn = document.getElementById('shareBtn')
+// our share button in the markup
+const shareButton = document.getElementById('share');
 
-shareBtn.addEventListener('click', event => {
+// create share data object
+const shareData = {
+  title: 'Рузнама',
+  text: 'Рузнама-Курахский район',
+  url: 'https://dagprogs.github.io/ruznamaKurah/' // reffers to the current page
+};
 
-  // Check for Web Share api support
-  if (navigator.share) {
-    // Browser supports native share api
-    navigator.share({
-      text: 'Рузнама-Курахский район: ',
-      url: 'https://dagprogs.github.io/ruznamaKurah/'
-    }).then(() => {
-      console.log('Thanks for sharing!');
-    })
-      .catch((err) => console.error(err));
+// click event handler is necessary to call navigator.share()
+shareButton.addEventListener('click', async () => {
+  // does the browser supports the feature?
+  if(navigator.share) {
+    try {
+      await navigator.share(shareData);
+      console.log('🥳 Shared via API.');
+    } catch(error) {
+      console.log(`😢 ${error}`);
+    }
   } else {
-    // Fallback
-    alert("The current browser does not support the share function. Please, manually share the link")
+    // you could do a fallback solution here ... 
+    console.log('😢 Your browser does not support the web share api.')
   }
-});
+})
+
