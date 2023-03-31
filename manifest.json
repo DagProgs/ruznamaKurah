@@ -61,16 +61,6 @@
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#007558",
-  "background_color": "#007558",
-  "share_target":
-{
-  "action": "/share",
-  "params":
-  {
-    "title": "Рузнама",
-    "text": "Рузнама-Курахский район",
-    "url": "https://dagprogs.github.io/ruznamaKurah/"
-  }
-}
+  "background_color": "#007558"
 
 }
