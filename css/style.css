@@ -86,10 +86,21 @@ body {
     height: 25px;
 }
 
+.share-clock {
+    display: flex;
+    justify-content: space-between;
+}
+
 .clock {
     color: #fff;
     font-size: 1.9em;
     padding: 5px 0;
+}
+
+.share-svg svg {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
 
 .bottom_info {
