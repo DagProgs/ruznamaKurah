@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "da02ca10d85758b031a2ded55676a8f7"
+    "revision": "c08cfdb56e6e3f0df8e6cf606f606351"
   },
   {
     "url": "css/style.css",
@@ -58,7 +58,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/share.js",
-    "revision": "faac381b78ec2ebba6aad90c28257680"
+    "revision": "dfa2d81d118ae33a1cb63cdd9c20d3d2"
   },
   {
     "url": "img/hiasan.png",
