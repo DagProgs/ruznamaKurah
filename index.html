@@ -30,12 +30,9 @@
     <link rel="apple-touch-icon" href="img/icons/icon-192x192.png" />
     <link rel="apple-touch-icon" href="img/icons/icon-284x284.png" />
     <link rel="apple-touch-icon" href="img/icons/icon-512x512.png" />
-	<script
-      async
-      src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
-      integrity="sha384-uONtBTCBzHKF84F6XvyC8S0gL8HTkAPeCyBNvfLfsqHh+Kd6s/kaS4BdmNQ5ktp1"
-      crossorigin="anonymous"
-    ></script>
+    <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
+        integrity="sha384-uONtBTCBzHKF84F6XvyC8S0gL8HTkAPeCyBNvfLfsqHh+Kd6s/kaS4BdmNQ5ktp1"
+        crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
             if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) { $('#preloader').remove(); }
@@ -65,18 +62,19 @@
             </div>
         </header>
         <main class="main">
+            
             <div class="clock-info">
                 <a onclick="javascript:location.reload(); return false;">
                     <img src="img/update.svg" alt="">
                 </a>
-                    <div class="bottom_info">
-                        <span>Осталось</span>&nbsp<span class="timeUntilNextPrayer">00:00:00</span>&nbsp
-                        до&nbsp
-                        <span class="strong"></span>
-                    </div>
+                <div class="bottom_info">
+                    <span>Осталось</span>&nbsp<span class="timeUntilNextPrayer">00:00:00</span>&nbsp
+                    до&nbsp
+                    <span class="strong"></span>
                 </div>
+            </div>
+            <p class="opisruznama opisruznamaa">День</p>
             <div class="time_line_cont">
-
                 <div class="container">
                     <div class="box">
                         <div data-name="fajr" class="pnt">
@@ -178,9 +176,10 @@
                     </div>
                     <h2 id="ishatime">00:00</h2>
                 </div>
-                
+
             </div>
         </main>
+        <p class="opisruznama">Месяц</p>
         <div class="text_mounts">
             <p id="mount-ru">Январь</p>
         </div>
@@ -353,7 +352,7 @@
             </table>
 
 
-
+            <p class="opisruznama">Год</p>
             <div class="accordion">
                 <div class="accordion-item">
                     <button id="accordion-button-1" aria-expanded="false"><span
@@ -656,52 +655,59 @@
                     </div>
                 </div>
             </div>
-			<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="main.js"></script></body>
-  <script type="module">
+            <script type="text/javascript" src="runtime.js"></script>
+            <script type="text/javascript" src="polyfills.js"></script>
+            <script type="text/javascript" src="main.js"></script>
+</body>
+<script type="module">
 
-import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
+    import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
 
-if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
 
-  const wb = new Workbox('sw-workbox.js');
+        const wb = new Workbox('sw-workbox.js');
 
-  wb.addEventListener('installed', event => {
-    if (event.isUpdate) {
-      if (confirm(`Мы только что обновили версию приложения! Чтобы получить обновления, нажмите на кнопку OK.`)) {
-        window.location.reload();
-      }
-    } else {
-        alert(`Приложение готово к работе в автономном режиме`)
+        wb.addEventListener('installed', event => {
+            if (event.isUpdate) {
+                if (confirm(`Мы только что обновили версию приложения! Чтобы получить обновления, нажмите на кнопку OK.`)) {
+                    window.location.reload();
+                }
+            } else {
+                alert(`Приложение готово к работе в автономном режиме`)
+            }
+        });
+
+        wb.register();
     }
-  });
 
-  wb.register();
-}
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-  </script>
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
     ym(92655412, "init", {
-         clickmap:true,
-         trackLinks:true,
-         accurateTrackBounce:true,
-         webvisor:true
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
     });
- </script>
- <noscript><div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
- <!-- /Yandex.Metrika counter -->
-            <select name="choose_place" id="choose_place" class="choose_place"></select>
-            <script src="js/prayer.times.linear.colors.js"></script>
-            <script src="js/dayruznama.js"></script>
-            <script src="js/data-ru.clock.js"></script>
-            <script src="js/hijri.js"></script>
-            <script src="js/accordion.js"></script>
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+<select name="choose_place" id="choose_place" class="choose_place"></select>
+<script src="js/prayer.times.linear.colors.js"></script>
+<script src="js/dayruznama.js"></script>
+<script src="js/data-ru.clock.js"></script>
+<script src="js/hijri.js"></script>
+<script src="js/accordion.js"></script>
 </body>
 
 </html>

@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "729392994433f76eb590cee00ef26be7"
+    "revision": "09d9dd2ecb40031d516155fff1802976"
   },
   {
     "url": "css/style.css",
-    "revision": "7c56e53e12f01d3c7e872b6188406a4f"
+    "revision": "9354d96dad7c1f79d6c1ecce7bd56b16"
   },
   {
     "url": "js/accordion.js",
@@ -55,10 +55,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prayer.times.linear.colors.js",
     "revision": "1e05f29099ad0d1fb5f2e2ea1afa854b"
-  },
-  {
-    "url": "js/db/ruznama_k.db",
-    "revision": "de460c0d225b60cf38d9b38e3d99fdc8"
   },
   {
     "url": "img/hiasan.png",

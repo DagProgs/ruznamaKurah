@@ -317,3 +317,21 @@ tr {
     font-weight: 300;
     margin: 2em 0;
 }
+
+.opisruznama {
+    color: #7fb6a8;
+    padding-left: 15px;
+    margin: 5px 0;
+    font-size: 11px;
+}
+
+.opisruznamaa {
+    padding-left: 0;
+}
+
+.opisruznama::before {
+    display: inline;
+    content: "Рузнама - ";
+    font-weight: bold;
+    color: #007558;
+}
