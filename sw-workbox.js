@@ -26,7 +26,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "8f08d5870f210b518aec2b67d8929ad0"
+    "revision": "5ee31a3cf62c3aaca3f228b25bf676f7"
   },
   {
     "url": "js/accordion.js",
