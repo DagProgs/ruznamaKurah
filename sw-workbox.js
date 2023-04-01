@@ -26,7 +26,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "calendar.html",
-    "revision": "0d6095d7ec0b3a72ff0302342dc38f85"
+    "revision": "854d01eb754d66261b5cc11e1c3b32a9"
   },
   {
     "url": "css/all.min.css",
