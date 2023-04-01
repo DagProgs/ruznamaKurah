@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -346,4 +347,17 @@ tr {
     content: "Рузнама - ";
     font-weight: bold;
     color: #007558;
+}
+
+.calendar-share {
+    display: flex;
+}
+
+.calendarBtn {
+    padding: 0 10px;
+}
+
+.calendar-svg svg {
+    width: 30px;
+    height: 30px;
 }
