@@ -34,7 +34,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/calendar.css",
-    "revision": "82efd46eb6da92e18456ab0c60d0a040"
+    "revision": "978ece18809ba65ab2b4a368a930ff06"
   },
   {
     "url": "css/style.css",
