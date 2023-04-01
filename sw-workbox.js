@@ -154,7 +154,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "img/rolling-dots.gif",
-    "revision": "c8b0d07f8a41e35a693cb7e36811eb88"
+    "revision": "7585284276e328d3bcdc46b262e89d5a"
   },
   {
     "url": "img/update.svg",
