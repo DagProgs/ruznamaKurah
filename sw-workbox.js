@@ -25,12 +25,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "01b7e74bd419544d1a09e2c1d2158df3"
   },
   {
-    "url": "calendar.html",
-    "revision": "854d01eb754d66261b5cc11e1c3b32a9"
-  },
-  {
     "url": "css/all.min.css",
-    "revision": "41d394990448b2c2b1afe840e837dc8e"
+    "revision": "08ad7a4a944e7564adf9414e9626f501"
   },
   {
     "url": "css/calendar.css",
@@ -54,7 +50,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/hijri.js",
-    "revision": "22160ccd8745afbf08d7653b08b4f5df"
+    "revision": "92612840f56b08a0e3a3d493543218a9"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
@@ -71,42 +67,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/share.js",
     "revision": "dfa2d81d118ae33a1cb63cdd9c20d3d2"
-  },
-  {
-    "url": "js/db/ruznama_k.db",
-    "revision": "de460c0d225b60cf38d9b38e3d99fdc8"
-  },
-  {
-    "url": "webfonts/fa-brands-400.woff2",
-    "revision": "f451a30bc5a090618168378456e95c48"
-  },
-  {
-    "url": "webfonts/fa-regular-400.woff2",
-    "revision": "9e9838f87228d7b1f22ed397ca7a2e85"
-  },
-  {
-    "url": "webfonts/fa-solid-900.woff2",
-    "revision": "93ee2edf9627a5c9a1e4d0978c30a24b"
-  },
-  {
-    "url": "webfonts/fa-v4compatibility.woff2",
-    "revision": "f11a63e2f9e00fa64ec994a0c7ac7886"
-  },
-  {
-    "url": "webfonts/fa-brands-400.ttf",
-    "revision": "5ac99533bd9dc46227434b4853c3e532"
-  },
-  {
-    "url": "webfonts/fa-regular-400.ttf",
-    "revision": "093d2cde7075fcffb24ab215668d0da2"
-  },
-  {
-    "url": "webfonts/fa-solid-900.ttf",
-    "revision": "1e17b1ec3152f29bf783bd42db8b6023"
-  },
-  {
-    "url": "webfonts/fa-v4compatibility.ttf",
-    "revision": "86b3416a435de48a578443e6c446334f"
   },
   {
     "url": "img/hiasan.png",
