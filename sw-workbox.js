@@ -50,7 +50,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/hijri.js",
-    "revision": "92612840f56b08a0e3a3d493543218a9"
+    "revision": "22160ccd8745afbf08d7653b08b4f5df"
   },
   {
     "url": "js/jquery-3.6.0.min.js",

@@ -6,5 +6,5 @@ $('.my-date-ar').hijriDate({
     weekDayLang: 'ru',
     gregLang: 'ru',
     hijriLang: 'ru',
-    correction: +1
+    correction: +0
 });
