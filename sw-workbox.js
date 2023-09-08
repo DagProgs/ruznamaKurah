@@ -25,12 +25,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "01b7e74bd419544d1a09e2c1d2158df3"
   },
   {
+    "url": "calendar.html",
+    "revision": "854d01eb754d66261b5cc11e1c3b32a9"
+  },
+  {
     "url": "css/all.min.css",
     "revision": "08ad7a4a944e7564adf9414e9626f501"
   },
   {
     "url": "css/calendar.css",
-    "revision": "978ece18809ba65ab2b4a368a930ff06"
+    "revision": "7fb3dc3665d401c9738cee4e2604f5e6"
   },
   {
     "url": "css/style.css",
