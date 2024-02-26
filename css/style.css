@@ -1,363 +1,178 @@
-*,
-*::after,
-*::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 10px;
-    background-color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
 }
 
-#preloader {
-   background: #FFFFFF url("../img/rolling-dots.gif") no-repeat center center;
-   bottom: 0;
-   position: fixed;
-   top: 0;
-   width: 100%;
-   z-index: 99999;
+:root {
+  --header-fon: #007558;
+  --header-text: #fff;
+  --header-loc: #8ac9b9;
+  --subheader-fon: #007558;
+  --subheader-ru: #8ac9b9;
+  --subheader-ar: #8ac9b9;
+  --subheader-day: #8ac9b9;
+  --subheader-clock: #ffffff;
+  --clock-sec: #a3ffd4;
 }
 
-.wrapper {
-    overflow: hidden;
+.header {
+  position: relative;
+  height: 60px;
+  z-index: 1;
 }
 
-.header-bg {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    min-width: 320px;
-    height: 150px;
-    background-color: #007558;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-    z-index: 5;
+.header_name_loc {
+  position: fixed;
+  width: 100vw;
+  min-width: 320px;
+  background-color: var(--header-fon);
 }
 
-.header-text {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 15px;
-    height: 60px;
+.header_text {
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
 }
 
-.ruznama {
-    color: #fff;
-    font-size: 2.5em;
+.header_name_loc h1 {
+  font-size: 2.5em;
+  color: var(--header-text);
 }
 
-.localization {
-    color: #fff;
-    font-size: 1.2em;
-    font-weight: normal;
-    padding-top: 6px;
+.header_name_loc p {
+  padding-right: 15px;
+  padding-top: 8px;
+  font-size: 1.2em;
+  color: var(--header-loc);
 }
 
-.header-subtext {
-    display: grid;
-    flex-direction: column;
-    align-items: center;
-    height: 80px;
-    margin: 0 15px;
+.subheader {
+  height: 60px;
 }
 
-.data-ru {
-    color: #fff;
-    padding-bottom: 2px;
+.subheader_data_clock {
+  display: flex;
+  justify-content: space-between;
+  min-width: 320px;
+  background-color: var(--subheader-fon);
+  height: 60px;
+  align-items: center;
+  padding: 0 15px;
 }
 
-.data-ar {
-    color: #fff;
+.subheader_mount_day p {
+  font-size: 1.3em;
 }
 
-.clock-info {
-    position: relative;
+.subheader_mount_day p:nth-child(1) {
+  color: var(--subheader-ru);
 }
 
-.clock-info img {
-    position: absolute;
-    top: 2px;
-    margin-top: 5px;
-    padding: 3px;
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
+.subheader_mount_day p:nth-child(2) {
+  font-size: 1.1em;
+  color: var(--subheader-ar);
 }
 
-.share-clock {
-    display: flex;
-    justify-content: space-between;
+.subheader_mount_day p:nth-child(3) {
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: var(--subheader-day);
 }
 
-.clock {
-    color: #fff;
-    font-size: 1.9em;
-    padding: 5px 0;
+.subheader_clock p {
+  color: var(--subheader-clock);
+  font-size: 2em;
+  font-weight: bold;
 }
 
-.share-svg svg {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+#clock span {
+  color: var(--clock-sec);
+  font-size: 0.6em;
+  font-weight: normal;
 }
 
-.bottom_info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #007558;
-    font-weight: bold;
-    font-size: 1.5em;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    height: 40px;
+#clock span::before {
+  content: " ";
 }
 
-.choose_place {
-    display: none;
+.prayerTimesTableBodyMain td {
+  text-align: left;
+  padding-left: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #007558;
 }
 
-.main {
-    padding-top: 160px;
-    margin: 0 15px;
-    min-width: 280px;
+.pastPrayer {
+  background-color: #f8d7da;
+  /* Цвет фона для наступившего намаза */
 }
 
-.pnt svg {
-    fill: #007558;
+.nextPrayer {
+  background-color: #d4edda;
+  /* Цвет фона для следующего намаза */
 }
 
-.time_line_cont .pnt {
-    background: transparent;
-    width: 45px;
-    height: 45px;
-    border: 3px solid transparent;
+.pastPrayerText {
+  color: #868686;
+  /* Цвет текста для прошедшего намаза */
 }
 
-.pnt.active {
-    border: 2px solid #007558;
-    border-radius: 10px;
+.remainingTime {
+  font-weight: bold;
+  color: #000;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 0;
-}
-
-.box {
-    display: flex;
-}
-
-.container h2 {
-    font-size: 2.3em;
-}
-
-.container h2,
-h3 {
-    color: #007558;
-}
-
-.prayer-times-day {
-    padding-left: 10px;
-    line-height: 1.4;
-}
-
-.prayer-times-day h3 {
-    font-size: .9em;
-    font-weight: normal;
-}
-
-.text_mounts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 35px;
-    background-color: #007558;
-    font-size: 2.2em;
-    font-weight: bold;
-    color: #fff;
+.listmounth {
+  width: 100vw;
+  height: 50px;
+  border: none;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  padding-left: 15px;
+  color: #007558;
 }
 
 table {
-    width: 100vw;
-    min-width: 320px;
+  width: 100vw;
+  border-collapse: collapse;
 }
 
-table,
-td,
-th {
-    border-collapse: collapse;
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.stici {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 60px;
+}
+
+.current-day-cell {
+  background-color: #007558;
+  color: #ffffff;
 }
 
 table tr th {
-    font-size: calc(2vw + 6px);
-    padding: 10px 2px;
-    color: #fff;
-    background-color: #007558;
-    border: 0;
+  font-size: calc(2vw + 6px);
+  padding: 10px 2px;
 }
 
 table tr td {
-    font-size: calc(3vw + 2px);
-    text-align: center;
-    padding: 5px 1px;
-    border: 0px;
-}
-
-tr:nth-child(odd) {
-    background-color: #f0f0f0;
-}
-
-tr:nth-child(even) {
-    background-color: #ffffff;
-}
-
-.table,
-tr {
-    color: #7fb6a8;
-}
-
-.myclosed {
-    color: #007558;
-    font-weight: bold;
-}
-
-
-.accordion .accordion-item {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.accordion .accordion-item button[aria-expanded='true'] {
-    border-bottom: 1px solid #007558;
-}
-
-.accordion button {
-    position: relative;
-    display: block;
-    text-align: left;
-    width: 100%;
-    padding: 15px 0;
-    color: #007558;
-    font-size: 2.2em;
-    font-weight: 400;
-    border: none;
-    background: none;
-    outline: none;
-}
-
-.accordion button:hover,
-.accordion button:focus {
-    cursor: pointer;
-    color: #007558;
-}
-
-.accordion button:hover::after,
-.accordion button:focus::after {
-    cursor: pointer;
-    color: #007558;
-    border: 1px solid #007558;
-}
-
-.accordion button .accordion-title {
-    margin: 0 15px;
-}
-
-.accordion button .icon {
-    display: inline-block;
-    position: absolute;
-    top: 18px;
-    right: 0;
-    width: 22px;
-    height: 22px;
-    border: 1px solid;
-    border-radius: 22px;
-    margin: 0 15px;
-}
-
-.accordion button .icon::before {
-    display: block;
-    position: absolute;
-    content: '';
-    top: 9px;
-    left: 5px;
-    width: 10px;
-    height: 2px;
-    background: currentColor;
-}
-
-.accordion button .icon::after {
-    display: block;
-    position: absolute;
-    content: '';
-    top: 5px;
-    left: 9px;
-    width: 2px;
-    height: 10px;
-    background: currentColor;
-}
-
-.accordion button[aria-expanded='true'] {
-    color: #007558;
-}
-
-.accordion button[aria-expanded='true'] .icon::after {
-    width: 0;
-}
-
-.accordion button[aria-expanded='true']+.accordion-content {
-    opacity: 1;
-    max-height: 200vh;
-    transition: all 200ms linear;
-    will-change: opacity, max-height;
-}
-
-.accordion .accordion-content {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 200ms linear, max-height 200ms linear;
-    will-change: opacity, max-height;
-}
-
-.accordion .accordion-content p {
-    font-size: 1rem;
-    font-weight: 300;
-    margin: 2em 0;
-}
-
-.opisruznama {
-    color: #7fb6a8;
-    padding-left: 15px;
-    margin: 5px 0;
-    font-size: 11px;
-}
-
-.opisruznamaa {
-    padding-left: 0;
-}
-
-.opisruznama::before {
-    display: inline;
-    content: "Рузнама - ";
-    font-weight: bold;
-    color: #007558;
-}
-
-.calendar-share {
-    display: flex;
-}
-
-.calendarBtn {
-    padding: 0 10px;
-}
-
-.calendar-svg svg {
-    width: 30px;
-    height: 30px;
-}
+  font-size: calc(3vw + 2px);
+  text-align: center;
+  padding: 5px 1px;
+  border: 0px;
+}/*# sourceMappingURL=style.css.map */

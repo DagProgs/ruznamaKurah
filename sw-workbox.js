@@ -22,59 +22,55 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "4c69e47f1e5e0481272d32d636f6e674"
+    "revision": "9b1b29e109960fa908b1d209bf63b20e"
   },
   {
-    "url": "calendar.html",
-    "revision": "854d01eb754d66261b5cc11e1c3b32a9"
+    "url": "styles.css",
+    "revision": "1a0728ccfd858acdb58c8c60d9f9defe"
   },
   {
-    "url": "css/all.min.css",
-    "revision": "08ad7a4a944e7564adf9414e9626f501"
+    "url": "main.js",
+    "revision": "80846bb3403b82a07c7f84658f186b23"
   },
   {
-    "url": "css/calendar.css",
-    "revision": "7fb3dc3665d401c9738cee4e2604f5e6"
+    "url": "polyfills.js",
+    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
   },
   {
-    "url": "css/style.css",
-    "revision": "37ebfecf9b44aabe2bb234ca4fa0f358"
+    "url": "runtime.js",
+    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
   },
   {
-    "url": "js/accordion.js",
-    "revision": "7b6c7076f2a35632b36f49d6e7f2b099"
+    "url": "assets/icons/icon-128x128.png",
+    "revision": "25c8eb241d5e0c913da717f6007736b2"
   },
   {
-    "url": "js/data-ru.clock.js",
-    "revision": "d6b5e942b5cee2a7f7470c49bee1348a"
+    "url": "assets/icons/icon-144x144.png",
+    "revision": "6e606e6871ccc1fdc7222dee1d72d42e"
   },
   {
-    "url": "js/dayruznama.js",
-    "revision": "bee1b709a4beb0625c72bb63f1d42b8b"
+    "url": "assets/icons/icon-152x152.png",
+    "revision": "33b8202ee77c28c332a4fa3efee61d34"
   },
   {
-    "url": "js/hijri.js",
-    "revision": "22160ccd8745afbf08d7653b08b4f5df"
+    "url": "assets/icons/icon-192x192.png",
+    "revision": "c5d401eb140c47f0d0a1b8880b5c8b49"
   },
   {
-    "url": "js/jquery-3.6.0.min.js",
-    "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
+    "url": "assets/icons/icon-384x384.png",
+    "revision": "47f069d621e0e363d1f0b560be4335dc"
   },
   {
-    "url": "js/jquery.hijri.date.min.js",
-    "revision": "e1382399f8832a5378e2e1df0f833225"
+    "url": "assets/icons/icon-512x512.png",
+    "revision": "84f212482ada6ec3913a2a76d4b89c0d"
   },
   {
-    "url": "js/prayer.times.linear.colors.js",
-    "revision": "1e05f29099ad0d1fb5f2e2ea1afa854b"
+    "url": "assets/icons/icon-72x72.png",
+    "revision": "9c82c0475577731db0e52b9fa62e8c05"
   },
   {
-    "url": "js/share.js",
-    "revision": "dfa2d81d118ae33a1cb63cdd9c20d3d2"
-  },
-  {
-    "url": "js/db/ruznama_k.db",
-    "revision": "de460c0d225b60cf38d9b38e3d99fdc8"
+    "url": "assets/icons/icon-96x96.png",
+    "revision": "9815fb3c4b57df1e8cda23d01fc66078"
   }
 ]);
 
