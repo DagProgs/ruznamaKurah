@@ -42,7 +42,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/mounth.js",
-    "revision": "de29eb6cae4f821e3f80907b87e6a042"
+    "revision": "f75688273ff3f76d5c407fee943f9c5a"
   },
   {
     "url": "js/subheader.js",

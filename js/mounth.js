@@ -1,60 +1,61 @@
 var monthSelect = document.getElementById("monthSelect");
-var tableBody = document.getElementById("prayerTimesTableBody");
-var prayerTimes;
-var previousHighlightedDay;
+    var tableBody = document.getElementById("prayerTimesTableBody");
+    var prayerTimes;
+    var previousHighlightedDay;
 
-function getCurrentMonth() {
-    var currentDate = new Date();
-    return currentDate.getMonth() + 1;
-}
+    function getCurrentMonth() {
+        var currentDate = new Date();
+        return currentDate.getMonth() + 1;
+    }
 
-fetch('js/json/prayer-times.json')
-    .then(response => response.json())
-    .then(data => {
-        prayerTimes = data;
-        updatePrayerTimesTable();
-        monthSelect.value = getCurrentMonth();
-    });
+    fetch('js/json/prayer-times.json')
+        .then(response => response.json())
+        .then(data => {
+            prayerTimes = data;
+            updatePrayerTimesTable();
+            monthSelect.value = getCurrentMonth();
+        });
 
-function updatePrayerTimesTable() {
-    var selectedMonth = monthSelect.value;
-    var currentDate = new Date();
-    var currentDay = currentDate.getDate();
+    function updatePrayerTimesTable() {
+        var selectedMonth = monthSelect.value;
+        var currentDate = new Date();
+        var currentDay = currentDate.getDate();
 
-    // Clear table without losing the reference to existing rows
-    tableBody.innerHTML = "";
+        // Clear table without losing the reference to existing rows
+        tableBody.innerHTML = "";
 
-    for (var day in prayerTimes[selectedMonth]) {
-        // Ensure that 'day' is a number
-        day = parseInt(day);
+        for (var day in prayerTimes[selectedMonth]) {
+            // Ensure that 'day' is a number
+            day = parseInt(day);
 
-        // Check if the day is within the month's range
-        if (day > 0 && day <= 31) {
-            var row = document.createElement("tr");
+            // Check if the day is within the month's range
+            if (day > 0 && day <= 31) {
+                var row = document.createElement("tr");
 
-            if (day === currentDay && selectedMonth == getCurrentMonth()) {
-                row.classList.add('current-day-cell');
-                if (previousHighlightedDay) {
-                    previousHighlightedDay.classList.remove('current-day-cell');
+                if (day === currentDay && selectedMonth == getCurrentMonth()) {
+                    row.classList.add('current-day-cell');
+                    if (previousHighlightedDay) {
+                        previousHighlightedDay.classList.remove('current-day-cell');
+                    }
+                    previousHighlightedDay = row;
                 }
-                previousHighlightedDay = row;
+
+                var dayCell = document.createElement("td");
+                var formattedDate = selectedMonth + "/" + day;
+                dayCell.textContent = formattedDate;
+                row.appendChild(dayCell);
+
+                for (var prayer in prayerTimes[selectedMonth][day]) {
+                    var time = prayerTimes[selectedMonth][day][prayer];
+                    var formattedTime = time[0].toString().padStart(2, '0') + ":" + time[1].toString().padStart(2, '0');
+                    var prayerCell = document.createElement("td");
+                    prayerCell.textContent = formattedTime;
+                    row.appendChild(prayerCell);
+                }
+
+                tableBody.appendChild(row);
             }
-
-            var dayCell = document.createElement("td");
-            dayCell.textContent = day;
-            row.appendChild(dayCell);
-
-            for (var prayer in prayerTimes[selectedMonth][day]) {
-                var time = prayerTimes[selectedMonth][day][prayer];
-                var formattedTime = time[0].toString().padStart(2, '0') + ":" + time[1].toString().padStart(2, '0');
-                var prayerCell = document.createElement("td");
-                prayerCell.textContent = formattedTime;
-                row.appendChild(prayerCell);
-            }
-
-            tableBody.appendChild(row);
         }
     }
-}
 
-monthSelect.addEventListener("change", updatePrayerTimesTable);
+    monthSelect.addEventListener("change", updatePrayerTimesTable);
