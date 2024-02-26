@@ -22,11 +22,15 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "9b1b29e109960fa908b1d209bf63b20e"
+    "revision": "94b5e38c751bd3f44c49cc27bd5dd8b3"
   },
   {
     "url": "css/style.css",
     "revision": "ebb004bbd37e00ce94b13480feee5235"
+  },
+  {
+    "url": "js/clock.js",
+    "revision": "60624b63d2a9aaf14a8896b5738b2910"
   },
   {
     "url": "js/day.js",
@@ -42,7 +46,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/subheader.js",
-    "revision": "05f890b45820ad8f17202e12f534cf5f"
+    "revision": "99eb6b04064af5e464a720bbe89fe048"
   },
   {
     "url": "js/json/prayer-times-ru.json",

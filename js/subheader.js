@@ -14,13 +14,37 @@ months[11] = "Ноября";
 months[12] = "Декабря";
 
 var date = new Date();
-var thismonth = months[date.getMonth() + 1];
-var thisyear = date.getFullYear();
-var day = date.getDay() + 1;
+var thisMonth = months[date.getMonth() + 1];
+var thisYear = date.getFullYear();
+var day = date.getDate(); // Use getDate() to get the day of the month
+var dayOfWeek;
 
-if (date < 10) date = '0' + date;
+switch (date.getDay()) {
+  case 0:
+    dayOfWeek = "Воскресенье";
+    break;
+  case 1:
+    dayOfWeek = "Понедельник";
+    break;
+  case 2:
+    dayOfWeek = "Вторник";
+    break;
+  case 3:
+    dayOfWeek = "Среда";
+    break;
+  case 4:
+    dayOfWeek = "Четверг";
+    break;
+  case 5:
+    dayOfWeek = "Пятница";
+    break;
+  case 6:
+    dayOfWeek = "Суббота";
+    break;
+}
 
-document.getElementById("date-ru").innerHTML = (day + " " + thismonth + " " + thisyear + " " + "г");
+document.getElementById("my-date-ru").innerHTML = (day + " " + thisMonth + " " + thisYear + " г");
+
 
 
 //ar
@@ -111,35 +135,3 @@ if (day == 6) DayofWeek = "Пятница";
 if (day == 7) DayofWeek = "Суббота";
 
 document.getElementById("days").innerHTML = (DayofWeek + " ");
-
-//clock
-function currentTime() {
-    var date = new Date();
-    var hour = date.getHours();
-    var min = date.getMinutes();
-    var sec = date.getSeconds();
-
-    hour = updateTime(hour);
-    min = updateTime(min);
-    sec = updateTime(sec);
-
-    document.getElementById("clock").innerText = (hour + ":" + min + "");
-
-    var secSpan = document.createElement('span');
-    secSpan.innerText = sec;
-    document.getElementById("clock").appendChild(secSpan);
-
-    var t = setTimeout(currentTime, 1000);
-
-}
-
-function updateTime(k) {
-    if (k < 10) {
-        return "0" + k;
-    }
-    else {
-        return k;
-    }
-}
-
-currentTime();
