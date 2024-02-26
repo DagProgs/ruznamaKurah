@@ -25,20 +25,32 @@ workbox.precaching.precacheAndRoute([
     "revision": "9b1b29e109960fa908b1d209bf63b20e"
   },
   {
-    "url": "styles.css",
-    "revision": "1a0728ccfd858acdb58c8c60d9f9defe"
+    "url": "css/style.css",
+    "revision": "ebb004bbd37e00ce94b13480feee5235"
   },
   {
-    "url": "main.js",
-    "revision": "80846bb3403b82a07c7f84658f186b23"
+    "url": "js/day.js",
+    "revision": "c49e4abea39c2028b1a0e23bad0c3a4e"
   },
   {
-    "url": "polyfills.js",
-    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
+    "url": "js/jquery-3.6.0.min.js",
+    "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
   },
   {
-    "url": "runtime.js",
-    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
+    "url": "js/mounth.js",
+    "revision": "13a463104c4bd09563ba3f9dd9b0fb88"
+  },
+  {
+    "url": "js/subheader.js",
+    "revision": "05f890b45820ad8f17202e12f534cf5f"
+  },
+  {
+    "url": "js/json/prayer-times-ru.json",
+    "revision": "7c390f494ba5bc0b34f432c6f58bb51d"
+  },
+  {
+    "url": "js/json/prayer-times.json",
+    "revision": "60e709eee08f4ec5177cc94dde95b40b"
   },
   {
     "url": "assets/icons/icon-128x128.png",
