@@ -25,31 +25,36 @@ function updatePrayerTimesTable() {
     tableBody.innerHTML = "";
 
     for (var day in prayerTimes[selectedMonth]) {
-        var row = document.createElement("tr");
+        // Ensure that 'day' is a number
+        day = parseInt(day);
 
-        if (day == currentDay && selectedMonth == getCurrentMonth()) {
-            row.classList.add('current-day-cell');
-            if (previousHighlightedDay) {
-                previousHighlightedDay.classList.remove('current-day-cell');
+        // Check if the day is within the month's range
+        if (day > 0 && day <= 31) {
+            var row = document.createElement("tr");
+
+            if (day === currentDay && selectedMonth == getCurrentMonth()) {
+                row.classList.add('current-day-cell');
+                if (previousHighlightedDay) {
+                    previousHighlightedDay.classList.remove('current-day-cell');
+                }
+                previousHighlightedDay = row;
             }
-            previousHighlightedDay = row;
+
+            var dayCell = document.createElement("td");
+            dayCell.textContent = day;
+            row.appendChild(dayCell);
+
+            for (var prayer in prayerTimes[selectedMonth][day]) {
+                var time = prayerTimes[selectedMonth][day][prayer];
+                var formattedTime = time[0].toString().padStart(2, '0') + ":" + time[1].toString().padStart(2, '0');
+                var prayerCell = document.createElement("td");
+                prayerCell.textContent = formattedTime;
+                row.appendChild(prayerCell);
+            }
+
+            tableBody.appendChild(row);
         }
-
-        var dayCell = document.createElement("td");
-        dayCell.textContent = day;
-        row.appendChild(dayCell);
-
-        for (var prayer in prayerTimes[selectedMonth][day]) {
-            var time = prayerTimes[selectedMonth][day][prayer];
-            var formattedTime = time[0].toString().padStart(2, '0') + ":" + time[1].toString().padStart(2, '0');
-            var prayerCell = document.createElement("td");
-            prayerCell.textContent = formattedTime;
-            row.appendChild(prayerCell);
-        }
-
-        tableBody.appendChild(row);
     }
 }
-
 
 monthSelect.addEventListener("change", updatePrayerTimesTable);
