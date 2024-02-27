@@ -1,25 +1,101 @@
-@charset "UTF-8";
+:root {
+  --header-bg: #007558;
+  --header-name: #fff;
+  --header-loc: #9ae0cf;
+  --subheader-bg: #007558;
+  --header-date-ru: #9ae0cf;
+  --header-date-ar: #9ae0cf;
+  --header-week-ru: #9ae0cf;
+  --header-clock: #fff;
+}
+
 * {
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px;
+a, a:link, a:visited {
+  text-decoration: none;
 }
 
-:root {
-  --header-fon: #007558;
-  --header-text: #fff;
-  --header-loc: #8ac9b9;
-  --subheader-fon: #007558;
-  --subheader-ru: #8ac9b9;
-  --subheader-ar: #8ac9b9;
-  --subheader-day: #8ac9b9;
-  --subheader-clock: #ffffff;
-  --clock-sec: #a3ffd4;
+a:hover {
+  text-decoration: none;
+}
+
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+body {
+  font-size: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 200vh;
 }
 
 .header {
@@ -28,119 +104,154 @@ body {
   z-index: 1;
 }
 
-.header_name_loc {
-  position: fixed;
-  width: 100vw;
-  min-width: 320px;
-  background-color: var(--header-fon);
-}
-
-.header_text {
-  padding-left: 15px;
+.name_loc {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  background-color: var(--header-bg);
+  width: 100vw;
+  min-width: 320px;
   height: 60px;
+  padding: 0 15px;
 }
-
-.header_name_loc h1 {
-  font-size: 2.5em;
-  color: var(--header-text);
+.name_loc h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--header-name);
 }
-
-.header_name_loc p {
-  padding-right: 15px;
-  padding-top: 8px;
-  font-size: 1.2em;
+.name_loc p {
+  font-size: 1.3em;
   color: var(--header-loc);
+  padding-top: 7px;
 }
 
 .subheader {
-  height: 60px;
+  position: relative;
+  height: 90px;
 }
 
-.subheader_data_clock {
+.day-mounth-year-clock {
   display: flex;
-  justify-content: space-between;
-  min-width: 320px;
-  background-color: var(--subheader-fon);
-  height: 60px;
   align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100vw;
+  min-width: 320px;
+  height: 90px;
+  background-color: var(--subheader-bg);
   padding: 0 15px;
 }
 
-.subheader_mount_day p {
+.date-ru-ar {
+  margin: 10px 0;
+}
+.date-ru-ar .date-ru {
+  margin: 2px 0;
+  font-size: 1.7em;
+  color: var(--header-date-ru);
+}
+.date-ru-ar .date-ar {
+  margin: 2px 0;
   font-size: 1.3em;
+  color: var(--header-date-ar);
 }
 
-.subheader_mount_day p:nth-child(1) {
-  color: var(--subheader-ru);
+.box_week {
+  margin: 10px 0;
 }
-
-.subheader_mount_day p:nth-child(2) {
-  font-size: 1.1em;
-  color: var(--subheader-ar);
-}
-
-.subheader_mount_day p:nth-child(3) {
-  font-weight: bold;
-  font-size: 1em;
+.box_week .week-ru {
+  font-size: 1.3em;
   text-transform: uppercase;
-  color: var(--subheader-day);
+  font-weight: bold;
+  color: var(--header-week-ru);
 }
 
-.subheader_clock p {
-  color: var(--subheader-clock);
+.box_clock .clock {
   font-size: 2em;
   font-weight: bold;
+  color: var(--header-clock);
 }
-
-#clock span {
-  color: var(--clock-sec);
+.box_clock .clock span {
   font-size: 0.6em;
   font-weight: normal;
 }
-
-#clock span::before {
+.box_clock .clock span::before {
   content: " ";
 }
 
-.prayerTimesTableBodyMain td {
-  text-align: left;
-  padding-left: 15px;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #007558;
+#prayerTimesContainer {
+  width: 100vw;
 }
 
 .pastPrayer {
-  background-color: #f8d7da;
-  /* Цвет фона для наступившего намаза */
+  color: #fafafa;
+  background-color: #007558;
 }
 
 .nextPrayer {
-  background-color: #d4edda;
-  /* Цвет фона для следующего намаза */
+  background-color: #007558;
+  color: #ffffff;
 }
 
-.pastPrayerText {
-  color: #868686;
-  /* Цвет текста для прошедшего намаза */
+.prayerName {
+  position: absolute;
+  padding-left: 15px;
+  width: 100vw;
+}
+
+h2 {
+  display: inline-flex;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.prayerTime {
+  padding-right: 15px;
+}
+
+h3 {
+  width: 100vw;
+  display: inline-flex;
+  justify-content: right;
+  font-size: 2em;
+  margin: 10px 0;
 }
 
 .remainingTime {
-  font-weight: bold;
-  color: #000;
+  color: #a4e4cf;
+  width: 100vw;
+  padding-right: 15px;
 }
 
-.listmounth {
-  width: 100vw;
+h4 {
+  margin: 5px 0;
+  display: inline-flex;
+  justify-content: end;
+  font-size: 1.5em;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  background-image: none;
+  width: 100%;
   height: 50px;
-  border: none;
-  font-size: 1.7em;
-  text-transform: uppercase;
-  padding-left: 15px;
   color: #007558;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 2em;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.listmounth, .sticii {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 59px;
 }
 
 table {
@@ -157,7 +268,7 @@ td {
 .stici {
   background-color: #f2f2f2;
   position: sticky;
-  top: 60px;
+  top: 95px;
 }
 
 .current-day-cell {
@@ -168,6 +279,7 @@ td {
 table tr th {
   font-size: calc(2vw + 6px);
   padding: 10px 2px;
+  color: #007558;
 }
 
 table tr td {
@@ -175,4 +287,39 @@ table tr td {
   text-align: center;
   padding: 5px 1px;
   border: 0px;
+}
+
+.juma {
+  display: inline-flex;
+  padding-top: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  height: 60px;
+  color: #007558;
+  font-weight: bold;
+  width: 100vw;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background-color: #f1f1f1;
+}
+
+#closeBtn {
+  position: relative;
+  bottom: 75px;
+  left: 15px;
+  font-size: 1.5em;
+  width: 30px;
+  height: 30px;
+  background-color: #007558;
+  border-radius: 100%;
+  color: #fff;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

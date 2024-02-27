@@ -7,7 +7,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Рузнама Курахский район</title>
-    <link rel="manifest" href="manifest.json" />
+	<link rel="manifest" href="manifest.json" />
 	<script
       async
       src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
@@ -19,41 +19,33 @@
 <body>
     <!-- Header -->
     <div class="header">
-        <div class="header_name_loc">
-            <div class="header_text">
-                <h1>Рузнама</h1>
-                <p>Курахский район</p>
-            </div>
+        <div class="name_loc">
+            <h1>Рузнама</h1>
+            <p>Курахский район</p>
         </div>
     </div>
-    <!-- SubHeader -->
+    <!-- Sub Header -->
     <div class="subheader">
-        <div class="subheader_data_clock">
-            <div class="subheader_mount_day">
-                <p id="my-date-ru">01 Января 2024 г</p>
-                <p class="hijri-date">01 Мухаррам 1445 г</p>
-                <p id="days">Понедельник</p>
+        <div class="day-mounth-year-clock">
+            <div class="ru-ar-week">
+                <div class="date-ru-ar">
+                    <p class="date-ru" id="ru-date">01 Января 2024 г</p>
+                    <p class="date-ar hijri-date">01 Мухаррам 1445 г</p>
+                </div>
+                <div class="box_week">
+                    <p class="week-ru" id="week-ru">Понедельник</p>
+                </div>
             </div>
-            <div class="subheader_clock">
-                <p id="clock">00:00<span></span>:00</p>
+            <div class="box_clock">
+                <p class="clock" id="clock">00:00:00</p>
             </div>
         </div>
     </div>
-    <!-- day -->
-    <table>
-        <thead>
-            <tr>
-                <th>Намаз</th>
-                <th>Время</th>
-                <th>Ост.время</th>
-            </tr>
-        </thead>
-        <tbody id="prayerTimesTableBodyMain" class="prayerTimesTableBodyMain">
-            <!-- Здесь будут динамически добавляться строки с временами намазов -->
-        </tbody>
-    </table>
-    <!-- mounyh -->
-    <select id="monthSelect" class="listmounth">
+    <!-- Day -->
+    <div id="prayerTimesContainer"></div>
+    
+    <!-- Mounth, Year -->
+    <select id="monthSelect" class="listmounth sticii">
         <option value="1">Январь</option>
         <option value="2">Февраль</option>
         <option value="3">Март</option>
@@ -83,13 +75,25 @@
         <tbody id="prayerTimesTableBody"></tbody>
     </table>
     <p id="currentMonth"></p>
-    <script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="main.js"></script>
-    <script src="js/subheader.js"></script>
+    
+    <div class="popup" id="popup">
+        <p class="juma">Джума Мубарак!!!</p>
+        <button id="closeBtn">X</button>
+    </div>
+
+
+	<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="main.js"></script>
+
+    <script src="js/calendar-ru.js"></script>
+    <script src="js/calendar-ar.js"></script>
+    <script src="js/week-ru.js"></script>
+    <script src="js/clock.js"></script>
     <script src="js/day.js"></script>
     <script src="js/mounth.js"></script>
-    <script src="js/clock.js"></script>
-</body>
-<script type="module">
+    <script src="js/juma-mubarak.js"></script>
+	
+	
+	<script type="module">
 
 import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
 
@@ -111,40 +115,6 @@ if ('serviceWorker' in navigator) {
 }
 
   </script>
+</body>
 
-  <script>
-    window.addEventListener('beforeinstallprompt', event => {
-      console.log('beforeinstallprompt event was fired');
-
-      // Prevent Chrome <= 67 from automatically showing the prompt
-      event.preventDefault();
-
-      // Stash the event so it can be triggered later.
-      this.installPromptEvent = event;
-
-      // Update the install UI to notify the user app can be installed
-      btnInstall.disabled = false;
-    });
-
-    btnInstall = document.querySelector('#btnInstall');
-
-    btnInstall.addEventListener('click', () => {
-      // Update the install UI to remove the install button
-      btnInstall.disabled = true;
-
-      // Show the modal add to home screen dialog
-      installPromptEvent.prompt();
-
-      // Wait for the user to respond to the prompt
-      installPromptEvent.userChoice.then(choice => {
-        if (choice.outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
-        } else {
-          console.log('User dismissed the A2HS prompt');
-        }
-        // Clear the saved prompt since it can't be used again
-        installPromptEvent = null;
-      });
-    });
-  </script>
 </html>

@@ -1,0 +1,17 @@
+@import "./box/colors";
+@import "./box/reset";
+
+body {
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 200vh
+}
+
+@import "./box/header";
+@import "./box/subheader";
+@import "./box/day";
+@import "./box/mount-table";
+@import "./box/juma";
+
+
+  

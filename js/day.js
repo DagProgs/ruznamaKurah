@@ -40,8 +40,6 @@ fetch('js/json/prayer-times.json')
             });
         }
 
-        console.log("Prayer Times in Minutes:", prayerTimesInMinutes);
-
         // Добавляем логику для определения ближайшего намаза на следующий день
         var nextDay = new Date();
         nextDay.setDate(nextDay.getDate() + 1);
@@ -61,55 +59,72 @@ fetch('js/json/prayer-times.json')
             }
         }
 
-        console.log("Updated Prayer Times in Minutes:", prayerTimesInMinutes);
-
         // Функция для обновления времени каждую секунду
-        function updateRemainingTime() {
-            var currentTime = new Date();
-            var currentTimeInMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
+// Функция для обновления времени каждую секунду
+function updateRemainingTime() {
+    var currentTime = new Date();
+    var currentTimeInMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
 
-            // Заполняем таблицу с временами намазов
-            var tableBody = document.getElementById('prayerTimesTableBodyMain');
-            tableBody.innerHTML = "";
+    // Очищаем контейнер с временами намазов
+    var prayerTimesContainer = document.getElementById('prayerTimesContainer');
+    prayerTimesContainer.innerHTML = "";
 
-            var nextPrayerFound = false; // Флаг для определения следующего намаза
+    var nextPrayerFound = false; // Флаг для определения следующего намаза
 
-            prayerOrder.forEach(function (prayer) {
-                var timeInMinutes = prayerTimesInMinutes[prayer];
-                if (timeInMinutes !== undefined) {
-                    var hours = Math.floor(timeInMinutes / 60);
-                    var minutes = timeInMinutes % 60;
+    prayerOrder.forEach(function (prayer) {
+        var timeInMinutes = prayerTimesInMinutes[prayer];
+        if (timeInMinutes !== undefined) {
+            var hours = Math.floor(timeInMinutes / 60);
+            var minutes = timeInMinutes % 60;
 
-                    var row = tableBody.insertRow();
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    var cell3 = row.insertCell(2);
+            var prayerDiv = document.createElement('div');
+            prayerDiv.classList.add('prayerTime');
 
-                    cell1.innerHTML = prayer;
-                    cell2.innerHTML = hours + ':' + (minutes < 10 ? '0' : '') + minutes;
+            var prayerNameHeading = document.createElement('h2'); // Создаем элемент h2 для имени намаза
+            prayerNameHeading.classList.add('prayerName');
+            prayerNameHeading.textContent = prayer;
 
-                    // Проверяем, наступил ли намаз
-                    if (currentTimeInMinutes > timeInMinutes) {
-                        cell2.classList.add('pastPrayer'); // Добавляем стиль для прошедшего намаза
-                        cell2.classList.add('pastPrayerText'); // Добавляем стиль для текста прошедшего намаза
-                    } else if (!nextPrayerFound) { // Если следующий намаз еще не найден
-                        cell2.classList.add('nextPrayer'); // Добавляем стиль для следующего намаза
-                        nextPrayerFound = true; // Устанавливаем флаг следующего намаза
+            var prayerTimeHeading = document.createElement('h3'); // Создаем элемент h3 для времени намаза
+            prayerTimeHeading.classList.add('prayerTime');
+            prayerTimeHeading.textContent = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
 
-                        // Рассчитываем оставшееся время до следующего намаза
-                        var remainingMinutes = timeInMinutes - currentTimeInMinutes;
-                        var hours = Math.floor(remainingMinutes / 60);
-                        var minutes = remainingMinutes % 60;
 
-                        cell3.innerHTML = '<span class="remainingTime">' + hours + ':' + (minutes < 10 ? '0' : '') + minutes + '</span>';
-                    }
-                }
-            });
+            prayerDiv.appendChild(prayerNameHeading); // Добавляем h2 в блок намаза
+            prayerDiv.appendChild(prayerTimeHeading); // Добавляем h3 в блок намаза
+
+            // Проверяем, наступил ли намаз
+            if (currentTimeInMinutes > timeInMinutes) {
+                prayerDiv.classList.add('pastPrayer'); // Добавляем стиль для прошедшего намаза
+            } else if (!nextPrayerFound) { // Если следующий намаз еще не найден
+                prayerDiv.classList.add('nextPrayer'); // Добавляем стиль для следующего намаза
+                nextPrayerFound = true; // Устанавливаем флаг следующего намаза
+
+                // Рассчитываем оставшееся время до следующего намаза
+                var remainingMinutes = timeInMinutes - currentTimeInMinutes;
+                var remainingHours = Math.floor(remainingMinutes / 60);
+                remainingMinutes = remainingMinutes % 60;
+
+                var remainingTimeHeading = document.createElement('h4'); // Создаем элемент h4 для оставшегося времени
+remainingTimeHeading.classList.add('remainingTime');
+remainingTimeHeading.textContent = 'До ' + prayer + ': ' + remainingHours.toString().padStart(2, '0') + ':' + remainingMinutes.toString().padStart(2, '0');
+
+
+
+                prayerDiv.appendChild(remainingTimeHeading); // Добавляем h4 с оставшимся временем и именем намаза в блок намаза
+            }
+
+            prayerTimesContainer.appendChild(prayerDiv); // Добавляем блок намаза в контейнер
         }
+    });
+}
+
+
+
 
         // Вызываем функцию обновления времени каждую секунду
         setInterval(updateRemainingTime, 1000); // Обновляем каждую секунду (1000 миллисекунд = 1 секунда)
 
-        // Инициализируем таблицу при загрузке страницы
+        // Инициализируем контейнер при загрузке страницы
         updateRemainingTime();
+
     });

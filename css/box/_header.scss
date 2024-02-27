@@ -1,0 +1,29 @@
+.header {
+    position: relative;
+    height: 60px;
+    z-index: 1;
+}
+
+.name_loc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background-color: var(--header-bg);
+    width: 100vw;
+    min-width: 320px;
+    height: 60px;
+    padding: 0 15px;
+
+    h1 {
+        font-size: 3em;
+        font-weight: bold;
+        color: var(--header-name);
+    }
+
+    p {
+        font-size: 1.3em;
+        color: var(--header-loc);
+        padding-top: 7px;
+    }
+}

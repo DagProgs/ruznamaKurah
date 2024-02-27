@@ -22,11 +22,19 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "b97d3f51e877916a84cf9db3cb86305b"
+    "revision": "e181ba58d14391e980060723fd0f88d1"
   },
   {
     "url": "css/style.css",
-    "revision": "ebb004bbd37e00ce94b13480feee5235"
+    "revision": "992d856512ac712c923c5c7946350dea"
+  },
+  {
+    "url": "js/calendar-ar.js",
+    "revision": "790de1c604a960ccc70590a5fc696826"
+  },
+  {
+    "url": "js/calendar-ru.js",
+    "revision": "8e7fb887a9786a6d6cd22bed0de4eb38"
   },
   {
     "url": "js/clock.js",
@@ -34,19 +42,23 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/day.js",
-    "revision": "d7c54d0029b7bea0321a25361c6063fe"
+    "revision": "35372a5fcf2b0c96be7ea2b0eb945e6a"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
     "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
   },
   {
+    "url": "js/juma-mubarak.js",
+    "revision": "bf6b46d397a19573abcef5c5db60b9bf"
+  },
+  {
     "url": "js/mounth.js",
     "revision": "69716f6c1acee654d1c35c140b138a43"
   },
   {
-    "url": "js/subheader.js",
-    "revision": "12562a80ae5685a86ca2b50acf2a9ead"
+    "url": "js/week-ru.js",
+    "revision": "220fd31e12154c99a2ced57457b51d85"
   },
   {
     "url": "js/json/prayer-times.json",
