@@ -34,7 +34,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/day.js",
-    "revision": "c49e4abea39c2028b1a0e23bad0c3a4e"
+    "revision": "9f0c887109cbf386706fa17849e782c9"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
@@ -47,10 +47,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/subheader.js",
     "revision": "12562a80ae5685a86ca2b50acf2a9ead"
-  },
-  {
-    "url": "js/json/prayer-times-ru.json",
-    "revision": "7c390f494ba5bc0b34f432c6f58bb51d"
   },
   {
     "url": "js/json/prayer-times.json",

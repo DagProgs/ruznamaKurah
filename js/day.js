@@ -1,5 +1,4 @@
-// Загружаем данные о временах намазов из JSON-файла
-fetch('js/json/prayer-times-ru.json')
+fetch('js/json/prayer-times.json')
     .then(response => response.json())
     .then(data => {
 
@@ -10,22 +9,33 @@ fetch('js/json/prayer-times-ru.json')
 
         // Заполняем массив порядком намазов
         prayerOrder.push("Фаджр");
-        prayerOrder.push("Шурук");
+        prayerOrder.push("Восх");
         prayerOrder.push("Зухр");
         prayerOrder.push("Аср");
         prayerOrder.push("Магриб");
         prayerOrder.push("Иша");
+
+        // Создаем объект отображения переименованных названий намазов
+        var prayerNameMap = {
+            "Фаджр": "Fajr",
+            "Восх": "Sunrise",
+            "Зухр": "Dhuhr",
+            "Аср": "Asr",
+            "Магриб": "Maghrib",
+            "Иша": "Isha"
+        };
+
         var currentTime = new Date();
         var currentMonth = currentTime.getMonth() + 1; // Месяцы в JavaScript начинаются с 0
         var currentDate = currentTime.getDate();
-
         var currentTimeInMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
-
         var prayerTimesInMinutes = {};
+
         if (prayerTimes[currentMonth] && prayerTimes[currentMonth][currentDate]) {
             prayerOrder.forEach(function (prayer) {
-                if (prayerTimes[currentMonth][currentDate][prayer]) {
-                    prayerTimesInMinutes[prayer] = prayerTimes[currentMonth][currentDate][prayer][0] * 60 + prayerTimes[currentMonth][currentDate][prayer][1];
+                var originalName = prayerNameMap[prayer];
+                if (originalName && prayerTimes[currentMonth][currentDate][originalName]) {
+                    prayerTimesInMinutes[prayer] = prayerTimes[currentMonth][currentDate][originalName][0] * 60 + prayerTimes[currentMonth][currentDate][originalName][1];
                 }
             });
         }
@@ -38,13 +48,14 @@ fetch('js/json/prayer-times-ru.json')
         nextDay.setHours(0, 0, 0, 0);
         var nextDayInMinutes = nextDay.getHours() * 60 + nextDay.getMinutes();
 
-        if (currentTimeInMinutes > prayerTimesInMinutes.Maghrib) {
+        if (currentTimeInMinutes > prayerTimesInMinutes["Магриб"]) {
             // Используем первый намаз следующего дня
             var nextDayPrayerTimes = prayerTimes[currentMonth][currentDate + 1];
             if (nextDayPrayerTimes) {
                 prayerOrder.forEach(function (prayer) {
-                    if (nextDayPrayerTimes[prayer]) {
-                        prayerTimesInMinutes[prayer] = nextDayPrayerTimes[prayer][0] * 60 + nextDayPrayerTimes[prayer][1];
+                    var originalName = prayerNameMap[prayer];
+                    if (originalName && nextDayPrayerTimes[originalName]) {
+                        prayerTimesInMinutes[prayer] = nextDayPrayerTimes[originalName][0] * 60 + nextDayPrayerTimes[originalName][1];
                     }
                 });
             }
