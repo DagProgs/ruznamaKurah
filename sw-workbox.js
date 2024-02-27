@@ -34,7 +34,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/day.js",
-    "revision": "9f0c887109cbf386706fa17849e782c9"
+    "revision": "d7c54d0029b7bea0321a25361c6063fe"
   },
   {
     "url": "js/jquery-3.6.0.min.js",

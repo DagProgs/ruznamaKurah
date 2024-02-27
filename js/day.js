@@ -9,7 +9,7 @@ fetch('js/json/prayer-times.json')
 
         // Заполняем массив порядком намазов
         prayerOrder.push("Фаджр");
-        prayerOrder.push("Восх");
+        prayerOrder.push("Шурук");
         prayerOrder.push("Зухр");
         prayerOrder.push("Аср");
         prayerOrder.push("Магриб");
@@ -18,7 +18,7 @@ fetch('js/json/prayer-times.json')
         // Создаем объект отображения переименованных названий намазов
         var prayerNameMap = {
             "Фаджр": "Fajr",
-            "Восх": "Sunrise",
+            "Шурук": "Sunrise",
             "Зухр": "Dhuhr",
             "Аср": "Asr",
             "Магриб": "Maghrib",
