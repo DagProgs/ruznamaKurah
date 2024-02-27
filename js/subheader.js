@@ -124,14 +124,9 @@ $('.hijri-date').hijriDate({
 });
 
 //day
-if (thisyear < 2000)
-    thisyear = thisyear + 1900;
-if (day == 1) DayofWeek = "Воскресенье";
-if (day == 2) DayofWeek = "Понедельник";
-if (day == 3) DayofWeek = "Вторник";
-if (day == 4) DayofWeek = "Среда";
-if (day == 5) DayofWeek = "Четверг";
-if (day == 6) DayofWeek = "Пятница";
-if (day == 7) DayofWeek = "Суббота";
+var day = new Date().getDay(); // Получаем текущий день недели (0 - Воскресенье, 1 - Понедельник, и т.д.)
+var daysOfWeek = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+var DayofWeek = daysOfWeek[day];
 
-document.getElementById("days").innerHTML = (DayofWeek + " ");
+document.getElementById("days").innerHTML = DayofWeek + " ";
+
