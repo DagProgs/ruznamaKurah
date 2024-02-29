@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "d711f490f9d0e6c9e0c22f945ca13f77"
+    "revision": "23ce58475484ae72a7e4e195d7542f52"
   },
   {
     "url": "css/style.css",
@@ -45,6 +45,18 @@ workbox.precaching.precacheAndRoute([
     "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
   },
   {
+    "url": "js/prayer-times-day.js",
+    "revision": "d6f92eb7cdc124fd8dabd30b85f6ed27"
+  },
+  {
+    "url": "js/prayer-times-mounth.js",
+    "revision": "33471f2a113a80acf05f085b84674ef9"
+  },
+  {
+    "url": "js/json/prayer-times.json",
+    "revision": "fa29c9bf6a50f842418b4f0c6a632167"
+  },
+  {
     "url": "main.js",
     "revision": "80846bb3403b82a07c7f84658f186b23"
   },
@@ -58,7 +70,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "ee68643a2ad1cb72c4e209652781e578"
+    "revision": "818f682f702fff52c18507baf4e42433"
   },
   {
     "url": "assets/icons/icon-128x128.png",
