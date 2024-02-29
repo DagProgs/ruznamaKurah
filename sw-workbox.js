@@ -46,11 +46,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/prayer-times-day.js",
-    "revision": "d6f92eb7cdc124fd8dabd30b85f6ed27"
+    "revision": "22348890739332930dd7da3da5344488"
   },
   {
     "url": "js/prayer-times-mounth.js",
-    "revision": "33471f2a113a80acf05f085b84674ef9"
+    "revision": "69716f6c1acee654d1c35c140b138a43"
   },
   {
     "url": "js/json/prayer-times.json",
@@ -70,7 +70,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "818f682f702fff52c18507baf4e42433"
+    "revision": "792dae3a91b3c47b595f7867719e555f"
   },
   {
     "url": "assets/icons/icon-128x128.png",

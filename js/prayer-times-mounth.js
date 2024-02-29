@@ -8,7 +8,7 @@ function getCurrentMonth() {
     return currentDate.getMonth() + 1;
 }
 
-fetch('json/prayer-times.json')
+fetch('js/json/prayer-times.json')
     .then(response => response.json())
     .then(data => {
         prayerTimes = data;
