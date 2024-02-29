@@ -42,4 +42,11 @@ switch (date.getDay()) {
     break;
 }
 
+document.getElementById("ru-day").innerHTML = (day);
+document.getElementById("ru-mounth").innerHTML = (thisMonth);
+document.getElementById("ru-year").innerHTML = (thisYear + " г");
+document.getElementById("ru-week").innerHTML = (dayOfWeek);
+
+/*
 document.getElementById("ru-date").innerHTML = (day + " " + thisMonth + " " + thisYear + " г");
+*/
