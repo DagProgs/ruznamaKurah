@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "23ce58475484ae72a7e4e195d7542f52"
+    "revision": "578acb9919149bed12da534f1a10eeb1"
   },
   {
     "url": "css/style.css",
-    "revision": "131e787008a7cf5d5a4878b5b75df2b7"
+    "revision": "de558aa2cc959c514c7053f0140110bd"
   },
   {
     "url": "js/calendar-ar.js",
@@ -70,7 +70,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "792dae3a91b3c47b595f7867719e555f"
+    "revision": "40570de78aea4921dfa6460c178dd1ed"
   },
   {
     "url": "assets/icons/icon-128x128.png",

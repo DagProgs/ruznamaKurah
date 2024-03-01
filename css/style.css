@@ -272,8 +272,11 @@ body {
 .text_prayer_times p {
   padding: 3px 0 5px;
   color: #6d8ddd;
-  border-bottom: 1px solid #6d8ddd;
   font-size: 0.7em;
+}
+
+.text_prayer_times h2:nth-child(3) {
+  border-bottom: 1px solid #6d8ddd;
 }
 
 .text_prayer_times h2:last-child {
