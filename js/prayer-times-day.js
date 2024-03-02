@@ -48,7 +48,7 @@ fetch('js/json/prayer-times.json')
 
         if (currentTimeInMinutes > prayerTimesInMinutes["Магриб"]) {
             // Используем первый намаз следующего дня
-            var nextDayPrayerTimes = prayerTimes[currentMonth][currentDate + 1];
+            var nextDayPrayerTimes = prayerTimes[currentMonth][currentDate + 0];
             if (nextDayPrayerTimes) {
                 prayerOrder.forEach(function (prayer) {
                     var originalName = prayerNameMap[prayer];
