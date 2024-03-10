@@ -22,11 +22,23 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "578acb9919149bed12da534f1a10eeb1"
+    "revision": "3ffcbf979677b055f5069e94fb9c5d28"
+  },
+  {
+    "url": "main.js",
+    "revision": "80846bb3403b82a07c7f84658f186b23"
+  },
+  {
+    "url": "polyfills.js",
+    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
+  },
+  {
+    "url": "runtime.js",
+    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
   },
   {
     "url": "css/style.css",
-    "revision": "de558aa2cc959c514c7053f0140110bd"
+    "revision": "4c68bc30028d590e60d0ffe42ef213d1"
   },
   {
     "url": "js/calendar-ar.js",
@@ -53,24 +65,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "69716f6c1acee654d1c35c140b138a43"
   },
   {
-    "url": "js/json/prayer-times.json",
-    "revision": "fa29c9bf6a50f842418b4f0c6a632167"
-  },
-  {
-    "url": "main.js",
-    "revision": "80846bb3403b82a07c7f84658f186b23"
-  },
-  {
-    "url": "polyfills.js",
-    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
-  },
-  {
-    "url": "runtime.js",
-    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
-  },
-  {
     "url": "manifest.json",
-    "revision": "f15b5af59b88d6f38d936952fafde207"
+    "revision": "fff1cdcc3487fd73a4a3923456563fa8"
   },
   {
     "url": "assets/icons/icon-128x128.png",
