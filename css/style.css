@@ -1,7 +1,11 @@
 :root {
   --bg-h: #eef5ff;
+  --text-h: #0c8d42;
+  /* 
   --text-h: #252e49;
-  --bg: #252e49;
+  --bg: #252e49; 
+  */
+  --bg: #0c8d42;
   --text: #eef5ff;
 }
 
@@ -377,4 +381,11 @@ table tr td {
   text-align: center;
   padding: 5px 1px;
   border: 0px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.ramadan {
+  position: absolute;
+  left: 105px;
+  top: 30px;
+  width: 80px;
+}
