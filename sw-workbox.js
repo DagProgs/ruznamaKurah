@@ -65,8 +65,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "69716f6c1acee654d1c35c140b138a43"
   },
   {
+    "url": "js/json/prayer-times.json",
+    "revision": "fa29c9bf6a50f842418b4f0c6a632167"
+  },
+  {
     "url": "manifest.json",
-    "revision": "e6408d7c36396e1ae2abed1bdb87c14a"
+    "revision": "f62adc1692ccc897214b660da84d1b22"
   },
   {
     "url": "img/hiasan.png",
