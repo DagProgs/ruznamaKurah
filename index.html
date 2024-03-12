@@ -194,29 +194,34 @@
         <tbody id="prayerTimesTableBody"></tbody>
     </table>
     <p id="currentMonth"></p>
-	 
+	 <script>
+    // Проверяем user-agent на наличие iPhone
+    if (navigator.userAgent.match(/iPhone/i)) {
+      // Перенаправляем пользователя на страницу с инструкциями
+      window.location.href = 'instr.html';
+    }
+  </script>
     <script type="module">
+    import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
 
-        import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
+    if ('serviceWorker' in navigator) {
 
-        if ('serviceWorker' in navigator) {
+        const wb = new Workbox('sw-workbox.js');
 
-            const wb = new Workbox('sw-workbox.js');
-
-            wb.addEventListener('installed', event => {
-                if (event.isUpdate) {
-                    if (confirm(`Мы только что обновили версию приложения! Чтобы получить обновления, нажмите на кнопку OK.`)) {
-                        window.location.reload();
-                    }
-                } else {
-                    alert(`Приложение готово к работе в автономном режиме`)
+        wb.addEventListener('installed', event => {
+            if (event.isUpdate) {
+                if (confirm(`Мы только что обновили версию приложения! Чтобы получить обновления, нажмите на кнопку OK.`)) {
+                    window.location.reload();
                 }
-            });
+            } else {
+                alert(`Приложение готово к работе в автономном режиме`);
+            }
+        });
 
-            wb.register();
-        }
+        wb.register();
+    }
 
-    </script>
+</script>
 
 
     <!-- Yandex.Metrika counter -->

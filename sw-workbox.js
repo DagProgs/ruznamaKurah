@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "8aa2b8a6eec450d721fbcf76a0229193"
+    "revision": "fef163dcf7b724367ca4f5799aad03fe"
   },
   {
     "url": "main.js",
@@ -38,7 +38,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "e94ee5eeefc1227ac3788bd71163d901"
+    "revision": "49d5fd0997804a02fc05964bb83b5ab8"
   },
   {
     "url": "js/calendar-ar.js",
@@ -70,7 +70,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "52e6be2893f0d44db5ea4b828135b7e7"
+    "revision": "b37f9173cfb735ded5d7235af57905d2"
   },
   {
     "url": "img/hiasan.png",
