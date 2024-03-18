@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "92c964d631345b6c373732730ad6f14a"
+    "revision": "1f1c60bdbd5f9e0ce4e3481f5dc5d619"
   },
   {
     "url": "main.js",
@@ -66,7 +66,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "59ed75f40c9e073795ab87246fb36bd4"
+    "revision": "a2b7684c82852df4ade8f0be4e90882a"
   },
   {
     "url": "img/ramadan.png",
@@ -74,7 +74,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "030740c74f0dd396a508cd505cb4c715"
+    "revision": "c80eebf7a1c09c4449d3c6d32031ad6e"
   },
   {
     "url": "assets/icons/icon-128x128.png",

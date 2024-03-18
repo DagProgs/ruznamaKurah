@@ -125,12 +125,22 @@ body {
 }
 
 .happy {
-  background-image: url(../../img/ramadan.png);
+  background-image: url(../img/ramadan.png);
   background-size: 120px;
   background-position: 150px -25px;
   background-repeat: no-repeat;
+  animation: happy 10s ease-in-out;
+  z-index: 10;
 }
 
+@keyframes happy {
+  0% {
+    background-position: 150px -100px;
+  }
+  30% {
+    background-position: 150px -25px;
+  }
+}
 .name_ruznama {
   font-size: 28px;
   font-weight: bold;
@@ -389,4 +399,4 @@ table tr td {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-}/*# sourceMappingURL=style.css.map */
+}
