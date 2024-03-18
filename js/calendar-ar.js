@@ -73,9 +73,9 @@ function hijriDate(a = {}) {
     const thisYear = f.year;
     const dayOfWeek = t.toLocaleDateString(r.weekDayLang, { weekday: 'long' });
 
-    document.getElementById("day").innerHTML = day;
-    document.getElementById("month").innerHTML = monthText;
-    document.getElementById("year").innerHTML = thisYear + " г";
+    document.getElementById("ar-day").innerHTML = day;
+    document.getElementById("ar-mounth").innerHTML = monthText;
+    document.getElementById("ar-year").innerHTML = thisYear + " г";
 }
 
 hijriDate({

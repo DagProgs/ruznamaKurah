@@ -22,31 +22,19 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "9ced5d8f2bf23d7c318a992fc7b99a0e"
+    "revision": "b03089e9dcf7b9fdc34078e16d31e763"
   },
   {
     "url": "main.js",
-    "revision": "80846bb3403b82a07c7f84658f186b23"
-  },
-  {
-    "url": "polyfills.js",
-    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
-  },
-  {
-    "url": "runtime.js",
-    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
-  },
-  {
-    "url": "css/style.css",
-    "revision": "6852fbd87ffa770dd336266497d92126"
+    "revision": "2676aa2c3d7a9eb04f238bf700c3c7d3"
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "0308116b10155dbd32f49b3e5184cd43"
+    "revision": "354b6295d66a7a9fb054ee57f3c7001a"
   },
   {
     "url": "js/calendar-ru.js",
-    "revision": "21f8150a08ce439bbb79a233c8db580e"
+    "revision": "a00564cbe2169a01b57b03b148cfb6fa"
   },
   {
     "url": "js/clock.js",
@@ -57,24 +45,36 @@ workbox.precaching.precacheAndRoute([
     "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
   },
   {
-    "url": "js/prayer-times-day.js",
-    "revision": "fbe510733a84e039e747d6dbbb70e605"
+    "url": "js/line-timer.js",
+    "revision": "b3305349138e5e3c0fbabc094f3e8a8d"
   },
   {
-    "url": "js/prayer-times-mounth.js",
-    "revision": "69716f6c1acee654d1c35c140b138a43"
+    "url": "js/prayer-days.js",
+    "revision": "70fe03d94140ba637b638ad0545f9058"
+  },
+  {
+    "url": "js/prayer-times-mounths.js",
+    "revision": "7ed9d0e8bc6545156595e8fbd36cd55c"
+  },
+  {
+    "url": "js/pwacompat.min.js",
+    "revision": "0bf1bea41b1ba758d3989814c988f46e"
   },
   {
     "url": "js/json/prayer-times.json",
     "revision": "fa29c9bf6a50f842418b4f0c6a632167"
   },
   {
-    "url": "manifest.json",
-    "revision": "52e6be2893f0d44db5ea4b828135b7e7"
+    "url": "css/style.css",
+    "revision": "d87b340041014019a763d1c9f66ca662"
   },
   {
-    "url": "img/hiasan.png",
+    "url": "img/ramadan.png",
     "revision": "68a642d1aa582d801540584db10abe19"
+  },
+  {
+    "url": "manifest.json",
+    "revision": "00b87749c3cad08e21b33265f4434c01"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -124,18 +124,6 @@ workbox.routing.registerRoute(
     ]
   })
 );
-
-// API with network-first strategy
-workbox.routing.registerRoute(
-  /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
-  workbox.strategies.networkFirst()
-)
-
-// API with cache-first strategy
-workbox.routing.registerRoute(
-  /(http[s]?:\/\/)?([^\/\s]+\/)favorites/,
-  workbox.strategies.cacheFirst()
-)
 
 // OTHER EVENTS
 

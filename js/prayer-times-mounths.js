@@ -22,7 +22,7 @@ function updatePrayerTimesTable() {
     var currentMonth = currentDate.getMonth() + 1;
 
     // Отобразить текущий месяц
-    document.getElementById("currentMonth").textContent = "Current Month: " + currentMonth;
+    document.getElementById("currentMonth").textContent = "Месяц: " + currentMonth;
 
     var currentDay = currentDate.getDate();
 

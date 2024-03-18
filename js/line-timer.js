@@ -71,53 +71,6 @@ fetch('js/json/prayer-times.json')
             }
         }
 
-        // Вывод времени каждого намаза
-        prayerOrder.forEach(function (prayer) {
-            var timeInMinutes = prayerTimesInMinutes[prayer];
-            if (timeInMinutes !== undefined) {
-                var hours = Math.floor(timeInMinutes / 60);
-                var minutes = timeInMinutes % 60;
-
-                var prayerTimeFormatted = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
-
-                // Вставляем время намаза в соответствующий элемент HTML
-                var prayerElementId;
-                switch (prayer) {
-                    case "Фаджр":
-                        prayerElementId = "fajrprayerTimes";
-                        break;
-                    case "Шурук":
-                        prayerElementId = "sunriseprayerTimes";
-                        break;
-                    case "Зухр":
-                        prayerElementId = "dhuhrprayerTimes";
-                        break;
-                    case "Аср":
-                        prayerElementId = "asrprayerTimes";
-                        break;
-                    case "Магриб":
-                        prayerElementId = "maghribprayerTimes";
-                        break;
-                    case "Иша":
-                        prayerElementId = "ishaprayerTimes";
-                        break;
-                    default:
-                        break;
-                }
-
-                var prayerElement = document.getElementById(prayerElementId);
-                if (prayerElement) {
-                    prayerElement.innerHTML = prayerTimeFormatted;
-
-                    if (currentTimeInMinutes >= timeInMinutes) {
-                        prayerElement.classList.add("past-prayer"); // Добавляем класс, указывающий на прошедший намаз
-                    } else {
-                        prayerElement.classList.add("next-prayer");
-                    }
-                }
-            }
-        });
-
 
         function updateRemainingTime() {
             var currentTime = new Date();
@@ -157,7 +110,7 @@ fetch('js/json/prayer-times.json')
                     totalPrayerTimeInMinutes = prayerTimesInMinutes[nextPrayer] - prayerTimesInMinutes[prayerOrder[prayerOrder.indexOf(nextPrayer) - 1]];
                 }
         
-                timeToNextPrayerElement.textContent = 'До ' + nextPrayer + 'а ' + remainingTime;
+                timeToNextPrayerElement.textContent = 'Осталось до ' + nextPrayer + 'а - ' + remainingTime;
                 var remainingPercentage = (minTimeDifference / totalPrayerTimeInMinutes) * 100;
                 redLine.style.width = (100 - remainingPercentage) + '%';
         
