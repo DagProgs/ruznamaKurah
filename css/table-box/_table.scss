@@ -1,0 +1,33 @@
+table {
+    width: 100vw;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+  }
+  
+  .stici {
+    background-color: #eef5ff;
+    position: sticky;
+    top: 59px;
+  }
+  
+  .current-day-cell {
+    background-color: #252e49;
+    color: #ffffff;
+  }
+  
+  table tr th {
+    font-size: calc(2vw + 6px);
+    padding: 10px 2px;
+    color: #252e49;
+  }
+  
+  table tr td {
+    font-size: calc(3vw + 2px);
+    text-align: center;
+    padding: 5px 1px;
+    border: 0px;
+  }

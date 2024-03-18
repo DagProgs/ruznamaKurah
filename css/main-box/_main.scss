@@ -1,0 +1,22 @@
+.main {
+    position: relative;
+}
+
+.main_container {
+    position: absolute;
+}
+
+.main_container_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    min-width: 320px;
+    height: 70px;
+    padding: 0 15px;
+    border-bottom: 1px solid var(--main-border-bottom);
+}
+
+.main_container_name_descr {
+    padding: 0 10px;
+}

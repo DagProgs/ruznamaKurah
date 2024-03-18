@@ -1,0 +1,14 @@
+.subheader_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    min-width: 320px;
+    height: 120px;
+    padding: 0 15px;
+    background-color: var(--sub-bg);
+}
+
+.subheader_date_ru_ar {}
+
+.week_clock {}

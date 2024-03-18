@@ -1,0 +1,24 @@
+.header_container {
+    position: relative;
+    height: 60px;
+    z-index: 1;
+}
+
+.header_container_name_loc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+    min-width: 320px;
+    height: 70px;
+    padding: 0 15px;
+    background-color: var(--bg);
+}
+
+.happy {
+    background-image: url(../../img/ramadan.png);
+    background-size: 120px;
+    background-position: 150px -25px;
+    background-repeat: no-repeat;
+}

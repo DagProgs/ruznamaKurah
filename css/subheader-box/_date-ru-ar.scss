@@ -1,0 +1,39 @@
+.subheader_date {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.subheader_day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: var(--sub-circle);
+    width: 30px;
+    height: 30px;
+}
+
+.day, 
+.mounth,
+.year {
+    color: var(--sub-text);
+}
+
+.day {
+    font-size: 15px;
+    color: #fff;
+}
+
+.subheader_mounth_year {
+    padding-left: 10px;
+}
+
+.mounth {
+    font-size: 20px;
+}
+
+.year {
+    font-size: 15px;
+    font-weight: bold;
+}

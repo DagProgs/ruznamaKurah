@@ -1,0 +1,28 @@
+.timeToNextPrayerContainer {
+    height: 32px;
+    background-color: var(--line-timer-bg);
+}
+
+.next_prayer_times {
+    display: flex;
+    justify-content: center;
+    padding:  5px 0;
+    font-size: 16px;
+    color: var(--line-timer-text);
+}
+
+.myline {
+    display: flex;
+    align-items: center;
+    height: 2px;
+    background-color: var(--line-timer-line);
+    margin-top: 3px;
+}
+
+#redLine {
+    height: 2px;
+    background-color: var(--line-timer-line-anim);
+    transition: width 1s linear;
+}
+
+.redline {}

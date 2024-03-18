@@ -1,0 +1,26 @@
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    border-top: 1px solid #252e49;
+    width: 100%;
+    height: 50px;
+    color: #252e49;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+option {
+    background-color: #252e49;
+    color: #eef5ff;
+    font-size: 0.6em;
+    border: 0px;
+    outline: 0px;
+}
+
+.listmounth {
+    background-color: #eef5ff;
+}
