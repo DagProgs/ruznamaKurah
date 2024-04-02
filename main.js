@@ -1,4 +1,4 @@
-import { Workbox } from './workbox-v4.3.0/workbox-window.prod.mjs';
+import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
 
 if (!localStorage.getItem('appInstalled') && !window.matchMedia('(display-mode: standalone)').matches && /iPhone|iPod/i.test(navigator.userAgent)) {
     // Открываем модальное окно только на устройствах iPhone

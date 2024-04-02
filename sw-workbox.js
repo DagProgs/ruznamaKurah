@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "1158e0a80e5e5d520d027f8a4a405776"
+    "revision": "a806ffda77af6c2434e897317ef10268"
   },
   {
-    "url": "main.js",
-    "revision": "2676aa2c3d7a9eb04f238bf700c3c7d3"
+    "url": "manifest.json",
+    "revision": "1bb63f3c36189e8d4047566099d3a4ee"
   },
   {
     "url": "js/calendar-ar.js",
@@ -58,23 +58,19 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/pwacompat.min.js",
-    "revision": "0bf1bea41b1ba758d3989814c988f46e"
-  },
-  {
-    "url": "js/json/prayer-times.json",
-    "revision": "fa29c9bf6a50f842418b4f0c6a632167"
+    "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
   },
   {
     "url": "css/style.css",
-    "revision": "a2b7684c82852df4ade8f0be4e90882a"
+    "revision": "216600c441ddbcb5c532c38ed5674e0b"
+  },
+  {
+    "url": "main.js",
+    "revision": "755cf300bbc0abb0f7505885990dee69"
   },
   {
     "url": "img/ramadan.png",
     "revision": "68a642d1aa582d801540584db10abe19"
-  },
-  {
-    "url": "manifest.json",
-    "revision": "a911d74a76bb023b483657b8037a3b7b"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -124,8 +120,6 @@ workbox.routing.registerRoute(
     ]
   })
 );
-
-// OTHER EVENTS
 
 // Receive push and show a notification
 self.addEventListener('push', function(event) {
