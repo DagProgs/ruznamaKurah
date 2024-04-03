@@ -26,7 +26,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "43ee2343c22a5e734d20c39e4a4594f5"
+    "revision": "c4d4dc4b04c6b4b5f60cf9435bc5bfb6"
   },
   {
     "url": "js/calendar-ar.js",
@@ -59,6 +59,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/pwacompat.min.js",
     "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
+  },
+  {
+    "url": "js/json/prayer-times.json",
+    "revision": "fa29c9bf6a50f842418b4f0c6a632167"
   },
   {
     "url": "css/style.css",
