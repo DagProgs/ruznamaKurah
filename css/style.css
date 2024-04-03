@@ -10,7 +10,9 @@
   box-sizing: border-box;
 }
 
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   text-decoration: none;
 }
 
@@ -18,16 +20,28 @@ a:hover {
   text-decoration: none;
 }
 
-aside, nav, footer, header, section, main {
+aside,
+nav,
+footer,
+header,
+section,
+main {
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-size: inherit;
   font-weight: inherit;
 }
 
-ul, ul li {
+ul,
+ul li {
   list-style: none;
 }
 
@@ -35,7 +49,8 @@ img {
   vertical-align: top;
 }
 
-img, svg {
+img,
+svg {
   max-width: 100%;
   height: auto;
 }
@@ -44,7 +59,10 @@ address {
   font-style: normal;
 }
 
-input, textarea, button, select {
+input,
+textarea,
+button,
+select {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -55,7 +73,8 @@ input::-ms-clear {
   display: none;
 }
 
-button, input[type=submit] {
+button,
+input[type=submit] {
   display: inline-block;
   box-shadow: none;
   background-color: transparent;
@@ -63,8 +82,10 @@ button, input[type=submit] {
   cursor: pointer;
 }
 
-input:focus, input:active,
-button:focus, button:active {
+input:focus,
+input:active,
+button:focus,
+button:active {
   outline: none;
 }
 
@@ -137,10 +158,12 @@ body {
   0% {
     background-position: 150px -100px;
   }
+
   30% {
     background-position: 150px -25px;
   }
 }
+
 .name_ruznama {
   font-size: 28px;
   font-weight: bold;
@@ -400,3 +423,49 @@ table tr td {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Реклама */
+
+.popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f1f1f1;
+  padding: 15px;
+  border: 1px solid #ccc;
+  z-index: 10;
+}
+
+#closeBtn {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.imgp {
+  width: 100vw;
+  height: 100vh;
+}
+
+.imgpopup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closebtn {
+  font-size: 20px;
+  color: #b94343;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Конец Рекламы */

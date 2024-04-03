@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "634ba530b501264dbf85e839abe8f0ed"
+    "revision": "c066269adcb7532cf59a10611e579199"
   },
   {
     "url": "manifest.json",
-    "revision": "c4d4dc4b04c6b4b5f60cf9435bc5bfb6"
+    "revision": "1fb20df2f81dd05b47206d96125a7d1d"
   },
   {
     "url": "js/calendar-ar.js",
@@ -66,27 +66,19 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "216600c441ddbcb5c532c38ed5674e0b"
+    "revision": "0d637d4d77a94d31b632cb683664ae29"
   },
   {
     "url": "main.js",
-    "revision": "80846bb3403b82a07c7f84658f186b23"
-  },
-  {
-    "url": "polyfills.js",
-    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
-  },
-  {
-    "url": "runtime.js",
-    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
-  },
-  {
-    "url": "smain.js",
     "revision": "755cf300bbc0abb0f7505885990dee69"
   },
   {
     "url": "img/ramadan.png",
     "revision": "68a642d1aa582d801540584db10abe19"
+  },
+  {
+    "url": "img/photo.jpg",
+    "revision": "5105452b4fe535b2c1e598fd265200b2"
   },
   {
     "url": "assets/icons/icon-128x128.png",
