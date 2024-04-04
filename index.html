@@ -197,32 +197,6 @@
         </div>
     </div>
 
-
-    <!-- Реклама -->
-    <div class="popup" id="popup">
-        <div class="imgp">
-            <img src="img/photo.jpg" alt="" class="imgpopup">
-        </div>
-        <button id="closeBtn" class="closebtn">Закрыть</button>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const popup = document.getElementById("popup");
-
-            if (localStorage.getItem("popupShown") === null) {
-                popup.style.display = "block";
-                localStorage.setItem("popupShown", "true");
-            }
-
-            document.getElementById("closeBtn").addEventListener("click", function () {
-                popup.style.display = "none";
-            });
-        });
-    </script>
-    <!-- Конец Рекламы -->
-
-
     <script src="js/calendar-ru.js"></script>
     <script src="js/calendar-ar.js"></script>
     <script src="js/clock.js"></script>

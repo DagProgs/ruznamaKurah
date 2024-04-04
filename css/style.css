@@ -148,7 +148,7 @@ body {
 .happy {
   background-image: url(../img/ramadan.png);
   background-size: 120px;
-  background-position: 150px -25px;
+  background-position: 150px -5px;
   background-repeat: no-repeat;
   animation: happy 10s ease-in-out;
   z-index: 10;
@@ -160,7 +160,7 @@ body {
   }
 
   30% {
-    background-position: 150px -25px;
+    background-position: 150px -5px;
   }
 }
 
@@ -423,49 +423,3 @@ table tr td {
   text-decoration: none;
   cursor: pointer;
 }
-
-/* Реклама */
-
-.popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #f1f1f1;
-  padding: 15px;
-  border: 1px solid #ccc;
-  z-index: 10;
-}
-
-#closeBtn {
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.imgp {
-  width: 100vw;
-  height: 100vh;
-}
-
-.imgpopup {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.closebtn {
-  font-size: 20px;
-  color: #b94343;
-  font-weight: bold;
-  text-transform: uppercase;
-  width: 100vw;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Конец Рекламы */
