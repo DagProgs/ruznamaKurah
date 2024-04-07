@@ -14,9 +14,6 @@
 </head>
 
 <body>
-    <button id="btnInstall" disabled style="position: absolute; top: 8px; left: 50px; z-index: 50; color: #fff; font-size: 10px;">
-        Установить
-    </button>
     <script type="text/javascript" src="runtime.js"></script>
     <script type="text/javascript" src="polyfills.js"></script>
     <script type="text/javascript" src="main.js"></script>
@@ -198,11 +195,13 @@
 
             wb.addEventListener('installed', event => {
                 if (event.isUpdate) {
-                    if (confirm(`New content is available!. Click OK to refresh`)) {
+                    if (confirm(`Мы только что обновили версию приложения! Чтобы получить обновления, нажмите на кнопку OK.`)) {
                         window.location.reload();
+                    } else {
+                        alert(`Вы отказались от обновления приложения. Для получения новых возможностей перезагрузите страницу в будущем.`);
                     }
                 } else {
-                    alert(`The app is offline-ready`)
+                    alert(`Приложение готово к работе в автономном режиме`);
                 }
             });
 
@@ -210,41 +209,49 @@
         }
 
     </script>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="Screen.png" alt="Add to Home Screen">
+            <p>Для лучшего опыта использования, установите приложение на вашем устройстве. Нажмите кнопку "1-Поделиться"
+                -
+                "2-Добавить на главный экран" - "3-Добавить".</p>
+        </div>
+    </div>
     <script>
-        window.addEventListener('beforeinstallprompt', event => {
-            console.log('beforeinstallprompt event was fired');
+        if (!localStorage.getItem('appInstalled') && !window.matchMedia('(display-mode: standalone)').matches && /iPhone|iPod/i.test(navigator.userAgent)) {
+            // Открываем модальное окно только на устройствах iPhone
+            document.getElementById('myModal').style.display = "block";
+            localStorage.setItem('appInstalled', 'true');
+        }
 
-            // Prevent Chrome <= 67 from automatically showing the prompt
-            event.preventDefault();
+        // Закрытие модального окна при нажатии на кнопку "Close"
+        document.getElementsByClassName("close")[0].onclick = function () {
+            document.getElementById('myModal').style.display = "none";
+        }
+    </script>
 
-            // Stash the event so it can be triggered later.
-            this.installPromptEvent = event;
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-            // Update the install UI to notify the user app can be installed
-            btnInstall.disabled = false;
-        });
-
-        btnInstall = document.querySelector('#btnInstall');
-
-        btnInstall.addEventListener('click', () => {
-            // Update the install UI to remove the install button
-            btnInstall.disabled = true;
-
-            // Show the modal add to home screen dialog
-            installPromptEvent.prompt();
-
-            // Wait for the user to respond to the prompt
-            installPromptEvent.userChoice.then(choice => {
-                if (choice.outcome === 'accepted') {
-                    console.log('User accepted the A2HS prompt');
-                } else {
-                    console.log('User dismissed the A2HS prompt');
-                }
-                // Clear the saved prompt since it can't be used again
-                installPromptEvent = null;
-            });
+        ym(92655412, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
         });
     </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 </body>
 
 </html>

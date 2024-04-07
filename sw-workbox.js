@@ -22,15 +22,15 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "3013482c5ceefde9e0ad5bbbe89e2a4e"
+    "revision": "399888f16a2d33d9cafd381af7c2a650"
   },
   {
     "url": "manifest.json",
-    "revision": "1d8e6204995f0e5b18defcb1949a91d7"
+    "revision": "ced1f59a26ff038a5a42c692dd01ed85"
   },
   {
     "url": "css/style.css",
-    "revision": "661be60f435733063e33d5145cd3cb6e"
+    "revision": "f3cdd1b7a297cb4136376ca388e213a2"
   },
   {
     "url": "js/calendar-ar.js",
