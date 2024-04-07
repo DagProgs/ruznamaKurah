@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "399888f16a2d33d9cafd381af7c2a650"
+    "revision": "051abca773254d472fd4eac230526e11"
   },
   {
     "url": "manifest.json",
-    "revision": "ced1f59a26ff038a5a42c692dd01ed85"
+    "revision": "284c5f8408ae74247df00ff41b56b06c"
   },
   {
     "url": "css/style.css",
@@ -95,18 +95,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "img/solat.png",
     "revision": "da087a1197c1d940c6d7791761635e87"
-  },
-  {
-    "url": "main.js",
-    "revision": "80846bb3403b82a07c7f84658f186b23"
-  },
-  {
-    "url": "polyfills.js",
-    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
-  },
-  {
-    "url": "runtime.js",
-    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
   },
   {
     "url": "assets/icons/icon-128x128.png",
