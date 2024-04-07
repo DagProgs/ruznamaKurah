@@ -10,9 +10,7 @@
   box-sizing: border-box;
 }
 
-a,
-a:link,
-a:visited {
+a, a:link, a:visited {
   text-decoration: none;
 }
 
@@ -20,28 +18,16 @@ a:hover {
   text-decoration: none;
 }
 
-aside,
-nav,
-footer,
-header,
-section,
-main {
+aside, nav, footer, header, section, main {
   display: block;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1, h2, h3, h4, h5, h6, p {
   font-size: inherit;
   font-weight: inherit;
 }
 
-ul,
-ul li {
+ul, ul li {
   list-style: none;
 }
 
@@ -49,8 +35,7 @@ img {
   vertical-align: top;
 }
 
-img,
-svg {
+img, svg {
   max-width: 100%;
   height: auto;
 }
@@ -59,10 +44,7 @@ address {
   font-style: normal;
 }
 
-input,
-textarea,
-button,
-select {
+input, textarea, button, select {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -73,8 +55,7 @@ input::-ms-clear {
   display: none;
 }
 
-button,
-input[type=submit] {
+button, input[type=submit] {
   display: inline-block;
   box-shadow: none;
   background-color: transparent;
@@ -82,10 +63,8 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input:focus,
-input:active,
-button:focus,
-button:active {
+input:focus, input:active,
+button:focus, button:active {
   outline: none;
 }
 
@@ -102,230 +81,250 @@ legend {
   display: block;
 }
 
-:root {
-  --bg: #eef5ff;
-  --text: #2a313d;
-  --dop-text: #8f9eb1;
-  --sub-bg: #eef5ff;
-  --sub-text: #252e49;
-  --sub-circle: #8f9eb1;
-  --sub-dop-text: #8f9eb1;
-  --line-timer-bg: #252e49;
-  --line-timer-text: #e2e8f0;
-  --line-timer-line: #8f9eb1;
-  --line-timer-line-anim: #fca7a7;
-  --main-border-bottom: #252e49;
-  --main-border-right: #252e49;
-  --main-text: #252e49;
-  --main-dop-text: #8f9eb1;
-  --main-time-prayer: #252e49;
-  --main-time-prayer-start: #b94343;
-}
-
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #eef5ff;
+  background-color: #dff5fa;
+}
+
+header {
+  position: relative;
+  height: 45px;
+  z-index: 10;
 }
 
 .header_container {
-  position: relative;
-  height: 60px;
-  z-index: 1;
-}
-
-.header_container_name_loc {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  width: 100vw;
-  min-width: 320px;
-  height: 70px;
-  padding: 0 15px;
-  background-color: var(--bg);
+  top: 10px;
+  height: 60px;
+  width: calc(100vw - 30px);
+  min-width: 290px;
+  margin: 0 15px;
+  padding: 0 10px;
+  background-color: #252e49;
+  border-radius: 10px;
+  color: #fff;
 }
-
-.happy {
-  background-image: url(../img/ramadan.png);
-  background-size: 120px;
-  background-position: 150px -5px;
-  background-repeat: no-repeat;
-  animation: happy 10s ease-in-out;
-  z-index: 10;
-}
-
-@keyframes happy {
-  0% {
-    background-position: 150px -100px;
-  }
-
-  30% {
-    background-position: 150px -5px;
-  }
-}
-
-.name_ruznama {
-  font-size: 28px;
+.header_container h1 {
+  font-size: 25px;
   font-weight: bold;
-  color: var(--text);
 }
-
-.name_localization {
+.header_container p {
   padding-top: 5px;
   font-size: 15px;
-  color: var(--dop-text);
+  color: #9dacd8;
+}
+
+.subheader {
+  position: relative;
+  height: 140px;
 }
 
 .subheader_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
-  min-width: 320px;
-  height: 120px;
-  padding: 0 15px;
-  background-color: var(--sub-bg);
+  position: absolute;
+  top: 10px;
+  height: 130px;
+  width: calc(100vw - 30px);
+  min-width: 290px;
+  margin: 0 15px;
+  padding: 0 10px 0 0;
+  background-color: #252e49;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
 }
 
-.subheader_date {
+.day_mounth_year {
   display: flex;
   align-items: center;
-  padding: 5px 0;
-}
-
-.subheader_day {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  background-color: var(--sub-circle);
-  width: 30px;
-  height: 30px;
-}
-
-.day,
-.mounth,
-.year {
-  color: var(--sub-text);
+  padding: 2px 0;
 }
 
 .day {
-  font-size: 15px;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #444f6e;
+  border-right: 1px solid #ffffff;
 }
 
-.subheader_mounth_year {
-  padding-left: 10px;
+.mounth_year {
+  padding: 0 5px;
 }
 
 .mounth {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .year {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
 }
 
 .week {
-  padding-bottom: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  color: var(--sub-text);
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .clock {
   display: flex;
-  font-size: 23px;
+  align-items: center;
+  font-size: 20px;
+}
+.clock span {
+  font-size: 10px;
+  padding-left: 5px;
+  color: #6f7faf;
 }
 
-.clock span {
-  padding: 7px 5px;
-  font-size: 12px;
-  color: var(--sub-dop-text);
+.ramadan {
+  position: absolute;
+  width: 100px;
+  height: 70px;
+  z-index: 2;
+}
+
+.endprayer {
+  position: relative;
+  height: 40px;
+}
+
+.endprayer_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  height: 30px;
+  width: calc(100vw - 30px);
+  min-width: 290px;
+  margin: 0 15px;
+  padding: 0 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #252e49;
 }
 
 .timeToNextPrayerContainer {
   height: 32px;
-  background-color: var(--line-timer-bg);
+  background-color: #fff;
+  width: calc(100vw - 30px);
 }
 
 .next_prayer_times {
   display: flex;
   justify-content: center;
-  padding: 5px 0;
+  padding: 4px 0;
   font-size: 16px;
-  color: var(--line-timer-text);
+  color: #252e49;
 }
 
 .myline {
   display: flex;
   align-items: center;
   height: 2px;
-  background-color: var(--line-timer-line);
+  background-color: #bac9f5;
   margin-top: 3px;
 }
 
 #redLine {
   height: 2px;
-  background-color: var(--line-timer-line-anim);
+  background-color: #252e49;
   transition: width 1s linear;
 }
 
-.main {
+.mainday {
   position: relative;
+  height: 80px;
 }
 
-.main_container {
-  position: absolute;
-}
-
-.main_container_box {
+.mainday_container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100vw;
-  min-width: 320px;
+  justify-content: space-between;
+  position: absolute;
+  top: 10px;
   height: 70px;
-  padding: 0 15px;
-  border-bottom: 1px solid var(--main-border-bottom);
-}
-
-.main_container_name_descr {
+  width: calc(100vw - 30px);
+  min-width: 290px;
+  margin: 0 15px;
   padding: 0 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #252e49;
 }
 
-.main_container_icon_name_descr {
+.mainday_logo_img_name_descr {
   display: flex;
+  align-items: center;
 }
 
-.prayer-icon {
+.mainday_img {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #252e49;
   width: 40px;
   min-width: 40px;
   height: 40px;
-  min-height: 40px;
-  border-right: 1px solid var(--main-border-right);
+  padding-right: 5px;
 }
 
-.prayer-name {
-  font-weight: bold;
+.mainday_name_descr {
+  padding: 0 5px;
+}
+
+.mainday_name {
   font-size: 20px;
-  color: var(--main-text);
+  font-weight: bold;
 }
 
-.prayer-description {
-  font-size: 10px;
-  color: var(--main-dop-text);
+.mainday_descr {
+  font-size: 12px;
 }
 
-.prayer-time {
-  font-size: 25px;
-  color: var(--main-time-prayer);
+.mainday_time {
+  font-size: 20px;
 }
 
 .highlighted {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
   font-weight: bold;
-  color: var(--main-time-prayer-start);
+  color: #7a001a;
+}
+
+.highlighted::before {
+  content: "";
+  background-image: url(../img/solat.png);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 40px;
+}
+
+.main_table {
+  position: relative;
+}
+
+.main_table_container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10px;
+  height: auto;
+  width: calc(100vw - 30px);
+  min-width: 290px;
+  margin: 0 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
 
 select {
@@ -333,14 +332,13 @@ select {
   -moz-appearance: none;
   appearance: none;
   outline: 0;
-  border-top: 1px solid #252e49;
   width: 100%;
-  height: 50px;
+  height: 40px;
   color: #252e49;
   cursor: pointer;
   font-size: 1.5em;
-  padding-left: 15px;
   font-weight: bold;
+  text-align: center;
 }
 
 option {
@@ -351,24 +349,8 @@ option {
   outline: 0px;
 }
 
-.listmounth {
-  background-color: #eef5ff;
-}
-
 table {
-  width: 100vw;
   border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 8px;
-}
-
-.stici {
-  background-color: #eef5ff;
-  position: sticky;
-  top: 59px;
 }
 
 .current-day-cell {
@@ -378,48 +360,35 @@ td {
 
 table tr th {
   font-size: calc(2vw + 6px);
-  padding: 10px 2px;
-  color: #252e49;
+  padding: 10px 0;
+  color: #fff;
 }
 
 table tr td {
   font-size: calc(3vw + 2px);
   text-align: center;
-  padding: 5px 1px;
+  padding: 5px 0;
   border: 0px;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
+td,
+th {
+  border-bottom: 1px solid #d5d9e6 !important;
 }
 
-.modal-content {
-  margin: 15% auto;
-  padding: 20px;
-  width: 80%;
-  max-width: 600px;
-  background-color: #fff;
-  position: relative;
+.main_table_listmounth {
+  color: #252e49;
+  font-size: 20px;
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.main_table_stici {
+  height: 20px;
+  background-color: #252e49;
+  position: sticky;
+  top: 58px;
+  z-index: 2;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+#currentMonth {
+  text-align: center;
 }

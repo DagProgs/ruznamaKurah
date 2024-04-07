@@ -10,152 +10,151 @@
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
         integrity="sha384-uONtBTCBzHKF84F6XvyC8S0gL8HTkAPeCyBNvfLfsqHh+Kd6s/kaS4BdmNQ5ktp1"
         crossorigin="anonymous"></script>
-    <script src="main.js" type="module"></script>
-    <title>Рузнама Курахский район</title>
+    <title>Рузнама - Курахский район</title>
 </head>
 
 <body>
-
+    <button id="btnInstall" disabled style="position: absolute; top: 23px; right: 16px; z-index: 1;">
+        Install PWA For Prod
+    </button>
+    <script type="text/javascript" src="runtime.js"></script>
+    <script type="text/javascript" src="polyfills.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <header>
         <div class="header_container">
-            <div class="header_container_name_loc happy">
-                <div class="name_ruznama">Рузнама</div>
-                <div class="name_localization">Курахский район</div>
-            </div>
+            <h1>Рузнама</h1>
+            <p>Курахский район</p>
         </div>
+    </header>
+    <div class="subheader">
         <div class="subheader_container">
-            <div class="subheader_date_ru_ar">
-
-                <div class="subheader_date">
-                    <div class="subheader_day">
-                        <div class="day" id="ru-day">01</div>
-                    </div>
-                    <div class="subheader_mounth_year">
+            <div class="day_mounth_year_ru_ar">
+                <div class="day_mounth_year">
+                    <div class="day" id="ru-day">01</div>
+                    <div class="mounth_year">
                         <div class="mounth" id="ru-mounth">Январь</div>
-                        <div class="year" id="ru-year">2024 г</div>
+                        <div class="year" id="ru-year">2024 г.</div>
                     </div>
                 </div>
-                <div class="subheader_date">
-                    <div class="subheader_day">
-                        <div class="day" id="ar-day">01</div>
-                    </div>
-                    <div class="subheader_mounth_year">
+                <div class="day_mounth_year">
+                    <div class="day" id="ar-day">01</div>
+                    <div class="mounth_year">
                         <div class="mounth" id="ar-mounth">Мухаррам</div>
-                        <div class="year" id="ar-year">1445 г</div>
+                        <div class="year" id="ar-year">1445 г.</div>
                     </div>
                 </div>
             </div>
             <div class="week_clock">
                 <div class="week" id="ru-week">Понедельник</div>
                 <div class="clock" id="clock">00:00:00</div>
+                <img src="img/ramadan.png" alt="" class="ramadan">
             </div>
         </div>
-        <div id="timeToNextPrayerContainer" class="timeToNextPrayerContainer">
-            <div class="next_prayer_times" id="timeToNextPrayer">
-                До осталось: --:--
-            </div>
-            <div class="myline">
-                <div id="redLine" class="redline"></div>
+    </div>
+    <script src="js/calendar-ru.js"></script>
+    <script src="js/calendar-ar.js"></script>
+    <script src="js/clock.js"></script>
+    <div class="endprayer">
+        <div class="endprayer_container">
+            <div id="timeToNextPrayerContainer" class="timeToNextPrayerContainer">
+                <div class="next_prayer_times" id="timeToNextPrayer">
+                    До осталось: --:--
+                </div>
+                <div class="myline">
+                    <div id="redLine" class="redline"></div>
+                </div>
             </div>
         </div>
-    </header>
-
-    <main class="main">
-        <div class="main_container">
-            <div class="main_container_box">
-                <div class="main_container_icon_name_descr">
-                    <div class="prayer-icon">
-                        <svg id="id_icon_fajr" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M462 311 L462 451 C462 464, 467 476, 477 486 C486 496, 498 501, 512 501 C526 501, 538 496, 547 486 C557 476, 562 464, 562 451 L562 311 C562 297, 557 285, 547 275 C538 265, 526 261, 512 261 C498 261, 486 265, 477 275 C467 285, 462 297, 462 311 Z M291 563 L193 464 C182 454, 177 442, 177 429 C177 415, 182 403, 193 393 C201 383, 213 378, 227 378 C241 378, 253 383, 262 393 L361 492 C366 497, 370 502, 372 508 C375 515, 376 521, 376 528 C376 534, 375 541, 372 547 C370 553, 366 558, 361 563 C352 573, 340 578, 326 578 C312 578, 300 573, 291 563 Z M663 492 L762 393 C771 383, 783 379, 797 379 C811 379, 823 383, 833 393 C842 403, 847 415, 847 429 C847 442, 842 454, 833 464 L733 563 C724 573, 712 578, 698 578 C684 578, 672 573, 663 563 C653 553, 648 541, 648 528 C648 514, 653 502, 663 492 Z M512 664 L915 664 C929 664, 941 668, 950 678 C961 688, 965 700, 965 714 C965 727, 961 739, 950 749 C941 759, 929 764, 915 764 L109 764 C95 764, 83 759, 74 749 C65 739, 59 727, 59 714 C59 700, 65 688, 74 678 C83 668, 95 664, 109 664 L512 664Z " />
-                        </svg>
-                    </div>
-                    <div class="main_container_name_descr">
-                        <div class="prayer-name" id="fajr-name">Фаджр</div>
-                        <div class="prayer-description">Время утреннего намаза</div>
-                    </div>
+    </div>
+    <script src="js/line-timer.js"></script>
+    <div class="mainday">
+        <div class="mainday_container">
+            <div class="mainday_logo_img_name_descr">
+                <div class="mainday_img">
+                    <img src="img/1.svg" alt="">
                 </div>
-                <div class="prayer-time" id="fajr-time">00:00</div>
-            </div>
-            <div class="main_container_box">
-                <div class="main_container_icon_name_descr">
-                    <div class="prayer-icon">
-                        <svg id="id_icon_sunrise" viewBox="0 0 1024 1024" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M463 200 L463 340 C463 354, 467 366, 477 375 C487 385, 499 390, 513 390 C526 390, 538 385, 548 375 C558 366, 563 354, 563 340 L563 200 C563 186, 558 174, 548 165 C538 155, 526 150, 513 150 C499 150, 487 155, 477 165 C467 174, 463 186, 463 200 Z M291 452 L193 353 C182 344, 178 332, 178 318 C178 304, 182 292, 193 283 C202 273, 214 268, 228 268 C241 268, 253 273, 263 283 L362 382 C367 386, 370 392, 373 398 C375 404, 377 410, 377 417 C377 424, 375 430, 373 436 C370 442, 367 449, 362 452 C352 462, 340 467, 327 467 C313 467, 301 462, 291 452 Z M663 382 L762 283 C772 273, 784 268, 798 268 C811 268, 823 273, 833 283 C843 292, 848 304, 848 318 C848 332, 843 344, 833 353 L734 452 C724 462, 712 467, 699 467 C685 467, 673 462, 663 452 C653 443, 649 431, 649 417 C649 403, 653 391, 663 382 Z M776 553 L916 553 C929 553, 941 558, 951 568 C961 577, 966 589, 966 603 C966 617, 961 629, 951 638 C941 648, 929 653, 916 653 L776 653 C769 653, 763 652, 756 649 C750 647, 745 643, 740 638 C736 634, 732 628, 729 622 C727 616, 726 610, 726 603 C726 589, 730 577, 740 568 C750 558, 762 553, 776 553 Z M250 553 L110 553 C103 553, 97 554, 90 557 C84 559, 79 563, 74 568 C70 572, 66 578, 63 584 C61 590, 60 596, 60 603 C60 610, 61 616, 63 622 C66 628, 70 634, 74 638 C79 643, 84 647, 90 649 C97 652, 103 653, 110 653 L250 653 C263 653, 275 648, 285 638 C295 629, 300 617, 300 603 C300 589, 295 577, 285 568 C275 558, 263 553, 250 553 Z M512 774 L109 774 C95 774, 83 779, 73 790 C63 798, 59 810, 59 824 C59 838, 63 850, 73 859 C83 869, 95 874, 109 874 L916 874 C929 874, 941 869, 951 859 C961 850, 966 838, 966 824 C966 810, 961 798, 951 790 C941 779, 929 774, 916 774 L512 774Z  M513 434 C419 434, 343 510, 343 604 C343 623, 346 641, 351 658 L674 658 C679 641, 683 623, 683 604 C683 510, 606 434, 513 434 Z M578 613 C573 618, 567 620, 560 620 C553 620, 547 618, 542 613 L512 583 L481 614 C476 618, 470 621, 463 621 C456 621, 451 618, 446 614 C441 609, 438 603, 438 596 C438 589, 441 583, 446 578 L493 531 C494 530, 495 529, 497 528 C498 527, 499 526, 500 526 C505 523, 510 522, 516 523 C521 524, 526 526, 530 530 L577 578 C582 582, 585 588, 585 595 C585 602, 583 608, 578 613" />
-                        </svg>
-                    </div>
-                    <div class="main_container_name_descr">
-                        <div class="prayer-name" id="sunrise-name">Шурук</div>
-                        <div class="prayer-description">Восход солнца</div>
-                    </div>
+                <div class="mainday_name_descr">
+                    <div class="mainday_name" id="fajr-name">Фаджр</div>
+                    <div class="mainday_descr">Время утреннего намаза</div>
                 </div>
-                <div class="prayer-time" id="sunrise-time">00:00</div>
             </div>
-            <div class="main_container_box">
-                <div class="main_container_icon_name_descr">
-                    <div class="prayer-icon">
-                        <svg id="id_icon_dhuhr" viewBox="0 0 1024 1024" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M462 109 L462 249 C462 263, 467 275, 477 284 C486 294, 498 299, 512 299 C526 299, 538 294, 547 284 C557 275, 562 263, 562 249 L562 109 C562 95, 557 83, 547 74 C538 65, 526 59, 512 59 C498 59, 486 65, 477 74 C467 83, 462 95, 462 109 Z M462 775 L462 915 C462 929, 467 941, 477 950 C486 961, 498 965, 512 965 C526 965, 538 961, 547 950 C557 941, 562 929, 562 915 L562 775 C562 761, 557 749, 547 740 C538 730, 526 725, 512 725 C498 725, 486 730, 477 740 C467 749, 462 761, 462 775 Z M291 361 L193 262 C182 253, 177 241, 177 227 C177 213, 182 201, 193 193 C201 182, 213 177, 227 177 C241 177, 253 182, 262 193 L361 291 C366 295, 370 301, 372 307 C375 313, 376 319, 376 326 C376 333, 375 339, 372 345 C370 351, 366 357, 361 361 C352 371, 340 376, 326 376 C312 376, 300 371, 291 361 Z M762 833 L663 733 C653 724, 648 712, 648 698 C648 684, 653 672, 663 663 C672 653, 684 648, 698 648 C712 648, 724 653, 733 663 L833 762 C842 771, 847 783, 847 797 C847 811, 842 823, 833 833 C823 842, 811 847, 797 847 C783 847, 771 842, 762 833 Z M663 291 L762 193 C771 182, 783 177, 797 177 C811 177, 823 182, 833 193 C842 201, 847 213, 847 227 C847 241, 842 253, 833 262 L733 361 C724 371, 712 376, 698 376 C684 376, 672 371, 663 361 C653 352, 648 340, 648 326 C648 312, 653 300, 663 291 Z M193 762 L291 663 C300 653, 312 648, 326 648 C340 648, 352 653, 361 663 C366 667, 370 673, 372 679 C375 685, 376 691, 376 698 C376 705, 375 711, 372 717 C370 723, 366 729, 361 733 L262 833 C253 842, 241 847, 227 847 C213 847, 201 842, 193 833 C187 828, 183 822, 181 816 C178 810, 177 804, 177 797 C177 790, 178 784, 181 778 C183 772, 187 766, 193 762 Z M775 462 L915 462 C929 462, 941 467, 950 477 C961 486, 965 498, 965 512 C965 526, 961 538, 950 547 C941 557, 929 562, 915 562 L775 562 C768 562, 762 561, 756 558 C750 556, 744 552, 740 547 C735 543, 731 537, 729 531 C726 525, 725 519, 725 512 C725 498, 730 486, 740 477 C749 467, 761 462, 775 462 Z M249 462 L109 462 C102 462, 96 463, 90 466 C84 468, 78 472, 74 477 C69 481, 65 487, 63 493 C60 499, 59 505, 59 512 C59 519, 60 525, 63 531 C65 537, 69 543, 74 547 C78 552, 84 556, 90 558 C96 561, 102 562, 109 562 L249 562 C263 562, 275 557, 284 547 C294 538, 299 526, 299 512 C299 498, 294 486, 284 477 C275 467, 263 462, 249 462 Z M342 513 C342 419, 418 343, 512 343 C606 343, 682 419, 682 513 C682 607, 606 683, 512 683 C418 683, 342 607, 342 513" />
-                        </svg>
-                    </div>
-                    <div class="main_container_name_descr">
-                        <div class="prayer-name" id="dhuhr-name">Зухр</div>
-                        <div class="prayer-description">Время полуденного намаза</div>
-                    </div>
+            <div class="mainday_time" id="fajr-time">00:00</div>
+        </div>
+    </div>
+    <div class="mainday">
+        <div class="mainday_container">
+            <div class="mainday_logo_img_name_descr">
+                <div class="mainday_img">
+                    <img src="img/2.svg" alt="">
                 </div>
-                <div class="prayer-time" id="dhuhr-time">00:00</div>
-            </div>
-            <div class="main_container_box">
-                <div class="main_container_icon_name_descr">
-                    <div class="prayer-icon">
-                        <svg id="id_icon_asr" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M463 200 L463 340 C463 354, 467 366, 477 375 C487 385, 499 390, 513 390 C526 390, 538 385, 548 375 C558 366, 563 354, 563 340 L563 200 C563 186, 558 174, 548 165 C538 155, 526 150, 513 150 C499 150, 487 155, 477 165 C467 174, 463 186, 463 200 Z M291 452 L193 353 C182 344, 178 332, 178 318 C178 304, 182 292, 193 283 C202 273, 214 268, 228 268 C241 268, 253 273, 263 283 L362 382 C367 386, 370 392, 373 398 C375 404, 377 410, 377 417 C377 424, 375 430, 373 436 C370 442, 367 449, 362 452 C352 462, 340 467, 327 467 C313 467, 301 462, 291 452 Z M663 382 L762 283 C772 273, 784 268, 798 268 C811 268, 823 273, 833 283 C843 292, 848 304, 848 318 C848 332, 843 344, 833 353 L734 452 C724 462, 712 467, 699 467 C685 467, 673 462, 663 452 C653 443, 649 431, 649 417 C649 403, 653 391, 663 382 Z M776 553 L916 553 C929 553, 941 558, 951 568 C961 577, 966 589, 966 603 C966 617, 961 629, 951 638 C941 648, 929 653, 916 653 L776 653 C769 653, 763 652, 756 649 C750 647, 745 643, 740 638 C736 634, 732 628, 729 622 C727 616, 726 610, 726 603 C726 589, 730 577, 740 568 C750 558, 762 553, 776 553 Z M250 553 L110 553 C103 553, 97 554, 90 557 C84 559, 79 563, 74 568 C70 572, 66 578, 63 584 C61 590, 60 596, 60 603 C60 610, 61 616, 63 622 C66 628, 70 634, 74 638 C79 643, 84 647, 90 649 C97 652, 103 653, 110 653 L250 653 C263 653, 275 648, 285 638 C295 629, 300 617, 300 603 C300 589, 295 577, 285 568 C275 558, 263 553, 250 553 Z M512 774 L109 774 C95 774, 83 779, 73 790 C63 798, 59 810, 59 824 C59 838, 63 850, 73 859 C83 869, 95 874, 109 874 L916 874 C929 874, 941 869, 951 859 C961 850, 966 838, 966 824 C966 810, 961 798, 951 790 C941 779, 929 774, 916 774 L512 774Z  M513 434 C419 434, 343 510, 343 604 C343 623, 346 641, 351 658 L674 658 C679 641, 683 623, 683 604 C683 510, 606 434, 513 434" />
-                        </svg>
-                    </div>
-                    <div class="main_container_name_descr">
-                        <div class="prayer-name" id="asr-name">Аср</div>
-                        <div class="prayer-description">Время предвечернего намаза</div>
-                    </div>
+                <div class="mainday_name_descr">
+                    <div class="mainday_name" id="sunrise-name">Шурук</div>
+                    <div class="mainday_descr">Восход солнца</div>
                 </div>
-                <div class="prayer-time" id="asr-time">00:00</div>
             </div>
-            <div class="main_container_box">
-                <div class="main_container_icon_name_descr">
-                    <div class="prayer-icon">
-                        <svg id="id_icon_maghrib" viewBox="0 0 1024 1024" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M463 200 L463 340 C463 354, 467 366, 477 375 C487 385, 499 390, 513 390 C526 390, 538 385, 548 375 C558 366, 563 354, 563 340 L563 200 C563 186, 558 174, 548 165 C538 155, 526 150, 513 150 C499 150, 487 155, 477 165 C467 174, 463 186, 463 200 Z M291 452 L193 353 C182 344, 178 332, 178 318 C178 304, 182 292, 193 283 C202 273, 214 268, 228 268 C241 268, 253 273, 263 283 L362 382 C367 386, 370 392, 373 398 C375 404, 377 410, 377 417 C377 424, 375 430, 373 436 C370 442, 367 449, 362 452 C352 462, 340 467, 327 467 C313 467, 301 462, 291 452 Z M663 382 L762 283 C772 273, 784 268, 798 268 C811 268, 823 273, 833 283 C843 292, 848 304, 848 318 C848 332, 843 344, 833 353 L734 452 C724 462, 712 467, 699 467 C685 467, 673 462, 663 452 C653 443, 649 431, 649 417 C649 403, 653 391, 663 382 Z M776 553 L916 553 C929 553, 941 558, 951 568 C961 577, 966 589, 966 603 C966 617, 961 629, 951 638 C941 648, 929 653, 916 653 L776 653 C769 653, 763 652, 756 649 C750 647, 745 643, 740 638 C736 634, 732 628, 729 622 C727 616, 726 610, 726 603 C726 589, 730 577, 740 568 C750 558, 762 553, 776 553 Z M250 553 L110 553 C103 553, 97 554, 90 557 C84 559, 79 563, 74 568 C70 572, 66 578, 63 584 C61 590, 60 596, 60 603 C60 610, 61 616, 63 622 C66 628, 70 634, 74 638 C79 643, 84 647, 90 649 C97 652, 103 653, 110 653 L250 653 C263 653, 275 648, 285 638 C295 629, 300 617, 300 603 C300 589, 295 577, 285 568 C275 558, 263 553, 250 553 Z M512 774 L109 774 C95 774, 83 779, 73 790 C63 798, 59 810, 59 824 C59 838, 63 850, 73 859 C83 869, 95 874, 109 874 L916 874 C929 874, 941 869, 951 859 C961 850, 966 838, 966 824 C966 810, 961 798, 951 790 C941 779, 929 774, 916 774 L512 774Z  M513 434 C419 434, 343 510, 343 604 C343 623, 346 641, 351 658 L674 658 C679 641, 683 623, 683 604 C683 510, 606 434, 513 434 Z M578 565 L530 613 C529 614, 528 615, 527 616 C526 617, 524 617, 523 618 C518 621, 513 621, 508 621 C502 620, 498 617, 494 614 L446 566 C441 561, 439 555, 439 548 C439 541, 441 535, 446 530 C451 526, 457 523, 464 523 C471 523, 477 525, 482 530 L512 561 L543 530 C547 525, 553 523, 560 523 C567 523, 573 525, 578 530 C583 535, 586 541, 586 548 C585 555, 583 561, 578 565" />
-                        </svg>
-                    </div>
-                    <div class="main_container_name_descr">
-                        <div class="prayer-name" id="maghrib-name">Магриб</div>
-                        <div class="prayer-description">Время вечернего намаза</div>
-                    </div>
+            <div class="mainday_time" id="sunrise-time">00:00</div>
+        </div>
+    </div>
+    <div class="mainday">
+        <div class="mainday_container">
+            <div class="mainday_logo_img_name_descr">
+                <div class="mainday_img">
+                    <img src="img/3.svg" alt="">
                 </div>
-                <div class="prayer-time" id="maghrib-time">00:00</div>
-            </div>
-            <div class="main_container_box">
-                <div class="main_container_icon_name_descr">
-                    <div class="prayer-icon">
-                        <svg id="id_icon_isha" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M461 347 C452 368, 447 391, 447 415 C447 509, 523 585, 617 585 C637 585, 657 581, 675 575 C649 635, 589 677, 519 677 C425 677, 349 601, 349 507 C349 433, 396 371, 461 347" />
-                        </svg>
-                    </div>
-                    <div class="main_container_name_descr">
-                        <div class="prayer-name" id="isha-name">Иша</div>
-                        <div class="prayer-description">Время ночного намаза</div>
-                    </div>
+                <div class="mainday_name_descr">
+                    <div class="mainday_name" id="dhuhr-name">Зухр</div>
+                    <div class="mainday_descr">Время полуденного намаза</div>
                 </div>
-                <div class="prayer-time" id="isha-time">00:00</div>
             </div>
-            <select id="monthSelect" class="listmounth">
+            <div class="mainday_time" id="dhuhr-time">00:00</div>
+        </div>
+    </div>
+    <div class="mainday">
+        <div class="mainday_container">
+            <div class="mainday_logo_img_name_descr">
+                <div class="mainday_img">
+                    <img src="img/4.svg" alt="">
+                </div>
+                <div class="mainday_name_descr">
+                    <div class="mainday_name" id="asr-name">Аср</div>
+                    <div class="mainday_descr">Время предвечернего намаза</div>
+                </div>
+            </div>
+            <div class="mainday_time" id="asr-time">00:00</div>
+        </div>
+    </div>
+    <div class="mainday">
+        <div class="mainday_container">
+            <div class="mainday_logo_img_name_descr">
+                <div class="mainday_img">
+                    <img src="img/5.svg" alt="">
+                </div>
+                <div class="mainday_name_descr">
+                    <div class="mainday_name" id="maghrib-name">Магриб</div>
+                    <div class="mainday_descr">Время вечернего намаза</div>
+                </div>
+            </div>
+            <div class="mainday_time" id="maghrib-time">00:00</div>
+        </div>
+    </div>
+    <div class="mainday">
+        <div class="mainday_container">
+            <div class="mainday_logo_img_name_descr">
+                <div class="mainday_img">
+                    <img src="img/6.svg" alt="">
+                </div>
+                <div class="mainday_name_descr">
+                    <div class="mainday_name" id="isha-name">Иша</div>
+                    <div class="mainday_descr">Время ночного намаза</div>
+                </div>
+            </div>
+            <div class="mainday_time" id="isha-time">00:00</div>
+        </div>
+    </div>
+    <script src="js/prayer-days.js"></script>
+    <div class="main_table">
+        <div class="main_table_container">
+            <select id="monthSelect" class="main_table_listmounth">
                 <option value="1">Январь</option>
                 <option value="2">Февраль</option>
                 <option value="3">Март</option>
@@ -171,7 +170,7 @@
             </select>
             <table>
                 <thead>
-                    <tr class="stici">
+                    <tr class="main_table_stici">
                         <th>Чис.</th>
                         <th>Фаджр</th>
                         <th>Шурук</th>
@@ -185,49 +184,67 @@
             </table>
             <p id="currentMonth"></p>
         </div>
-    </main>
-
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img src="Screen.png" alt="Add to Home Screen">
-            <p>Для лучшего опыта использования, установите приложение на вашем устройстве. Нажмите кнопку "1-Поделиться"
-                -
-                "2-Добавить на главный экран" - "3-Добавить".</p>
-        </div>
     </div>
-
-    <script src="js/calendar-ru.js"></script>
-    <script src="js/calendar-ar.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/prayer-days.js"></script>
-    <script src="js/line-timer.js"></script>
+    </div>
     <script src="js/prayer-times-mounths.js"></script>
 
+    <script type="module">
 
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
 
-        ym(92655412, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true
+        if ('serviceWorker' in navigator) {
+
+            const wb = new Workbox('sw-workbox.js');
+
+            wb.addEventListener('installed', event => {
+                if (event.isUpdate) {
+                    if (confirm(`New content is available!. Click OK to refresh`)) {
+                        window.location.reload();
+                    }
+                } else {
+                    alert(`The app is offline-ready`)
+                }
+            });
+
+            wb.register();
+        }
+
+    </script>
+    <script>
+        window.addEventListener('beforeinstallprompt', event => {
+            console.log('beforeinstallprompt event was fired');
+
+            // Prevent Chrome <= 67 from automatically showing the prompt
+            event.preventDefault();
+
+            // Stash the event so it can be triggered later.
+            this.installPromptEvent = event;
+
+            // Update the install UI to notify the user app can be installed
+            btnInstall.disabled = false;
+        });
+
+        btnInstall = document.querySelector('#btnInstall');
+
+        btnInstall.addEventListener('click', () => {
+            // Update the install UI to remove the install button
+            btnInstall.disabled = true;
+
+            // Show the modal add to home screen dialog
+            installPromptEvent.prompt();
+
+            // Wait for the user to respond to the prompt
+            installPromptEvent.userChoice.then(choice => {
+                if (choice.outcome === 'accepted') {
+                    console.log('User accepted the A2HS prompt');
+                } else {
+                    console.log('User dismissed the A2HS prompt');
+                }
+                // Clear the saved prompt since it can't be used again
+                installPromptEvent = null;
+            });
         });
     </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
-
-
 </body>
 
 </html>

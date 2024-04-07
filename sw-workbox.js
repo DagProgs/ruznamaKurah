@@ -22,11 +22,15 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "9b7684e0774b448b6b91387e5dcce55b"
+    "revision": "9c0b15f4c71a34432fc2e9cdabb24de2"
   },
   {
     "url": "manifest.json",
-    "revision": "0dec36726ed979937bb60a02e8cd2c67"
+    "revision": "bd9808a6ef214cd68a9ed9a1fe54502e"
+  },
+  {
+    "url": "css/style.css",
+    "revision": "661be60f435733063e33d5145cd3cb6e"
   },
   {
     "url": "js/calendar-ar.js",
@@ -42,7 +46,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/jquery-3.6.0.min.js",
-    "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
+    "revision": "8fb8fee4fcc3cc86ff6c724154c49c42"
   },
   {
     "url": "js/line-timer.js",
@@ -57,24 +61,52 @@ workbox.precaching.precacheAndRoute([
     "revision": "7ed9d0e8bc6545156595e8fbd36cd55c"
   },
   {
-    "url": "js/pwacompat.min.js",
-    "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
-  },
-  {
     "url": "js/json/prayer-times.json",
     "revision": "fa29c9bf6a50f842418b4f0c6a632167"
   },
   {
-    "url": "css/style.css",
-    "revision": "7822fd9b440ab16f099e80d49d2f1244"
+    "url": "img/1.svg",
+    "revision": "bce40a862445411ec686482c02cb588f"
   },
   {
-    "url": "main.js",
-    "revision": "755cf300bbc0abb0f7505885990dee69"
+    "url": "img/2.svg",
+    "revision": "fc59ee299076adf26ae064f8c68f6165"
+  },
+  {
+    "url": "img/3.svg",
+    "revision": "f7a39f3588a86b33a524b33b256ac77a"
+  },
+  {
+    "url": "img/4.svg",
+    "revision": "434f3c80313dfecce4ed0e457ff46f6e"
+  },
+  {
+    "url": "img/5.svg",
+    "revision": "724c9ad02feec579f2543988e375b352"
+  },
+  {
+    "url": "img/6.svg",
+    "revision": "b37a0352904a124bf991b809fad2bec4"
   },
   {
     "url": "img/ramadan.png",
-    "revision": "f358c4fc1b2a452ba49fc6798ebe96b3"
+    "revision": "be633c928304412f00ce027321c3ff3e"
+  },
+  {
+    "url": "img/solat.png",
+    "revision": "da087a1197c1d940c6d7791761635e87"
+  },
+  {
+    "url": "main.js",
+    "revision": "80846bb3403b82a07c7f84658f186b23"
+  },
+  {
+    "url": "polyfills.js",
+    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
+  },
+  {
+    "url": "runtime.js",
+    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -124,6 +156,20 @@ workbox.routing.registerRoute(
     ]
   })
 );
+
+// API with network-first strategy
+workbox.routing.registerRoute(
+  /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
+  workbox.strategies.networkFirst()
+)
+
+// API with cache-first strategy
+workbox.routing.registerRoute(
+  /(http[s]?:\/\/)?([^\/\s]+\/)favorites/,
+  workbox.strategies.cacheFirst()
+)
+
+// OTHER EVENTS
 
 // Receive push and show a notification
 self.addEventListener('push', function(event) {
