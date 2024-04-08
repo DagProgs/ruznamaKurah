@@ -13,43 +13,20 @@
 </head>
 
 <body>
-    <button id="installButton">Установить виджет</button>
+    <button id="addToHomeButton">Добавить на главный экран</button>
 
   <script>
-    function isAndroid() {
-      return navigator.userAgent.toLowerCase().indexOf("android") > -1;
-    }
-
-    function installWidget() {
-      if (isAndroid() && window.matchMedia('(display-mode: browser)').matches) {
-        if (window.navigator.getInstalledRelatedApps) {
-            alert('Публикация в Play Маркете');
-        } else {
-            if (navigator.standalone) {
-              alert('Приложение уже установлено на вашем устройстве.');
-            } else {
-              alert('Пожалуйста, нажмите "Добавить на главный экран" для установки виджета.');
-              
-              window.addEventListener('beforeinstallprompt', (event) => {
-                event.prompt();
-                event.userChoice.then((choiceResult) => {
-                  if (choiceResult.outcome === 'accepted') {
-                    console.log('Пользователь согласился на установку');
-                  } else {
-                    console.log('Пользователь отказался от установки');
-                  }
-                });
-
-                return false;
-              });
-            }
-        }
+    function addToHomeScreen() {
+      if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+        alert('Пожалуйста, нажмите на меню браузера и выберите "Добавить на главный экран" или аналогичный пункт.');
+      } else if(/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+        alert('Пожалуйста, нажмите на значок "Делить" и выберите "На главной панели" или аналогичный пункт.');
       } else {
-        alert('Установка виджета поддерживается только на Android устройствах и в режиме PWA.');
+        alert('Добавление на главный экран доступно только на Android и iOS устройствах.');
       }
     }
 
-    document.getElementById('installButton').addEventListener('click', installWidget);
+    document.getElementById('addToHomeButton').addEventListener('click', addToHomeScreen);
   </script>
     <header>
         <div class="header_container">
