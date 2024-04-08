@@ -325,6 +325,7 @@ header {
   position: relative;
   height: 950px;
   margin: 10px 0;
+  padding-top: 10px;
 }
 
 .main_table_container {
@@ -470,6 +471,7 @@ th {
 
 footer {
   position: relative;
+  height: 20px;
 }
 
 .footer_container {
@@ -477,6 +479,7 @@ footer {
   display: flex;
   justify-content: center;
   width: 100vw;
+  height: 20px;
 }
 .footer_container p {
   font-size: 10px;
