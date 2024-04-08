@@ -13,21 +13,35 @@
 </head>
 
 <body>
-    <button id="addToHomeButton">Добавить на главный экран</button>
-
-  <script>
-    function addToHomeScreen() {
-      if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
-        alert('Пожалуйста, нажмите на меню браузера и выберите "Добавить на главный экран" или аналогичный пункт.');
-      } else if(/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
-        alert('Пожалуйста, нажмите на значок "Делить" и выберите "На главной панели" или аналогичный пункт.');
-      } else {
-        alert('Добавление на главный экран доступно только на Android и iOS устройствах.');
-      }
-    }
-
-    document.getElementById('addToHomeButton').addEventListener('click', addToHomeScreen);
-  </script>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="img/screen.png" alt="Add to Home Screen">
+            <p>Для лучшего опыта использования, установите приложение на вашем устройстве. Нажмите кнопку "1-Поделиться"
+                -
+                "2-Добавить на главный экран" - "3-Добавить".</p>
+        </div>
+    </div>
+	<script src="js/iphone-close-install-modal.js"></script>
+    <div id="pwaModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Рузнама - Курахский район:</p>
+            <button id="installPWAButton">Установить</button>
+        </div>
+    </div>
+	<script src="js/android-close-install-modal.js"></script>
+	<script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw-worker.js')
+                .then(reg => {
+                    console.log('Service Worker registered');
+                })
+                .catch(error => {
+                    console.error('Error registering Service Worker:', error);
+                });
+        }
+    </script>
     <header>
         <div class="header_container">
             <h1>Рузнама</h1>
