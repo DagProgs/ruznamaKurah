@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "1d3c3c772e5ba0dcfcb02db25c94657f"
+    "revision": "25f27ff296c9423e7244f31164a119c6"
   },
   {
     "url": "manifest.json",
-    "revision": "0c7025a0a2d8e6cc879d60e4fd71871a"
+    "revision": "c083eb3df005161af1b9c7278d656aab"
   },
   {
     "url": "css/style.css",
@@ -67,6 +67,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/pwacompat.min.js",
     "revision": "0bf1bea41b1ba758d3989814c988f46e"
+  },
+  {
+    "url": "runtime.js",
+    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
   },
   {
     "url": "update.js",
