@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "406bed1f9da797e62a8b932e2f052310"
+    "revision": "20ba0de4a87cbd36cea9b14928e4053c"
   },
   {
     "url": "manifest.json",
@@ -65,12 +65,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "6259c5e99da1d6f51115a235005e5f81"
   },
   {
-    "url": "js/pwacompat.min.js",
+    "url": "pwacompat.min.js",
     "revision": "0bf1bea41b1ba758d3989814c988f46e"
   },
   {
-    "url": "js/update.js",
-    "revision": "7d143871d0a020bc3ce4217ad89414a3"
+    "url": "update.js",
+    "revision": "b8dcb303f407bee198430e3dace35448"
   },
   {
     "url": "js/json/prayer-times.json",
