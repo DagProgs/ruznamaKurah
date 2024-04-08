@@ -1,10 +1,10 @@
-importScripts('workbox-v4.3.0/workbox-sw.js');
+importScripts('workbox-v4.3.1/workbox-sw.js');
 
 // SETTINGS
 
 // Path prefix to load modules locally
 workbox.setConfig({
-  modulePathPrefix: 'workbox-v4.3.0/'
+  modulePathPrefix: 'workbox-v4.3.1/'
 });
 
 // Turn on logging
