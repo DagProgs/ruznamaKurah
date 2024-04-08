@@ -6,10 +6,16 @@ if ('serviceWorker' in navigator) {
     wb.addEventListener('installed', event => {
         if (event.isUpdate) {
             wb.messageSW({ type: 'SKIP_WAITING' });
-            // Add code to display installation prompt here
-            // This will prompt the user to install the updated service worker
+
+            if (confirm('Хотите установить приложение PWA?')) {
+                // Если пользователь согласен, то добавляем приложение к домашнему экрану
+                // Этот код будет зависеть от вашего приложения и используемой платформы
+            }
+            
         }
     });
 
     wb.register();
 }
+
+
