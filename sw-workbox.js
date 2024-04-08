@@ -22,15 +22,15 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "ccd8a23588902c0d4f314be27ba93393"
+    "revision": "e9bdfecd303efaaaf0bf842698312edc"
   },
   {
     "url": "manifest.json",
-    "revision": "d1812d2a259ad169aba706a8319ea9e9"
+    "revision": "66875e4da376119cdbcdb1114fff7643"
   },
   {
     "url": "css/style.css",
-    "revision": "4f206f24cce7223dbdb8bedec652f3d9"
+    "revision": "8197471263359064e44cd7dd362d1047"
   },
   {
     "url": "js/calendar-ar.js",
@@ -63,6 +63,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prayer-times-mounths.js",
     "revision": "6259c5e99da1d6f51115a235005e5f81"
+  },
+  {
+    "url": "pwacompat.min.js",
+    "revision": "0bf1bea41b1ba758d3989814c988f46e"
   },
   {
     "url": "update.js",

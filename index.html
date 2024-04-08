@@ -23,7 +23,6 @@
             </div>
         </div>
     </header>
-
     <div class="subheader">
         <div class="subheader_container">
             <div class="day_mounth_year_ru_ar">
@@ -49,9 +48,6 @@
             </div>
         </div>
     </div>
-    <script src="js/calendar-ru.js"></script>
-    <script src="js/calendar-ar.js"></script>
-    <script src="js/clock.js"></script>
     <div class="endprayer">
         <div class="endprayer_container">
             <div id="timeToNextPrayerContainer" class="timeToNextPrayerContainer">
@@ -64,7 +60,6 @@
             </div>
         </div>
     </div>
-    <script src="js/line-timer.js"></script>
     <div class="mainday">
         <div class="mainday_container">
             <div class="mainday_logo_img_name_descr">
@@ -149,7 +144,6 @@
             <div class="mainday_time" id="isha-time">00:00</div>
         </div>
     </div>
-    <script src="js/prayer-days.js"></script>
     <div class="main_table">
         <div class="main_table_container">
             <select id="monthSelect" class="main_table_listmounth">
@@ -183,7 +177,6 @@
             <p id="currentMonth"></p>
         </div>
     </div>
-    <script src="js/prayer-times-mounths.js"></script>
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -205,75 +198,10 @@
             document.getElementById('myModal').style.display = "none";
         }
     </script>
-    <div id="pwaModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Рузнама Курахский р-он</p>
-            <button id="installPWAButton">Установить</button>
-        </div>
-    </div>
-    <script>
-        let deferredPrompt;
-
-        window.addEventListener('beforeinstallprompt', (event) => {
-            console.log('Received beforeinstallprompt event', event);
-            event.preventDefault();
-            deferredPrompt = event;
-            showInstallButton();
-        });
-
-        function showInstallButton() {
-            const modal = document.getElementById('pwaModal');
-            modal.style.display = 'block';
-
-            modal.querySelector('#installPWAButton').onclick = function () {
-                if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    deferredPrompt.userChoice
-                        .then((choiceResult) => {
-                            if (choiceResult.outcome === 'accepted') {
-                                console.log('User accepted the PWA installation');
-                            } else {
-                                console.log('User declined the PWA installation');
-                            }
-                            deferredPrompt = null;
-                            modal.style.display = 'none';
-                        })
-                        .catch((error) => {
-                            console.error('Error during PWA installation:', error);
-                        });
-                }
-            };
-        }
-
-        document.querySelector('.close').onclick = function () {
-            document.getElementById('pwaModal').style.display = 'none';
-        };
-
-        // Обработчик события для отправки команды установки PWA в сервис-воркер
-        document.getElementById('installPWAButton').onclick = function () {
-            if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-                navigator.serviceWorker.controller.postMessage('installPWA');
-            }
-        };
-    </script>
-    
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw-worker.js')
-                .then(reg => {
-                    console.log('Service Worker registered');
-                })
-                .catch(error => {
-                    console.error('Error registering Service Worker:', error);
-                });
-        }
-    </script>
     <div class="popup" id="popup">
         <p class="jumamubarak">Джума Мубарак!</p>
         <button id="closeBtn">Закрыть</button>
     </div>
-    <script src="js/juma.js"></script>
 
     <footer>
         <div class="footer_container">
@@ -281,14 +209,22 @@
         </div>
     </footer>
 
+    <script src="js/calendar-ru.js"></script>
+    <script src="js/calendar-ar.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/line-timer.js"></script>
+    <script src="js/prayer-days.js"></script>
+    <script src="js/prayer-times-mounths.js"></script>
+    <script src="js/juma.js"></script>
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(92655412, "init", {
