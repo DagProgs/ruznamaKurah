@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json" />
     <script src="js/jquery-3.6.0.min.js"></script>
-	<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
+    <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
         integrity="sha384-uONtBTCBzHKF84F6XvyC8S0gL8HTkAPeCyBNvfLfsqHh+Kd6s/kaS4BdmNQ5ktp1"
         crossorigin="anonymous"></script>
     <script src="update.js"></script>
@@ -15,16 +15,6 @@
 </head>
 
 <body>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img src="img/screen.png" alt="Add to Home Screen">
-            <p>Для лучшего опыта использования, установите приложение на вашем устройстве. Нажмите кнопку "1-Поделиться"
-                -
-                "2-Добавить на главный экран" - "3-Добавить".</p>
-        </div>
-    </div>
-	<script src="js/iphone-close-install-modal.js"></script>
     <header>
         <div class="header_container">
             <h1>Рузнама</h1>
@@ -192,27 +182,79 @@
     </div>
     </div>
     <script src="js/prayer-times-mounths.js"></script>
-	<!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="img/screen.png" alt="Add to Home Screen">
+            <p>Для лучшего опыта использования, установите приложение на вашем устройстве. Нажмите кнопку "1-Поделиться"
+                -
+                "2-Добавить на главный экран" - "3-Добавить".</p>
+        </div>
+    </div>
+    <div id="pwaModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Установите PWA на вашем устройстве</p>
+            <button id="installPWAButton">Установить</button>
+        </div>
+    </div>
+    <script>
+        let deferredPrompt;
 
-        ym(92655412, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true
+        window.addEventListener('beforeinstallprompt', (event) => {
+            console.log('Received beforeinstallprompt event', event);
+            event.preventDefault();
+            deferredPrompt = event;
+            showInstallButton();
         });
+
+        function showInstallButton() {
+            const modal = document.getElementById('pwaModal');
+            modal.style.display = 'block';
+
+            modal.querySelector('#installPWAButton').onclick = function () {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice
+                        .then((choiceResult) => {
+                            if (choiceResult.outcome === 'accepted') {
+                                console.log('User accepted the PWA installation');
+                            } else {
+                                console.log('User declined the PWA installation');
+                            }
+                            deferredPrompt = null;
+                            modal.style.display = 'none';
+                        })
+                        .catch((error) => {
+                            console.error('Error during PWA installation:', error);
+                        });
+                }
+            };
+        }
+
+        document.querySelector('.close').onclick = function () {
+            document.getElementById('pwaModal').style.display = 'none';
+        };
+
+        // Обработчик события для отправки команды установки PWA в сервис-воркер
+        document.getElementById('installPWAButton').onclick = function () {
+            if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage('installPWA');
+            }
+        };
     </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw-worker.js')
+                .then(reg => {
+                    console.log('Service Worker registered');
+                })
+                .catch(error => {
+                    console.error('Error registering Service Worker:', error);
+                });
+        }
+    </script>
 </body>
 
 </html>

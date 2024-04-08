@@ -1,1 +1,89 @@
-function hijriDate(e={}){var r,t,a;let n={showWeekDay:void 0===e.showWeekDay||e.showWeekDay,showGregDate:void 0!==e.showGregDate&&e.showGregDate,separator:e.separator&&"string"==typeof e.separator?e.separator:"-",weekDayLang:e.weekDayLang&&"string"==typeof e.weekDayLang?e.weekDayLang:"ar",hijriLang:e.hijriLang&&"string"==typeof e.hijriLang?e.hijriLang:"ar",gregLang:e.gregLang&&"string"==typeof e.gregLang?e.gregLang:"ar",correction:e.correction&&"number"==typeof e.correction?e.correction:0},o=new Date,i;function g(e,r,t){this.year=e,this.month=r,this.day=t,this.toFixed=function(){return this.day+Math.ceil(29.5*(this.month-1))+354*(this.year-1)+Math.floor((3+11*this.year)/30)+227015-1},this.toString=function(){return`${this.day} ${({ar:["المحرم","صفر","ربيع الأول","ربيع الآخر","جمادى الأولى","جمادى الآخرة","رجب","شعبان","رمضان","شوال","ذو القعدة","ذو الحجة"],ru:["Мухаррам","Сафар","Раби-уль-авваль","Раби-уль-ахир","Джумад-уль-ула","Джумад-уль-ахир","Раджаб","Шаъбан","Рамадан","Шавваль","Зуль-каъда","Зуль-хиджа"]})[n.hijriLang][this.month-1]} ${this.year}`}}let h=o.getFullYear(),_=o.getMonth()+1,y=o.getDate();o.getDay();let s;i=(r=h,t=_,a=y,s=t<=2?0:t>2&&(r%4==0&&r%100!=0||r%400==0)?-1:-2,0+365*(r-1)+Math.floor((r-1)/4)-Math.floor((r-1)/100)+Math.floor((r-1)/400)+Math.floor((367*t-362)/12)+s+(a+n.correction));let $=new g(1421,11,28);$=function(e){let r=new g(1100,1,1);r.year=Math.floor((30*(e-227015)+10646)/10631);let t=new g(r.year,1,1),a=Math.ceil((e-29-t.toFixed())/29.5)+1;return r.month=Math.min(a,12),t.year=r.year,t.month=r.month,t.day=1,r.day=e-t.toFixed()+1,r}(i);let l=$.day,L=$.month,c={ar:["المحرم","صفر","ربيع الأول","ربيع الآخر","جمادى الأولى","جمادى الآخرة","رجب","شعبان","رمضان","شوال","ذو القعدة","ذو الحجة"],ru:["Мухаррам","Сафар","Раби-уль-авваль","Раби-уль-ахир","Джумад-уль-ула","Джумад-уль-ахир","Раджаб","Шаъбан","Рамадан","Шавваль","Зуль-каъда","Зуль-хиджа"]}[n.hijriLang][L-1],w=$.year;o.toLocaleDateString(n.weekDayLang,{weekday:"long"}),document.getElementById("ar-day").innerHTML=l,document.getElementById("ar-mounth").innerHTML=c,document.getElementById("ar-year").innerHTML=w+" г"}hijriDate({showGregDate:!1,showWeekDay:!1,separator:"&nbsp&nbsp|&nbsp&nbsp",weekDayLang:"ru",gregLang:"ru",hijriLang:"ru",correction:-1});
+function hijriDate(a = {}) {
+    const r = {
+        showWeekDay: a.showWeekDay === undefined ? true : a.showWeekDay,
+        showGregDate: a.showGregDate !== undefined && a.showGregDate,
+        separator: a.separator && typeof a.separator === 'string' ? a.separator : '-',
+        weekDayLang: a.weekDayLang && typeof a.weekDayLang === 'string' ? a.weekDayLang : 'ar',
+        hijriLang: a.hijriLang && typeof a.hijriLang === 'string' ? a.hijriLang : 'ar',
+        gregLang: a.gregLang && typeof a.gregLang === 'string' ? a.gregLang : 'ar',
+        correction: a.correction && typeof a.correction === 'number' ? a.correction : 0,
+    };
+
+    const t = new Date();
+    let h;
+
+    function HijriDate(year, month, day) {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+        this.toFixed = function() {
+            return this.day + Math.ceil(29.5 * (this.month - 1)) + 354 * (this.year - 1) + Math.floor((3 + 11 * this.year) / 30) + 227015 - 1;
+        };
+        this.toString = function() {
+            const hijriMonths = {
+                ar: ["المحرم", "صفر", "ربيع الأول", "ربيع الآخر", "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة"],
+                ru: ["Мухаррам", "Сафар", "Раби-уль-авваль", "Раби-уль-ахир", "Джумад-уль-ула", "Джумад-уль-ахир", "Раджаб", "Шаъбан", "Рамадан", "Шавваль", "Зуль-каъда", "Зуль-хиджа"]
+            };
+            return `${this.day} ${hijriMonths[r.hijriLang][this.month - 1]} ${this.year}`;
+        };
+    }
+
+    const c = t.getFullYear();
+    let l = t.getMonth() + 1;
+    const u = t.getDate();
+    const d = t.getDay();
+
+    h = (function (a, t, n) {
+        const o = Math.floor((a - 1) / 4);
+        const i = Math.floor((a - 1) / 100);
+        const h = Math.floor((a - 1) / 400);
+        const s = Math.floor((367 * t - 362) / 12);
+        let e;
+        if (t <= 2) {
+            e = 0;
+        } else if (t > 2 && (a % 4 === 0 && a % 100 !== 0 || a % 400 === 0)) {
+            e = -1;
+        } else {
+            e = -2;
+        }
+        return 0 + 365 * (a - 1) + o - i + h + s + e + (n + r.correction);
+    })(c, l, u);
+
+    let f = new HijriDate(1421, 11, 28);
+    f = (function (a) {
+        const e = new HijriDate(1100, 1, 1);
+        e.year = Math.floor((30 * (a - 227015) + 10646) / 10631);
+        const r = new HijriDate(e.year, 1, 1);
+        const t = Math.ceil((a - 29 - r.toFixed()) / 29.5) + 1;
+        e.month = Math.min(t, 12);
+        r.year = e.year;
+        r.month = e.month;
+        r.day = 1;
+        e.day = a - r.toFixed() + 1;
+        return e;
+    })(h);
+
+    const day = f.day;
+    const thisMonth = f.month;
+    const monthNames = {
+        ar: ["المحرم", "صفر", "ربيع الأول", "ربيع الآخر", "جمادى الأولى", "جمادى الآخرة", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة"],
+        ru: ["Мухаррам", "Сафар", "Раби-уль-авваль", "Раби-уль-ахир", "Джумад-уль-ула", "Джумад-уль-ахир", "Раджаб", "Шаъбан", "Рамадан", "Шавваль", "Зуль-каъда", "Зуль-хиджа"]
+    };
+    const monthText = monthNames[r.hijriLang][thisMonth - 1];
+    const thisYear = f.year;
+    const dayOfWeek = t.toLocaleDateString(r.weekDayLang, { weekday: 'long' });
+
+    document.getElementById("ar-day").innerHTML = day;
+    document.getElementById("ar-mounth").innerHTML = monthText;
+    document.getElementById("ar-year").innerHTML = thisYear + " г";
+}
+
+hijriDate({
+    showGregDate: false,
+    showWeekDay: false,
+    separator: '&nbsp&nbsp|&nbsp&nbsp',
+    weekDayLang: 'ru',
+    gregLang: 'ru',
+    hijriLang: 'ru',
+    correction: -1
+});

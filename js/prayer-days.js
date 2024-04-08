@@ -1,1 +1,74 @@
-fetch("js/json/prayer-times.json").then(e=>e.json()).then(e=>{let t=new Date,s=t.getMonth()+1,n=t.getDate(),i=e[s][n],r={Fajr:"Фаджр",Sunrise:"Шурук",Dhuhr:"Зухр",Asr:"Аср",Maghrib:"Магриб",Isha:"Иша"};for(let a in i){let o=i[a][0],h=i[a][1],l=`${o<10?"0"+o:o}:${h<10?"0"+h:h}`;document.getElementById(a.toLowerCase()+"-time").innerText=l,document.getElementById(a.toLowerCase()+"-name").innerText=r[a]}function $(){let e=new Date,t=60*e.getHours()+e.getMinutes();for(let s in i){let n=i[s][0],r=i[s][1],a=60*n+r,o=document.getElementById(s.toLowerCase()+"-time"),h=d(s);!i||"Isha"===s&&(t>=a||t<60*i.Fajr[0]+i.Fajr[1])?o.classList.add("highlighted"):t>=a&&t<60*i[h][0]+i[h][1]?(o.classList.add("highlighted"),o.classList.remove("not-passed")):(o.classList.add("not-passed"),o.classList.remove("highlighted"))}}function d(e){let t=Object.keys(i),s=t.indexOf(e);return -1!==s&&t[s+1]}$(),setInterval($,1e4)}).catch(e=>console.error("Ошибка загрузки данных:",e));
+// Загрузка данных из файла prayer-times.json
+fetch('js/json/prayer-times.json')
+.then(response => response.json())
+.then(data => {
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth() + 1;
+    const currentDay = currentDate.getDate();
+    const todayPrayerTimes = data[currentMonth][currentDay];
+
+    const prayerNames = {
+        "Fajr": "Фаджр",
+        "Sunrise": "Шурук",
+        "Dhuhr": "Зухр",
+        "Asr": "Аср",
+        "Maghrib": "Магриб",
+        "Isha": "Иша"
+    };
+
+    for (const time in todayPrayerTimes) {
+        const hour = todayPrayerTimes[time][0];
+        const minute = todayPrayerTimes[time][1];
+
+        const formattedTime = `${hour < 10 ? '0' + hour : hour}:${minute < 10 ? '0' + minute : minute}`;
+        document.getElementById(time.toLowerCase() + "-time").innerText = formattedTime;
+        document.getElementById(time.toLowerCase() + "-name").innerText = prayerNames[time];
+
+    }
+
+    // Функция для обновления цвета времени намаза
+    function updatePrayerTimeColor() {
+    const currentTime = new Date();
+    const currentTotalMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
+ 
+    for (const time in todayPrayerTimes) {
+        const hour = todayPrayerTimes[time][0];
+        const minute = todayPrayerTimes[time][1];
+        const prayerTotalMinutes = hour * 60 + minute;
+ 
+        const timeElement = document.getElementById(time.toLowerCase() + "-time");
+        const next = nextTime(time);
+ 
+        if (!todayPrayerTimes ||
+            (time === "Isha" && 
+            (
+                currentTotalMinutes >= prayerTotalMinutes || // До конца текущего дня
+                currentTotalMinutes < (todayPrayerTimes["Fajr"][0] * 60 + todayPrayerTimes["Fajr"][1]) // До начала намаза Fajr
+            ))
+        ) {
+            timeElement.classList.add("highlighted");
+        } else if (currentTotalMinutes >= prayerTotalMinutes && currentTotalMinutes < (todayPrayerTimes[next][0] * 60 + todayPrayerTimes[next][1])) {
+            timeElement.classList.add("highlighted");
+            timeElement.classList.remove("not-passed");
+        } else {
+            timeElement.classList.add("not-passed");
+            timeElement.classList.remove("highlighted");
+        }
+    }
+}
+
+
+    // Функция для получения следующего времени
+    function nextTime(currentTime) {
+        const times = Object.keys(todayPrayerTimes);
+        const currentIndex = times.indexOf(currentTime);
+        return currentIndex !== -1 && times[currentIndex + 1];
+    }
+
+    // Вызов функции для обновления цвета каждые 10 секунд
+    updatePrayerTimeColor(); // Сначала выполнить функцию один раз при загрузке страницы
+    setInterval(updatePrayerTimeColor, 10000); // каждые 10 секунд (10000 миллисекунд)
+
+
+})
+.catch(error => console.error('Ошибка загрузки данных:', error));

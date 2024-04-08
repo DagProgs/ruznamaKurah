@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "56700e57865f7606829cb2176e4d2b67"
+    "revision": "a1b1a5516e4344c6a423f45770f5b27d"
   },
   {
     "url": "manifest.json",
-    "revision": "6dbb76fb6ec88634b89efcd935a50cec"
+    "revision": "0eee67ae5d755022667313db73f630f1"
   },
   {
     "url": "css/style.css",
@@ -34,19 +34,15 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "986816218529e106ddbca50429820df9"
+    "revision": "354b6295d66a7a9fb054ee57f3c7001a"
   },
   {
     "url": "js/calendar-ru.js",
-    "revision": "5bd13c7dcb3b833600275783ac045d92"
+    "revision": "a00564cbe2169a01b57b03b148cfb6fa"
   },
   {
     "url": "js/clock.js",
-    "revision": "099265fb106f32c7a8fa7b31da037e2e"
-  },
-  {
-    "url": "js/iphone-close-install-modal.js",
-    "revision": "f978cacd915e38fa69315a7f3b273f71"
+    "revision": "59cec707bbaf501a5fd944e9b573b62e"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
@@ -54,19 +50,15 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/line-timer.js",
-    "revision": "8cddfed8ae4a3b05a90cfed52bf4166b"
+    "revision": "b3305349138e5e3c0fbabc094f3e8a8d"
   },
   {
     "url": "js/prayer-days.js",
-    "revision": "ba2f1d5c32300b2a6a1787e80a8687d9"
+    "revision": "70fe03d94140ba637b638ad0545f9058"
   },
   {
     "url": "js/prayer-times-mounths.js",
-    "revision": "6259c5e99da1d6f51115a235005e5f81"
-  },
-  {
-    "url": "pwacompat.min.js",
-    "revision": "0bf1bea41b1ba758d3989814c988f46e"
+    "revision": "7ed9d0e8bc6545156595e8fbd36cd55c"
   },
   {
     "url": "update.js",
@@ -74,7 +66,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/json/prayer-times.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
+    "revision": "fa29c9bf6a50f842418b4f0c6a632167"
   },
   {
     "url": "img/1.svg",
