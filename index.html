@@ -4,16 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.6.0.min.js"></script>
-    <link rel="manifest" href="manifest.json" />
-    <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
-        integrity="sha384-uONtBTCBzHKF84F6XvyC8S0gL8HTkAPeCyBNvfLfsqHh+Kd6s/kaS4BdmNQ5ktp1"
-        crossorigin="anonymous"></script>
+    <script src="js/update.js" async></script>
+    <script src="js/pwacompat.min.js" async></script>
     <title>Рузнама - Курахский район</title>
 </head>
 
 <body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="img/screen.png" alt="Add to Home Screen">
+            <p>Для лучшего опыта использования, установите приложение на вашем устройстве. Нажмите кнопку "1-Поделиться"
+                -
+                "2-Добавить на главный экран" - "3-Добавить".</p>
+        </div>
+    </div>
+    <div id="pwaModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Рузнама - Курахский район:</p>
+            <button id="installPWAButton">Установить</button>
+        </div>
+    </div>
+    <script src="js/iphone-close-install-modal.js"></script>
+    <script src="js/android-close-install-modal.js"></script>
     <header>
         <div class="header_container">
             <h1>Рузнама</h1>
@@ -181,74 +198,6 @@
     </div>
     </div>
     <script src="js/prayer-times-mounths.js"></script>
-
-    <script type="module">
-
-        import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-window.prod.mjs';
-
-        if ('serviceWorker' in navigator) {
-
-            const wb = new Workbox('sw-workbox.js');
-
-            wb.addEventListener('installed', event => {
-                if (event.isUpdate) {
-                    if (confirm(`Мы только что обновили версию приложения! Чтобы получить обновления, нажмите на кнопку OK.`)) {
-                        window.location.reload();
-                    } else {
-                        alert(`Вы отказались от обновления приложения. Для получения новых возможностей перезагрузите страницу в будущем.`);
-                    }
-                } else {
-                    alert(`Приложение готово к работе в автономном режиме`);
-                }
-            });
-
-            wb.register();
-        }
-
-    </script>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img src="Screen.png" alt="Add to Home Screen">
-            <p>Для лучшего опыта использования, установите приложение на вашем устройстве. Нажмите кнопку "1-Поделиться"
-                -
-                "2-Добавить на главный экран" - "3-Добавить".</p>
-        </div>
-    </div>
-    <script>
-        if (!localStorage.getItem('appInstalled') && !window.matchMedia('(display-mode: standalone)').matches && /iPhone|iPod/i.test(navigator.userAgent)) {
-            // Открываем модальное окно только на устройствах iPhone
-            document.getElementById('myModal').style.display = "block";
-            localStorage.setItem('appInstalled', 'true');
-        }
-
-        // Закрытие модального окна при нажатии на кнопку "Close"
-        document.getElementsByClassName("close")[0].onclick = function () {
-            document.getElementById('myModal').style.display = "none";
-        }
-    </script>
-
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(92655412, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true
-        });
-    </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
 </body>
 
 </html>

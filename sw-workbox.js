@@ -22,27 +22,35 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "051abca773254d472fd4eac230526e11"
+    "revision": "081906fccb9f090eaf5193386690dfee"
   },
   {
     "url": "manifest.json",
-    "revision": "284c5f8408ae74247df00ff41b56b06c"
+    "revision": "b82c1ce323a9d5e1667076e88f8d4b80"
   },
   {
     "url": "css/style.css",
-    "revision": "f3cdd1b7a297cb4136376ca388e213a2"
+    "revision": "e582bd18df4f64de9fd36d7c5179ea7d"
+  },
+  {
+    "url": "js/android-close-install-modal.js",
+    "revision": "f8debb71854b09f690e33609ffda20bc"
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "354b6295d66a7a9fb054ee57f3c7001a"
+    "revision": "986816218529e106ddbca50429820df9"
   },
   {
     "url": "js/calendar-ru.js",
-    "revision": "a00564cbe2169a01b57b03b148cfb6fa"
+    "revision": "5bd13c7dcb3b833600275783ac045d92"
   },
   {
     "url": "js/clock.js",
-    "revision": "59cec707bbaf501a5fd944e9b573b62e"
+    "revision": "099265fb106f32c7a8fa7b31da037e2e"
+  },
+  {
+    "url": "js/iphone-close-install-modal.js",
+    "revision": "f978cacd915e38fa69315a7f3b273f71"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
@@ -50,19 +58,27 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/line-timer.js",
-    "revision": "b3305349138e5e3c0fbabc094f3e8a8d"
+    "revision": "8cddfed8ae4a3b05a90cfed52bf4166b"
   },
   {
     "url": "js/prayer-days.js",
-    "revision": "70fe03d94140ba637b638ad0545f9058"
+    "revision": "ba2f1d5c32300b2a6a1787e80a8687d9"
   },
   {
     "url": "js/prayer-times-mounths.js",
-    "revision": "7ed9d0e8bc6545156595e8fbd36cd55c"
+    "revision": "6259c5e99da1d6f51115a235005e5f81"
+  },
+  {
+    "url": "js/pwacompat.min.js",
+    "revision": "0bf1bea41b1ba758d3989814c988f46e"
+  },
+  {
+    "url": "js/update.js",
+    "revision": "7d143871d0a020bc3ce4217ad89414a3"
   },
   {
     "url": "js/json/prayer-times.json",
-    "revision": "fa29c9bf6a50f842418b4f0c6a632167"
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
   },
   {
     "url": "img/1.svg",
@@ -91,6 +107,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "img/ramadan.png",
     "revision": "be633c928304412f00ce027321c3ff3e"
+  },
+  {
+    "url": "img/screen.png",
+    "revision": "21909f0bd0f04a0c9873d2abe38a82db"
   },
   {
     "url": "img/solat.png",

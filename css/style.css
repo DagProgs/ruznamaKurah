@@ -393,7 +393,6 @@ th {
   text-align: center;
 }
 
-/*screen*/
 .modal {
   display: none;
   position: fixed;
@@ -428,3 +427,10 @@ th {
   text-decoration: none;
   cursor: pointer;
 }
+
+#installPWAButton {
+  margin-top: 10px;
+  color: #fff;
+  padding: 20px;
+  background-color: #a52a2a;
+}/*# sourceMappingURL=style.css.map */
