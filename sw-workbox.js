@@ -22,43 +22,47 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "eacf01163636a488f2d972ff21ddf0e6"
+    "revision": "ccd8a23588902c0d4f314be27ba93393"
   },
   {
     "url": "manifest.json",
-    "revision": "c1d30f07c540aa869ee8bd963c0a951c"
+    "revision": "d1812d2a259ad169aba706a8319ea9e9"
   },
   {
     "url": "css/style.css",
-    "revision": "e582bd18df4f64de9fd36d7c5179ea7d"
+    "revision": "8e39bf102e83224dfc94ab5446e1f34d"
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "354b6295d66a7a9fb054ee57f3c7001a"
+    "revision": "986816218529e106ddbca50429820df9"
   },
   {
     "url": "js/calendar-ru.js",
-    "revision": "a00564cbe2169a01b57b03b148cfb6fa"
+    "revision": "5bd13c7dcb3b833600275783ac045d92"
   },
   {
     "url": "js/clock.js",
-    "revision": "59cec707bbaf501a5fd944e9b573b62e"
+    "revision": "099265fb106f32c7a8fa7b31da037e2e"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
     "revision": "8fb8fee4fcc3cc86ff6c724154c49c42"
   },
   {
+    "url": "js/juma.js",
+    "revision": "4ca73997ba1a396515f91316c50cea6a"
+  },
+  {
     "url": "js/line-timer.js",
-    "revision": "b3305349138e5e3c0fbabc094f3e8a8d"
+    "revision": "8cddfed8ae4a3b05a90cfed52bf4166b"
   },
   {
     "url": "js/prayer-days.js",
-    "revision": "70fe03d94140ba637b638ad0545f9058"
+    "revision": "ba2f1d5c32300b2a6a1787e80a8687d9"
   },
   {
     "url": "js/prayer-times-mounths.js",
-    "revision": "7ed9d0e8bc6545156595e8fbd36cd55c"
+    "revision": "6259c5e99da1d6f51115a235005e5f81"
   },
   {
     "url": "update.js",
@@ -66,7 +70,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/json/prayer-times.json",
-    "revision": "fa29c9bf6a50f842418b4f0c6a632167"
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
   },
   {
     "url": "img/1.svg",

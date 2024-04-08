@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,16 +11,19 @@
         integrity="sha384-uONtBTCBzHKF84F6XvyC8S0gL8HTkAPeCyBNvfLfsqHh+Kd6s/kaS4BdmNQ5ktp1"
         crossorigin="anonymous"></script>
     <script src="update.js" type="module"></script>
-    <title>Рузнама - Курахский район</title>
+    <title>Рузнама Курахский район</title>
 </head>
 
 <body>
     <header>
-        <div class="header_container">
-            <h1>Рузнама</h1>
-            <p>Курахский район</p>
+        <div class="dopfon">
+            <div class="header_container">
+                <h1>Рузнама</h1>
+                <p>Курахский район</p>
+            </div>
         </div>
     </header>
+
     <div class="subheader">
         <div class="subheader_container">
             <div class="day_mounth_year_ru_ar">
@@ -53,7 +56,7 @@
         <div class="endprayer_container">
             <div id="timeToNextPrayerContainer" class="timeToNextPrayerContainer">
                 <div class="next_prayer_times" id="timeToNextPrayer">
-                    До осталось: --:--
+                    До осталось --:--
                 </div>
                 <div class="myline">
                     <div id="redLine" class="redline"></div>
@@ -180,7 +183,6 @@
             <p id="currentMonth"></p>
         </div>
     </div>
-    </div>
     <script src="js/prayer-times-mounths.js"></script>
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -191,22 +193,22 @@
                 "2-Добавить на главный экран" - "3-Добавить".</p>
         </div>
     </div>
-	<script>
-	if (!localStorage.getItem('appInstalled') && !window.matchMedia('(display-mode: standalone)').matches && /iPhone|iPod/i.test(navigator.userAgent)) {
-    // Открываем модальное окно только на устройствах iPhone
-    document.getElementById('myModal').style.display = "block";
-    localStorage.setItem('appInstalled', 'true');
-}
+    <script>
+        if (!localStorage.getItem('appInstalled') && !window.matchMedia('(display-mode: standalone)').matches && /iPhone|iPod/i.test(navigator.userAgent)) {
+            // Открываем модальное окно только на устройствах iPhone
+            document.getElementById('myModal').style.display = "block";
+            localStorage.setItem('appInstalled', 'true');
+        }
 
-// Закрытие модального окна при нажатии на кнопку "Close"
-document.getElementsByClassName("close")[0].onclick = function() {
-    document.getElementById('myModal').style.display = "none";
-}
-	</script>
+        // Закрытие модального окна при нажатии на кнопку "Close"
+        document.getElementsByClassName("close")[0].onclick = function () {
+            document.getElementById('myModal').style.display = "none";
+        }
+    </script>
     <div id="pwaModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Установите PWA на вашем устройстве</p>
+            <p>Рузнама Курахский р-он</p>
             <button id="installPWAButton">Установить</button>
         </div>
     </div>
@@ -255,7 +257,7 @@ document.getElementsByClassName("close")[0].onclick = function() {
             }
         };
     </script>
-
+    
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw-worker.js')
@@ -267,8 +269,19 @@ document.getElementsByClassName("close")[0].onclick = function() {
                 });
         }
     </script>
-	
-	<!-- Yandex.Metrika counter -->
+    <div class="popup" id="popup">
+        <p class="jumamubarak">Джума Мубарак!</p>
+        <button id="closeBtn">Закрыть</button>
+    </div>
+    <script src="js/juma.js"></script>
+
+    <footer>
+        <div class="footer_container">
+            <p>MSM</p>
+        </div>
+    </footer>
+
+    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
