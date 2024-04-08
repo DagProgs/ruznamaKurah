@@ -13,24 +13,35 @@
 </head>
 
 <body>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img src="img/screen.png" alt="Add to Home Screen">
-            <p>Для лучшего опыта использования, установите приложение на вашем устройстве. Нажмите кнопку "1-Поделиться"
-                -
-                "2-Добавить на главный экран" - "3-Добавить".</p>
-        </div>
-    </div>
-    <div id="pwaModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Рузнама - Курахский район:</p>
-            <button id="installPWAButton">Установить</button>
-        </div>
-    </div>
-    <script src="js/iphone-close-install-modal.js"></script>
-    <script src="js/android-close-install-modal.js"></script>
+    <button id="installButton">Установить виджет</button>
+
+  <script>
+    function isAndroid() {
+      return navigator.userAgent.toLowerCase().indexOf("android") > -1;
+    }
+
+    function isIOS() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
+
+    function installWidget() {
+      if (isAndroid()) {
+        // Добавить код для установки виджета на Android
+        if (confirm('Хотите установить виджет на Android устройство?')) {
+          // Код для установки виджета на Android
+        }
+      } else if (isIOS()) {
+        // Добавить код для установки виджета на iPhone
+        if (confirm('Хотите установить виджет на iPhone устройство?')) {
+          // Код для установки виджета на iPhone
+        }
+      } else {
+        alert('Установка виджета поддерживается только на Android и iPhone устройствах.');
+      }
+    }
+
+    document.getElementById('installButton').addEventListener('click', installWidget);
+  </script>
     <header>
         <div class="header_container">
             <h1>Рузнама</h1>
