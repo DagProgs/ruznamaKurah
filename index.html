@@ -191,6 +191,18 @@
                 "2-Добавить на главный экран" - "3-Добавить".</p>
         </div>
     </div>
+	<script>
+	if (!localStorage.getItem('appInstalled') && !window.matchMedia('(display-mode: standalone)').matches && /iPhone|iPod/i.test(navigator.userAgent)) {
+    // Открываем модальное окно только на устройствах iPhone
+    document.getElementById('myModal').style.display = "block";
+    localStorage.setItem('appInstalled', 'true');
+}
+
+// Закрытие модального окна при нажатии на кнопку "Close"
+document.getElementsByClassName("close")[0].onclick = function() {
+    document.getElementById('myModal').style.display = "none";
+}
+	</script>
     <div id="pwaModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -255,6 +267,28 @@
                 });
         }
     </script>
+	
+	<!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(92655412, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 </body>
 
 </html>
