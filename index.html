@@ -20,23 +20,32 @@
       return navigator.userAgent.toLowerCase().indexOf("android") > -1;
     }
 
-    function isIOS() {
-      return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    }
-
     function installWidget() {
-      if (isAndroid()) {
-        // Добавить код для установки виджета на Android
-        if (confirm('Хотите установить виджет на Android устройство?')) {
-          // Код для установки виджета на Android
-        }
-      } else if (isIOS()) {
-        // Добавить код для установки виджета на iPhone
-        if (confirm('Хотите установить виджет на iPhone устройство?')) {
-          // Код для установки виджета на iPhone
+      if (isAndroid() && window.matchMedia('(display-mode: browser)').matches) {
+        if (window.navigator.getInstalledRelatedApps) {
+            alert('Публикация в Play Маркете');
+        } else {
+            if (navigator.standalone) {
+              alert('Приложение уже установлено на вашем устройстве.');
+            } else {
+              alert('Пожалуйста, нажмите "Добавить на главный экран" для установки виджета.');
+              
+              window.addEventListener('beforeinstallprompt', (event) => {
+                event.prompt();
+                event.userChoice.then((choiceResult) => {
+                  if (choiceResult.outcome === 'accepted') {
+                    console.log('Пользователь согласился на установку');
+                  } else {
+                    console.log('Пользователь отказался от установки');
+                  }
+                });
+
+                return false;
+              });
+            }
         }
       } else {
-        alert('Установка виджета поддерживается только на Android и iPhone устройствах.');
+        alert('Установка виджета поддерживается только на Android устройствах и в режиме PWA.');
       }
     }
 
