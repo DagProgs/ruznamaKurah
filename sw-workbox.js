@@ -62,7 +62,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "update.js",
-    "revision": "99e339283bc892b4f93ee0ceaedbd0ca"
+    "revision": "e332232f49094c4a5b4169a8ca73b7de"
   },
   {
     "url": "js/json/prayer-times.json",

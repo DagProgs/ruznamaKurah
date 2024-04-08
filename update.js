@@ -5,13 +5,7 @@ if ('serviceWorker' in navigator) {
 
     wb.addEventListener('installed', event => {
         if (event.isUpdate) {
-            if (confirm(`Мы только что обновили версию приложения! Чтобы получить обновления, нажмите на кнопку OK.`)) {
-                window.location.reload();
-            } else {
-                alert(`Вы отказались от обновления приложения. Для получения новых возможностей перезагрузите страницу в будущем.`);
-            }
-        } else {
-            alert(`Приложение готово к работе в автономном режиме`);
+            window.location.reload();
         }
     });
 
