@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "62e5e7a24b2d4c9042f832a97f7649c6"
+    "revision": "0ea4f502785e475fd3a89b2f4de02331"
   },
   {
     "url": "manifest.json",
