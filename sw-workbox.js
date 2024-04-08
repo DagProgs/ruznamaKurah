@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "67b4021dba9d53b134d9f1cdd9112394"
+    "revision": "b51694158cd2dc944480afe75e733bc5"
   },
   {
     "url": "manifest.json",
@@ -34,7 +34,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/android-close-install-modal.js",
-    "revision": "f8debb71854b09f690e33609ffda20bc"
+    "revision": "c706f27d8ccd733ecacf2ff53580e5ca"
   },
   {
     "url": "js/calendar-ar.js",
