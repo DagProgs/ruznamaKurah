@@ -30,11 +30,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "8197471263359064e44cd7dd362d1047"
+    "revision": "3fb0503db853527defef2ac70861997f"
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "986816218529e106ddbca50429820df9"
+    "revision": "9b3ce38c563c200320cdd395088c6b4c"
   },
   {
     "url": "js/calendar-ru.js",
@@ -114,7 +114,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "img/ramadan.png",
-    "revision": "be633c928304412f00ce027321c3ff3e"
+    "revision": "68c6547f6d4931e9f9aec5e5913b48e1"
   },
   {
     "url": "img/screen.png",
