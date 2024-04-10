@@ -193,6 +193,7 @@ header {
   color: #6f7faf;
 }
 
+/*
 .ramadan {
   position: absolute;
   right: 0;
@@ -200,6 +201,7 @@ header {
   height: auto;
   z-index: 1;
 }
+*/
 
 .endprayer {
   position: relative;

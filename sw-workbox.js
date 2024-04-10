@@ -22,15 +22,15 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "8cfaea74c0f2a7e675063c312ea2f3ae"
+    "revision": "cf5ff90360793057fded9a60e35dee39"
   },
   {
     "url": "manifest.json",
-    "revision": "be7f55ff91fcaaa94a32d6d55b3e385f"
+    "revision": "aa9d7fc14bbca9ef72333a87700b6960"
   },
   {
     "url": "css/style.css",
-    "revision": "3fb0503db853527defef2ac70861997f"
+    "revision": "682a1353c662cd441168254fe444cb12"
   },
   {
     "url": "js/calendar-ar.js",
@@ -46,7 +46,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/jquery-3.6.0.min.js",
-    "revision": "8fb8fee4fcc3cc86ff6c724154c49c42"
+    "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
   },
   {
     "url": "js/juma.js",
@@ -74,7 +74,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "pwacompat.min.js",
-    "revision": "0bf1bea41b1ba758d3989814c988f46e"
+    "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
   },
   {
     "url": "runtime.js",
@@ -85,32 +85,28 @@ workbox.precaching.precacheAndRoute([
     "revision": "db409cd90d613a43e7a19c449e074441"
   },
   {
-    "url": "js/json/prayer-times.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
-  },
-  {
     "url": "img/1.svg",
-    "revision": "bce40a862445411ec686482c02cb588f"
+    "revision": "9d6cf2623bbc4a07024db2e22b665528"
   },
   {
     "url": "img/2.svg",
-    "revision": "fc59ee299076adf26ae064f8c68f6165"
+    "revision": "dd961ae7704d410f30cdcdd0c2a03442"
   },
   {
     "url": "img/3.svg",
-    "revision": "f7a39f3588a86b33a524b33b256ac77a"
+    "revision": "dccc52ad0d1e7833c3487205115476ac"
   },
   {
     "url": "img/4.svg",
-    "revision": "434f3c80313dfecce4ed0e457ff46f6e"
+    "revision": "96c0c04db09822cdb186a0ce09a6f200"
   },
   {
     "url": "img/5.svg",
-    "revision": "724c9ad02feec579f2543988e375b352"
+    "revision": "0741eda4d223da81339630b201f9e09d"
   },
   {
     "url": "img/6.svg",
-    "revision": "b37a0352904a124bf991b809fad2bec4"
+    "revision": "1a376188e87b6cea6866e32fbc9b6f98"
   },
   {
     "url": "img/ramadan.png",
