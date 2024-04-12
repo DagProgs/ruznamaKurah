@@ -1,4 +1,4 @@
-importScripts('./workbox-v4.3.1/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
 // SETTINGS
 
@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "ff05b65dfe9f94f1d9d96ff2213b990f"
+    "revision": "dd722eb11031b1a45862492da2d5b67e"
   },
   {
     "url": "css/style.css",
@@ -157,17 +157,7 @@ workbox.precaching.precacheAndRoute([
 // RUNTIME CACHING
 
 // Google fonts
-workbox.routing.registerRoute(
-  new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'googleapis',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 30
-      })
-    ]
-  })
-);
+
 
 // API with network-first strategy
 workbox.routing.registerRoute(
@@ -180,6 +170,32 @@ workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)favorites/,
   workbox.strategies.cacheFirst()
 )
+
+
+
+workbox.routing.registerRoute(
+  ({url}) => url.origin === 'https://storage.googleapis.com',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'googleapis',
+  })
+);
+
+workbox.routing.registerRoute(
+  ({url}) => url.origin === 'https://fonts.googleapis.com',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'googlefonts',
+  })
+);
+
+workbox.routing.registerRoute(
+  ({url}) => url.pathname.startsWith('/images'),
+  new workbox.strategies.CacheFirst({
+    cacheName: 'images-cache',
+  })
+);
+
+
+
 
 // OTHER EVENTS
 
