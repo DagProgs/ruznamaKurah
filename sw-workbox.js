@@ -1,10 +1,10 @@
-importScripts('workbox-v4.3.1/workbox-sw.js');
+importScripts('workbox-v4.3.0/workbox-sw.js');
 
 // SETTINGS
 
 // Path prefix to load modules locally
 workbox.setConfig({
-  modulePathPrefix: 'workbox-v4.3.1/'
+  modulePathPrefix: 'workbox-v4.3.0/'
 });
 
 // Turn on logging
@@ -22,11 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "cf5ff90360793057fded9a60e35dee39"
-  },
-  {
-    "url": "manifest.json",
-    "revision": "aa9d7fc14bbca9ef72333a87700b6960"
+    "revision": "1e5b2e9a63a0234b24c48164768208be"
   },
   {
     "url": "css/style.css",
@@ -63,6 +59,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prayer-times-mounths.js",
     "revision": "6259c5e99da1d6f51115a235005e5f81"
+  },
+  {
+    "url": "js/json/prayer-times.json",
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
   },
   {
     "url": "main.js",
