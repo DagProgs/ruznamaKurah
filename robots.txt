@@ -1,6 +1,7 @@
 User-agent: *
-Disallow: /img
-Disallow: /js
-Disallow: /js/json
+Disallow: /workbox-v4.3.1/
+Disallow: /img/
+Disallow: /js/
+Disallow: /js/json/
 Host: https://dagprogs.github.io/ruznamaKurah/
 Sitemap: http://https://dagprogs.github.io/ruznamaKurah/sitemap.xml
