@@ -1,10 +1,10 @@
-importScripts('workbox-v4.3.0/workbox-sw.js');
+importScripts('./workbox-v4.3.1/workbox-sw.js');
 
 // SETTINGS
 
 // Path prefix to load modules locally
 workbox.setConfig({
-  modulePathPrefix: 'workbox-v4.3.0/'
+  modulePathPrefix: './workbox-v4.3.1/'
 });
 
 // Turn on logging
@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "c7f18a672dabc11a3da3f1d9167ace97"
+    "revision": "ff05b65dfe9f94f1d9d96ff2213b990f"
   },
   {
     "url": "css/style.css",
