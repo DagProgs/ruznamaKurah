@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /запретная-страница/
+Sitemap: https://dagprogs.github.io/ruznamaKurah/sitemap.xml
