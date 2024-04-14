@@ -11,18 +11,24 @@
     <meta name="robot" content="index, follow">
     <meta name="author" content="DagProgs">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json" />
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script async src="pwacompat.min.js"></script>
+    <script defer src="update.js" type="module"></script>
     <title>Рузнама Курахский район</title>
 </head>
 
 <body>
+
     <header>
         <div class="header_container">
             <h1>Рузнама</h1>
             <h2>Курахский район</h2>
         </div>
     </header>
+
     <main>
+
         <section class="subheader">
             <div class="subheader_container">
                 <div class="date_ru_ar">
@@ -47,6 +53,7 @@
                 </div>
             </div>
         </section>
+
         <section>
             <div class="endtime">
                 <div class="endtime_container">
@@ -59,6 +66,7 @@
                 </div>
             </div>
         </section>
+
         <section>
             <div class="prayer_time_day">
                 <div class="prayer_time_day_container">
@@ -145,6 +153,7 @@
                 </div>
             </div>
         </section>
+
         <section>
             <div class="prayer_time_mounth">
                 <div class="prayer_time_mounth_container">
@@ -180,32 +189,49 @@
                 </div>
             </div>
         </section>
+
         <section>
             <div class="popup" id="popup">
                 <p class="jumamubarak">Джума Мубарак!</p>
                 <button id="closeBtn">Закрыть</button>
             </div>
         </section>
-        <script>
-            if (!localStorage.getItem('appInstalled') && !window.matchMedia('(display-mode: standalone)').matches && /iPhone|iPod/i.test(navigator.userAgent)) {
-                // Открываем модальное окно только на устройствах iPhone
-                document.getElementById('myModal').style.display = "block";
-                localStorage.setItem('appInstalled', 'true');
-            }
 
-            // Закрытие модального окна при нажатии на кнопку "Close"
-            document.getElementsByClassName("close")[0].onclick = function () {
-                document.getElementById('myModal').style.display = "none";
-            }
-        </script>
     </main>
+
     <footer>
         <div class="verapp">
             <div class="verapp_container">
-                ver: 2.3.35
+                ver: 2.3.34
             </div>
         </div>
     </footer>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="img/screen.png" alt="Add to Home Screen">
+            <p>Для лучшего опыта использования, установите приложение на вашем устройстве. Нажмите кнопку "1-Поделиться"
+                -
+                "2-Добавить на главный экран" - "3-Добавить".</p>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem('appInstalled') && !window.matchMedia('(display-mode: standalone)').matches && /iPhone|iPod/i.test(navigator.userAgent)) {
+            // Открываем модальное окно только на устройствах iPhone
+            document.getElementById('myModal').style.display = "block";
+            localStorage.setItem('appInstalled', 'true');
+        }
+
+        // Закрытие модального окна при нажатии на кнопку "Close"
+        document.getElementsByClassName("close")[0].onclick = function () {
+            document.getElementById('myModal').style.display = "none";
+        }
+    </script>
+
+    <script type="text/javascript" src="runtime.js"></script>
+    <script type="text/javascript" src="polyfills.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <script src="js/calendar-ru.js"></script>
     <script src="js/calendar-ar.js"></script>
     <script src="js/clock.js"></script>
@@ -213,6 +239,28 @@
     <script src="js/prayer-days.js"></script>
     <script src="js/prayer-times-mounths.js"></script>
     <script src="js/juma.js"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(92655412, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 </body>
 
 </html>
