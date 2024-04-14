@@ -15,7 +15,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "yt.html",
-    "revision": "86622895d4fc35028ebdccf7f4685c41"
+    "revision": "990dbceed67668257a21ce061226e544"
   },
   {
     "url": "manifest.json",
@@ -64,10 +64,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prayer-times-mounths.js",
     "revision": "6259c5e99da1d6f51115a235005e5f81"
-  },
-  {
-    "url": "js/yt.js",
-    "revision": "40af4728cf48f26502448aac4914403e"
   },
   {
     "url": "js/json/prayer-times.json",
