@@ -22,15 +22,19 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "dd722eb11031b1a45862492da2d5b67e"
+    "revision": "ec3588ac643cc5330b1082d77ffa27c8"
+  },
+  {
+    "url": "manifest.json",
+    "revision": "f9f746e91522644f3a16c27ce4123ed5"
   },
   {
     "url": "css/style.css",
-    "revision": "682a1353c662cd441168254fe444cb12"
+    "revision": "da1aa1a0e6da3582ec649bcbda09dfe1"
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "9b3ce38c563c200320cdd395088c6b4c"
+    "revision": "986816218529e106ddbca50429820df9"
   },
   {
     "url": "js/calendar-ru.js",
@@ -41,16 +45,20 @@ workbox.precaching.precacheAndRoute([
     "revision": "099265fb106f32c7a8fa7b31da037e2e"
   },
   {
+    "url": "js/end-time.js",
+    "revision": "8cddfed8ae4a3b05a90cfed52bf4166b"
+  },
+  {
+    "url": "js/iphone.js",
+    "revision": "656278ba55b19b97fba4b2b39fd9b3e6"
+  },
+  {
     "url": "js/jquery-3.6.0.min.js",
-    "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
+    "revision": "8fb8fee4fcc3cc86ff6c724154c49c42"
   },
   {
     "url": "js/juma.js",
-    "revision": "4ca73997ba1a396515f91316c50cea6a"
-  },
-  {
-    "url": "js/line-timer.js",
-    "revision": "8cddfed8ae4a3b05a90cfed52bf4166b"
+    "revision": "971acee4cf24bb83e115762d4bd5d73e"
   },
   {
     "url": "js/prayer-days.js",
@@ -86,35 +94,27 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "img/1.svg",
-    "revision": "9d6cf2623bbc4a07024db2e22b665528"
+    "revision": "ca0ec45cd521c6f4be1dec19ab2e63f8"
   },
   {
     "url": "img/2.svg",
-    "revision": "dd961ae7704d410f30cdcdd0c2a03442"
+    "revision": "a2a2a2ecb6c758d519b8c4623ca54086"
   },
   {
     "url": "img/3.svg",
-    "revision": "dccc52ad0d1e7833c3487205115476ac"
+    "revision": "ed57ca4dae496d5645e4da282e063ef0"
   },
   {
     "url": "img/4.svg",
-    "revision": "96c0c04db09822cdb186a0ce09a6f200"
+    "revision": "be3d080a27ad98b431e1216e5b49a4f5"
   },
   {
     "url": "img/5.svg",
-    "revision": "0741eda4d223da81339630b201f9e09d"
+    "revision": "3f7c8b0595e8904423c7b5ebdc15d0d2"
   },
   {
     "url": "img/6.svg",
-    "revision": "1a376188e87b6cea6866e32fbc9b6f98"
-  },
-  {
-    "url": "img/ramadan.png",
-    "revision": "68c6547f6d4931e9f9aec5e5913b48e1"
-  },
-  {
-    "url": "img/screen.png",
-    "revision": "21909f0bd0f04a0c9873d2abe38a82db"
+    "revision": "e35ffe5a9a0fb69091824b26cc26e1eb"
   },
   {
     "url": "img/solat.png",
