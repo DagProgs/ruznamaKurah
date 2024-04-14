@@ -22,8 +22,23 @@
 
     <header>
         <div class="header_container">
-            <h1>Рузнама</h1>
-            <h2>Курахский район</h2>
+            <div class="menu_ruznama">
+                <a href="javascript:void(0)" onclick="openNav1()">
+                    <img src="img/menu.svg" alt="" class="icon_menu">
+                </a>
+                <div class="compass_left">
+                    <div id="myCompass" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">
+                            <img src="img/close.svg" alt="">
+                        </a>
+                        <div class="overlay-content">
+                            <a href="yt.html">Видео</a>
+                        </div>
+                    </div>
+                </div>
+                <h1>Рузнама</h1>
+            </div>
+            <h2>Курахский р-он</h2>
         </div>
     </header>
 
@@ -202,7 +217,7 @@
     <footer>
         <div class="verapp">
             <div class="verapp_container">
-                ver: 2.3.34
+                ver: 2.3.35
             </div>
         </div>
     </footer>
@@ -232,6 +247,7 @@
     <script type="text/javascript" src="runtime.js"></script>
     <script type="text/javascript" src="polyfills.js"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/calendar-ru.js"></script>
     <script src="js/calendar-ar.js"></script>
     <script src="js/clock.js"></script>
