@@ -42,7 +42,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "986816218529e106ddbca50429820df9"
+    "revision": "9b3ce38c563c200320cdd395088c6b4c"
   },
   {
     "url": "js/calendar-ru.js",
