@@ -11,15 +11,15 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "f4975cb4362b2538e62918d31957c5ed"
+    "revision": "b9ecf1b9d29e9e99c4c7f9992f4d600e"
   },
   {
     "url": "yt.html",
-    "revision": "990dbceed67668257a21ce061226e544"
+    "revision": "86622895d4fc35028ebdccf7f4685c41"
   },
   {
     "url": "manifest.json",
-    "revision": "43a8d3db8f7fce871c44a909e2a1a96b"
+    "revision": "9d772f22a6e9165682832eecf7d5bbd7"
   },
   {
     "url": "css/plyr.css",
@@ -64,6 +64,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prayer-times-mounths.js",
     "revision": "6259c5e99da1d6f51115a235005e5f81"
+  },
+  {
+    "url": "js/yt.js",
+    "revision": "40af4728cf48f26502448aac4914403e"
   },
   {
     "url": "js/json/prayer-times.json",
