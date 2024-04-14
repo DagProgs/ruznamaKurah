@@ -1,27 +1,52 @@
 const player = new Plyr('#player', {
     invertTime: false,
 });
-
-$(document).ready(function() {
-    // Установка источника видео для плеера
-    let youtubeurl = 'https://www.youtube.com/watch?v=' + $('#player').attr('data-plyr-embed-id');
-    player.source = {
-        type: 'video',
-        sources: [
-            {
-                src: youtubeurl,
-                provider: 'youtube'
-            }
-        ]
-    };
-
-    // Автоматическое воспроизведение видео
-    window.setTimeout(function() {
-        player.play();
-    }, 1000);
-
-    // Переключение на следующее видео по окончанию текущего    
-    player.on('ended', event => {
-        // Ваш код для переключения на следующее видео
+$(function() {
+    // Включение трека по клику
+    $('.change-youtube').click(function(){
+        $('.change-youtube').removeClass('active');
+        $(this).addClass('active');    
+        let youtubeurl = $(this).attr('data-youtube');
+        player.source = {
+            type: 'video',
+            sources: [
+                {
+                    src: youtubeurl,
+                    provider: 'youtube'
+                }
+            ]
+        };    
+        // если нужно запускать видео сразу по клику, раскоментируйте строчки ниже
+		/*
+            window.setTimeout(function() {
+            player.play();
+            }, 1000);  
+				*/
     });
-});
+    // Переключение аидео на следующее по окончанию    
+    player.on('ended', event => {
+        let nextyoutube = $('.change-youtube.active').next(".change-youtube");
+        let urlnextyoutube = nextyoutube.attr('data-youtube');
+        if (!urlnextyoutube) {
+            player.stop();     
+            } else {
+            $('.change-youtube').removeClass('active');
+            nextyoutube.addClass('active');
+            player.source = {
+                type: 'video',
+                sources: [
+                    {
+                        src: urlnextyoutube,
+                        provider: 'youtube'
+                    }
+                ]
+            };        
+            // если нужно запускать следующее видео, раскоментируйте строчки ниже
+            /*
+                window.setTimeout(function() {    
+                player.play(); 
+                }, 1000);
+            */
+        }
+    });    
+});    
