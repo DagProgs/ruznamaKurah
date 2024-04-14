@@ -11,7 +11,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "2bc77cd05b7805c8c30016b275c47c45"
+    "revision": "f4975cb4362b2538e62918d31957c5ed"
   },
   {
     "url": "yt.html",
@@ -19,7 +19,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "ed081f9acf29abec8c30ed62141f8308"
+    "revision": "43a8d3db8f7fce871c44a909e2a1a96b"
   },
   {
     "url": "css/plyr.css",
