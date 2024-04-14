@@ -1,24 +1,13 @@
 importScripts('./workbox-v4.3.1/workbox-sw.js');
 
-// SETTINGS
-
-// Path prefix to load modules locally
 workbox.setConfig({
-  modulePathPrefix: './workbox-v4.3.1/'
-});
-
-// Turn on logging
-workbox.setConfig({
+  modulePathPrefix: './workbox-v4.3.1/',
   debug: true
 });
 
-// Updating SW lifecycle to update the app after user triggered refresh
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
 
-// PRECACHING
-
-// We inject manifest here using "workbox-build" in workbox-build-inject.js
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
@@ -174,52 +163,41 @@ workbox.precaching.precacheAndRoute([
   }
 ]);
 
-// RUNTIME CACHING
-
 // Google fonts
+workbox.routing.registerRoute(
+  new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'googleapis',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 30
+      })
+    ]
+  })
+);
 
-
-// API with network-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
   workbox.strategies.networkFirst()
-)
+);
 
-// API with cache-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)favorites/,
   workbox.strategies.cacheFirst()
-)
-
-
-
-workbox.routing.registerRoute(
-  ({url}) => url.origin === 'https://storage.googleapis.com',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'googleapis',
-  })
 );
 
-workbox.routing.registerRoute(
-  ({url}) => url.origin === 'https://fonts.googleapis.com',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'googlefonts',
-  })
-);
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+});
 
-workbox.routing.registerRoute(
-  ({url}) => url.pathname.startsWith('/images'),
-  new workbox.strategies.CacheFirst({
-    cacheName: 'images-cache',
-  })
-);
-
-
-
-
-// OTHER EVENTS
-
-// Receive push and show a notification
 self.addEventListener('push', function(event) {
   console.log('[Service Worker]: Received push event', event);
 });
