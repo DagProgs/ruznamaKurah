@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <title>Рузнама Курахский район</title>
 </head>
+
 <body>
     <header>
         <div class="header_container">
@@ -184,11 +186,23 @@
                 <button id="closeBtn">Закрыть</button>
             </div>
         </section>
+        <script>
+            if (!localStorage.getItem('appInstalled') && !window.matchMedia('(display-mode: standalone)').matches && /iPhone|iPod/i.test(navigator.userAgent)) {
+                // Открываем модальное окно только на устройствах iPhone
+                document.getElementById('myModal').style.display = "block";
+                localStorage.setItem('appInstalled', 'true');
+            }
+
+            // Закрытие модального окна при нажатии на кнопку "Close"
+            document.getElementsByClassName("close")[0].onclick = function () {
+                document.getElementById('myModal').style.display = "none";
+            }
+        </script>
     </main>
     <footer>
         <div class="verapp">
             <div class="verapp_container">
-                ver: 2.3.34
+                ver: 2.3.35
             </div>
         </div>
     </footer>
@@ -199,6 +213,6 @@
     <script src="js/prayer-days.js"></script>
     <script src="js/prayer-times-mounths.js"></script>
     <script src="js/juma.js"></script>
-    <script src="js/iphone.js"></script>
 </body>
+
 </html>

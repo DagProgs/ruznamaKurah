@@ -1,4 +1,4 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+importScripts('./workbox-v4.3.1/workbox-sw.js');
 
 // SETTINGS
 
@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "9ab1109457a7ab9833e99aa152f7e918"
+    "revision": "0ed610518718ef0fb15affa73b0af7c8"
   },
   {
     "url": "manifest.json",
-    "revision": "f9f746e91522644f3a16c27ce4123ed5"
+    "revision": "ed081f9acf29abec8c30ed62141f8308"
   },
   {
     "url": "css/style.css",
@@ -47,10 +47,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/end-time.js",
     "revision": "8cddfed8ae4a3b05a90cfed52bf4166b"
-  },
-  {
-    "url": "js/iphone.js",
-    "revision": "656278ba55b19b97fba4b2b39fd9b3e6"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
