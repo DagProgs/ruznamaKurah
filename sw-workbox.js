@@ -15,7 +15,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "yt.html",
-    "revision": "990dbceed67668257a21ce061226e544"
+    "revision": "3c82267ff68782558bf85f0f2f792c10"
   },
   {
     "url": "manifest.json",
