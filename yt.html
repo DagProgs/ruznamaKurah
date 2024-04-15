@@ -11,7 +11,7 @@
     <meta name="robot" content="index, follow">
     <meta name="author" content="DagProgs">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://dagprogs.github.io/apidb/vYT/video-js.css">
+    <link rel="stylesheet" href="https://dagprogs.github.io/apidb/vYT/plyr.css">
     <link rel="manifest" href="manifest.json" />
     <script src="js/jquery-3.6.0.min.js"></script>
     <script async src="pwacompat.min.js"></script>
@@ -21,32 +21,36 @@
 
 <body>
 
-    <header>
-        <div class="header_container">
-            <div class="menu_ruznama">
-                <a href="index.html">
-                    <img src="img/back.svg" alt="" class="icon_menu">
-                </a>
-                <h1>Видео</h1>
+    <div class="youtube-container">
+        <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="txXyKbmqn8A"></div>
+        <div class="youtube-list">
+            <div class="change-youtube active" data-youtube="39vNSq-N5ms">
+                <img
+                    src="https://i.ytimg.com/vi/39vNSq-N5ms/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLALdv0dxDSxSXleDEHgnQhgl1QbPg" />
+                <span>Яхья Юсупов - Чтение суры Аль-Фатиха | Коран</span>
             </div>
         </div>
-    </header>
-    <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264"
-        controlsList="nodownload" ytcontrols="0" disablePictureInPicture
-        data-setup='{"techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=txXyKbmqn8A"}]}'>
-    </video>
-
-    <script>
-        videojs('my-video', {}, function () {
-            // Player (this) is initialized and ready.
-        });
-    </script>
+        <div class="youtube-list">
+            <div class="change-youtube active" data-youtube="jwGXO7nuLh4">
+                <img
+                    src="https://i.ytimg.com/vi/jwGXO7nuLh4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLB1o4GErFBh3AauEcztfhMOPnhUsA" />
+                <span>Чтение суры аль-Фатиха в намазе | Дагестан</span>
+            </div>
+        </div>
+        <div class="youtube-list">
+            <div class="change-youtube active" data-youtube="txXyKbmqn8A">
+                <img
+                    src="https://i.ytimg.com/vi/txXyKbmqn8A/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLBDCXLaDtyhpG3wTLfbHwJZCKALHA" />
+                <span>Дуа после Азана</span>
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript" src="runtime.js"></script>
     <script type="text/javascript" src="polyfills.js"></script>
     <script type="text/javascript" src="main.js"></script>
-    <script src="https://dagprogs.github.io/apidb/vYT/video.min.js"></script>
-    <script src="https://dagprogs.github.io/apidb/vYT/Youtube.js"></script>
+    <script src="https://dagprogs.github.io/apidb/vYT/plyr.js"></script>
+    <script src="https://dagprogs.github.io/apidb/vYT/yt.js"></script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
