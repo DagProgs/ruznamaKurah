@@ -11,15 +11,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "b9ecf1b9d29e9e99c4c7f9992f4d600e"
-  },
-  {
-    "url": "yt.html",
-    "revision": "843631a08406ccbb075762f26a23aac7"
+    "revision": "d6ff7b228d1c1aa903146d704d2a701b"
   },
   {
     "url": "manifest.json",
-    "revision": "9d772f22a6e9165682832eecf7d5bbd7"
+    "revision": "2c0c231233f7187aead2f3b818359c88"
   },
   {
     "url": "css/plyr.css",
@@ -27,7 +23,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "b093cabec4ce4ce131ae10c05235ecc8"
+    "revision": "5d174d72b48c73387a6a29d64fc65b51"
   },
   {
     "url": "js/calendar-ar.js",
@@ -47,7 +43,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/jquery-3.6.0.min.js",
-    "revision": "8fb8fee4fcc3cc86ff6c724154c49c42"
+    "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
   },
   {
     "url": "js/juma.js",
@@ -115,7 +111,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "img/back.svg",
-    "revision": "f64644972655feea2b492bb9b0a40250"
+    "revision": "4be712fe4aa18586469331c1aa0d390b"
   },
   {
     "url": "img/close.svg",
