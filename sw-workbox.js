@@ -11,19 +11,19 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "d6ff7b228d1c1aa903146d704d2a701b"
+    "revision": "94b456f6c5bc6f38562d608f3106ec91"
+  },
+  {
+    "url": "pages/yt.html",
+    "revision": "31ad122f7b9fe60af332a5b5987f5b82"
   },
   {
     "url": "manifest.json",
-    "revision": "2c0c231233f7187aead2f3b818359c88"
-  },
-  {
-    "url": "css/plyr.css",
-    "revision": "b762f4687b3d9c3c834acb09af73cc40"
+    "revision": "ed081f9acf29abec8c30ed62141f8308"
   },
   {
     "url": "css/style.css",
-    "revision": "5d174d72b48c73387a6a29d64fc65b51"
+    "revision": "14514eb66e15697830ff43cf2f91dfa7"
   },
   {
     "url": "js/calendar-ar.js",
@@ -51,7 +51,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/menu.js",
-    "revision": "499807da0ba790c0c07a214379433cd9"
+    "revision": "b8d7e2e5dce1e7c40b41e91c83a4fa09"
   },
   {
     "url": "js/prayer-days.js",
@@ -111,7 +111,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "img/back.svg",
-    "revision": "4be712fe4aa18586469331c1aa0d390b"
+    "revision": "f64644972655feea2b492bb9b0a40250"
   },
   {
     "url": "img/close.svg",
