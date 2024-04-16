@@ -214,8 +214,6 @@ header {
 
 .plyr {
   width: 100vw;
-  max-width: 320px;
-  min-width: 320px;
   position: fixed;
   left: 50%;
   transform: translate(-50%);
@@ -225,7 +223,7 @@ header {
 .youtube-list {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 200px;
+  padding-top: clamp(12.5rem, 5.1316rem + 36.8421vw, 30rem);
 }
 
 .change-youtube {
