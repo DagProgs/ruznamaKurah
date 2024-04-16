@@ -15,7 +15,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "pages/yt.html",
-    "revision": "31ad122f7b9fe60af332a5b5987f5b82"
+    "revision": "5b45a26ab02214d069194e0da12b630d"
   },
   {
     "url": "manifest.json",
@@ -23,7 +23,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "14514eb66e15697830ff43cf2f91dfa7"
+    "revision": "1522d4b2898d51e5d0638c94e72916aa"
   },
   {
     "url": "js/calendar-ar.js",
