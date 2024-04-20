@@ -1057,12 +1057,15 @@ body, button, input, table, textarea, select {
     font-size: 15px;
   }
 }
-.plyr {
-  width: 100vw;
+.youtube-container {
+  display: none;
   position: fixed;
-  left: 50%;
-  transform: translate(-50%);
-  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.774);
+  z-index: 9999;
 }
 
 .youtube-list {
@@ -1079,15 +1082,17 @@ body, button, input, table, textarea, select {
   background: #BFE2FF;
 }
 
-.change-youtube span {
-  display: block;
-  padding: 6px 12px 0 12px;
-  font-size: 12px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+#player {
+  width: 100%;
+  height: 100%;
 }
 
-.change-youtube.active {
-  border: 6px solid #00b3ff;
-  color: #FFF;
-  background: #00b3ff;
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fffb00;
+  background-color: rgba(0, 0, 0, 0.363);
+  cursor: pointer;
+  z-index: 10000;
 }/*# sourceMappingURL=style.css.map */
