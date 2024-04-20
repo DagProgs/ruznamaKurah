@@ -22,55 +22,119 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "94b456f6c5bc6f38562d608f3106ec91"
+    "revision": "57e1ad414019920e89f57af94c0fdf8b"
   },
   {
-    "url": "pages/yt.html",
-    "revision": "5b45a26ab02214d069194e0da12b630d"
+    "url": "calc.html",
+    "revision": "d5c092e7b5bde0d464c1f514c18d7226"
+  },
+  {
+    "url": "calendar.html",
+    "revision": "dd9f6bbb702674153ddc8bda5848ad86"
+  },
+  {
+    "url": "compass.html",
+    "revision": "5f69bdc19266f5b8fc162504b15c07f2"
+  },
+  {
+    "url": "mounth.html",
+    "revision": "62a8ad288e6514491a129195aa6c61a1"
+  },
+  {
+    "url": "offline.html",
+    "revision": "b6ed7f462ddf7c7fb04e4915c8662697"
+  },
+  {
+    "url": "tasbih.html",
+    "revision": "fe007c7e02d70ed75085884e4cd9f609"
+  },
+  {
+    "url": "video.html",
+    "revision": "ea511ed273c4ffc936b7fa584cac3947"
+  },
+  {
+    "url": "year.html",
+    "revision": "1c54a1673d1f7ee2809d4f05aabdaa5a"
   },
   {
     "url": "manifest.json",
-    "revision": "ed081f9acf29abec8c30ed62141f8308"
+    "revision": "f320089ad502cabf5878a44b48f73731"
   },
   {
     "url": "css/style.css",
-    "revision": "21948fed1a3ef1b2b9dfbd35ee73fb65"
+    "revision": "9e14ef3c3fc054f1055b9f03664d0ebe"
+  },
+  {
+    "url": "js/calc.js",
+    "revision": "302af459d130c527a97a9f0ed027de52"
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "9b3ce38c563c200320cdd395088c6b4c"
+    "revision": "9f71cc48d5846ddcc3c22547dd52c88f"
   },
   {
     "url": "js/calendar-ru.js",
     "revision": "5bd13c7dcb3b833600275783ac045d92"
   },
   {
+    "url": "js/calendar.js",
+    "revision": "6b968a30943442c651937ed37f215f93"
+  },
+  {
     "url": "js/clock.js",
     "revision": "099265fb106f32c7a8fa7b31da037e2e"
+  },
+  {
+    "url": "js/compass.js",
+    "revision": "61771ca58c858962d8ec364c74d719cb"
   },
   {
     "url": "js/end-time.js",
     "revision": "8cddfed8ae4a3b05a90cfed52bf4166b"
   },
   {
-    "url": "js/jquery-3.6.0.min.js",
-    "revision": "0732e3eabbf8aa7ce7f69eedbd07dfdd"
+    "url": "js/jquery-3.7.1.min.js",
+    "revision": "2c872dbe60f4ba70fb85356113d8b35e"
   },
   {
     "url": "js/juma.js",
-    "revision": "971acee4cf24bb83e115762d4bd5d73e"
+    "revision": "4ca73997ba1a396515f91316c50cea6a"
   },
   {
     "url": "js/menu.js",
-    "revision": "b8d7e2e5dce1e7c40b41e91c83a4fa09"
+    "revision": "b294147672e2c9eeba6fedcf5623bce9"
+  },
+  {
+    "url": "js/modernizr.min.js",
+    "revision": "65f1d21d5fcc9d21da758adababd0c3c"
+  },
+  {
+    "url": "js/mounths-names.js",
+    "revision": "a8a3895aef09d25d61403da5dbfb5210"
+  },
+  {
+    "url": "js/online-offline.js",
+    "revision": "7bc120e94570c896948416031f40ef1b"
   },
   {
     "url": "js/prayer-days.js",
-    "revision": "ba2f1d5c32300b2a6a1787e80a8687d9"
+    "revision": "cf89284cf51a14609971ffee10e66fd8"
   },
   {
     "url": "js/prayer-times-mounths.js",
-    "revision": "6259c5e99da1d6f51115a235005e5f81"
+    "revision": "e0594737db41bd586e6a82b0536ddf45"
+  },
+  {
+    "url": "js/prayer-year.js",
+    "revision": "623a773a02cd05649db71f098225e5f6"
+  },
+  {
+    "url": "js/prefixfree.min.js",
+    "revision": "c133bc0d840e28562c1c75c70173507d"
+  },
+  {
+    "url": "js/tasbih.js",
+    "revision": "1e978dae441ecadddc4f6505f34714e8"
   },
   {
     "url": "js/json/prayer-times.json",
@@ -122,19 +186,23 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "img/back.svg",
-    "revision": "f64644972655feea2b492bb9b0a40250"
+    "revision": "abd3b1b232415b6603af511c6f18b5a7"
   },
   {
-    "url": "img/close.svg",
-    "revision": "bac90ed061e57fe65ecaff5d346cefbe"
+    "url": "img/mounth.svg",
+    "revision": "e73b302b239df27bb22824f2f22d1a08"
   },
   {
-    "url": "img/menu.svg",
-    "revision": "0d0c07eff7cd14e968ad846a9e5db4c0"
+    "url": "img/purepng.com-compasscompassinstrumentnavigationcardinal-directionspointsdiagram-1701527842316onq7x.png",
+    "revision": "2ea2bfd8a214313df7cb836d679d1d8d"
   },
   {
     "url": "img/solat.png",
     "revision": "da087a1197c1d940c6d7791761635e87"
+  },
+  {
+    "url": "img/year.svg",
+    "revision": "505acc4fd4a08ba225ba2b98ae8c94f6"
   },
   {
     "url": "assets/icons/icon-128x128.png",

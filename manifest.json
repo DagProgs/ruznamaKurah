@@ -1,12 +1,12 @@
 {
-  "manifest_version": 41,
+  "manifest_version": 50,
   "lang": "ru",
   "dir": "ltr",
   "name": "Курахский район",
   "short_name": "Рузнама Курахский р-он",
   "description": "Времена Намазов для Курахского района",
-  "version": "2.3.35",
-  "categories": ["ruznama", "religion", "prayer"],
+  "version": "3.0.3",
+  "categories": ["ruznama", "religion", "prayer", "Курах", "Курахский район", "Рузнама"],
   "icons": [
 	{
       "src": "assets/icons/icon-72x72.png",
