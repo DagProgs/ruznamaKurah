@@ -22,43 +22,39 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "57e1ad414019920e89f57af94c0fdf8b"
+    "revision": "bcf536ce38d2c06ceb2c6a956302542b"
   },
   {
     "url": "calc.html",
-    "revision": "d5c092e7b5bde0d464c1f514c18d7226"
+    "revision": "2557c1df18e98b02d8f456118bd3b8f2"
   },
   {
     "url": "calendar.html",
-    "revision": "dd9f6bbb702674153ddc8bda5848ad86"
-  },
-  {
-    "url": "compass.html",
-    "revision": "5f69bdc19266f5b8fc162504b15c07f2"
+    "revision": "4dfed6b2dcde61132548fdb2a6ec2e45"
   },
   {
     "url": "mounth.html",
-    "revision": "62a8ad288e6514491a129195aa6c61a1"
+    "revision": "5abb7e92a09243e2604d5692547df8a4"
   },
   {
     "url": "offline.html",
-    "revision": "b6ed7f462ddf7c7fb04e4915c8662697"
+    "revision": "8738f74269eafac6a6b59a9414567129"
   },
   {
     "url": "tasbih.html",
-    "revision": "fe007c7e02d70ed75085884e4cd9f609"
+    "revision": "07da8f750982e34b001acafa4545857e"
   },
   {
     "url": "video.html",
-    "revision": "ea511ed273c4ffc936b7fa584cac3947"
+    "revision": "ef22e74612823d7cdc29fd8a2dfe56fa"
   },
   {
     "url": "year.html",
-    "revision": "1c54a1673d1f7ee2809d4f05aabdaa5a"
+    "revision": "3b6579281640e3e57742a08d37ab8e79"
   },
   {
     "url": "manifest.json",
-    "revision": "f320089ad502cabf5878a44b48f73731"
+    "revision": "e2f0ce370a0cb34c23ad2147b72582d9"
   },
   {
     "url": "css/style.css",
