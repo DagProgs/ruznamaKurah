@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">  
+    <meta name="google" content="notranslate">
     <link rel="stylesheet" href="css/style.css">
     <title>Рузнама Курахский район - Калькулятор</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -18,47 +20,22 @@
     <meta name="generator" content="WEB APP">
     <meta content="website">
     <link rel="manifest" href="manifest.json" />
-    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/min/jquery-3.7.1.min.js"></script>
+    <script src="js/min/modernizr.min.js"></script>
+    <script src="js/min/prefixfree.min.js"></script>
     <script async src="pwacompat.min.js"></script>
     <script defer src="update.js" type="module"></script>
 </head>
 
 <body>
 
-    <header>
-        <div class="header_container">
+    <div class="dopheader">
+        <div class="dopheader_header_container">
+            <a href="index.html"><img src="img/back.svg" alt="" class="my_icon_back"></a>
             <h1>Калькулятор</h1>
         </div>
-    </header>
-    <nav>
-        <div class="menu">
-            <div class="menu_container">
-                <h2>Меню</h2>
-            </div>
-            <section>
-                <div class="item_menu_box">
-                    <a id="pageLink" href="#"><div class="menu_video">Видео</div></a>
-                </div>
-                <div class="item_menu_box">
-                    <a href="calendar.html"><div class="menu_foto">Календарь</div></a>
-                </div>
-                <div class="item_menu_box">
-                    <a href="calc.html"><div class="menu_foto">Калькулятор</div></a>
-                </div>
-                <div class="item_menu_box">
-                    <a href="tasbih.html"><div class="menu_foto">Тасбих</div></a>
-                </div>
-            </section>
-        </div>
-        <button class="menu-toggle" id="menuToggle" data-toggled="false">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M3 18h18v-2H3v2z" fill="#003066" />
-                <path d="M3 13h18v-2H3v2z" fill="#003066" />
-                <path d="M3 6v2h18V6H3z" fill="#003066" />
-            </svg>
-        </button>
-    </nav>
+    </div>
+    
     <main>
         <div class="main_container">
             <section class="calc_container" id="calculator">
@@ -102,21 +79,11 @@
             </section>
         </div>
     </main>
-    <footer>
-        <section>
-            <div class="footer_container">
-                <div class="mounth_year_icon">
-                    <a href="index.html"><img src="img/back.svg" alt="" class="my_icon_back"></a>
-                </div>
-            </div>
-        </section>
-    </footer>
 
     <script type="text/javascript" src="runtime.js"></script>
     <script type="text/javascript" src="polyfills.js"></script>
     <script type="text/javascript" src="main.js"></script>
-    <script src="js/menu.js"></script>
-    <script src="js/online-offline.js"></script>
+
     <script src="js/calc.js"></script>
 
     <!-- Yandex.Metrika counter -->

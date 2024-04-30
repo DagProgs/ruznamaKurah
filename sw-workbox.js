@@ -22,43 +22,35 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "bcf536ce38d2c06ceb2c6a956302542b"
-  },
-  {
-    "url": "calc.html",
-    "revision": "2557c1df18e98b02d8f456118bd3b8f2"
-  },
-  {
-    "url": "calendar.html",
-    "revision": "4dfed6b2dcde61132548fdb2a6ec2e45"
-  },
-  {
-    "url": "mounth.html",
-    "revision": "5abb7e92a09243e2604d5692547df8a4"
-  },
-  {
-    "url": "offline.html",
-    "revision": "8738f74269eafac6a6b59a9414567129"
-  },
-  {
-    "url": "tasbih.html",
-    "revision": "07da8f750982e34b001acafa4545857e"
-  },
-  {
-    "url": "video.html",
-    "revision": "ef22e74612823d7cdc29fd8a2dfe56fa"
-  },
-  {
-    "url": "year.html",
-    "revision": "3b6579281640e3e57742a08d37ab8e79"
+    "revision": "b3c061275b822884887a3bb7de5d18e6"
   },
   {
     "url": "manifest.json",
-    "revision": "e2f0ce370a0cb34c23ad2147b72582d9"
+    "revision": "b990fb5fef3bcd55efd9b0d6fd263cbe"
+  },
+  {
+    "url": "calc.html",
+    "revision": "64356f5865b11980f10e059a3bd917c7"
+  },
+  {
+    "url": "calendar.html",
+    "revision": "d6d5631a78a67cceb0b91a21bb3e4058"
+  },
+  {
+    "url": "tasbih.html",
+    "revision": "4076e916f28f912ad22022bed9222699"
+  },
+  {
+    "url": "video.html",
+    "revision": "8366f5be8c7ffa5fa427ead13d27e559"
+  },
+  {
+    "url": "offline.html",
+    "revision": "b659782d0f8fee933be8dcfa379c8aba"
   },
   {
     "url": "css/style.css",
-    "revision": "5d929b02158f0bea176191a44b93ed73"
+    "revision": "9ef6a6ac25448076e072291ab5824302"
   },
   {
     "url": "js/calc.js",
@@ -81,32 +73,32 @@ workbox.precaching.precacheAndRoute([
     "revision": "099265fb106f32c7a8fa7b31da037e2e"
   },
   {
-    "url": "js/compass.js",
-    "revision": "61771ca58c858962d8ec364c74d719cb"
-  },
-  {
     "url": "js/end-time.js",
-    "revision": "8cddfed8ae4a3b05a90cfed52bf4166b"
+    "revision": "d66d69aa30c7937d7f1e4e564e677ef7"
   },
   {
-    "url": "js/jquery-3.7.1.min.js",
-    "revision": "2c872dbe60f4ba70fb85356113d8b35e"
+    "url": "js/json/prayer-times.json",
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
   },
   {
-    "url": "js/juma.js",
+    "url": "js/jumma.js",
     "revision": "4ca73997ba1a396515f91316c50cea6a"
   },
   {
-    "url": "js/menu.js",
-    "revision": "b294147672e2c9eeba6fedcf5623bce9"
+    "url": "js/min/jquery-3.7.1.min.js",
+    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
   },
   {
-    "url": "js/modernizr.min.js",
+    "url": "js/min/modernizr.min.js",
     "revision": "65f1d21d5fcc9d21da758adababd0c3c"
   },
   {
+    "url": "js/min/prefixfree.min.js",
+    "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
+  },
+  {
     "url": "js/mounths-names.js",
-    "revision": "a8a3895aef09d25d61403da5dbfb5210"
+    "revision": "dca606af43f0631a25eb1bbdede7ba5a"
   },
   {
     "url": "js/online-offline.js",
@@ -121,20 +113,24 @@ workbox.precaching.precacheAndRoute([
     "revision": "e0594737db41bd586e6a82b0536ddf45"
   },
   {
-    "url": "js/prayer-year.js",
-    "revision": "623a773a02cd05649db71f098225e5f6"
+    "url": "js/prayer-times-year.js",
+    "revision": "9982a9853e313e1671e51d446096e3b3"
   },
   {
-    "url": "js/prefixfree.min.js",
-    "revision": "c133bc0d840e28562c1c75c70173507d"
+    "url": "js/system/accordion.js",
+    "revision": "ef7dadb9a5eb23bf72206844abf005ed"
+  },
+  {
+    "url": "js/system/modal.js",
+    "revision": "b74505ddbff9b628a21b596e6a067ca9"
+  },
+  {
+    "url": "js/system/theme.js",
+    "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
   },
   {
     "url": "js/tasbih.js",
-    "revision": "1e978dae441ecadddc4f6505f34714e8"
-  },
-  {
-    "url": "js/json/prayer-times.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
+    "revision": "7f7fc4779044aece14b0ce6a5bed59ba"
   },
   {
     "url": "main.js",
@@ -154,51 +150,19 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "update.js",
-    "revision": "db409cd90d613a43e7a19c449e074441"
-  },
-  {
-    "url": "img/1.svg",
-    "revision": "ca0ec45cd521c6f4be1dec19ab2e63f8"
-  },
-  {
-    "url": "img/2.svg",
-    "revision": "a2a2a2ecb6c758d519b8c4623ca54086"
-  },
-  {
-    "url": "img/3.svg",
-    "revision": "ed57ca4dae496d5645e4da282e063ef0"
-  },
-  {
-    "url": "img/4.svg",
-    "revision": "be3d080a27ad98b431e1216e5b49a4f5"
-  },
-  {
-    "url": "img/5.svg",
-    "revision": "3f7c8b0595e8904423c7b5ebdc15d0d2"
-  },
-  {
-    "url": "img/6.svg",
-    "revision": "e35ffe5a9a0fb69091824b26cc26e1eb"
+    "revision": "2e37a1e61c0f6c88bddbb61150536944"
   },
   {
     "url": "img/back.svg",
     "revision": "abd3b1b232415b6603af511c6f18b5a7"
   },
   {
-    "url": "img/mounth.svg",
-    "revision": "e73b302b239df27bb22824f2f22d1a08"
+    "url": "img/svg/dark.svg",
+    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
   },
   {
-    "url": "img/purepng.com-compasscompassinstrumentnavigationcardinal-directionspointsdiagram-1701527842316onq7x.png",
-    "revision": "2ea2bfd8a214313df7cb836d679d1d8d"
-  },
-  {
-    "url": "img/solat.png",
-    "revision": "da087a1197c1d940c6d7791761635e87"
-  },
-  {
-    "url": "img/year.svg",
-    "revision": "505acc4fd4a08ba225ba2b98ae8c94f6"
+    "url": "img/svg/light.svg",
+    "revision": "bf5c6d038a905bd193b0350df31fe6db"
   },
   {
     "url": "assets/icons/icon-128x128.png",
