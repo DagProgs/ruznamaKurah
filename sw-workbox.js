@@ -42,7 +42,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "video.html",
-    "revision": "8366f5be8c7ffa5fa427ead13d27e559"
+    "revision": "cb63a3804bce68bed3b571e238e09509"
   },
   {
     "url": "offline.html",
