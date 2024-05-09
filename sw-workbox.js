@@ -46,7 +46,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "6dfda1afbdb2250fe0f8062cd7d42f9f"
+    "revision": "77ba9d8c23121a9d9439670aeb023fa6"
   },
   {
     "url": "css/style.css",
@@ -77,8 +77,24 @@ workbox.precaching.precacheAndRoute([
     "revision": "d66d69aa30c7937d7f1e4e564e677ef7"
   },
   {
+    "url": "js/json/prayer-times.json",
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
+  },
+  {
     "url": "js/jumma.js",
     "revision": "4ca73997ba1a396515f91316c50cea6a"
+  },
+  {
+    "url": "js/min/jquery-3.7.1.min.js",
+    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
+  },
+  {
+    "url": "js/min/modernizr.min.js",
+    "revision": "65f1d21d5fcc9d21da758adababd0c3c"
+  },
+  {
+    "url": "js/min/prefixfree.min.js",
+    "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
   },
   {
     "url": "js/modal-reklama.js",
@@ -103,6 +119,18 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prayer-times-year.js",
     "revision": "9982a9853e313e1671e51d446096e3b3"
+  },
+  {
+    "url": "js/system/accordion.js",
+    "revision": "ef7dadb9a5eb23bf72206844abf005ed"
+  },
+  {
+    "url": "js/system/modal.js",
+    "revision": "2f4fbe50167694d06bfef53a59e9dec4"
+  },
+  {
+    "url": "js/system/theme.js",
+    "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
   },
   {
     "url": "js/tasbih.js",
