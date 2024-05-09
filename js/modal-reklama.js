@@ -1,43 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.querySelector('#myModal');
+    const modalls = document.querySelector('#myModalls');
 
-    document.querySelector('#myBtn').addEventListener('click', openModal);
+    document.querySelector('#myBtnn').addEventListener('click', openModalls);
 
-    function openModal() {
-        modal.classList.add('modal-open');
-        attachModalEvents();
+    function openModalls() {
+        modalls.classList.add('modalls-open');
+        attachModallsEvents();
     }
 
-    function attachModalEvents() {
-        modal.querySelector('.close').addEventListener('click', closeModal);
+    function attachModallsEvents() {
+        modalls.querySelector('.closes').addEventListener('click', closesModalls);
         document.addEventListener('keydown', handleEscape);
-        modal.addEventListener('click', handleOutside);
+        modalls.addEventListener('click', handleOutside);
     }
 
-    function closeModal() {
-        modal.classList.remove('modal-open');
-        detachModalEvents();
+    function closesModalls() {
+        modalls.classList.remove('modalls-open');
+        detachModallsEvents();
     }
 
-    function detachModalEvents() {
-        modal.querySelector('.close').removeEventListener('click', closeModal);
+    function detachModallsEvents() {
+        modalls.querySelector('.closes').removeEventListener('click', closesModalls);
         document.removeEventListener('keydown', handleEscape);
-        modal.removeEventListener('click', handleOutside);
+        modalls.removeEventListener('click', handleOutside);
     }
 
     function handleEscape(event) {
         if (event.key === 'Escape') {
-            closeModal();
+            closesModalls();
         }
     }
 
     function handleOutside(event) {
-        const isClickInside = !!event.target.closest('.modal-content');
+        const isClickInside = !!event.target.closesst('.modalls-content');
         if (!isClickInside) {
-            closeModal();
+            closesModalls();
         }
     }
 
     // Открыть модальное окно по умолчанию после загрузки страницы
-    openModal();
+    openModalls();
 });
