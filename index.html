@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">  
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="google" content="notranslate">
     <link rel="stylesheet" href="css/style.css">
     <title>Рузнама Курахский район</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Точное время обязательных намазов:
     сегодня - месяц - год">
-    <meta name="keywords" content="Рузнама, Рузнама Курах, Курах, Курах рузнама, Курахский район, Времена намазов, времена намазов Курах, Кьурагь Дагълар">
+    <meta name="keywords"
+        content="Рузнама, Рузнама Курах, Курах, Курах рузнама, Курахский район, Времена намазов, времена намазов Курах, Кьурагь Дагълар">
     <meta name="robots" content="index,follow,noodp">
     <meta name="googlebot" content="index,follow">
     <meta name="google" content="nositelinkssearchbox">
@@ -25,11 +26,14 @@
     <script src="js/min/prefixfree.min.js"></script>
     <script async src="pwacompat.min.js"></script>
     <script defer src="update.js" type="module"></script>
+    <script src="js/modal-reklama.js"></script>
 </head>
 
 <body>
     <div class="wrapper theme">
+        <div class="reklama">
 
+        </div>
         <header>
             <div class="header_container">
                 <div class="menu_modal" id="openModalHeader">
@@ -45,7 +49,19 @@
 
         <main>
             <div class="main_container">
+                <section>
+                    <!-- Кнопка открытия модального окна -->
+                    <button id="myBtn">АВТОПРОБЕГ 11 МАЯ</button>
 
+                    <!-- Затемнение всей страницы при открытии окна -->
+                    <div id="myModal" class="modal">
+                        <!-- Содержимое модального окна -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <img src="img/fon.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
                 <section>
                     <div class="subheader">
                         <div class="subheader_container">
@@ -287,7 +303,9 @@
                             <section>
                                 <div class="menuvideo">
                                     <div class="menuvideo_container">
-                                        <a id="pageLink" href="#"><div class="menu_video">Видео</div></a>
+                                        <a id="pageLink" href="#">
+                                            <div class="menu_video">Видео</div>
+                                        </a>
                                     </div>
                                 </div>
                             </section>
@@ -691,7 +709,7 @@
     <script src="js/jumma.js"></script>
     <script src="js/online-offline.js"></script>
 
-    <!-- Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter 
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
@@ -711,6 +729,7 @@
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div>
     </noscript>
+    -->
 </body>
 
 </html>

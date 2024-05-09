@@ -22,11 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "b3c061275b822884887a3bb7de5d18e6"
-  },
-  {
-    "url": "manifest.json",
-    "revision": "b990fb5fef3bcd55efd9b0d6fd263cbe"
+    "revision": "d3e8fd17285fdd4a57aca4c7f55185d2"
   },
   {
     "url": "calc.html",
@@ -37,6 +33,10 @@ workbox.precaching.precacheAndRoute([
     "revision": "d6d5631a78a67cceb0b91a21bb3e4058"
   },
   {
+    "url": "offline.html",
+    "revision": "b659782d0f8fee933be8dcfa379c8aba"
+  },
+  {
     "url": "tasbih.html",
     "revision": "4076e916f28f912ad22022bed9222699"
   },
@@ -45,12 +45,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "cb63a3804bce68bed3b571e238e09509"
   },
   {
-    "url": "offline.html",
-    "revision": "b659782d0f8fee933be8dcfa379c8aba"
+    "url": "manifest.json",
+    "revision": "b990fb5fef3bcd55efd9b0d6fd263cbe"
   },
   {
     "url": "css/style.css",
-    "revision": "9ef6a6ac25448076e072291ab5824302"
+    "revision": "faa840aad292ddaf909158dd7259f038"
   },
   {
     "url": "js/calc.js",
@@ -77,24 +77,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "d66d69aa30c7937d7f1e4e564e677ef7"
   },
   {
-    "url": "js/json/prayer-times.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
-  },
-  {
     "url": "js/jumma.js",
     "revision": "4ca73997ba1a396515f91316c50cea6a"
   },
   {
-    "url": "js/min/jquery-3.7.1.min.js",
-    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
-  },
-  {
-    "url": "js/min/modernizr.min.js",
-    "revision": "65f1d21d5fcc9d21da758adababd0c3c"
-  },
-  {
-    "url": "js/min/prefixfree.min.js",
-    "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
+    "url": "js/modal-reklama.js",
+    "revision": "153a499ccd61a735bb24fa1f1b1a3d33"
   },
   {
     "url": "js/mounths-names.js",
@@ -115,18 +103,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prayer-times-year.js",
     "revision": "9982a9853e313e1671e51d446096e3b3"
-  },
-  {
-    "url": "js/system/accordion.js",
-    "revision": "ef7dadb9a5eb23bf72206844abf005ed"
-  },
-  {
-    "url": "js/system/modal.js",
-    "revision": "b74505ddbff9b628a21b596e6a067ca9"
-  },
-  {
-    "url": "js/system/theme.js",
-    "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
   },
   {
     "url": "js/tasbih.js",
@@ -155,6 +131,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "img/back.svg",
     "revision": "abd3b1b232415b6603af511c6f18b5a7"
+  },
+  {
+    "url": "img/fon.jpg",
+    "revision": "257258e174ebcc2d97d54dc4d7052da3"
   },
   {
     "url": "img/svg/dark.svg",
