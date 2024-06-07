@@ -21,6 +21,10 @@ workbox.core.clientsClaim();
 // We inject manifest here using "workbox-build" in workbox-build-inject.js
 workbox.precaching.precacheAndRoute([
   {
+    "url": "manifest.json",
+    "revision": "08cb07ba70bb71a9e619539f54187348"
+  },
+  {
     "url": "index.html",
     "revision": "fb371e468bc08addb47be8ae75a36c70"
   },
@@ -45,10 +49,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "cb63a3804bce68bed3b571e238e09509"
   },
   {
-    "url": "manifest.json",
-    "revision": "08cb07ba70bb71a9e619539f54187348"
-  },
-  {
     "url": "css/style.css",
     "revision": "c7bf986f076075e7cfa9ae807b950759"
   },
@@ -58,7 +58,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "9f71cc48d5846ddcc3c22547dd52c88f"
+    "revision": "1fdc3996364d41aa9dcd4b506147b07a"
   },
   {
     "url": "js/calendar-ru.js",
@@ -77,24 +77,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "d66d69aa30c7937d7f1e4e564e677ef7"
   },
   {
-    "url": "js/json/prayer-times.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
-  },
-  {
     "url": "js/jumma.js",
     "revision": "4ca73997ba1a396515f91316c50cea6a"
-  },
-  {
-    "url": "js/min/jquery-3.7.1.min.js",
-    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
-  },
-  {
-    "url": "js/min/modernizr.min.js",
-    "revision": "65f1d21d5fcc9d21da758adababd0c3c"
-  },
-  {
-    "url": "js/min/prefixfree.min.js",
-    "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
   },
   {
     "url": "js/modal-reklama.js",
@@ -121,20 +105,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "9982a9853e313e1671e51d446096e3b3"
   },
   {
-    "url": "js/system/accordion.js",
-    "revision": "ef7dadb9a5eb23bf72206844abf005ed"
-  },
-  {
-    "url": "js/system/modal.js",
-    "revision": "2f4fbe50167694d06bfef53a59e9dec4"
-  },
-  {
-    "url": "js/system/theme.js",
-    "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
-  },
-  {
     "url": "js/tasbih.js",
     "revision": "7f7fc4779044aece14b0ce6a5bed59ba"
+  },
+  {
+    "url": "js/json/prayer-times.json",
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
   },
   {
     "url": "main.js",
@@ -155,22 +131,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "update.js",
     "revision": "2e37a1e61c0f6c88bddbb61150536944"
-  },
-  {
-    "url": "img/back.svg",
-    "revision": "abd3b1b232415b6603af511c6f18b5a7"
-  },
-  {
-    "url": "img/fon.jpg",
-    "revision": "257258e174ebcc2d97d54dc4d7052da3"
-  },
-  {
-    "url": "img/svg/dark.svg",
-    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
-  },
-  {
-    "url": "img/svg/light.svg",
-    "revision": "bf5c6d038a905bd193b0350df31fe6db"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -203,6 +163,22 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "assets/icons/icon-96x96.png",
     "revision": "9815fb3c4b57df1e8cda23d01fc66078"
+  },
+  {
+    "url": "img/back.svg",
+    "revision": "abd3b1b232415b6603af511c6f18b5a7"
+  },
+  {
+    "url": "img/fon.jpg",
+    "revision": "257258e174ebcc2d97d54dc4d7052da3"
+  },
+  {
+    "url": "img/svg/dark.svg",
+    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
+  },
+  {
+    "url": "img/svg/light.svg",
+    "revision": "bf5c6d038a905bd193b0350df31fe6db"
   }
 ]);
 
