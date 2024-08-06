@@ -21,10 +21,6 @@ workbox.core.clientsClaim();
 // We inject manifest here using "workbox-build" in workbox-build-inject.js
 workbox.precaching.precacheAndRoute([
   {
-    "url": "manifest.json",
-    "revision": "08cb07ba70bb71a9e619539f54187348"
-  },
-  {
     "url": "index.html",
     "revision": "fb371e468bc08addb47be8ae75a36c70"
   },
@@ -49,8 +45,36 @@ workbox.precaching.precacheAndRoute([
     "revision": "cb63a3804bce68bed3b571e238e09509"
   },
   {
+    "url": "manifest.json",
+    "revision": "8d7258ca5ac3341966c1735ed1927757"
+  },
+  {
+    "url": "js/json/prayer-times.json",
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
+  },
+  {
     "url": "css/style.css",
     "revision": "c7bf986f076075e7cfa9ae807b950759"
+  },
+  {
+    "url": "main.js",
+    "revision": "80846bb3403b82a07c7f84658f186b23"
+  },
+  {
+    "url": "polyfills.js",
+    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
+  },
+  {
+    "url": "pwacompat.min.js",
+    "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
+  },
+  {
+    "url": "runtime.js",
+    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
+  },
+  {
+    "url": "update.js",
+    "revision": "2e37a1e61c0f6c88bddbb61150536944"
   },
   {
     "url": "js/calc.js",
@@ -58,7 +82,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "1fdc3996364d41aa9dcd4b506147b07a"
+    "revision": "0c06e9cde54ecfaac92d7bd7cd0b5dc7"
   },
   {
     "url": "js/calendar-ru.js",
@@ -133,28 +157,20 @@ workbox.precaching.precacheAndRoute([
     "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
   },
   {
-    "url": "js/json/prayer-times.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
+    "url": "img/back.svg",
+    "revision": "abd3b1b232415b6603af511c6f18b5a7"
   },
   {
-    "url": "main.js",
-    "revision": "80846bb3403b82a07c7f84658f186b23"
+    "url": "img/fon.jpg",
+    "revision": "257258e174ebcc2d97d54dc4d7052da3"
   },
   {
-    "url": "polyfills.js",
-    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
+    "url": "img/svg/dark.svg",
+    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
   },
   {
-    "url": "pwacompat.min.js",
-    "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
-  },
-  {
-    "url": "runtime.js",
-    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
-  },
-  {
-    "url": "update.js",
-    "revision": "2e37a1e61c0f6c88bddbb61150536944"
+    "url": "img/svg/light.svg",
+    "revision": "bf5c6d038a905bd193b0350df31fe6db"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -187,22 +203,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "assets/icons/icon-96x96.png",
     "revision": "9815fb3c4b57df1e8cda23d01fc66078"
-  },
-  {
-    "url": "img/back.svg",
-    "revision": "abd3b1b232415b6603af511c6f18b5a7"
-  },
-  {
-    "url": "img/fon.jpg",
-    "revision": "257258e174ebcc2d97d54dc4d7052da3"
-  },
-  {
-    "url": "img/svg/dark.svg",
-    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
-  },
-  {
-    "url": "img/svg/light.svg",
-    "revision": "bf5c6d038a905bd193b0350df31fe6db"
   }
 ]);
 
