@@ -22,31 +22,31 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "fb371e468bc08addb47be8ae75a36c70"
+    "revision": "aa492b588d1d551100b214a8a8de87c6"
   },
   {
     "url": "calc.html",
-    "revision": "64356f5865b11980f10e059a3bd917c7"
+    "revision": "e19deaf7776643cb0b13ad22df95f948"
   },
   {
     "url": "calendar.html",
-    "revision": "d6d5631a78a67cceb0b91a21bb3e4058"
+    "revision": "fd6568cbc27e95120d2e7d0f0e0ebd23"
   },
   {
     "url": "offline.html",
-    "revision": "b659782d0f8fee933be8dcfa379c8aba"
+    "revision": "fdc5cd2c30b4d683af04232b15e27dfb"
   },
   {
     "url": "tasbih.html",
-    "revision": "4076e916f28f912ad22022bed9222699"
+    "revision": "22998e3be94fe0a3d0ffb1c4b9ff729d"
   },
   {
     "url": "video.html",
-    "revision": "cb63a3804bce68bed3b571e238e09509"
+    "revision": "7840150bc8f84aeb729b76fccd3fcf0b"
   },
   {
     "url": "manifest.json",
-    "revision": "8d7258ca5ac3341966c1735ed1927757"
+    "revision": "f26c504fd3ea38f792455b69f3cd9155"
   },
   {
     "url": "js/json/prayer-times.json",
@@ -54,27 +54,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "c7bf986f076075e7cfa9ae807b950759"
-  },
-  {
-    "url": "main.js",
-    "revision": "80846bb3403b82a07c7f84658f186b23"
-  },
-  {
-    "url": "polyfills.js",
-    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
-  },
-  {
-    "url": "pwacompat.min.js",
-    "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
-  },
-  {
-    "url": "runtime.js",
-    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
-  },
-  {
-    "url": "update.js",
-    "revision": "2e37a1e61c0f6c88bddbb61150536944"
+    "revision": "6ef2ff30d5b69166df4b9a4454a4c6d7"
   },
   {
     "url": "js/calc.js",
@@ -82,7 +62,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "0c06e9cde54ecfaac92d7bd7cd0b5dc7"
+    "revision": "c414a52ee43d8f2937abecf566be2046"
   },
   {
     "url": "js/calendar-ru.js",
@@ -105,8 +85,20 @@ workbox.precaching.precacheAndRoute([
     "revision": "4ca73997ba1a396515f91316c50cea6a"
   },
   {
+    "url": "js/min/jquery-3.7.1.min.js",
+    "revision": "2c872dbe60f4ba70fb85356113d8b35e"
+  },
+  {
+    "url": "js/min/modernizr.min.js",
+    "revision": "65f1d21d5fcc9d21da758adababd0c3c"
+  },
+  {
+    "url": "js/min/prefixfree.min.js",
+    "revision": "c133bc0d840e28562c1c75c70173507d"
+  },
+  {
     "url": "js/modal-reklama.js",
-    "revision": "a25db228244e1a37b01d8943ba12c245"
+    "revision": "dac3bd67b778998061d249a74fa450d2"
   },
   {
     "url": "js/mounths-names.js",
@@ -129,22 +121,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "9982a9853e313e1671e51d446096e3b3"
   },
   {
-    "url": "js/tasbih.js",
-    "revision": "7f7fc4779044aece14b0ce6a5bed59ba"
-  },
-  {
-    "url": "js/min/jquery-3.7.1.min.js",
-    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
-  },
-  {
-    "url": "js/min/modernizr.min.js",
-    "revision": "65f1d21d5fcc9d21da758adababd0c3c"
-  },
-  {
-    "url": "js/min/prefixfree.min.js",
-    "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
-  },
-  {
     "url": "js/system/accordion.js",
     "revision": "ef7dadb9a5eb23bf72206844abf005ed"
   },
@@ -157,8 +133,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
   },
   {
+    "url": "js/tasbih.js",
+    "revision": "24b0a664cc01ed81fd708a334b14175b"
+  },
+  {
     "url": "img/back.svg",
-    "revision": "abd3b1b232415b6603af511c6f18b5a7"
+    "revision": "6701e569a9bb8e6b056d39607805bf71"
   },
   {
     "url": "img/fon.jpg",
@@ -171,6 +151,26 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "img/svg/light.svg",
     "revision": "bf5c6d038a905bd193b0350df31fe6db"
+  },
+  {
+    "url": "main.js",
+    "revision": "80846bb3403b82a07c7f84658f186b23"
+  },
+  {
+    "url": "polyfills.js",
+    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
+  },
+  {
+    "url": "pwacompat.min.js",
+    "revision": "0bf1bea41b1ba758d3989814c988f46e"
+  },
+  {
+    "url": "runtime.js",
+    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
+  },
+  {
+    "url": "update.js",
+    "revision": "292a54366527e52ade23e3025af48f31"
   },
   {
     "url": "assets/icons/icon-128x128.png",
