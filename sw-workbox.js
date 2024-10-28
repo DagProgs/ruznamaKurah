@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "fbc7c37c53c0696d286da853e9b5afe2"
+    "revision": "1ea431c51ad0013675192d7278689e78"
   },
   {
     "url": "calc.html",
@@ -50,7 +50,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "22287e293d031d818d7c12c6c07a8c78"
+    "revision": "cf436a676bef315518f142653ffe73e7"
   },
   {
     "url": "js/calc.js",
@@ -207,6 +207,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "img/svg/light.svg",
     "revision": "bf5c6d038a905bd193b0350df31fe6db"
+  },
+  {
+    "url": "img/svg/share.svg",
+    "revision": "9edfe7755ee6563cccf0b3e3834ef78b"
   }
 ]);
 
