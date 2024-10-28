@@ -214,7 +214,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "img/svg/share.svg",
-    "revision": "9edfe7755ee6563cccf0b3e3834ef78b"
+    "revision": "8e25fdf8b5e4d8881120a6d6155888f9"
   }
 ]);
 
