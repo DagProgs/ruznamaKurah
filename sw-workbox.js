@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "88a5002dd0f05bc85565f0e44fc776df"
+    "revision": "4d9bcaba0f857e2fe9147a803d8096a1"
   },
   {
     "url": "calc.html",
@@ -50,7 +50,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "cf436a676bef315518f142653ffe73e7"
+    "revision": "f5d56d602fcaaef8df83f49a0fc5f650"
   },
   {
     "url": "js/calc.js",
@@ -119,6 +119,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prayer-times-year.js",
     "revision": "9982a9853e313e1671e51d446096e3b3"
+  },
+  {
+    "url": "js/share.js",
+    "revision": "c47a6e766e5c1bc78b7f64c3ff37a08c"
   },
   {
     "url": "js/system/accordion.js",

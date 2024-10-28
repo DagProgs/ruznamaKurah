@@ -53,31 +53,9 @@
                     <div class="btnicon"></div>
                 </div>
                 <div class="share">
-                    <button></button>
+                    <div class="button"></div>
                     <p class="result"></p>
                 </div>
-                <!--Share Script-->
-                <script>
-                    const shareData = {
-                        title: "Рузнама",
-                        text: "Курахский район",
-                        url: "https://dagprogs.github.io/ruznamaKurah/",
-                    };
-
-                    const btn = document.querySelector("button");
-                    const resultPara = document.querySelector(".result");
-
-                    // Share must be triggered by "user activation"
-                    btn.addEventListener("click", async () => {
-                        try {
-                            await navigator.share(shareData);
-                            resultPara.textContent = "Рузнама Курахский район";
-                        } catch (err) {
-                            resultPara.textContent = `Error: ${err}`;
-                        }
-                    });
-
-                </script>
             </div>
         </header>
         <main>
@@ -731,6 +709,7 @@
     <!-- Reklama
     <script src="js/modal-reklama.js"></script>
     -->
+    <script src="js/share.js"></script>
     <script src="js/system/theme.js"></script>
     <script src="js/system/modal.js"></script>
     <script src="js/calendar-ru.js"></script>
@@ -744,9 +723,6 @@
     <script src="js/system/accordion.js"></script>
     <script src="js/jumma.js"></script>
     <script src="js/online-offline.js"></script>
-
-
-
 
 
     <!-- Yandex.Metrika counter -->
