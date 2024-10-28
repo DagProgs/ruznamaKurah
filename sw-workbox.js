@@ -22,39 +22,35 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "aa492b588d1d551100b214a8a8de87c6"
+    "revision": "4d95708e4cde26b6813510f41ddf98c6"
   },
   {
     "url": "calc.html",
-    "revision": "e19deaf7776643cb0b13ad22df95f948"
+    "revision": "64356f5865b11980f10e059a3bd917c7"
   },
   {
     "url": "calendar.html",
-    "revision": "fd6568cbc27e95120d2e7d0f0e0ebd23"
+    "revision": "d6d5631a78a67cceb0b91a21bb3e4058"
   },
   {
     "url": "offline.html",
-    "revision": "fdc5cd2c30b4d683af04232b15e27dfb"
+    "revision": "b659782d0f8fee933be8dcfa379c8aba"
   },
   {
     "url": "tasbih.html",
-    "revision": "22998e3be94fe0a3d0ffb1c4b9ff729d"
+    "revision": "4076e916f28f912ad22022bed9222699"
   },
   {
     "url": "video.html",
-    "revision": "7840150bc8f84aeb729b76fccd3fcf0b"
+    "revision": "cb63a3804bce68bed3b571e238e09509"
   },
   {
     "url": "manifest.json",
-    "revision": "f26c504fd3ea38f792455b69f3cd9155"
-  },
-  {
-    "url": "js/json/prayer-times.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
+    "revision": "f2278ad4d21ddcbd9931a3fb3084c719"
   },
   {
     "url": "css/style.css",
-    "revision": "6ef2ff30d5b69166df4b9a4454a4c6d7"
+    "revision": "22287e293d031d818d7c12c6c07a8c78"
   },
   {
     "url": "js/calc.js",
@@ -62,7 +58,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "c414a52ee43d8f2937abecf566be2046"
+    "revision": "b3cbf36c3fd109f72355514c53681f8c"
   },
   {
     "url": "js/calendar-ru.js",
@@ -81,12 +77,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "d66d69aa30c7937d7f1e4e564e677ef7"
   },
   {
+    "url": "js/json/prayer-times.json",
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
+  },
+  {
     "url": "js/jumma.js",
     "revision": "4ca73997ba1a396515f91316c50cea6a"
   },
   {
     "url": "js/min/jquery-3.7.1.min.js",
-    "revision": "2c872dbe60f4ba70fb85356113d8b35e"
+    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
   },
   {
     "url": "js/min/modernizr.min.js",
@@ -94,11 +94,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/min/prefixfree.min.js",
-    "revision": "c133bc0d840e28562c1c75c70173507d"
+    "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
   },
   {
     "url": "js/modal-reklama.js",
-    "revision": "dac3bd67b778998061d249a74fa450d2"
+    "revision": "a25db228244e1a37b01d8943ba12c245"
   },
   {
     "url": "js/mounths-names.js",
@@ -129,28 +129,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "2f4fbe50167694d06bfef53a59e9dec4"
   },
   {
+    "url": "js/system/modal.min.js",
+    "revision": "b74505ddbff9b628a21b596e6a067ca9"
+  },
+  {
     "url": "js/system/theme.js",
     "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
   },
   {
     "url": "js/tasbih.js",
-    "revision": "24b0a664cc01ed81fd708a334b14175b"
-  },
-  {
-    "url": "img/back.svg",
-    "revision": "6701e569a9bb8e6b056d39607805bf71"
-  },
-  {
-    "url": "img/fon.jpg",
-    "revision": "257258e174ebcc2d97d54dc4d7052da3"
-  },
-  {
-    "url": "img/svg/dark.svg",
-    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
-  },
-  {
-    "url": "img/svg/light.svg",
-    "revision": "bf5c6d038a905bd193b0350df31fe6db"
+    "revision": "7f7fc4779044aece14b0ce6a5bed59ba"
   },
   {
     "url": "main.js",
@@ -162,7 +150,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "pwacompat.min.js",
-    "revision": "0bf1bea41b1ba758d3989814c988f46e"
+    "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
   },
   {
     "url": "runtime.js",
@@ -170,7 +158,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "update.js",
-    "revision": "292a54366527e52ade23e3025af48f31"
+    "revision": "2e37a1e61c0f6c88bddbb61150536944"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -203,6 +191,22 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "assets/icons/icon-96x96.png",
     "revision": "9815fb3c4b57df1e8cda23d01fc66078"
+  },
+  {
+    "url": "img/back.svg",
+    "revision": "abd3b1b232415b6603af511c6f18b5a7"
+  },
+  {
+    "url": "img/fon.jpg",
+    "revision": "257258e174ebcc2d97d54dc4d7052da3"
+  },
+  {
+    "url": "img/svg/dark.svg",
+    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
+  },
+  {
+    "url": "img/svg/light.svg",
+    "revision": "bf5c6d038a905bd193b0350df31fe6db"
   }
 ]);
 

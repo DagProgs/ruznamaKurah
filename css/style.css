@@ -175,6 +175,10 @@ label {
     height: 40px
 }
 
+#openModalHeader {
+    display: none;
+}
+
 .dopheader,
 header {
     position: relative;
@@ -187,7 +191,8 @@ header {
     left: 0;
     width: 100vw;
     min-width: 320px;
-    height: 60px
+    height: 60px;
+    padding: 0 15px;
 }
 
 .header_container h1 {
