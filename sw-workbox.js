@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "bac89b6fa621ae4ce960394fa0b2ddba"
+    "revision": "88a5002dd0f05bc85565f0e44fc776df"
   },
   {
     "url": "calc.html",
@@ -50,7 +50,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "c8a24149286111f815018b873235a04f"
+    "revision": "cf436a676bef315518f142653ffe73e7"
   },
   {
     "url": "js/calc.js",
