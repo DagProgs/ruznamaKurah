@@ -53,48 +53,29 @@
                 </div>
             </div>
         </header>
-
-
-        <button id="share" type="button">Share</button>
-
-
+        <p><button>Share</button></p>
+        <p class="result"></p>
         <script>
-            const input = document.getElementById("files");
-            const output = document.getElementById("output");
+            const shareData = {
+                title: "MDN",
+                text: "Learn web development on MDN!",
+                url: "https://developer.mozilla.org",
+            };
 
-            document.getElementById("share").addEventListener("click", async () => {
-                const files = input.files;
+            const btn = document.querySelector("button");
+            const resultPara = document.querySelector(".result");
 
-                if (files.length === 0) {
-                    output.textContent = "No files selected.";
-                    return;
-                }
-
-                // feature detecting navigator.canShare() also implies
-                // the same for the navigator.share()
-                if (!navigator.canShare) {
-                    output.textContent = `Your browser doesn't support the Web Share API.`;
-                    return;
-                }
-
-                if (navigator.canShare({ files })) {
-                    try {
-                        await navigator.share({
-                            files,
-                            title: "Images",
-                            text: "Beautiful images",
-                        });
-                        output.textContent = "Shared!";
-                    } catch (error) {
-                        output.textContent = `Error: ${error.message}`;
-                    }
-                } else {
-                    output.textContent = `Your system doesn't support sharing these files.`;
+            // Share must be triggered by "user activation"
+            btn.addEventListener("click", async () => {
+                try {
+                    await navigator.share(shareData);
+                    resultPara.textContent = "MDN shared successfully";
+                } catch (err) {
+                    resultPara.textContent = `Error: ${err}`;
                 }
             });
 
         </script>
-
 
         <main>
             <div class="main_container">
