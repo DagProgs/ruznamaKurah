@@ -1,0 +1,1 @@
+const isOnline=window.navigator.onLine,pageLink=document.getElementById("pageLink");isOnline?(pageLink.href="video.html",pageLink.addEventListener("click",()=>{location.href="video.html"})):(pageLink.href="offline.html",pageLink.addEventListener("click",()=>{location.href="offline.html"}));

@@ -22,19 +22,27 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "7514f1587fbb1ac3a92c4c4dbd641b31"
+    "revision": "45293be2919cb75e50de6f05b3afe5ad"
   },
   {
     "url": "ruznama.html",
-    "revision": "1c8b5b2d2cef9689ae9ed41fd17fa9b3"
+    "revision": "c56f7df7d188ad2c59674517269a9bb3"
   },
   {
     "url": "manifest.json",
-    "revision": "e8f33cc1efa4fea4a2026fbc55146158"
+    "revision": "f2278ad4d21ddcbd9931a3fb3084c719"
   },
   {
     "url": "css/style.css",
     "revision": "30e1a694c80957d394c156c35507f9c9"
+  },
+  {
+    "url": "js/calc.js",
+    "revision": "302af459d130c527a97a9f0ed027de52"
+  },
+  {
+    "url": "js/calendar-ar.js",
+    "revision": "b3cbf36c3fd109f72355514c53681f8c"
   },
   {
     "url": "js/calendar-ru.js",
@@ -89,6 +97,10 @@ workbox.precaching.precacheAndRoute([
     "revision": "dca606af43f0631a25eb1bbdede7ba5a"
   },
   {
+    "url": "js/online-offline.js",
+    "revision": "7bc120e94570c896948416031f40ef1b"
+  },
+  {
     "url": "js/prayer-days.js",
     "revision": "cf89284cf51a14609971ffee10e66fd8"
   },
@@ -123,6 +135,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/system/theme.js",
     "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
+  },
+  {
+    "url": "js/tasbih.js",
+    "revision": "7f7fc4779044aece14b0ce6a5bed59ba"
   },
   {
     "url": "main.js",
