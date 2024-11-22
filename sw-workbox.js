@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "45293be2919cb75e50de6f05b3afe5ad"
+    "revision": "ed36c553f9bc60d798641cd700e40575"
   },
   {
     "url": "ruznama.html",
