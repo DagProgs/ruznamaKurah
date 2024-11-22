@@ -26,11 +26,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "ruznama.html",
-    "revision": "c56f7df7d188ad2c59674517269a9bb3"
+    "revision": "a2a45721b2e1a8c93031c63e79eb4d54"
   },
   {
     "url": "manifest.json",
-    "revision": "f2278ad4d21ddcbd9931a3fb3084c719"
+    "revision": "bcf16c80589337af8a039b468c298915"
   },
   {
     "url": "css/style.css",
@@ -114,7 +114,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/ruznama.js",
-    "revision": "31c254006811194de2a950bd8412e095"
+    "revision": "d79a241ed6b088fb545fcb1f10a1d920"
   },
   {
     "url": "js/share.js",
