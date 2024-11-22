@@ -202,11 +202,29 @@ label {
     display: none;
 }
 
-.dopheader,
 header {
     position: relative;
     height: 60px;
     z-index: 1
+}
+
+.dopheader {
+    position: relative;
+    height: 60px;
+    z-index: 100;
+}
+
+.dopheader_header_container {
+    width: 100vw;
+    height: 60px;
+    background-color: #fff;
+}
+
+.dopheader_header_container p {
+    font-size: 0.7em;
+    padding-top: 5px;
+    padding-left: 10px;
+    color: #ff9595;
 }
 
 .header_container {
@@ -220,7 +238,24 @@ header {
 
 .header_container h1 {
     font-size: 25px;
-    color: var(--text)
+    color: var(--text);
+    padding-right: 10px;
+}
+
+.header_container .area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    font-size: 0.9em;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #f35b40;
+    box-shadow: 0 0 10px #b3b3b3;
+}
+
+a {
+    color: #000;
 }
 
 .headerclose,
@@ -1311,3 +1346,83 @@ th {
 }
 
 */
+
+.top.table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .col.top-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 30%;
+    transition: background-color 0.3s;
+    margin: 3px !important;
+    border-bottom: 1px solid #d1d1d1;
+  }
+  
+  .col.top-element:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .col.top-element strong {
+    display: block;
+    font-size: 1.2em;
+    color: #00796b;
+  }
+  
+  .col.top-element span {
+    font-size: 1.5em;
+    color: #555;
+  }
+  
+  .bottom_info {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .bottom_info .timeUntilNextPrayer {
+    font-weight: bold;
+    color: #d32f2f;
+  }
+  
+  .choose_place {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #00796b;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: border-color 0.3s;
+  }
+  
+  .choose_place:hover {
+    border-color: #004d40;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .top.table {
+      flex-direction: column;
+    }
+  
+    .col.top-element {
+      flex: 1 1 100%;
+      margin: 10px 0;
+    }
+  
+    .bottom_info {
+      font-size: 1em;
+    }
+  
+    .choose_place {
+      width: 100%;
+    }
+  }

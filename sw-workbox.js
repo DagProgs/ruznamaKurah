@@ -22,43 +22,19 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "4d9bcaba0f857e2fe9147a803d8096a1"
+    "revision": "7514f1587fbb1ac3a92c4c4dbd641b31"
   },
   {
-    "url": "calc.html",
-    "revision": "64356f5865b11980f10e059a3bd917c7"
-  },
-  {
-    "url": "calendar.html",
-    "revision": "d6d5631a78a67cceb0b91a21bb3e4058"
-  },
-  {
-    "url": "offline.html",
-    "revision": "b659782d0f8fee933be8dcfa379c8aba"
-  },
-  {
-    "url": "tasbih.html",
-    "revision": "4076e916f28f912ad22022bed9222699"
-  },
-  {
-    "url": "video.html",
-    "revision": "cb63a3804bce68bed3b571e238e09509"
+    "url": "ruznama.html",
+    "revision": "1c8b5b2d2cef9689ae9ed41fd17fa9b3"
   },
   {
     "url": "manifest.json",
-    "revision": "f2278ad4d21ddcbd9931a3fb3084c719"
+    "revision": "e8f33cc1efa4fea4a2026fbc55146158"
   },
   {
     "url": "css/style.css",
-    "revision": "f5d56d602fcaaef8df83f49a0fc5f650"
-  },
-  {
-    "url": "js/calc.js",
-    "revision": "302af459d130c527a97a9f0ed027de52"
-  },
-  {
-    "url": "js/calendar-ar.js",
-    "revision": "b3cbf36c3fd109f72355514c53681f8c"
+    "revision": "30e1a694c80957d394c156c35507f9c9"
   },
   {
     "url": "js/calendar-ru.js",
@@ -75,6 +51,14 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/end-time.js",
     "revision": "d66d69aa30c7937d7f1e4e564e677ef7"
+  },
+  {
+    "url": "js/json/areas.json",
+    "revision": "67464ac7bdfe283c2cc77d685521afd1"
+  },
+  {
+    "url": "js/json/city.json",
+    "revision": "7dd841fc85d7fc0a5df0773c3493a44f"
   },
   {
     "url": "js/json/prayer-times.json",
@@ -105,10 +89,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "dca606af43f0631a25eb1bbdede7ba5a"
   },
   {
-    "url": "js/online-offline.js",
-    "revision": "7bc120e94570c896948416031f40ef1b"
-  },
-  {
     "url": "js/prayer-days.js",
     "revision": "cf89284cf51a14609971ffee10e66fd8"
   },
@@ -119,6 +99,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prayer-times-year.js",
     "revision": "9982a9853e313e1671e51d446096e3b3"
+  },
+  {
+    "url": "js/ruznama.js",
+    "revision": "376a8b527ebb0e7709a9d2f83390fc0d"
   },
   {
     "url": "js/share.js",
@@ -141,10 +125,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
   },
   {
-    "url": "js/tasbih.js",
-    "revision": "7f7fc4779044aece14b0ce6a5bed59ba"
-  },
-  {
     "url": "main.js",
     "revision": "80846bb3403b82a07c7f84658f186b23"
   },
@@ -163,6 +143,22 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "update.js",
     "revision": "2e37a1e61c0f6c88bddbb61150536944"
+  },
+  {
+    "url": "img/back.svg",
+    "revision": "abd3b1b232415b6603af511c6f18b5a7"
+  },
+  {
+    "url": "img/svg/dark.svg",
+    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
+  },
+  {
+    "url": "img/svg/light.svg",
+    "revision": "bf5c6d038a905bd193b0350df31fe6db"
+  },
+  {
+    "url": "img/svg/share.svg",
+    "revision": "8e25fdf8b5e4d8881120a6d6155888f9"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -195,26 +191,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "assets/icons/icon-96x96.png",
     "revision": "9815fb3c4b57df1e8cda23d01fc66078"
-  },
-  {
-    "url": "img/back.svg",
-    "revision": "abd3b1b232415b6603af511c6f18b5a7"
-  },
-  {
-    "url": "img/fon.jpg",
-    "revision": "257258e174ebcc2d97d54dc4d7052da3"
-  },
-  {
-    "url": "img/svg/dark.svg",
-    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
-  },
-  {
-    "url": "img/svg/light.svg",
-    "revision": "bf5c6d038a905bd193b0350df31fe6db"
-  },
-  {
-    "url": "img/svg/share.svg",
-    "revision": "8e25fdf8b5e4d8881120a6d6155888f9"
   }
 ]);
 
