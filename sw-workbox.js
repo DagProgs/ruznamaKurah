@@ -114,7 +114,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/ruznama.js",
-    "revision": "d79a241ed6b088fb545fcb1f10a1d920"
+    "revision": "621db0995e1738cb31c3fcfe6a002714"
   },
   {
     "url": "js/share.js",

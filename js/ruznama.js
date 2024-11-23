@@ -2,13 +2,13 @@ jQuery(document).ready(function () {
     var areas, city;
 
     // Load areas data
-    jQuery.getJSON('js/json/city.json', function(data) {
+    jQuery.getJSON('city.json', function(data) {
         areas = data;
         loadCityData(); // Call to load city data after areas are loaded
     });
 
     function loadCityData() {
-        jQuery.getJSON('js/json/areas.json', function(data) {
+        jQuery.getJSON('areas.json', function(data) {
             city = data;
             initializePlaces(); // Initialize the places once both are loaded
         });
@@ -58,6 +58,18 @@ jQuery(document).ready(function () {
 
             // Проверка наличия данных в localStorage
             var savedPrayTimes = localStorage.getItem('prayTimes_' + placeID);
+            var savedMonth = localStorage.getItem('prayTimesMonth_' + placeID);
+            var savedYear = localStorage.getItem('prayTimesYear_' + placeID);
+            var currentMonth = date.getMonth() + 1; // Текущий месяц (1-12)
+            var currentYear = date.getFullYear(); // Текущий год
+
+            // Если месяц или год изменились, удаляем старые данные
+            if (savedMonth != currentMonth || savedYear != currentYear) {
+                localStorage.removeItem('prayTimes_' + placeID);
+                localStorage.setItem('prayTimesMonth_' + placeID, currentMonth);
+                localStorage.setItem('prayTimesYear_' + placeID, currentYear);
+            }
+
             if (savedPrayTimes) {
                 // Если данные есть в localStorage, используем их
                 processPrayTimes(JSON.parse(savedPrayTimes), day);
