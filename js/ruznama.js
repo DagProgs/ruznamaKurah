@@ -2,13 +2,13 @@ jQuery(document).ready(function () {
     var areas, city;
 
     // Load areas data
-    jQuery.getJSON('city.json', function(data) {
+    jQuery.getJSON('js/json/city.json', function(data) {
         areas = data;
         loadCityData(); // Call to load city data after areas are loaded
     });
 
     function loadCityData() {
-        jQuery.getJSON('areas.json', function(data) {
+        jQuery.getJSON('js/json/areas.json', function(data) {
             city = data;
             initializePlaces(); // Initialize the places once both are loaded
         });
