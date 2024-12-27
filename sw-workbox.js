@@ -22,11 +22,35 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "9551e7cc27bd17195f9939262d7e3c94"
+    "revision": "4e4dae8791ca804879053da2de90eb63"
+  },
+  {
+    "url": "manifest.json",
+    "revision": "9dbae80cfd9b978853772483746277ab"
   },
   {
     "url": "css/style.css",
-    "revision": "d8e61ffe83c16fcbee6001203afdfcd2"
+    "revision": "6566c8a6b7cac9b617698def0a245db7"
+  },
+  {
+    "url": "main.js",
+    "revision": "80846bb3403b82a07c7f84658f186b23"
+  },
+  {
+    "url": "polyfills.js",
+    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
+  },
+  {
+    "url": "pwacompat.min.js",
+    "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
+  },
+  {
+    "url": "runtime.js",
+    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
+  },
+  {
+    "url": "update.js",
+    "revision": "2e37a1e61c0f6c88bddbb61150536944"
   },
   {
     "url": "js/calc.js",
@@ -82,7 +106,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/modal-reklama.js",
-    "revision": "a25db228244e1a37b01d8943ba12c245"
+    "revision": "d4e0a2e0ed69c691cea02d4da67168aa"
   },
   {
     "url": "js/mounths-names.js",
@@ -131,42 +155,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/tasbih.js",
     "revision": "7f7fc4779044aece14b0ce6a5bed59ba"
-  },
-  {
-    "url": "main.js",
-    "revision": "80846bb3403b82a07c7f84658f186b23"
-  },
-  {
-    "url": "polyfills.js",
-    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
-  },
-  {
-    "url": "pwacompat.min.js",
-    "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
-  },
-  {
-    "url": "runtime.js",
-    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
-  },
-  {
-    "url": "update.js",
-    "revision": "2e37a1e61c0f6c88bddbb61150536944"
-  },
-  {
-    "url": "img/back.svg",
-    "revision": "abd3b1b232415b6603af511c6f18b5a7"
-  },
-  {
-    "url": "img/svg/dark.svg",
-    "revision": "dcfa7a4c3f3e9ff810900427126de6c0"
-  },
-  {
-    "url": "img/svg/light.svg",
-    "revision": "bf5c6d038a905bd193b0350df31fe6db"
-  },
-  {
-    "url": "img/svg/share.svg",
-    "revision": "8e25fdf8b5e4d8881120a6d6155888f9"
   },
   {
     "url": "assets/icons/icon-128x128.png",
