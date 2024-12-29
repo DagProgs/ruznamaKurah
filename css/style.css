@@ -834,7 +834,7 @@ h1 {
 
 main {
     position: relative;
-    height: 700px
+    height: 600px
 }
 
 .main_container {
@@ -1285,8 +1285,7 @@ th {
     background-color: brown
 }
 
-/* modal reklama */
-/*
+/* modal reklama 
 .modalls {
     display: none;
     position: fixed;
@@ -1345,75 +1344,9 @@ th {
     width: 60vw;
     box-shadow: 2px 2px 2px black;
     
-} */
-
-.modalls {
-    display: none; /* Скрываем модальное окно по умолчанию */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
 }
 
-.modalls-open {
-    display: block; /* Показываем модальное окно */
-}
-
-.modalls-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Ширина модального окна */
-    max-width: 800px; /* Максимальная ширина модального окна */
-}
-
-.closes {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.closes:hover,
-.closes:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#myBtnn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #2c2c2c;
-    background-color: #860000;
-    height: 60px;
-    width: 60vw;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.226);
-    color: #fff;
-    font-weight: bold;
-    margin-left: 15px;
-}
-
-#myBtnn span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: yellow;
-}
-
-#countdown {
-    font-size: 10px;
-}
- /* end reklama*/
-
-
+*/
 
 .top.table {
     display: flex;

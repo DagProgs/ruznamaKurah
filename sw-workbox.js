@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "4e4dae8791ca804879053da2de90eb63"
+    "revision": "9551e7cc27bd17195f9939262d7e3c94"
   },
   {
     "url": "manifest.json",
@@ -30,7 +30,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/style.css",
-    "revision": "6566c8a6b7cac9b617698def0a245db7"
+    "revision": "d8e61ffe83c16fcbee6001203afdfcd2"
   },
   {
     "url": "main.js",
@@ -106,7 +106,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/modal-reklama.js",
-    "revision": "d4e0a2e0ed69c691cea02d4da67168aa"
+    "revision": "a25db228244e1a37b01d8943ba12c245"
   },
   {
     "url": "js/mounths-names.js",
