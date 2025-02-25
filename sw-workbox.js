@@ -22,15 +22,103 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "9551e7cc27bd17195f9939262d7e3c94"
+    "revision": "a0bea26b885b7dc514685141faa563e2"
+  },
+  {
+    "url": "mounth.html",
+    "revision": "08aeb63ebd67860b710de04eaca06778"
+  },
+  {
+    "url": "year.html",
+    "revision": "d1aa871320105b3cd2824969f35a0fcf"
+  },
+  {
+    "url": "css/reset.css",
+    "revision": "a4e8ee575d5ceb6554b4b0646aa176c4"
+  },
+  {
+    "url": "css/styles.css",
+    "revision": "1fabe4a3e14f46f79d1570dfe8c11693"
   },
   {
     "url": "manifest.json",
-    "revision": "9dbae80cfd9b978853772483746277ab"
+    "revision": "c82fbc5965c18f7dd7b6fa07845a5cfa"
   },
   {
-    "url": "css/style.css",
-    "revision": "d8e61ffe83c16fcbee6001203afdfcd2"
+    "url": "fonts/monplesir.otf",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "fonts/monplesir.svg",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "fonts/monplesir.ttf",
+    "revision": "d8954ca9bec9609b3d415e6deb2b6454"
+  },
+  {
+    "url": "fonts/monplesir.woff",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "fonts/monplesir.woff2",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "js/accordion.js",
+    "revision": "ef7dadb9a5eb23bf72206844abf005ed"
+  },
+  {
+    "url": "js/calendar-ar.js",
+    "revision": "6d4bb981e034772317710de0f5e33536"
+  },
+  {
+    "url": "js/calendar-ru.js",
+    "revision": "980524c7b06ae90e2b8d3072fc872e51"
+  },
+  {
+    "url": "js/clock.js",
+    "revision": "c30623704c7e7fada499b0b3dd3379d4"
+  },
+  {
+    "url": "js/end-time.js",
+    "revision": "e4aa88ecfaa83ac87758cd28e94b65e9"
+  },
+  {
+    "url": "js/jquery-3.7.1.min.js",
+    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
+  },
+  {
+    "url": "js/json/prayer-times.json",
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
+  },
+  {
+    "url": "js/jumma.js",
+    "revision": "77083ddef0ac434caf31d17e4894fe3a"
+  },
+  {
+    "url": "js/modernizr.min.js",
+    "revision": "65f1d21d5fcc9d21da758adababd0c3c"
+  },
+  {
+    "url": "js/mounths-names.js",
+    "revision": "dca606af43f0631a25eb1bbdede7ba5a"
+  },
+  {
+    "url": "js/prayer-days.js",
+    "revision": "ba2f1d5c32300b2a6a1787e80a8687d9"
+  },
+  {
+    "url": "js/prayer-times-mounths.js",
+    "revision": "110b2f2486fb0dffe3fb5739fe4edd22"
+  },
+  {
+    "url": "js/prayer-times-year.js",
+    "revision": "9982a9853e313e1671e51d446096e3b3"
+  },
+  {
+    "url": "js/prefixfree.min.js",
+    "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
   },
   {
     "url": "main.js",
@@ -53,108 +141,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "2e37a1e61c0f6c88bddbb61150536944"
   },
   {
-    "url": "js/calc.js",
-    "revision": "302af459d130c527a97a9f0ed027de52"
+    "url": "img/mounth.svg",
+    "revision": "28b9786d0a8b41c97a7a7801711a1f8a"
   },
   {
-    "url": "js/calendar-ar.js",
-    "revision": "b3cbf36c3fd109f72355514c53681f8c"
-  },
-  {
-    "url": "js/calendar-ru.js",
-    "revision": "5bd13c7dcb3b833600275783ac045d92"
-  },
-  {
-    "url": "js/calendar.js",
-    "revision": "6b968a30943442c651937ed37f215f93"
-  },
-  {
-    "url": "js/clock.js",
-    "revision": "099265fb106f32c7a8fa7b31da037e2e"
-  },
-  {
-    "url": "js/end-time.js",
-    "revision": "d66d69aa30c7937d7f1e4e564e677ef7"
-  },
-  {
-    "url": "js/json/areas.json",
-    "revision": "67464ac7bdfe283c2cc77d685521afd1"
-  },
-  {
-    "url": "js/json/city.json",
-    "revision": "7dd841fc85d7fc0a5df0773c3493a44f"
-  },
-  {
-    "url": "js/json/prayer-times.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
-  },
-  {
-    "url": "js/jumma.js",
-    "revision": "4ca73997ba1a396515f91316c50cea6a"
-  },
-  {
-    "url": "js/min/jquery-3.7.1.min.js",
-    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
-  },
-  {
-    "url": "js/min/modernizr.min.js",
-    "revision": "65f1d21d5fcc9d21da758adababd0c3c"
-  },
-  {
-    "url": "js/min/prefixfree.min.js",
-    "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
-  },
-  {
-    "url": "js/modal-reklama.js",
-    "revision": "a25db228244e1a37b01d8943ba12c245"
-  },
-  {
-    "url": "js/mounths-names.js",
-    "revision": "dca606af43f0631a25eb1bbdede7ba5a"
-  },
-  {
-    "url": "js/online-offline.js",
-    "revision": "7bc120e94570c896948416031f40ef1b"
-  },
-  {
-    "url": "js/prayer-days.js",
-    "revision": "cf89284cf51a14609971ffee10e66fd8"
-  },
-  {
-    "url": "js/prayer-times-mounths.js",
-    "revision": "e0594737db41bd586e6a82b0536ddf45"
-  },
-  {
-    "url": "js/prayer-times-year.js",
-    "revision": "9982a9853e313e1671e51d446096e3b3"
-  },
-  {
-    "url": "js/ruznama.js",
-    "revision": "4e58f181bdc05bf0bd6e5c47f17ee9e1"
-  },
-  {
-    "url": "js/share.js",
-    "revision": "c47a6e766e5c1bc78b7f64c3ff37a08c"
-  },
-  {
-    "url": "js/system/accordion.js",
-    "revision": "ef7dadb9a5eb23bf72206844abf005ed"
-  },
-  {
-    "url": "js/system/modal.js",
-    "revision": "2f4fbe50167694d06bfef53a59e9dec4"
-  },
-  {
-    "url": "js/system/modal.min.js",
-    "revision": "b74505ddbff9b628a21b596e6a067ca9"
-  },
-  {
-    "url": "js/system/theme.js",
-    "revision": "89dad9ae0fc8b084ec4ec7d593008acf"
-  },
-  {
-    "url": "js/tasbih.js",
-    "revision": "7f7fc4779044aece14b0ce6a5bed59ba"
+    "url": "img/year.svg",
+    "revision": "8b97737e3fc289d58f9aaad12ea0d411"
   },
   {
     "url": "assets/icons/icon-128x128.png",
