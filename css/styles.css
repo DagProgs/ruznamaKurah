@@ -179,11 +179,10 @@ main {
 
 /*Week Clock*/
 .week_clock {
-  position: relative;
+  
 }
 
 .week_clock_square {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -210,8 +209,7 @@ main {
 }
 
 .clock_end_text {
-  display: flex;
-  justify-content: center;
+  
 }
 
 .clock_end {
@@ -219,10 +217,6 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 2em;
-}
-
-#timeToNextPrayer {
-  font-size: 1.2em;
 }
 
 .week_clock_square h5 {
@@ -234,6 +228,22 @@ main {
 .week_clock_square h6 {
   font-size: 2em;
   font-weight: bold;
+}
+
+#nextPrayerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#nextPrayerText {
+  font-size: 1.5em;
+}
+
+#nextPrayerTime {
+  font-size: 2em;
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+  color: #851111;
 }
 
 /*Footer*/

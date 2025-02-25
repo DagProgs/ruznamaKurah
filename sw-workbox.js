@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "a0bea26b885b7dc514685141faa563e2"
+    "revision": "e76e14d62f57c75a246858965b15a0cf"
   },
   {
     "url": "mounth.html",
@@ -38,7 +38,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/styles.css",
-    "revision": "b0086d9ec2cf1489eaa284a05fe82378"
+    "revision": "074c6b788bbb6513bd84fcc7dbe2997b"
   },
   {
     "url": "manifest.json",
@@ -82,7 +82,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/end-time.js",
-    "revision": "e4aa88ecfaa83ac87758cd28e94b65e9"
+    "revision": "3cfcf37da71fd6de3b01152c2be3d9a2"
   },
   {
     "url": "js/jquery-3.7.1.min.js",
