@@ -42,7 +42,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "c82fbc5965c18f7dd7b6fa07845a5cfa"
+    "revision": "357fe7df5bb2fc09c575151bed6f2166"
   },
   {
     "url": "fonts/monplesir.otf",
