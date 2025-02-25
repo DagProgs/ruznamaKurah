@@ -38,11 +38,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/styles.css",
-    "revision": "1fabe4a3e14f46f79d1570dfe8c11693"
+    "revision": "b0086d9ec2cf1489eaa284a05fe82378"
   },
   {
     "url": "manifest.json",
-    "revision": "357fe7df5bb2fc09c575151bed6f2166"
+    "revision": "5d7010718887ff8e154a276af97d0c97"
   },
   {
     "url": "fonts/monplesir.otf",

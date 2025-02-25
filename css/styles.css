@@ -178,9 +178,12 @@ main {
 }
 
 /*Week Clock*/
-.week_clock {}
+.week_clock {
+  position: relative;
+}
 
 .week_clock_square {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
