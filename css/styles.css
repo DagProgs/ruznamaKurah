@@ -15,16 +15,12 @@ a {
 }
 
 /*Reklama*/
-.reklama_block {
+.content {
   display: flex;
   justify-content: center;
-  align-items: end;
-  height: 30px;
-}
-
-.content {
   font-size: 1.5em;
   color: #11853e;
+  margin: 10px 0 0 0;
 }
 
 img {
