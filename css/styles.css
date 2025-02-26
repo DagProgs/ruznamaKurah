@@ -178,9 +178,7 @@ main {
 }
 
 /*Week Clock*/
-.week_clock {
-  
-}
+.week_clock {}
 
 .week_clock_square {
   display: flex;
@@ -208,9 +206,7 @@ main {
   color: #11853e;
 }
 
-.clock_end_text {
-  
-}
+.clock_end_text {}
 
 .clock_end {
   display: flex;
@@ -249,6 +245,21 @@ main {
 /*Footer*/
 footer {
   position: relative;
+}
+
+/*Footer KurahRD*/
+.kurahrd {
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.kurahrd::before {
+  content: url(../img/img.png);
+  zoom: 15%;
+  margin: 5px;
 }
 
 /*Jumma*/
