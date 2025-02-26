@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "e76e14d62f57c75a246858965b15a0cf"
+    "revision": "c0536af01e2e8e87398ab7664d14d717"
   },
   {
     "url": "mounth.html",
@@ -38,7 +38,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/styles.css",
-    "revision": "074c6b788bbb6513bd84fcc7dbe2997b"
+    "revision": "cbbec0a9f599c3cc2d8b11c3dd743062"
   },
   {
     "url": "manifest.json",
@@ -119,6 +119,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/prefixfree.min.js",
     "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
+  },
+  {
+    "url": "js/reklama.js",
+    "revision": "0e0591f0ac3eebf3eed10b41ba421b9d"
   },
   {
     "url": "main.js",

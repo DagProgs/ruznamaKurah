@@ -14,6 +14,23 @@ a {
   color: #000000;
 }
 
+/*Reklama*/
+.reklama_block {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 30px;
+}
+
+.content {
+  font-size: 1.5em;
+  color: #11853e;
+}
+
+img {
+  display: none;
+}
+
 /*Header*/
 header {
   position: relative;
