@@ -22,15 +22,15 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "86d68ce89c8199d7212f1c19538f4dda"
+    "revision": "db5fe4a91bffa5928277a1a1f2497784"
   },
   {
     "url": "mounth.html",
-    "revision": "08aeb63ebd67860b710de04eaca06778"
+    "revision": "99f71a377f33aa8c2fe51abd501f2282"
   },
   {
     "url": "year.html",
-    "revision": "d1aa871320105b3cd2824969f35a0fcf"
+    "revision": "b6d277943b60fd3a109cb7f1b72951e5"
   },
   {
     "url": "css/reset.css",
@@ -38,11 +38,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/styles.css",
-    "revision": "dc06fc387b4839f91fe500968949c629"
+    "revision": "db672d892b922015ac1a12dbba93e756"
   },
   {
     "url": "manifest.json",
-    "revision": "5d7010718887ff8e154a276af97d0c97"
+    "revision": "c9903043486a89b061838da1eada5cc4"
   },
   {
     "url": "fonts/monplesir.otf",
@@ -143,6 +143,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "update.js",
     "revision": "2e37a1e61c0f6c88bddbb61150536944"
+  },
+  {
+    "url": "img/hiasan.png",
+    "revision": "68a642d1aa582d801540584db10abe19"
   },
   {
     "url": "img/mounth.svg",

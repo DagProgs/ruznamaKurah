@@ -1,25 +1,70 @@
-@font-face {
-  font-family: 'Monplesir';
-  src: url('../fonts/monplesir.woff2') format('woff2'),
-    url('../fonts/monplesir.woff') format('woff'),
-    url('../fonts/monplesir.otf') format('opentype');
-}
-
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 10px;
+  font-family: Verdana, Tahoma, sans-serif;
 }
 
 a {
-  color: #000000;
+  color: #000;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /*Header*/
+header {
+  position: relative;
+  height: 60px;
+}
+
+.header_container {
+  position: fixed;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.header_container img {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 150px;
+  height: auto;
+}
+
+.header_container svg {
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+}
+
+.header_container h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.ruznama {
+  font-size: 0.7em;
+  font-weight: normal;
+  color: #9b9b9b;
+}
+
 /*Reklama*/
+.reklama {
+  padding: 0 15px;
+}
+
 .content {
   font-size: 1.5em;
   color: #11853e;
-  margin: 5px 0;
 }
 
 img {
@@ -27,190 +72,66 @@ img {
   height: auto;
 }
 
-header {
-  position: relative;
-  height: 70px;
-}
-
-.header_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: fixed;
-  width: 100vw;
-  min-width: 320px;
-  margin: 0 0 25px 0;
-  padding: 0 15px;
-  background-color: #fff;
-  z-index: 1;
-}
-
-.header_container h1 {
-  font-size: 2.2em;
-  font-weight: bold;
-}
-
-.header_container h2 {
-  font-size: 1.5em;
-  color: #c4c4c4;
-}
-
-.icon_name_loc {
-  display: flex;
-  justify-content: start;
-}
-
-.icon_name_loc svg {
-  width: 30px;
-  height: 30px;
-  margin: 0 10px 0 0;
-}
-
-.icon_name_loc path {
-  fill: #000000;
-}
-
 /*Main*/
-main {
-  position: relative;
-}
+main {}
 
 .main_container {
-  position: absolute;
   display: flex;
+  width: 100vw;
 }
 
-.mounth_year {
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.3em;
-  color: #000000;
-  text-transform: uppercase;
-  padding: 5px 0;
-}
-
-.mounth,
-.year {
-  display: flex;
-  align-items: center;
-}
-
-.mounth::before {
-  content: url(../img/mounth.svg);
-  margin: 0 5px;
-}
-
-.year::before {
-  content: url(../img/year.svg);
-  margin: 0 5px;
-}
-
-/*Left*/
+/*Main left*/
 .main_left {
   width: 50vw;
-  min-width: calc(320px - 50vw);
+  min-width: 160px;
+  ..border: 1px solid #1eff00; /*ramka*/
 }
 
-.box {
+.prayer_times {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.prayer_times .item {
   display: flex;
   align-items: center;
+  flex-grow: 1;
+  flex-basis: 100vw;
+  margin: 5px;
+  padding: 5px;
   background-color: #f1f1f1;
-  border-radius: 0 15px 15px 0;
-  margin: 5px 0;
-  padding: 2px 0;
-}
+  border-radius: 10px;
+} 
 
-.box svg {
-  width: 35px;
-  min-width: 35px;
-  height: 35px;
-  margin: 15px;
-}
-
-.box_name_clock {}
-
-.box_name_clock h3 {
-  font-size: 2em;
-  font-weight: bold;
-}
-
-.box_name_clock h4 {
-  font-size: 2.2em;
-}
-
-/*Right*/
-.main_right {
+.item_box {
   display: flex;
-  justify-content: center;
-  width: 50vw;
-  min-width: calc(320px - 50vw);
-}
-
-/*Calendar*/
-.calendar {
-  margin: 10px 0;
-}
-
-.calendar_square {
-  width: 130px;
-  height: 150px;
-  background-color: #f1f1f1;
-  border-radius: 15px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.144);
-}
-
-.calendar_square h6 {
-  display: flex;
-  justify-content: center;
-  font-size: 5em;
-  font-weight: bold;
-}
-
-.calendar_square h5 {
-  display: flex;
-  justify-content: center;
-  font-size: 2em;
-}
-
-.calendar_mini_square {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 130px;
-  height: 50px;
-  background-color: #11853e;
-  border-radius: 15px 15px 0 0;
 }
 
-.calendar_mini_square h5 {
-  font-size: 1.5em;
+.item_box svg {
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  min-height: 25px;
+  margin-left: 5px;
+}
+
+.item_box svg path {
+  fill: #333333;
+}
+
+.name_time {
+  padding-left: 10px;
+}
+
+.name_time h3 {
+  font-size: 1.7em;
   font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
 }
 
-/*Week Clock*/
-.week_clock {}
-
-.week_clock_square {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 130px;
-  height: 110px;
-  background-color: #f1f1f1;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.144);
-  border-radius: 15px;
-}
-
-.week_clock_square h4 {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #11853e;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #c2c2c2;
-  width: 100%;
+.name_time h4 {
+  font-size: 1.7em;
 }
 
 .highlighted {
@@ -218,99 +139,147 @@ main {
   color: #11853e;
 }
 
-.clock_end_text {}
-
-.clock_end {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
+/*Main mounth-year*/
+.mounth_year {
+  width: 50vw;
+  min-width: 160px;
 }
 
-.week_clock_square h5 {
-  padding-top: 5px;
-  font-size: 1.4em;
+.mounth_year .mounth_year_box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.mounth_year_box .item {
+  flex-grow: 1;
+  flex-basis: 40px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.mounth_year_box .mounth, .year {
+  display: flex;
+  align-items: center;
+}
+
+.mounth_year_box p {
+  font-size: 1.2em;
+  padding-left: 2px;
   text-transform: uppercase;
 }
 
-.week_clock_square h6 {
-  font-size: 2em;
+.mounth_year_box .mounth::before {
+  content: url(../img/mounth.svg);
+}
+
+.mounth_year_box .year::before {
+  content: url(../img/year.svg);
+}
+
+/*Main right*/
+.main_right {
+  width: 50vw;
+  min-width: 160px;
+  ..border: 1px solid #1100ff; /*ramka*/
+}
+
+.right_box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.right_box .item {
+  flex-grow: 1;
+  flex-basis: 100px;
+  margin: 5px;
+}
+
+/*Calendar*/
+.calendar {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar .square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 150px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+}
+
+.square .mini_square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 50px;
+  background-color: #0d8f43;
+  border-radius: 10px 10px 0 0;
+}
+
+.name_mounth {
+  font-size: 1.5em;
   font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.name_day {
+  font-size: 5em;
+  font-weight: bold;
+}
+
+.name_year {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+/*End Week Clock*/
+.week {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.week .square {
+  width: 120px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+}
+
+.week_clock_square {
+  margin: 10px;
 }
 
 #nextPrayerContainer {
-  display: flex;
-  flex-direction: column;
+  margin: 10px 0;
 }
 
 #nextPrayerText {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 #nextPrayerTime {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
-  border-bottom: 1px solid #000;
   color: #851111;
 }
 
-/*Footer*/
-footer {
-  position: relative;
+#ru-week {
+  font-size: 1.3em;
 }
 
-/*Jumma*/
-.jumma_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  bottom: 0;
-  left: 0;
-  background-color: #11853e;
-  z-index: 2;
-}
-
-.popup {
-  display: none;
-}
-
-.jumma_box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  padding: 0 15px;
-}
-
-.jumma_text {
-  font-family: Monplesir;
-  font-size: 5em;
-  line-height: 55px;
-  color: #fff;
-  padding-bottom: 50px;
-}
-
-.jumma_descr {
-  font-size: 2em;
-  text-transform: uppercase;
-  color: #11853e;
-  background-color: #f1f1f1;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-#closeBtn {
-  position: absolute;
-  cursor: pointer;
-  color: #8ce0b6;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5em;
+#clock {
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 /*Mounth*/
@@ -424,6 +393,65 @@ th {
   max-height: 0;
   overflow: hidden;
   transition: max-height .2s ease-out;
+}
+
+/*Footer*/
+footer {
+  position: relative;
+}
+
+/*Jumma*/
+.jumma_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  background-color: #11853e;
+  z-index: 50;
+}
+
+.popup {
+  display: none;
+}
+
+.jumma_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 15px;
+}
+
+.jumma_text {
+  font-family: Monplesir;
+  font-size: 5em;
+  line-height: 55px;
+  color: #fff;
+  padding-bottom: 50px;
+}
+
+.jumma_descr {
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #11853e;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#closeBtn {
+  position: absolute;
+  cursor: pointer;
+  color: #8ce0b6;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
 }
 
 /*iPhone*/
