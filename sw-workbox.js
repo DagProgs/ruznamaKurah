@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "db5fe4a91bffa5928277a1a1f2497784"
+    "revision": "0b84aef54d14d2959929f7779f0819cd"
   },
   {
     "url": "mounth.html",
@@ -42,7 +42,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "c9903043486a89b061838da1eada5cc4"
+    "revision": "5d7010718887ff8e154a276af97d0c97"
   },
   {
     "url": "fonts/monplesir.otf",
