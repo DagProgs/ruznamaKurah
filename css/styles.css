@@ -65,6 +65,8 @@ header {
 .content {
   font-size: 1.5em;
   color: #11853e;
+  border: 1px solid #11853e;
+  padding: 0 5px;
 }
 
 img {
@@ -264,21 +266,21 @@ main {}
 }
 
 #nextPrayerText {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 #nextPrayerTime {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
   color: #851111;
 }
 
 #ru-week {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 #clock {
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 

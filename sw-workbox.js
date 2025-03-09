@@ -33,14 +33,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "b6d277943b60fd3a109cb7f1b72951e5"
   },
   {
-    "url": "css/reset.css",
-    "revision": "a4e8ee575d5ceb6554b4b0646aa176c4"
-  },
-  {
-    "url": "css/styles.css",
-    "revision": "db672d892b922015ac1a12dbba93e756"
-  },
-  {
     "url": "manifest.json",
     "revision": "5d7010718887ff8e154a276af97d0c97"
   },
@@ -63,6 +55,26 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "fonts/monplesir.woff2",
     "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "img/hiasan.png",
+    "revision": "68a642d1aa582d801540584db10abe19"
+  },
+  {
+    "url": "img/mounth.svg",
+    "revision": "28b9786d0a8b41c97a7a7801711a1f8a"
+  },
+  {
+    "url": "img/year.svg",
+    "revision": "8b97737e3fc289d58f9aaad12ea0d411"
+  },
+  {
+    "url": "css/reset.css",
+    "revision": "a4e8ee575d5ceb6554b4b0646aa176c4"
+  },
+  {
+    "url": "css/styles.css",
+    "revision": "0713aa7f83ded1fd7e9d0de3dcb75dfc"
   },
   {
     "url": "js/accordion.js",
@@ -122,7 +134,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/reklama.js",
-    "revision": "44f86f79afd9f2af7ca207e767b7170e"
+    "revision": "5551b988604c071d2097862eda427a9f"
   },
   {
     "url": "main.js",
@@ -143,18 +155,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "update.js",
     "revision": "2e37a1e61c0f6c88bddbb61150536944"
-  },
-  {
-    "url": "img/hiasan.png",
-    "revision": "68a642d1aa582d801540584db10abe19"
-  },
-  {
-    "url": "img/mounth.svg",
-    "revision": "28b9786d0a8b41c97a7a7801711a1f8a"
-  },
-  {
-    "url": "img/year.svg",
-    "revision": "8b97737e3fc289d58f9aaad12ea0d411"
   },
   {
     "url": "assets/icons/icon-128x128.png",
