@@ -44,7 +44,7 @@ async function loadContent() {
         });
     } catch (error) {
         console.error('Ошибка при загрузке данных:', error);
-        errorMessage.textContent = 'Ошибка при загрузке данных. Попробуйте позже.';
+        errorMessage.textContent = 'Нет подключения к интернету. Попробуйте позже.';
         contentDiv.appendChild(errorMessage); // Показать сообщение об ошибке
     }
 }
