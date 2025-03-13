@@ -134,7 +134,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/reklama.js",
-    "revision": "eb7d79a8cf6be86597eb5cc66abc1970"
+    "revision": "478a0fbbfc979addfbcdfd47fc4c4d42"
   },
   {
     "url": "main.js",

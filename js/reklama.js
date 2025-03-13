@@ -42,6 +42,14 @@ async function loadContent() {
                 audio.src = item.src;
                 audio.controls = true; // Включить управление для аудио
                 contentDiv.appendChild(audio);
+            } else if (item.type === 'youtube') {
+                const iframe = document.createElement('iframe');
+                iframe.src = item.src;
+                iframe.width = '100%'; // Установить ширину iframe на 100%
+                iframe.height = '315'; // Установить высоту iframe
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'; // Разрешения
+                iframe.allowFullscreen = true; // Разрешить полноэкранный режим
+                contentDiv.appendChild(iframe);
             }
         });
     } catch (error) {
