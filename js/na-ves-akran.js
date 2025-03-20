@@ -34,6 +34,8 @@ function fetchData() {
                 } else {
                     hideOverlay();
                 }
+            } else {
+                hideOverlay(); // No cached data, hide overlay
             }
         });
 }
