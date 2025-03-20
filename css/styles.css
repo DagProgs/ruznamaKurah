@@ -504,7 +504,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  background-color: #ffffff; /* Полупрозрачный черный фон */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -517,7 +517,7 @@ footer {
   padding: 20px;
   border-radius: 10px;
   max-width: 800px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px #ffffff;
 }
 
 h1 {
