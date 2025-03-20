@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "02ee949694badb21d3630c07329cf0d8"
+    "revision": "8d906ff8ef51e963304e64ba1244d060"
   },
   {
     "url": "mounth.html",
@@ -42,7 +42,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/styles.css",
-    "revision": "2a47134a583064f6a603b57776b9dee3"
+    "revision": "1b0a4bf6421a1f7c4dc8c0a00a653fbd"
   },
   {
     "url": "js/accordion.js",
