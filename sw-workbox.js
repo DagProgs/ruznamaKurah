@@ -86,7 +86,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/na-ves-akran.js",
-    "revision": "4afe1cbb1943026c968d0576a1f31dd5"
+    "revision": "defa1add28ad656cb0f3baef77609943"
   },
   {
     "url": "js/prayer-days.js",
