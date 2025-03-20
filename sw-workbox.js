@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "0b84aef54d14d2959929f7779f0819cd"
+    "revision": "1d8f1308adb59f46a59931b16f821682"
   },
   {
     "url": "mounth.html",
@@ -37,44 +37,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "5d7010718887ff8e154a276af97d0c97"
   },
   {
-    "url": "fonts/monplesir.otf",
-    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
-  },
-  {
-    "url": "fonts/monplesir.svg",
-    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
-  },
-  {
-    "url": "fonts/monplesir.ttf",
-    "revision": "d8954ca9bec9609b3d415e6deb2b6454"
-  },
-  {
-    "url": "fonts/monplesir.woff",
-    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
-  },
-  {
-    "url": "fonts/monplesir.woff2",
-    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
-  },
-  {
-    "url": "img/hiasan.png",
-    "revision": "68a642d1aa582d801540584db10abe19"
-  },
-  {
-    "url": "img/mounth.svg",
-    "revision": "28b9786d0a8b41c97a7a7801711a1f8a"
-  },
-  {
-    "url": "img/year.svg",
-    "revision": "8b97737e3fc289d58f9aaad12ea0d411"
-  },
-  {
     "url": "css/reset.css",
     "revision": "a4e8ee575d5ceb6554b4b0646aa176c4"
   },
   {
     "url": "css/styles.css",
-    "revision": "0713aa7f83ded1fd7e9d0de3dcb75dfc"
+    "revision": "9af6f45f48289a11d4a68099490493db"
   },
   {
     "url": "js/accordion.js",
@@ -117,6 +85,10 @@ workbox.precaching.precacheAndRoute([
     "revision": "dca606af43f0631a25eb1bbdede7ba5a"
   },
   {
+    "url": "js/na-ves-akran.js",
+    "revision": "dacfe0318ff00fafbee8a376684e9190"
+  },
+  {
     "url": "js/prayer-days.js",
     "revision": "ba2f1d5c32300b2a6a1787e80a8687d9"
   },
@@ -155,6 +127,38 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "update.js",
     "revision": "2e37a1e61c0f6c88bddbb61150536944"
+  },
+  {
+    "url": "img/hiasan.png",
+    "revision": "68a642d1aa582d801540584db10abe19"
+  },
+  {
+    "url": "img/mounth.svg",
+    "revision": "28b9786d0a8b41c97a7a7801711a1f8a"
+  },
+  {
+    "url": "img/year.svg",
+    "revision": "8b97737e3fc289d58f9aaad12ea0d411"
+  },
+  {
+    "url": "fonts/monplesir.otf",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "fonts/monplesir.svg",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "fonts/monplesir.ttf",
+    "revision": "d8954ca9bec9609b3d415e6deb2b6454"
+  },
+  {
+    "url": "fonts/monplesir.woff",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "fonts/monplesir.woff2",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
   },
   {
     "url": "assets/icons/icon-128x128.png",
