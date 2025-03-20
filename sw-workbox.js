@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "1d8f1308adb59f46a59931b16f821682"
+    "revision": "02ee949694badb21d3630c07329cf0d8"
   },
   {
     "url": "mounth.html",
@@ -42,7 +42,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css/styles.css",
-    "revision": "042e82a80df93f3aa886bb5304e8ce5a"
+    "revision": "2a47134a583064f6a603b57776b9dee3"
   },
   {
     "url": "js/accordion.js",
@@ -75,6 +75,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/jumma.js",
     "revision": "77083ddef0ac434caf31d17e4894fe3a"
+  },
+  {
+    "url": "js/modal-description-prayer.js",
+    "revision": "f3bbd02ae731a9bea9b70b25c1a9bf96"
   },
   {
     "url": "js/modernizr.min.js",
@@ -127,6 +131,26 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "update.js",
     "revision": "2e37a1e61c0f6c88bddbb61150536944"
+  },
+  {
+    "url": "img/1.png",
+    "revision": "2f7d7fd5526d17feda258bc14eacb597"
+  },
+  {
+    "url": "img/2.png",
+    "revision": "0aa1020c2da12b812d297d5cb27416e9"
+  },
+  {
+    "url": "img/3.png",
+    "revision": "cc749dae7aa37ea8f996f07e8cb8ce65"
+  },
+  {
+    "url": "img/4.png",
+    "revision": "d3f2c63cafe9e6a8cb252d59dedac65a"
+  },
+  {
+    "url": "img/5.png",
+    "revision": "1dc9f96736b1d9ad0faba8acaec3fb2f"
   },
   {
     "url": "img/hiasan.png",
