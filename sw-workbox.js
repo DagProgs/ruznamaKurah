@@ -22,31 +22,27 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "85760b4af28cbe0c8cc23688380d3d17"
+    "revision": "8d906ff8ef51e963304e64ba1244d060"
   },
   {
     "url": "mounth.html",
-    "revision": "e379c414289c3ee53f874603e939d96c"
+    "revision": "99f71a377f33aa8c2fe51abd501f2282"
   },
   {
     "url": "year.html",
-    "revision": "e84e4ef0fda00ec989fba544d0db2b99"
-  },
-  {
-    "url": "calendar.html",
-    "revision": "4ae4f3dfd8f3a65f2e858eded2824fbc"
-  },
-  {
-    "url": "times.html",
-    "revision": "e7f2e758472628c5068bc1132df393fd"
+    "revision": "b6d277943b60fd3a109cb7f1b72951e5"
   },
   {
     "url": "manifest.json",
     "revision": "5d7010718887ff8e154a276af97d0c97"
   },
   {
+    "url": "css/reset.css",
+    "revision": "a4e8ee575d5ceb6554b4b0646aa176c4"
+  },
+  {
     "url": "css/styles.css",
-    "revision": "5fda253bd55bc9d571950e65760e8c21"
+    "revision": "1b0a4bf6421a1f7c4dc8c0a00a653fbd"
   },
   {
     "url": "js/accordion.js",
@@ -57,24 +53,24 @@ workbox.precaching.precacheAndRoute([
     "revision": "6d4bb981e034772317710de0f5e33536"
   },
   {
-    "url": "js/calendar-calendar.js",
-    "revision": "6dfc1e668adaece05e3fbd1d65d0190e"
+    "url": "js/calendar-ru.js",
+    "revision": "980524c7b06ae90e2b8d3072fc872e51"
   },
   {
-    "url": "js/calendar.js",
-    "revision": "fb2fa18938498955e3248adc7e126b00"
+    "url": "js/clock.js",
+    "revision": "c30623704c7e7fada499b0b3dd3379d4"
   },
   {
     "url": "js/end-time.js",
     "revision": "3cfcf37da71fd6de3b01152c2be3d9a2"
   },
   {
-    "url": "js/jquery-3.6.0.min.js",
-    "revision": "8fb8fee4fcc3cc86ff6c724154c49c42"
+    "url": "js/jquery-3.7.1.min.js",
+    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
   },
   {
     "url": "js/json/prayer-times.json",
-    "revision": "fa29c9bf6a50f842418b4f0c6a632167"
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
   },
   {
     "url": "js/jumma.js",
@@ -83,6 +79,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "js/modal-description-prayer.js",
     "revision": "f3bbd02ae731a9bea9b70b25c1a9bf96"
+  },
+  {
+    "url": "js/modernizr.min.js",
+    "revision": "65f1d21d5fcc9d21da758adababd0c3c"
   },
   {
     "url": "js/mounths-names.js",
@@ -94,7 +94,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/prayer-days.js",
-    "revision": "70fe03d94140ba637b638ad0545f9058"
+    "revision": "ba2f1d5c32300b2a6a1787e80a8687d9"
   },
   {
     "url": "js/prayer-times-mounths.js",
@@ -102,19 +102,15 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/prayer-times-year.js",
-    "revision": "f2292f0aec6dc6b746715171359885c9"
+    "revision": "9982a9853e313e1671e51d446096e3b3"
+  },
+  {
+    "url": "js/prefixfree.min.js",
+    "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
   },
   {
     "url": "js/reklama.js",
     "revision": "478a0fbbfc979addfbcdfd47fc4c4d42"
-  },
-  {
-    "url": "js/times-index.js",
-    "revision": "3fdc7f40bf778dad7f58ef7cbed68064"
-  },
-  {
-    "url": "js/times-times.js",
-    "revision": "e1cff77584a48e0f0b3b9c3d72a7d05b"
   },
   {
     "url": "main.js",
@@ -157,312 +153,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "1dc9f96736b1d9ad0faba8acaec3fb2f"
   },
   {
-    "url": "img/ramadan.png",
+    "url": "img/hiasan.png",
     "revision": "68a642d1aa582d801540584db10abe19"
   },
   {
-    "url": "img/svg/calendar.svg",
-    "revision": "61f05b037be052de95f1020b7dd10b94"
-  },
-  {
-    "url": "img/svg/menu-add.svg",
-    "revision": "122d3ea208c1ec64e1973084437f1d96"
-  },
-  {
-    "url": "img/svg/menu-fold.svg",
-    "revision": "c3e681e21fc603267c213f7b94573b87"
-  },
-  {
-    "url": "img/svg/mounth.svg",
+    "url": "img/mounth.svg",
     "revision": "28b9786d0a8b41c97a7a7801711a1f8a"
   },
   {
-    "url": "img/svg/year.svg",
+    "url": "img/year.svg",
     "revision": "8b97737e3fc289d58f9aaad12ea0d411"
-  },
-  {
-    "url": "times/1/1.json",
-    "revision": "df9239eb52f0542f87c4fe097e1a8be4"
-  },
-  {
-    "url": "times/1/10.json",
-    "revision": "8bc776dda03d869128da9b10c869dbcd"
-  },
-  {
-    "url": "times/1/11.json",
-    "revision": "6ec907d086e0c27048a3b76645ca1beb"
-  },
-  {
-    "url": "times/1/12.json",
-    "revision": "41f9d028cd0188c069a380805e37fdc7"
-  },
-  {
-    "url": "times/1/2.json",
-    "revision": "9329dc6377d4453f99ed55468f8a8be2"
-  },
-  {
-    "url": "times/1/3.json",
-    "revision": "a91d7cb08c035b9584cabbb3d20fc67e"
-  },
-  {
-    "url": "times/1/4.json",
-    "revision": "1f8b21dca0f8b124f89392fd014ec332"
-  },
-  {
-    "url": "times/1/5.json",
-    "revision": "5d9de3e00ffaef63b0bcfd48b8717e18"
-  },
-  {
-    "url": "times/1/6.json",
-    "revision": "6950f21c0e0f908f885100e8e62e750d"
-  },
-  {
-    "url": "times/1/7.json",
-    "revision": "4bbfbcb4555da65028c7da1d244d977c"
-  },
-  {
-    "url": "times/1/8.json",
-    "revision": "d1eeae662d9940dacd571516fddee6f9"
-  },
-  {
-    "url": "times/1/9.json",
-    "revision": "852763fdb71f93a0a8de328fec0eb6f8"
-  },
-  {
-    "url": "times/2/1.json",
-    "revision": "4fb4526d50585365f6ed418e9b9bcc04"
-  },
-  {
-    "url": "times/2/10.json",
-    "revision": "9ddb65927d93e17634fd44ce07597d2a"
-  },
-  {
-    "url": "times/2/11.json",
-    "revision": "1cfbc060635447b4bd4fc13ace993b59"
-  },
-  {
-    "url": "times/2/12.json",
-    "revision": "5c7d3a4549e1ad0f8f16c2189e062200"
-  },
-  {
-    "url": "times/2/2.json",
-    "revision": "9e53f6dbc9b53475f55cafe5653dd876"
-  },
-  {
-    "url": "times/2/3.json",
-    "revision": "573af4b7f7d31724c0a12382f1e8cfc8"
-  },
-  {
-    "url": "times/2/4.json",
-    "revision": "98ed312451e8910a5a1b316292467c0b"
-  },
-  {
-    "url": "times/2/5.json",
-    "revision": "73efb0b4afb37c80488df70198985306"
-  },
-  {
-    "url": "times/2/6.json",
-    "revision": "d908f3fd8dc379af9abb93e200663c56"
-  },
-  {
-    "url": "times/2/7.json",
-    "revision": "22febfe909e834cbd13f156667055172"
-  },
-  {
-    "url": "times/2/8.json",
-    "revision": "4d61235b1dc47c1b67a0593a0b043630"
-  },
-  {
-    "url": "times/2/9.json",
-    "revision": "3d94127551ae49cef104cd96bf1efb49"
-  },
-  {
-    "url": "times/3/1.json",
-    "revision": "dcbea882f7549b5812cfad817498f945"
-  },
-  {
-    "url": "times/3/10.json",
-    "revision": "2c71b4253dee481f2fc2433c281da238"
-  },
-  {
-    "url": "times/3/11.json",
-    "revision": "a21012f1d5d4e00e2bd696cbb1c352e7"
-  },
-  {
-    "url": "times/3/12.json",
-    "revision": "9f88c89d5f6dc32fd0260e950a9d471b"
-  },
-  {
-    "url": "times/3/2.json",
-    "revision": "290f0ba7674a573bf88b81017be3ef89"
-  },
-  {
-    "url": "times/3/3.json",
-    "revision": "600dea575f9e6c50b110d5cc56ee05ce"
-  },
-  {
-    "url": "times/3/4.json",
-    "revision": "c28d57670b5aa8cec9a904e8f97854d7"
-  },
-  {
-    "url": "times/3/5.json",
-    "revision": "a96203cacfccdb4e7173d97fbd4ba610"
-  },
-  {
-    "url": "times/3/6.json",
-    "revision": "7673c1f5cb43e7659d071aa8e6ef1d11"
-  },
-  {
-    "url": "times/3/7.json",
-    "revision": "ac5f357d40f56b74d6f39022d2ce0d2d"
-  },
-  {
-    "url": "times/3/8.json",
-    "revision": "fb92da07d19f030455e85cf6bb5dd6b9"
-  },
-  {
-    "url": "times/3/9.json",
-    "revision": "283222d0893d153a38d8f33dc9607a57"
-  },
-  {
-    "url": "times/4/1.json",
-    "revision": "d5d59d05cd1755a950f490a651024175"
-  },
-  {
-    "url": "times/4/10.json",
-    "revision": "57495a098c6b01ae622ee28a311ff146"
-  },
-  {
-    "url": "times/4/11.json",
-    "revision": "9945950aad85f47f6e960064d4419947"
-  },
-  {
-    "url": "times/4/12.json",
-    "revision": "557ccf4c940b3c67bd1482ccac6c4fb1"
-  },
-  {
-    "url": "times/4/2.json",
-    "revision": "a2c3dac927c6e06c9668fb25c2ea318a"
-  },
-  {
-    "url": "times/4/3.json",
-    "revision": "6c90e2f6a855daf716d400a3a4f4e5bd"
-  },
-  {
-    "url": "times/4/4.json",
-    "revision": "e9fce98823dfdee47a1fbe1243d9e242"
-  },
-  {
-    "url": "times/4/5.json",
-    "revision": "80bb85690e6cf002f5ac184b6ea58481"
-  },
-  {
-    "url": "times/4/6.json",
-    "revision": "e6f61028ae7e527370bfb54378874a9d"
-  },
-  {
-    "url": "times/4/7.json",
-    "revision": "17e01b081e53edd2f5d2bcc36906b6cf"
-  },
-  {
-    "url": "times/4/8.json",
-    "revision": "4c07ed096212eefe14bb48d637a05632"
-  },
-  {
-    "url": "times/4/9.json",
-    "revision": "1a29f551551a17639d5eff2ce9cdaaf5"
-  },
-  {
-    "url": "times/5/1.json",
-    "revision": "b86cd5b938766f6e461efccf48be4521"
-  },
-  {
-    "url": "times/5/10.json",
-    "revision": "5cd9b552d66ab19ea51373ed2f56a505"
-  },
-  {
-    "url": "times/5/11.json",
-    "revision": "223adb9938b399ff3f5a392525cc5f90"
-  },
-  {
-    "url": "times/5/12.json",
-    "revision": "fca3e1873b584aa50fff5e31e1a1f0f6"
-  },
-  {
-    "url": "times/5/2.json",
-    "revision": "5ee9dbd39310f59b1149e6d99a2d2b56"
-  },
-  {
-    "url": "times/5/3.json",
-    "revision": "9afac99f2ecfdf90649b5a8357cd3a7b"
-  },
-  {
-    "url": "times/5/4.json",
-    "revision": "6ef32a59beed07866d3c7a1aee87660a"
-  },
-  {
-    "url": "times/5/5.json",
-    "revision": "6983ab97da95f569f644df494bf7a478"
-  },
-  {
-    "url": "times/5/6.json",
-    "revision": "80e0017574b15a23e16d907223034fce"
-  },
-  {
-    "url": "times/5/7.json",
-    "revision": "168e8ac2fac3112a13de3667d0bcccaf"
-  },
-  {
-    "url": "times/5/8.json",
-    "revision": "596fab5a4df1fd3e582854b358d77d3b"
-  },
-  {
-    "url": "times/5/9.json",
-    "revision": "05a7e5a8d4c8560abf6d4852be2b52fc"
-  },
-  {
-    "url": "times/localization.json",
-    "revision": "a8171fff6ee7424ad6e63b9fd66fa17d"
-  },
-  {
-    "url": "fonts/evolventa/bold/evolventa-bold.otf",
-    "revision": "42ae20e2909821f794acdde1c25a2285"
-  },
-  {
-    "url": "fonts/evolventa/bold/evolventa-bold.svg",
-    "revision": "42ae20e2909821f794acdde1c25a2285"
-  },
-  {
-    "url": "fonts/evolventa/bold/evolventa-bold.ttf",
-    "revision": "42ae20e2909821f794acdde1c25a2285"
-  },
-  {
-    "url": "fonts/evolventa/bold/evolventa-bold.woff",
-    "revision": "42ae20e2909821f794acdde1c25a2285"
-  },
-  {
-    "url": "fonts/evolventa/bold/evolventa-bold.woff2",
-    "revision": "42ae20e2909821f794acdde1c25a2285"
-  },
-  {
-    "url": "fonts/evolventa/normal/evolventa-normal.otf",
-    "revision": "8324b41b96fe2e1232af47360042457c"
-  },
-  {
-    "url": "fonts/evolventa/normal/evolventa-normal.svg",
-    "revision": "8324b41b96fe2e1232af47360042457c"
-  },
-  {
-    "url": "fonts/evolventa/normal/evolventa-normal.ttf",
-    "revision": "8324b41b96fe2e1232af47360042457c"
-  },
-  {
-    "url": "fonts/evolventa/normal/evolventa-normal.woff",
-    "revision": "8324b41b96fe2e1232af47360042457c"
-  },
-  {
-    "url": "fonts/evolventa/normal/evolventa-normal.woff2",
-    "revision": "8324b41b96fe2e1232af47360042457c"
   },
   {
     "url": "fonts/monplesir.otf",
