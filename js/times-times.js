@@ -31,7 +31,7 @@ if (area && areaId) {
   const currentMonth = today.getMonth() + 1; // +1 для соответствия вашим JSON-файлам
 
   // Загрузка данных о времени молитв для выбранной территории
-  fetch(`/timesprayer/${areaId}/${currentMonth}.json`) // Замените на нужный файл (например, 1.json для января)
+  fetch(`/times/${areaId}/${currentMonth}.json`) // Замените на нужный файл (например, 1.json для января)
     .then(response => {
       if (!response.ok) {
         throw new Error('Сеть ответила с ошибкой: ' + response.status);
