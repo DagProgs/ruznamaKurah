@@ -422,7 +422,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "timesprayer/localization.json",
-    "revision": "633ca28980a130874e120d33a7b86c35"
+    "revision": "103e63bc6a7352ae3922b1d0e5d6feee"
   },
   {
     "url": "fonts/evolventa/bold/evolventa-bold.otf",
