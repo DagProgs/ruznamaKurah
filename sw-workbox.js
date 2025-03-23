@@ -110,11 +110,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/times-index.js",
-    "revision": "89fd2db321a43d04a3de3523d752578e"
+    "revision": "1c5eacaa71dc1ce102a06f428d778fbd"
   },
   {
     "url": "js/times-times.js",
-    "revision": "815504c8b0ed10b3dc7ca771c0724093"
+    "revision": "5617464400dfb2c341f897a3321c458d"
   },
   {
     "url": "main.js",
@@ -570,8 +570,8 @@ self.addEventListener('push', function(event) {
   const title = 'Новое уведомление!';
   const options = {
     body: event.data ? event.data.text() : 'У вас новое уведомление.',
-    icon: 'images/icon.png', // Укажите путь к иконке уведомления
-    badge: 'images/badge.png' // Укажите путь к значку уведомления
+    icon: 'assets/icons/icon-72x72.png', // Укажите путь к иконке уведомления
+    badge: 'assets/icons/icon-72x72.png' // Укажите путь к значку уведомления
   };
 
   event.waitUntil(
