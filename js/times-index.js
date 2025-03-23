@@ -1,4 +1,4 @@
-<script>
+
 let isListVisible = false;
 
 // Функция для получения данных из кэша или сети
@@ -75,4 +75,3 @@ document.getElementById('selected-area-button').addEventListener('click', functi
         window.location.href = `times.html?area=${encodeURIComponent(selectedArea)}&id=${selectedAreaId}`;
     }
 });
-</script>

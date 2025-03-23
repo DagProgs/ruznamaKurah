@@ -1,4 +1,4 @@
-<script>
+
 function getCurrentMonth() {
     const date = new Date();
     const options = { month: 'long', year: 'numeric' };
@@ -64,4 +64,3 @@ if (area && areaId) {
 } else {
     document.getElementById('selected-area').textContent = 'Выбор области не был сделан.';
 }
-</script>
