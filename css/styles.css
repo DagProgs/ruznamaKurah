@@ -1,140 +1,321 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+@font-face {
+  font-family: 'evolventa-normal';
+  src: url('../fonts/evolventa/normal/evolventa-normal.woff2') format('woff2'),
+    url('../fonts/evolventa/normal/evolventa-normal.woff2') format('woff'),
+    url('../fonts/evolventa/normal/evolventa-normal.otf') format('opentype'),
+    url('../fonts/evolventa/normal/evolventa-normal.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'evolventa-bold';
+  src: url('../fonts/evolventa/bold/evolventa-bold.woff2') format('woff2'),
+    url('../fonts/evolventa/bold/evolventa-bold.woff2') format('woff'),
+    url('../fonts/evolventa/bold/evolventa-bold.otf') format('opentype'),
+    url('../fonts/evolventa/bold/evolventa-bold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'monplesir';
+  src: url('../fonts/monplesir.woff2') format('woff2'),
+    url('../fonts/monplesir.woff2') format('woff'),
+    url('../fonts/monplesir.otf') format('opentype'),
+    url('../fonts/monplesir.ttf') format('opentype');
+}
+
+
 body {
-  font-size: 10px;
   font-family: Verdana, Tahoma, sans-serif;
+  font-size: 10px;
 }
 
 a {
   color: #000;
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/*Header*/
 header {
   position: relative;
   height: 60px;
+  z-index: 1;
 }
 
 .header_container {
-  position: fixed;
-  width: 100vw;
-  height: 60px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  min-width: 320px;
+  height: 60px;
   background-color: #fff;
-  z-index: 10;
-}
-
-.header_container img {
-  position: absolute;
-  top: -30px;
-  right: 0;
-  width: 150px;
-  height: auto;
+  padding-right: 15px;
 }
 
 .header_container svg {
   width: 30px;
+  min-width: 30px;
   height: 30px;
   margin: 15px;
 }
 
-.header_container h1 {
-  display: flex;
-  flex-direction: column;
-  font-size: 2em;
-  font-weight: bold;
-  z-index: 1;
+.header_text {
+  flex: 1;
 }
 
-.ruznama {
-  font-size: 0.7em;
-  font-weight: normal;
-  color: #9b9b9b;
+.header_text h1 {
+  font-size: 1.8em;
+  font-family: 'evolventa-bold';
 }
 
-/*Reklama*/
-.reklama {
-  padding: 0 15px;
+.header_text #load-button {
+  display: inline;
 }
 
-.content {
+.header_text p {
+  display: inline;
   font-size: 1.5em;
-  color: #11853e;
-  border: 1px solid #11853e;
-  padding: 0 5px;
+  font-family: 'evolventa-normal';
 }
 
-img {
-  max-width: 100%;
+.header_text img {
+  width: 18px;
+}
+
+.header_right {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.header_right svg {
+  margin: 5px;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+}
+
+.ramadan {
+  position: relative;
+  top: -14px;
+  left: 0;
+}
+
+.ramadan img {
+  width: 70px;
   height: auto;
 }
 
-/*Main*/
-main {}
-
 .main_container {
-  display: flex;
   width: 100vw;
+  padding: 0 15px;
 }
 
-/*Main left*/
-.main_left {
-  width: 50vw;
-  min-width: 160px;
-  ..border: 1px solid #1eff00;
-  /*ramka*/
-}
-
-.prayer_times {
+.main_left_right {
   display: flex;
-  flex-wrap: wrap;
-  margin: 10px;
 }
 
-.prayer_times .item {
+/*LEFT*/
+.main_left {
+  width: 150px;
+}
+
+/*RIGHT*/
+.main_right {
+  flex: 1;
+  padding-left: 10px;
+}
+
+.main_left .main_prayer_times {
+  margin: 5px 0;
+}
+
+.main_prayer_times_icon_text {
   display: flex;
   align-items: center;
-  flex-grow: 1;
-  flex-basis: 100vw;
-  margin: 5px;
-  padding: 5px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.main_prayer_times_icon_text svg {
+  width: 30px;
+  max-width: 30px;
+  height: 30px;
+}
+
+.main_prayer_text {
+  padding: 0 10px;
+}
+
+.main_prayer_text h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.main_prayer_text p {
+  font-size: 2em;
+}
+
+/*Месяц Год*/
+.mounth_year {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
   background-color: #f1f1f1;
   border-radius: 10px;
 }
 
-.item_box {
+.mounth_year .mounth {
   display: flex;
   align-items: center;
 }
 
-.item_box svg {
-  width: 25px;
-  min-width: 25px;
-  height: 25px;
-  min-height: 25px;
-  margin-left: 5px;
+.mounth_year .mounth::before {
+  content: url(../img/svg/mounth.svg);
 }
 
-.item_box svg path {
-  fill: #333333;
+.mounth_year .year {
+  display: flex;
+  align-items: center;
 }
 
-.name_time {
-  padding-left: 10px;
+.mounth_year .year::before {
+  content: url(../img/svg/year.svg);
 }
 
-.name_time h3 {
-  font-size: 1.7em;
+.mounth_year p {
+  padding: 0 2px;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+/*End Times*/
+.end_priyer_times {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#nextPrayerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#nextPrayerText {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+#nextPrayerTime {
+  font-size: 2em;
   font-weight: bold;
-}
-
-.name_time h4 {
-  font-size: 1.7em;
+  color: #701212;
 }
 
 .highlighted {
@@ -142,159 +323,320 @@ main {}
   color: #11853e;
 }
 
-/*Main mounth-year*/
-.mounth_year {
-  width: 50vw;
-  min-width: 160px;
+.main_prayer_text .modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.863);
 }
 
-.mounth_year .mounth_year_box {
+.main_prayer_text .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
+  border: 1px solid #b9b9b9;
+}
+
+.main_prayer_text .modal-content h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #000;
+  padding: 5px 0;
+}
+
+.main_prayer_text .modal-content p {
+  font-size: 1.5em;
+  padding: 5px 0;
+}
+
+.main_prayer_text .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main_prayer_text .openModal {
+  cursor: pointer;
+}
+
+.main_calendar {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.main_calendar .active {
+  color: #000;
+  font-weight: bold;
+}
+
+.main_calendar .icon img {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+}
+
+.main_calendar .days-of-week {
+  border-bottom: 1px solid #cacaca;
+  padding-bottom: 5px;
+}
+
+.main_calendar .days-of-week {
+  color: #cacaca;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 10px;
+  gap: 5px;
+  font-size: 1em;
 }
 
-.mounth_year_box .item {
-  flex-grow: 1;
-  flex-basis: 40px;
-  margin: 5px;
-  border-radius: 10px;
-}
-
-.mounth_year_box .mounth,
-.year {
-  display: flex;
-  align-items: center;
-}
-
-.mounth_year_box p {
-  font-size: 1.2em;
-  padding-left: 2px;
-  text-transform: uppercase;
-}
-
-.mounth_year_box .mounth::before {
-  content: url(../img/mounth.svg);
-}
-
-.mounth_year_box .year::before {
-  content: url(../img/year.svg);
-}
-
-/*Main right*/
-.main_right {
-  width: 50vw;
-  min-width: 160px;
-  ..border: 1px solid #1100ff;
-  /*ramka*/
-}
-
-.right_box {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px;
-}
-
-.right_box .item {
-  flex-grow: 1;
-  flex-basis: 100px;
-  margin: 5px;
-}
-
-/*Calendar*/
-.calendar {
+.main_calendar .time {
   display: flex;
   justify-content: center;
+  font-size: 2em;
+  gap: 5px;
 }
 
-.calendar .square {
+.main_calendar .date {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.5em;
+  margin: 9px 0 0 0;
+}
+
+/*Calendar Full*/
+.calendar_full_year {
+  min-width: 320px;
+}
+
+.calendar_full_year .calendar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 120px;
-  height: 150px;
-  background-color: #f1f1f1;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
 }
 
-.square .mini_square {
+.calendar_full_year .current-month {
+  background: white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.185);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+}
+
+.calendar_full_year .month {
+  background: #fff;
+  padding: 15px;
+  margin: 5px;
+  width: 100vw;
+  min-width: 320px;
+}
+
+.calendar_full_year .current-month {
+  background-color: #f1f1f1;
+}
+
+
+.calendar_full_year .month h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.calendar_full_year .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 10px;
+}
+
+.calendar_full_year .day {
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 50px;
-  background-color: #0d8f43;
-  border-radius: 10px 10px 0 0;
+  border: 1px solid #ebebeb;
+  font-size: 1.5em;
 }
 
-.name_mounth {
-  font-size: 1.5em;
+.calendar_full_year .day.empty {
+  background: #f1f1f1;
+}
+
+.calendar_full_year .today {
+  background-color: #dde2ee;
   font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
+  color: #000;
+}
+
+.calendar_full_year .weekdays {
+  display: contents;
+}
+
+.calendar_full_year .weekday {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.calendar_full_year .weekend {
+  color: red;
+}
+
+.calendar_full_year .month:not(.current-month) .weekend {
+  color: black;
+}
+
+
+.calendar_full_year .month-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50vw;
+  height: auto;
+}
+
+.calendar_full_day {
+  position: sticky;
+  top: 59px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.1em;
+  min-width: 320px;
+  background-color: #fff;
+  border-bottom: 2px solid #000;
+  padding: 5px 0;
+}
+
+/*AR*/
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.3em;
+  margin: 5px 0;
+}
+
+.square p {
+  font-weight: bold;
+}
+
+.square div ~ p {
+  font-weight: normal;
 }
 
 .name_day {
-  font-size: 5em;
   font-weight: bold;
 }
 
-.name_year {
-  font-size: 1.5em;
-  margin: 10px 0;
-}
-
-/*End Week Clock*/
-.week {
-  display: flex;
-  justify-content: center;
-  margin: 15px 0;
-}
-
-.week .square {
-  width: 120px;
+.main_times {
+  padding: 0 15px;
   background-color: #f1f1f1;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+  margin: 5px;
 }
 
-.week_clock_square {
-  margin: 10px;
+.main_times ul {
+  list-style-type: none;
+  padding: 10px;
+  display: none;
 }
 
-#nextPrayerContainer {
-  margin: 10px 0;
-}
-
-#nextPrayerText {
+.main_times li {
+  background: #fff;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
   font-size: 1.5em;
 }
 
-#nextPrayerTime {
-  font-size: 2em;
+.main_times #selected-area-button {
+  padding: 5px 0;
+  display: none;
+  font-size: 1.5em;
+}
+
+.main_times #close-button {
+  font-size: 1.1em;
+  padding: 5px 0;
+}
+
+.main_times #territory-list {
+  margin-bottom: 10px;
+}
+
+#current-month {
+  font-size: 1.2em;
+  padding: 5px 15px;
+}
+
+.main_table  table {
+  width: 100vw;
+  border-collapse: collapse;
+}
+
+.main_table table tbody tr:nth-child(even) {
+  background: #F7F7F7;
+
+}
+
+.main_table thead {
+  position: sticky;
+  top: 59px;
+}
+
+.main_table .today {
+  background-color: #dde2ee !important;
   font-weight: bold;
-  color: #851111;
 }
 
-#ru-week {
-  font-size: 1.5em;
+.main_table table tr th {
+  font-size: calc(2vw + 5px);
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+  padding: 10px 0;
 }
 
-#clock {
-  font-size: 1.5em;
-  font-weight: bold;
+.main_table table tr td {
+  text-align: center;
+  font-size: calc(2vw + 6px);
+  padding: 5px 0;
+  border: 0;
+  border: 1px solid #ddd;
 }
 
-/*Mounth*/
+.main_table .th_data {
+  padding: 5px calc(1vw + 2px);
+}
+
+
+.main_table table td {
+  padding: 5px 10px;
+  border: 1px solid #eee;
+  text-align: left;
+}
+
+
+/*Table Year Mounth*/
 .payer_table_container h2 {
   display: flex;
-  justify-content: center;
   font-size: 20px;
   width: 100vw;
   height: 30px;
-  color: #11853e;
+  color: #000000;
   font-weight: bold;
 }
 
@@ -317,17 +659,13 @@ table tr td {
 
 td,
 th {
-  border-bottom: 1px solid #11853e !important;
-}
-
-tr {
-  color: ;
+  border-bottom: 1px solid #2c2c2c !important;
 }
 
 .main_table_stici,
 th {
-  background-color: #11853e;
-  color: #fff;
+  background-color: #f1f1f1;
+  color: #000000;
 }
 
 th {
@@ -336,15 +674,15 @@ th {
 
 .main_table_stici {
   position: sticky;
-  top: 50px;
+  top: 59px;
 }
 
 #currentMonth {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   height: 40px;
-  font-size: 15px;
+  font-size: 1em;
   padding-bottom: 10px;
   color: #11853e;
 }
@@ -357,25 +695,14 @@ th {
   display: flex
 }
 
-.payer_table_container h2 {
+.payer_table .payer_table_container h2 {
   justify-content: center;
   height: 30px
 }
 
-.accordion,
-.accordion:hover,
-.active,
-.footer_container,
-.headermodal-content,
-.mounthmodal-content,
-.panel,
-.yearmodal-content {
-  background-color: var(--bg);
-}
-
-.accordion {
+.payer_table .accordion {
   justify-content: space-between;
-  color: var(--text);
+  color: #000;
   cursor: pointer;
   padding: 15px;
   border: none;
@@ -383,29 +710,23 @@ th {
   transition: .4s;
 }
 
-.accordion:after {
+.payer_table .accordion:after {
   content: "+";
   color: #777;
   float: right;
   margin-left: 5px;
 }
 
-.active:after {
+.payer_table .active:after {
   content: "−";
 }
 
-.panel {
+.payer_table .panel {
   max-height: 0;
   overflow: hidden;
   transition: max-height .2s ease-out;
 }
 
-/*Footer*/
-footer {
-  position: relative;
-}
-
-/*Jumma*/
 .jumma_container {
   display: flex;
   align-items: center;
@@ -434,9 +755,9 @@ footer {
 }
 
 .jumma_text {
-  font-family: Monplesir;
+  font-family: 'Monplesir';
   font-size: 5em;
-  line-height: 55px;
+  line-height: 70px;
   color: #fff;
   padding-bottom: 50px;
 }
@@ -457,6 +778,23 @@ footer {
   top: 10px;
   right: 15px;
   font-size: 1.5em;
+}
+
+/*Reklama*/
+.reklama {
+  padding: 0 15px;
+}
+
+.reklama .content {
+  font-size: 1.3em;
+  color: #11853e;
+  border: 1px solid #11853e;
+  padding: 0 5px;
+}
+
+.reklama img {
+  max-width: 100%;
+  height: auto;
 }
 
 /*iPhone*/
@@ -499,7 +837,6 @@ footer {
   cursor: pointer;
 }
 
-
 /*На весь экран*/
 .navesakran #overlay {
   position: fixed;
@@ -538,51 +875,4 @@ footer {
 .navesakran p {
   font-size: 1.2em;
   line-height: 1.5;
-}
-
-
-/*Modal*/
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(255, 255, 255, 0.863);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  width: 80%;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
-  border: 1px solid #b9b9b9;
-}
-
-.modal-content h2 {
-  font-size: 2em;
-  border-bottom: 1px solid #000;
-  padding: 5px 0;
-}
-
-.modal-content p {
-  font-size: 1.5em;
-  padding: 5px 0;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.openModal {
-  cursor: pointer;
 }

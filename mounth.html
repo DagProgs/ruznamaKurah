@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta name="google" content="notranslate">
-  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
   <title>Рузнама Курахский район</title>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -30,48 +29,46 @@
 </head>
 
 <body>
-  <!--Header-->
   <header>
     <div class="header_container">
-      <img src="img/hiasan.png" alt="">
       <a href="index.html">
         <svg width="100px" height="100px" viewBox="0 0 1024 1024" fill="#000000" class="icon" version="1.1"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z"
-              fill="" />
-          </svg>
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z"
+            fill="" />
+        </svg>
       </a>
-      <h1>Курахский район <span class="ruznama">Рузнама</span></h1>
+      <div class="header_text">
+        <h1>Курахский район</h1>
+        <p>Рузнама</p>
+      </div>
     </div>
   </header>
-  <!--Main-->
   <main>
-    <section>
-      <div class="payer_table">
-        <div class="payer_table_container">
-          <h2 id="mounths-names">Январь</h2>
-          <table>
-            <thead>
-              <tr class="main_table_stici">
-                <th>Чис.</th>
-                <th>Фаджр</th>
-                <th>Шурук</th>
-                <th>Зухр</th>
-                <th>Аср</th>
-                <th>Магриб</th>
-                <th>Иша</th>
-              </tr>
-            </thead>
-            <tbody id="prayerTimesTableBody"></tbody>
-          </table>
-          <p id="currentMonth"></p>
-        </div>
+    <div class="payer_table">
+      <div class="payer_table_container">
+        <h2 id="mounths-names">Январь</h2>
+        <table>
+          <thead>
+            <tr class="main_table_stici">
+              <th>Чис.</th>
+              <th>Фаджр</th>
+              <th>Шурук</th>
+              <th>Зухр</th>
+              <th>Аср</th>
+              <th>Магриб</th>
+              <th>Иша</th>
+            </tr>
+          </thead>
+          <tbody id="prayerTimesTableBody"></tbody>
+        </table>
+        <p id="currentMonth"></p>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!--Scripts-->
+  <!--Script-->
   <script type="text/javascript" src="runtime.js"></script>
   <script type="text/javascript" src="polyfills.js"></script>
   <script type="text/javascript" src="main.js"></script>
