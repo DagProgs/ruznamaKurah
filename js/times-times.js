@@ -4,7 +4,7 @@ let isListVisible = false; // Отслеживание видимости спи
 const storedArea = localStorage.getItem('selectedArea');
 const storedAreaId = localStorage.getItem('selectedAreaId'); // Сохраняем ID территории
 if (storedArea) {
-    document.getElementById('selected-area-button').textContent = `Рузнама для: ${storedArea}`;
+    document.getElementById('selected-area-button').textContent = `Рузнама: ${storedArea}`;
     document.getElementById('selected-area-button').style.display = 'block'; // Показываем кнопку, если территория выбрана
     document.getElementById('close-button').style.display = 'inline-block'; // Показываем кнопку закрытия
 }
@@ -12,10 +12,10 @@ if (storedArea) {
 // Обработчик для кнопки загрузки списка
 document.getElementById('load-button').addEventListener('click', function () {
     const listElement = document.getElementById('territory-list');
-    const loadButtonImage = this.querySelector('img');
+    const loadButtonImage = this.querySelector('img'); // Получаем изображение внутри кнопки
 
     if (!isListVisible) {
-        fetch('timesprayer/localization.json')
+        fetch('times/localization.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Ошибка сети: ' + response.status);
@@ -43,17 +43,7 @@ document.getElementById('load-button').addEventListener('click', function () {
                 isListVisible = true; // Обновляем состояние видимости
                 loadButtonImage.src = 'img/svg/menu-fold.svg'; // Измените на нужный путь к изображению
             })
-            .catch(error => {
-                console.error('Ошибка при загрузке данных:', error);
-                // Проверка наличия сохраненной территории
-                const storedArea = localStorage.getItem('selectedArea');
-                const storedAreaId = localStorage.getItem('selectedAreaId');
-                if (storedArea && storedAreaId) {
-                    window.location.href = `times.html?area=${encodeURIComponent(storedArea)}&id=${storedAreaId}`;
-                } else {
-                    alert('Нет подключения к интернету и нет сохраненных данных о территории.');
-                }
-            });
+            .catch(error => console.error('Ошибка при загрузке данных:', error));
     } else {
         listElement.style.display = 'none'; // Скрываем список
         isListVisible = false; // Обновляем состояние видимости
