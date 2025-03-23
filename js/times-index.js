@@ -4,7 +4,7 @@ let isListVisible = false; // Отслеживание видимости спи
 const storedArea = localStorage.getItem('selectedArea');
 const storedAreaId = localStorage.getItem('selectedAreaId'); // Сохраняем ID территории
 if (storedArea) {
-    document.getElementById('selected-area-button').textContent = `Рузнама: ${storedArea}`;
+    document.getElementById('selected-area-button').textContent = `Рузнама для: ${storedArea}`;
     document.getElementById('selected-area-button').style.display = 'block'; // Показываем кнопку, если территория выбрана
     document.getElementById('close-button').style.display = 'inline-block'; // Показываем кнопку закрытия
 }
