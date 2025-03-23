@@ -110,11 +110,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/times-index.js",
-    "revision": "619ce02f315da3a348f37da7b0b05b12"
+    "revision": "89fd2db321a43d04a3de3523d752578e"
   },
   {
     "url": "js/times-times.js",
-    "revision": "6c59133474ceab450d0a256ee3dc9687"
+    "revision": "815504c8b0ed10b3dc7ca771c0724093"
   },
   {
     "url": "main.js",
@@ -536,18 +536,45 @@ workbox.routing.registerRoute(
 // API with network-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
-  workbox.strategies.networkFirst()
-)
+  workbox.strategies.networkFirst({
+    cacheName: 'timeline-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 50,
+        maxAgeSeconds: 24 * 60 * 60 // 1 день
+      })
+    ]
+  })
+);
 
 // API with cache-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)favorites/,
-  workbox.strategies.cacheFirst()
-)
+  workbox.strategies.cacheFirst({
+    cacheName: 'favorites-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 50,
+        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
+      })
+    ]
+  })
+);
 
 // OTHER EVENTS
 
 // Receive push and show a notification
 self.addEventListener('push', function(event) {
   console.log('[Service Worker]: Received push event', event);
+  
+  const title = 'Новое уведомление!';
+  const options = {
+    body: event.data ? event.data.text() : 'У вас новое уведомление.',
+    icon: 'images/icon.png', // Укажите путь к иконке уведомления
+    badge: 'images/badge.png' // Укажите путь к значку уведомления
+  };
+
+  event.waitUntil(
+    self.registration.showNotification(title, options)
+  );
 });
