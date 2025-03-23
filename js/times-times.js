@@ -1,80 +1,67 @@
+// Функция для получения текущего месяца
+function getCurrentMonth() {
+  const date = new Date();
+  const options = { month: 'long', year: 'numeric' };
+  return date.toLocaleDateString('ru-RU', options);
+}
+
 // Получаем текущую дату
 const today = new Date();
-const currentDay = today.getDate(); // Получаем текущий день месяца
-const currentMonth = today.getMonth() + 1; // +1 для соответствия вашим JSON-файлам
 
-// Загрузка данных о времени молитв для выбранной территории
-fetch(`/timesprayer/${areaId}/${currentMonth}.json`) // Замените на нужный файл (например, 1.json для января)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Сеть ответила с ошибкой: ' + response.status);
-    }
-    return response.json();
-  })
-  .then(data => {
-    const timesList = document.getElementById('times-list');
-    // Очищаем таблицу перед добавлением новых данных
-    timesList.innerHTML = '';
-    
-    // Фильтруем данные по текущему месяцу и дню
-    data.array.forEach(item => {
-      const dateParts = item.date.split('-'); // Предполагаем, что дата в формате 'YYYY-MM-DD'
-      const day = parseInt(dateParts[2]); // Получаем день и преобразуем в число
+// Отображение текущего месяца и сегодняшнего числа
+document.getElementById('current-month').textContent = `Сегодня: ${today.getDate()} ${getCurrentMonth()}`;
 
-      // Проверяем, если текущий месяц и день совпадают
-      if (day === currentDay) {
-        const row = document.createElement('tr');
-        row.classList.add('today'); // Добавляем класс для выделения
-        row.innerHTML = `
-          <td>${day}</td>
-          <td>${item.times.fajr}</td>
-          <td>${item.times.sunrise}</td>
-          <td>${item.times.dhuhr}</td>
-          <td>${item.times.asr}</td>
-          <td>${item.times.maghrib}</td>
-          <td>${item.times.night}</td>
-        `;
-        timesList.appendChild(row);
+// Функция для получения параметров URL
+function getUrlParameter(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+const area = getUrlParameter('area');
+const areaId = getUrlParameter('id');
+
+if (area && areaId) {
+  document.getElementById('selected-area').textContent = `${area}`;
+
+  // Получаем текущую дату
+  const today = new Date();
+  const currentDay = today.getDate(); // Получаем текущий день месяца
+
+  // Получаем текущий месяц (0 - январь, 1 - февраль и т.д.)
+  const currentMonth = today.getMonth() + 1; // +1 для соответствия вашим JSON-файлам
+
+  // Загрузка данных о времени молитв для выбранной территории
+  fetch(`/timesprayer/${areaId}/${currentMonth}.json`) // Замените на нужный файл (например, 1.json для января)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Сеть ответила с ошибкой: ' + response.status);
       }
-    });
-
-    // Если данных не найдено, можно вывести сообщение
-    if (timesList.innerHTML === '') {
-      const noDataRow = document.createElement('tr');
-      noDataRow.innerHTML = `<td colspan="7">Нет данных для сегодняшнего дня.</td>`;
-      timesList.appendChild(noDataRow);
-    }
-
-    // Сохраняем данные в localStorage для кэширования
-    localStorage.setItem(`times_${areaId}_${currentMonth}`, JSON.stringify(data));
-  })
-  .catch(error => {
-    console.error('Ошибка при загрузке данных времени:', error);
-    // Если не удалось загрузить данные, попробуем использовать кэшированные
-    const cachedData = localStorage.getItem(`times_${areaId}_${currentMonth}`);
-    if (cachedData) {
-      const data = JSON.parse(cachedData);
+      return response.json();
+    })
+    .then(data => {
       const timesList = document.getElementById('times-list');
       // Очищаем таблицу перед добавлением новых данных
       timesList.innerHTML = '';
       data.array.forEach(item => {
-        const dateParts = item.date.split('-');
-        const day = parseInt(dateParts[2]);
+        const dateParts = item.date.split('-'); // Предполагаем, что дата в формате 'YYYY-MM-DD'
+        const day = parseInt(dateParts[2]); // Получаем день и преобразуем в число
         const row = document.createElement('tr');
         if (day === currentDay) {
-          row.classList.add('today');
+          row.classList.add('today'); // Добавляем класс для выделения
         }
         row.innerHTML = `
-          <td>${day}</td>
-          <td>${item.times.fajr}</td>
-          <td>${item.times.sunrise}</td>
-          <td>${item.times.dhuhr}</td>
-          <td>${item.times.asr}</td>
-          <td>${item.times.maghrib}</td>
-          <td>${item.times.night}</td>
-        `;
+                  <td>${day}</td>
+                  <td>${item.times.fajr}</td>
+                  <td>${item.times.sunrise}</td>
+                  <td>${item.times.dhuhr}</td>
+                  <td>${item.times.asr}</td>
+                  <td>${item.times.maghrib}</td>
+                  <td>${item.times.night}</td>
+              `;
         timesList.appendChild(row);
       });
-      alert('Данные загружены из кэша.');
-    } else {
-      document.getElementById('selected-area').
+    })
+    .catch(error => console.error('Ошибка при загрузке данных времени:', error));
+} else {
+  document.getElementById('selected-area').textContent = 'Выбор области не был сделан.';
+}
