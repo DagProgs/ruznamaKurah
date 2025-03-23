@@ -1,65 +1,73 @@
-let isListVisible = false; // Отслеживание видимости списка
+<script>
+let isListVisible = false;
 
-// Проверяем, есть ли сохраненная территория в localStorage
-const storedArea = localStorage.getItem('selectedArea');
-const storedAreaId = localStorage.getItem('selectedAreaId'); // Сохраняем ID территории
-if (storedArea) {
-    document.getElementById('selected-area-button').textContent = `Рузнама для: ${storedArea}`;
-    document.getElementById('selected-area-button').style.display = 'block'; // Показываем кнопку, если территория выбрана
-    document.getElementById('close-button').style.display = 'inline-block'; // Показываем кнопку закрытия
+// Функция для получения данных из кэша или сети
+function getJSONData(url) {
+  return new Promise((resolve, reject) => {
+    caches.match(url)
+      .then(response => {
+        if (response) {
+          return response.json();
+        } else {
+          return fetch(url).then(response => response.json());
+        }
+      })
+      .then(data => resolve(data))
+      .catch(error => reject(error));
+  });
 }
 
-// Обработчик для кнопки загрузки списка
+// Проверяем сохраненную территорию
+const storedArea = localStorage.getItem('selectedArea');
+const storedAreaId = localStorage.getItem('selectedAreaId');
+if (storedArea) {
+    document.getElementById('selected-area-button').textContent = `Рузнама для: ${storedArea}`;
+    document.getElementById('selected-area-button').style.display = 'block';
+    document.getElementById('close-button').style.display = 'inline-block';
+}
+
+// Обработчик кнопки загрузки списка
 document.getElementById('load-button').addEventListener('click', function () {
     const listElement = document.getElementById('territory-list');
-    const loadButtonImage = this.querySelector('img'); // Получаем изображение внутри кнопки
-
+    const loadButtonImage = this.querySelector('img');
     if (!isListVisible) {
-        fetch('times/localization.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Ошибка сети: ' + response.status);
-                }
-                return response.json();
-            })
+        getJSONData('times/localization.json')
             .then(data => {
-                listElement.innerHTML = ''; // Очищаем любые существующие элементы
+                listElement.innerHTML = '';
                 data.territory.forEach(item => {
                     const li = document.createElement('li');
                     li.textContent = item.area;
-
                     li.addEventListener('click', function () {
                         localStorage.setItem('selectedArea', item.area);
-                        localStorage.setItem('selectedAreaId', item.id); // Сохраняем ID
+                        localStorage.setItem('selectedAreaId', item.id);
                         document.getElementById('selected-area-button').textContent = `Выбрано: ${item.area}`;
-                        document.getElementById('selected-area-button').style.display = 'block'; // Показываем кнопку
-                        document.getElementById('close-button').style.display = 'inline-block'; // Показываем кнопку закрытия
+                        document.getElementById('selected-area-button').style.display = 'block';
+                        document.getElementById('close-button').style.display = 'inline-block';
                         window.location.href = `times.html?area=${encodeURIComponent(item.area)}&id=${item.id}`;
                     });
-
                     listElement.appendChild(li);
                 });
-                listElement.style.display = 'block'; // Показываем список
-                isListVisible = true; // Обновляем состояние видимости
-                loadButtonImage.src = 'img/svg/menu-fold.svg'; // Измените на нужный путь к изображению
+                listElement.style.display = 'block';
+                isListVisible = true;
+                loadButtonImage.src = 'img/svg/menu-fold.svg';
             })
             .catch(error => console.error('Ошибка при загрузке данных:', error));
     } else {
-        listElement.style.display = 'none'; // Скрываем список
-        isListVisible = false; // Обновляем состояние видимости
-        loadButtonImage.src = 'img/svg/menu-add.svg'; // Измените на нужный путь к изображению
+        listElement.style.display = 'none';
+        isListVisible = false;
+        loadButtonImage.src = 'img/svg/menu-add.svg';
     }
 });
 
-// Обработчик для кнопки закрытия
+// Обработчик кнопки закрытия
 document.getElementById('close-button').addEventListener('click', function () {
     localStorage.removeItem('selectedArea');
     localStorage.removeItem('selectedAreaId');
-    document.getElementById('selected-area-button').style.display = 'none'; // Скрываем кнопку выбора
-    this.style.display = 'none'; // Скрываем кнопку закрытия
+    document.getElementById('selected-area-button').style.display = 'none';
+    this.style.display = 'none';
 });
 
-// Обработчик для кнопки выбора территории
+// Обработчик кнопки выбора территории
 document.getElementById('selected-area-button').addEventListener('click', function () {
     const selectedArea = localStorage.getItem('selectedArea');
     const selectedAreaId = localStorage.getItem('selectedAreaId');
@@ -67,3 +75,4 @@ document.getElementById('selected-area-button').addEventListener('click', functi
         window.location.href = `times.html?area=${encodeURIComponent(selectedArea)}&id=${selectedAreaId}`;
     }
 });
+</script>
