@@ -21,7 +21,7 @@
         const areaId = getUrlParameter('id');
 
         if (area && areaId) {
-            document.getElementById('selected-area').textContent = `Выбрано: ${area}`;
+            document.getElementById('selected-area').textContent = `${area}`;
 
             // Получаем текущую дату
             const today = new Date();
