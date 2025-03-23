@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "fbc16daaa81c43b2959b28822ec87fa4"
+    "revision": "d944ee4af700a49921203e3c994aeb98"
   },
   {
     "url": "mounth.html",
@@ -34,7 +34,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "times.html",
-    "revision": "9216e16d4572179e3b4bb6285144f086"
+    "revision": "a2fced8ceeda3f5f585e488a50887a06"
   },
   {
     "url": "calendar.html",
@@ -110,11 +110,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/times-index.js",
-    "revision": "3fdc7f40bf778dad7f58ef7cbed68064"
+    "revision": "d0fcee429b3d9f29660491edde38b786"
   },
   {
     "url": "js/times-times.js",
-    "revision": "52bf5673fdb581b3a55aeddbaeda98b4"
+    "revision": "568ba7665d8fcca5a023c4ea47af1bf1"
   },
   {
     "url": "main.js",

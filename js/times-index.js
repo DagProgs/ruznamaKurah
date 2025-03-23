@@ -15,7 +15,7 @@ document.getElementById('load-button').addEventListener('click', function () {
     const loadButtonImage = this.querySelector('img'); // Получаем изображение внутри кнопки
 
     if (!isListVisible) {
-        fetch('times/localization.json')
+        fetch('timesprayer/localization.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Ошибка сети: ' + response.status);
