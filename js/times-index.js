@@ -15,7 +15,7 @@ document.getElementById('load-button').addEventListener('click', function () {
     const loadButtonImage = this.querySelector('img'); // Получаем изображение внутри кнопки
 
     if (!isListVisible) {
-        fetch('timesprayer/localization.json')
+        fetch('./timesprayer/localization.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Ошибка сети: ' + response.status);
@@ -34,20 +34,20 @@ document.getElementById('load-button').addEventListener('click', function () {
                         document.getElementById('selected-area-button').textContent = `Выбрано: ${item.area}`;
                         document.getElementById('selected-area-button').style.display = 'block'; // Показываем кнопку
                         document.getElementById('close-button').style.display = 'inline-block'; // Показываем кнопку закрытия
-                        window.location.href = `times.html?area=${encodeURIComponent(item.area)}&id=${item.id}`;
+                        window.location.href = `./times.html?area=${encodeURIComponent(item.area)}&id=${item.id}`;
                     });
 
                     listElement.appendChild(li);
                 });
                 listElement.style.display = 'block'; // Показываем список
                 isListVisible = true; // Обновляем состояние видимости
-                loadButtonImage.src = 'img/svg/menu-fold.svg'; // Измените на нужный путь к изображению
+                loadButtonImage.src = './img/svg/menu-fold.svg'; // Измените на нужный путь к изображению
             })
             .catch(error => console.error('Ошибка при загрузке данных:', error));
     } else {
         listElement.style.display = 'none'; // Скрываем список
         isListVisible = false; // Обновляем состояние видимости
-        loadButtonImage.src = 'img/svg/menu-add.svg'; // Измените на нужный путь к изображению
+        loadButtonImage.src = './img/svg/menu-add.svg'; // Измените на нужный путь к изображению
     }
 });
 
@@ -64,6 +64,6 @@ document.getElementById('selected-area-button').addEventListener('click', functi
     const selectedArea = localStorage.getItem('selectedArea');
     const selectedAreaId = localStorage.getItem('selectedAreaId');
     if (selectedArea && selectedAreaId) {
-        window.location.href = `times.html?area=${encodeURIComponent(selectedArea)}&id=${selectedAreaId}`;
+        window.location.href = `./times.html?area=${encodeURIComponent(selectedArea)}&id=${selectedAreaId}`;
     }
 });

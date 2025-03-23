@@ -34,7 +34,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "times.html",
-    "revision": "aeb9be5880b497ec53e9adcc6c6a9550"
+    "revision": "a2fced8ceeda3f5f585e488a50887a06"
   },
   {
     "url": "calendar.html",
@@ -110,11 +110,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/times-index.js",
-    "revision": "d0fcee429b3d9f29660491edde38b786"
+    "revision": "69481802b6983a83ea5d1e8a6ccf7d6f"
   },
   {
     "url": "js/times-times.js",
-    "revision": "568ba7665d8fcca5a023c4ea47af1bf1"
+    "revision": "1f1d1406f79c9b16cc8a58b6cf81bd17"
   },
   {
     "url": "main.js",
