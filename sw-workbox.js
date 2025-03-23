@@ -110,7 +110,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/times-index.js",
-    "revision": "1716a05bc4965b0db41709bc2c191ec8"
+    "revision": "a91d583f1dd41307569972652f62f516"
   },
   {
     "url": "js/times-times.js",
