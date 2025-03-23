@@ -536,45 +536,18 @@ workbox.routing.registerRoute(
 // API with network-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
-  workbox.strategies.networkFirst({
-    cacheName: 'timeline-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 50,
-        maxAgeSeconds: 24 * 60 * 60 // 1 день
-      })
-    ]
-  })
-);
+  workbox.strategies.networkFirst()
+)
 
 // API with cache-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)favorites/,
-  workbox.strategies.cacheFirst({
-    cacheName: 'favorites-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 50,
-        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
-      })
-    ]
-  })
-);
+  workbox.strategies.cacheFirst()
+)
 
 // OTHER EVENTS
 
 // Receive push and show a notification
 self.addEventListener('push', function(event) {
   console.log('[Service Worker]: Received push event', event);
-  
-  const title = 'Новое уведомление!';
-  const options = {
-    body: event.data ? event.data.text() : 'У вас новое уведомление.',
-    icon: 'assets/icons/icon-72x72.png', // Укажите путь к иконке уведомления
-    badge: 'assets/icons/icon-72x72.png' // Укажите путь к значку уведомления
-  };
-
-  event.waitUntil(
-    self.registration.showNotification(title, options)
-  );
 });
