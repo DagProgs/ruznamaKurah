@@ -103,22 +103,6 @@ legend {
 }
 
 @font-face {
-  font-family: 'evolventa-normal';
-  src: url('../fonts/evolventa/normal/evolventa-normal.woff2') format('woff2'),
-    url('../fonts/evolventa/normal/evolventa-normal.woff2') format('woff'),
-    url('../fonts/evolventa/normal/evolventa-normal.otf') format('opentype'),
-    url('../fonts/evolventa/normal/evolventa-normal.ttf') format('opentype');
-}
-
-@font-face {
-  font-family: 'evolventa-bold';
-  src: url('../fonts/evolventa/bold/evolventa-bold.woff2') format('woff2'),
-    url('../fonts/evolventa/bold/evolventa-bold.woff2') format('woff'),
-    url('../fonts/evolventa/bold/evolventa-bold.otf') format('opentype'),
-    url('../fonts/evolventa/bold/evolventa-bold.ttf') format('opentype');
-}
-
-@font-face {
   font-family: 'monplesir';
   src: url('../fonts/monplesir.woff2') format('woff2'),
     url('../fonts/monplesir.woff2') format('woff'),
@@ -126,14 +110,19 @@ legend {
     url('../fonts/monplesir.ttf') format('opentype');
 }
 
-
 body {
   font-family: Verdana, Tahoma, sans-serif;
   font-size: 10px;
 }
 
-a {
-  color: #000;
+svg {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+}
+
+svg path {
+  fill: #000;
 }
 
 header {
@@ -145,229 +134,357 @@ header {
 .header_container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: fixed;
   width: 100vw;
   min-width: 320px;
   height: 60px;
+  top: 0;
+  left: 0;
   background-color: #fff;
-  padding-right: 15px;
 }
 
-.header_container svg {
+.header_icon svg {
   width: 30px;
   min-width: 30px;
   height: 30px;
   margin: 15px;
 }
 
-.header_text {
-  flex: 1;
-}
-
 .header_text h1 {
-  font-size: 1.8em;
-  font-family: 'evolventa-bold';
+  font-size: 2em;
+  font-weight: bold;
 }
 
-.header_text #load-button {
-  display: inline;
-}
-
-.header_text p {
-  display: inline;
-  font-size: 1.5em;
-  font-family: 'evolventa-normal';
-}
-
-.header_text img {
-  width: 18px;
-}
-
-.header_right {
+.header_text .menu_open {
   display: flex;
-  gap: 2px;
-  flex-wrap: wrap;
-  padding: 0 10px;
+  align-items: end;
 }
 
-.header_right svg {
-  margin: 5px;
+.header_text #menuIcon {
   width: 20px;
-  min-width: 20px;
   height: 20px;
 }
 
-.ramadan {
-  position: relative;
-  top: -14px;
-  left: 0;
+.header_text p {
+  font-size: 1.5em;
+  margin: 2px 2px 2px 0;
 }
 
-.ramadan img {
-  width: 70px;
+.header_icon img {
+  position: relative;
+  top: -7px;
+  left: -10px;
+  width: 100px;
   height: auto;
 }
 
-.main_container {
-  width: 100vw;
+.main_box {
   padding: 0 15px;
 }
 
 .main_left_right {
   display: flex;
-}
-
-/*LEFT*/
-.main_left {
-  width: 150px;
-}
-
-/*RIGHT*/
-.main_right {
-  flex: 1;
-  padding-left: 10px;
-}
-
-.main_left .main_prayer_times {
-  margin: 5px 0;
-}
-
-.main_prayer_times_icon_text {
-  display: flex;
-  align-items: center;
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.main_prayer_times_icon_text svg {
-  width: 30px;
-  max-width: 30px;
-  height: 30px;
-}
-
-.main_prayer_text {
-  padding: 0 10px;
-}
-
-.main_prayer_text h2 {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.main_prayer_text p {
-  font-size: 2em;
-}
-
-/*Месяц Год*/
-.mounth_year {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  background-color: #f1f1f1;
-  border-radius: 10px;
-}
-
-.mounth_year .mounth {
-  display: flex;
-  align-items: center;
-}
-
-.mounth_year .mounth::before {
-  content: url(../img/svg/mounth.svg);
-}
-
-.mounth_year .year {
-  display: flex;
-  align-items: center;
-}
-
-.mounth_year .year::before {
-  content: url(../img/svg/year.svg);
-}
-
-.mounth_year p {
-  padding: 0 2px;
-  font-size: 1.3em;
-  text-transform: uppercase;
-}
-
-/*End Times*/
-.end_priyer_times {
-  background-color: #f1f1f1;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-#nextPrayerContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
 }
 
-#nextPrayerText {
-  font-size: 1.5em;
-  text-transform: uppercase;
+.main_left {
+  flex: 1;
 }
 
-#nextPrayerTime {
-  font-size: 2em;
-  font-weight: bold;
-  color: #701212;
+.main_right {
+  flex: 1;
 }
 
-.highlighted {
-  font-weight: bold;
-  color: #11853e;
-}
-
-.main_prayer_text .modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(255, 255, 255, 0.863);
-}
-
-.main_prayer_text .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  width: 80%;
+.main_list {
+  background-color: #252525;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
-  border: 1px solid #b9b9b9;
+  margin: 10px 0;
 }
 
-.main_prayer_text .modal-content h2 {
-  font-size: 2em;
-  border-bottom: 1px solid #000;
-  padding: 5px 0;
+.main_list #cityList {
+  display: none;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
 }
 
-.main_prayer_text .modal-content p {
+.main_list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.main_list li {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #686868;
+  border-radius: 10px;
+  margin: 10px 0;
   font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.end_time_prayer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
+}
+
+.end_time_prayer .countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2d802d;
+  font-size: 1.8em;
   padding: 5px 0;
 }
 
-.main_prayer_text .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
+.end_time_prayer .prayer_info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px 0;
+}
+
+.prayer_info .currentPrayerInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prayer_info #currentPrayerInfo {
+  font-size: 2em;
   font-weight: bold;
-  cursor: pointer;
+  padding: 0 5px;
+  color: #ac3a3a;
 }
 
-.main_prayer_text .openModal {
-  cursor: pointer;
+.prayer_info .prayerEndTimeInfo {
+  display: flex;
+  align-items: center;
 }
 
+.prayer_info #prayerEndTimeInfo {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0 5px;
+  color: #2d802d;
+}
+
+.prayer_info p {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+.prayerTimesContainer .prayer-time {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.prayerTimesContainer .prayer-time svg {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+}
+
+.prayerTimesContainer .name_time {
+  padding: 0 10px;
+}
+
+.prayerTimesContainer .name_time h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.prayerTimesContainer .name_time p {
+  font-size: 1.5em;
+  margin: 2px 0;
+}
+
+.prayerTimesContainer .current-prayer {
+  color: #ac3a3a;
+  font-size: 2em !important;
+  font-weight: bold;
+}
+
+.prayerTimesContainer .past-prayer {
+  color: #a7a7a7;
+}
+
+.prayerTimesContainer .next-prayer {
+  color: #2d802d;
+  font-weight: bold;
+}
+
+.main_right .mounth_year {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 8px 0;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  gap: 5px;
+}
+
+.main_right .mounth,
+.year {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.main_right .mounth .year,
+p {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.main_right .mounth .year,
+.city-label {
+  font-size: 1.2em;
+}
+
+.table_mounth {
+  position: relative;
+}
+
+.table_mounth_box {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.table_mounth_box .month-name {
+  font-size: 1.5em;
+  color: #333;
+}
+
+
+.table_mounth .today {
+  background-color: #f8e9e9;
+  font-weight: bold;
+}
+
+.table_mounth_box .current-prayer {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ac3a3a;
+  margin-bottom: 10px;
+}
+
+
+.table_mounth .current-prayer-header {
+  background-color: #ac3a3a;
+  color: white;
+  font-weight: bold;
+}
+
+
+.table_mounth table {
+  width: 100vw;
+  border-collapse: collapse;
+}
+
+.table_mounth thead {
+  position: sticky;
+  top: 59px;
+}
+
+.table_mounth th,
+td {
+  padding: 8px;
+  text-align: center;
+}
+
+.table_mounth th {
+  background-color: #f4f4f4;
+}
+
+.table_mounth h1,
+h2 {
+  text-align: center;
+}
+
+.table_mounth table tr th {
+  font-size: calc(2vw + 5px);
+  background-color: #f2f2f2;
+  padding: 10px 0;
+}
+
+.table_mounth table tr td {
+  text-align: center;
+  font-size: calc(2vw + 6px);
+  padding: 5px 0;
+  border: 0;
+}
+
+.table_mounth table tbody tr:nth-child(even) {
+  background: #F7F7F7;
+}
+
+.year_list {
+  padding: 0 15px;
+}
+
+.year_list ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.year_list li {
+  flex-grow: 1;
+  flex-basis: 8em;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.5em;
+}
+
+.year_list li:hover {
+  background-color: #e0e0e0;
+}
+
+.year_list li.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+/*AR*/
+.calendar .square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.3em;
+  margin: 5px 0;
+}
+
+.calendar .square p {
+  font-weight: bold;
+}
+
+.calendar .square div ~ p {
+  font-weight: normal;
+}
+
+.calendar .name_day {
+  font-weight: bold;
+}
+
+/*RU*/
 .main_calendar {
   background-color: #f1f1f1;
   padding: 10px;
@@ -519,212 +636,107 @@ header {
   padding: 5px 0;
 }
 
-/*AR*/
-.square {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  font-size: 1.3em;
-  margin: 5px 0;
+.name_time .modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.863);
 }
 
-.square p {
-  font-weight: bold;
-}
-
-.square div ~ p {
-  font-weight: normal;
-}
-
-.name_day {
-  font-weight: bold;
-}
-
-.main_times {
-  padding: 0 15px;
-  background-color: #f1f1f1;
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
   border-radius: 10px;
-  margin: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
+  border: 1px solid #b9b9b9;
 }
 
-.main_times ul {
-  list-style-type: none;
-  padding: 10px;
-  display: none;
-}
-
-.main_times li {
-  background: #fff;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.5em;
-}
-
-.main_times #selected-area-button {
-  padding: 5px 0;
-  display: none;
-  font-size: 1.5em;
-}
-
-.main_times #close-button {
-  font-size: 1.1em;
+.modal-content h2 {
+  font-size: 2.5em;
+  border-bottom: 1px solid #000;
   padding: 5px 0;
 }
 
-.main_times #territory-list {
-  margin-bottom: 10px;
-}
-
-#current-month {
+.modal-content p {
   font-size: 1.2em;
-  padding: 5px 15px;
-}
-
-.main_table  table {
-  width: 100vw;
-  border-collapse: collapse;
-}
-
-.main_table table tbody tr:nth-child(even) {
-  background: #F7F7F7;
-
-}
-
-.main_table thead {
-  position: sticky;
-  top: 59px;
-}
-
-.main_table .today {
-  background-color: #dde2ee !important;
-  font-weight: bold;
-}
-
-.main_table table tr th {
-  font-size: calc(2vw + 5px);
-  border: 1px solid #ddd;
-  background-color: #f2f2f2;
-  padding: 10px 0;
-}
-
-.main_table table tr td {
-  text-align: center;
-  font-size: calc(2vw + 6px);
+  font-weight: normal;
   padding: 5px 0;
-  border: 0;
-  border: 1px solid #ddd;
 }
 
-.main_table .th_data {
-  padding: 5px calc(1vw + 2px);
-}
-
-
-.main_table table td {
-  padding: 5px 10px;
-  border: 1px solid #eee;
-  text-align: left;
-}
-
-
-/*Table Year Mounth*/
-.payer_table_container h2 {
-  display: flex;
-  font-size: 20px;
-  width: 100vw;
-  height: 30px;
-  color: #000000;
-  font-weight: bold;
-}
-
-table {
-  position: relative;
-  border-collapse: collapse;
-  width: 100vw;
-}
-
-table tr th {
-  font-size: calc(2vw + 6px);
-}
-
-table tr td {
-  font-size: calc(3vw + 2px);
-  text-align: center;
-  padding: 5px 0;
-  border: 0;
-}
-
-td,
-th {
-  border-bottom: 1px solid #2c2c2c !important;
-}
-
-.main_table_stici,
-th {
-  background-color: #f1f1f1;
-  color: #000000;
-}
-
-th {
-  padding: 10px 0;
-}
-
-.main_table_stici {
-  position: sticky;
-  top: 59px;
-}
-
-#currentMonth {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  font-size: 1em;
-  padding-bottom: 10px;
-  color: #11853e;
-}
-
-/*Year*/
-.accordion,
-.payer_table_container h2 {
-  font-size: 20px;
-  width: 100vw;
-  display: flex
-}
-
-.payer_table .payer_table_container h2 {
-  justify-content: center;
-  height: 30px
-}
-
-.payer_table .accordion {
-  justify-content: space-between;
-  color: #000;
-  cursor: pointer;
-  padding: 15px;
-  border: none;
-  outline: 0;
-  transition: .4s;
-}
-
-.payer_table .accordion:after {
-  content: "+";
-  color: #777;
+.modal-content .close {
+  color: #aaa;
   float: right;
-  margin-left: 5px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.payer_table .active:after {
-  content: "−";
+.modal-content .openModal {
+  cursor: pointer;
 }
 
-.payer_table .panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .2s ease-out;
+/*Reklama*/
+.reklama {
+  padding: 0 15px;
+}
+
+.reklama .content {
+  font-size: 1em;
+  color: #11853e;
+  border: 1px solid #11853e;
+  padding: 0 5px;
+}
+
+.reklama img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*iPhone*/
+.imodal {
+  position: fixed;
+  left: 0
+}
+
+.imodal {
+  display: none;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, .9);
+  z-index: 10;
+}
+
+.imodal-content {
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  position: relative;
+}
+
+.iclose {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.iclose:focus,
+.iclose:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .jumma_container {
@@ -778,101 +790,4 @@ th {
   top: 10px;
   right: 15px;
   font-size: 1.5em;
-}
-
-/*Reklama*/
-.reklama {
-  padding: 0 15px;
-}
-
-.reklama .content {
-  font-size: 1.3em;
-  color: #11853e;
-  border: 1px solid #11853e;
-  padding: 0 5px;
-}
-
-.reklama img {
-  max-width: 100%;
-  height: auto;
-}
-
-/*iPhone*/
-.imodal {
-  position: fixed;
-  left: 0
-}
-
-.imodal {
-  display: none;
-  z-index: 100;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, .9);
-  z-index: 10;
-}
-
-.imodal-content {
-  margin: 15% auto;
-  padding: 20px;
-  width: 80%;
-  max-width: 600px;
-  background-color: #fff;
-  position: relative;
-}
-
-.iclose {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.iclose:focus,
-.iclose:hover {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/*На весь экран*/
-.navesakran #overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.navesakran #content {
-  text-align: center;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 800px;
-  box-shadow: 0 4px 20px #ffffff;
-}
-
-.navesakran h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.navesakran img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px;
-}
-
-.navesakran p {
-  font-size: 1.2em;
-  line-height: 1.5;
 }

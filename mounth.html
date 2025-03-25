@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -32,49 +32,54 @@
   <header>
     <div class="header_container">
       <a href="index.html">
-        <svg width="100px" height="100px" viewBox="0 0 1024 1024" fill="#000000" class="icon" version="1.1"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z"
-            fill="" />
-        </svg>
+        <div class="header_icon">
+          <svg width="100px" height="100px" viewBox="0 0 1024 1024" fill="#000000" class="icon" version="1.1"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z"
+              fill="" />
+          </svg>
+        </div>
       </a>
       <div class="header_text">
-        <h1>Курахский район</h1>
+        <h1 id="selectedCity">Курахский район</h1>
         <p>Рузнама</p>
       </div>
     </div>
   </header>
+
   <main>
-    <div class="payer_table">
-      <div class="payer_table_container">
-        <h2 id="mounths-names">Январь</h2>
-        <table>
-          <thead>
-            <tr class="main_table_stici">
-              <th>Чис.</th>
-              <th>Фаджр</th>
-              <th>Шурук</th>
-              <th>Зухр</th>
-              <th>Аср</th>
-              <th>Магриб</th>
-              <th>Иша</th>
-            </tr>
-          </thead>
-          <tbody id="prayerTimesTableBody"></tbody>
-        </table>
-        <p id="currentMonth"></p>
+    <div class="table_mounth">
+      <div class="table_mounth_box">
+        <div class="current-prayer" id="currentPrayer"></div>
+        <!--<div class="countdown" id="countdown"></div>-->
+        <div class="month-name" id="currentDate"></div>
       </div>
+      <table id="prayerTable">
+        <thead>
+          <tr>
+            <th>...</th>
+            <th id="fajrHeader">Фаджр</th>
+            <th id="sunriseHeader">Восход</th>
+            <th id="dhuhrHeader">Зухр</th>
+            <th id="asrHeader">Аср</th>
+            <th id="maghribHeader">Магриб</th>
+            <th id="ishaHeader">Иша</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Данные будут добавлены сюда -->
+        </tbody>
+      </table>
     </div>
   </main>
 
-  <!--Script-->
+  <!-- Scripts -->
   <script type="text/javascript" src="runtime.js"></script>
   <script type="text/javascript" src="polyfills.js"></script>
   <script type="text/javascript" src="main.js"></script>
 
-  <script src="js/mounths-names.js"></script>
-  <script src="js/prayer-times-mounths.js"></script>
+  <script src="js/mounth.js"></script>
 
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
