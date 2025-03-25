@@ -42,7 +42,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "544c6ca05cf7263cf1c8abb2fc4dfc99"
+    "revision": "0867e8d2334f0a105fa7d6bd8077021c"
   },
   {
     "url": "css/styles.css",
@@ -62,7 +62,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/index.js",
-    "revision": "2c98b884e6f96434a9d7809168b9bc06"
+    "revision": "2d4a3d7a7432c8e801171a2a0ebbf019"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
@@ -361,17 +361,19 @@ self.addEventListener('fetch', (event) => {
 });
 
 
-// Обработка ошибок
 self.addEventListener('fetch', (event) => {
+  console.log('[Service Worker] Fetch event:', event.request.url);
   event.respondWith(
     caches.match(event.request).then((response) => {
       if (response) {
+        console.log('[Service Worker] Found in cache:', event.request.url);
         return response;
       }
-      return fetch(event.request).catch(() => {
-        // Показываем резервную страницу офлайн
-        return caches.match('offline.html');
-      });
+      return fetch(event.request)
+        .catch(() => {
+          console.log('[Service Worker] Network request failed, showing offline page');
+          return caches.match('offline.html');
+        });
     })
   );
 });
