@@ -102,6 +102,10 @@ legend {
   display: block;
 }
 
+a {
+  color: #000;
+}
+
 @font-face {
   font-family: 'monplesir';
   src: url('../fonts/monplesir.woff2') format('woff2'),
