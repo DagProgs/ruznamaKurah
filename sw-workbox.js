@@ -36,7 +36,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "1825c29aeb03c592cfea4163217d7c43"
+    "revision": "9f43092f7d1839e4fb74d9c553d65355"
   },
   {
     "url": "css/styles.css",
@@ -302,7 +302,7 @@ self.addEventListener('fetch', (event) => {
       }
       return fetch(event.request).catch(() => {
         // Проверяем наличие офлайн-страницы
-        return caches.match('offline.html') || 
+        return caches.match('/offline.html') || 
                new Response('Ошибка загрузки файла. Попробуйте позже.', {
                  status: 503,
                  statusText: 'Service Unavailable'
