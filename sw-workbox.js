@@ -38,7 +38,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "6966084cc8ccab5fd2b14f5ebf6f48a9"
+    "revision": "e107cc52e5d02752492365b71f8b2db5"
   },
   {
     "url": "css/styles.css",
@@ -212,18 +212,6 @@ workbox.precaching.precacheAndRoute([
 
 // RUNTIME CACHING
 
-// Google fonts
-workbox.routing.registerRoute(
-  new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'googleapis',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 30
-      })
-    ]
-  })
-);
 
 // API with network-first strategy
 workbox.routing.registerRoute(
@@ -252,6 +240,121 @@ workbox.routing.registerRoute(
     ]
   })
 );
+
+// HTML-страницы (StaleWhileRevalidate)
+workbox.routing.registerRoute(
+  /\.(?:html)$/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'html-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 10, // Максимум 10 страниц
+        maxAgeSeconds: 7 * 24 * 60 * 60 // 7 дней
+      })
+    ]
+  })
+);
+
+// JSON-файлы (CacheFirst)
+workbox.routing.registerRoute(
+  /\/js\/json\/.*\.min\.json$/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'json-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 20, // Максимум 20 JSON-файлов
+        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
+      })
+    ]
+  })
+);
+
+// CSS и JavaScript (StaleWhileRevalidate)
+workbox.routing.registerRoute(
+  /\.(?:css|js)$/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'static-resources-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 50, // Максимум 50 файлов
+        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
+      })
+    ]
+  })
+);
+
+// Изображения (CacheFirst)
+workbox.routing.registerRoute(
+  /\.(?:png|jpg|jpeg|svg|gif|webp|ico)$/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'images-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 50, // Максимум 50 изображений
+        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
+      })
+    ]
+  })
+);
+
+// Шрифты (CacheFirst)
+workbox.routing.registerRoute(
+  /\.(?:woff|woff2|ttf|eot|otf)$/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'fonts-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 20, // Максимум 20 шрифтов
+        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
+      })
+    ]
+  })
+);
+
+// Google Fonts (StaleWhileRevalidate)
+workbox.routing.registerRoute(
+  /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'google-fonts-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 30, // Максимум 30 файлов
+        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
+      })
+    ]
+  })
+);
+
+// API (NetworkFirst)
+workbox.routing.registerRoute(
+  /^https:\/\/api\.example\.com\/.*/, // Замените на ваш API URL
+  new workbox.strategies.NetworkFirst({
+    cacheName: 'api-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 50, // Максимум 50 запросов
+        maxAgeSeconds: 24 * 60 * 60 // 1 день
+      })
+    ]
+  })
+);
+
+// 3. ОБРАБОТКА ОШИБОК
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response;
+      }
+      return fetch(event.request).catch(() => {
+        return new Response('Ошибка загрузки файла. Попробуйте позже.', {
+          status: 503,
+          statusText: 'Service Unavailable'
+        });
+      });
+    })
+  );
+});
 
 // OTHER EVENTS
 
