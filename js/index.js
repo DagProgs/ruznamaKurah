@@ -188,10 +188,10 @@ cityList.addEventListener('click', (event) => {
 cityNameElement.addEventListener('click', () => {
   const selectedCity = localStorage.getItem('selectedCity') || 'kurah';
   const fileName = `${selectedCity}.min.json`;
-  window.location.href = `/mounth.html?file=${encodeURIComponent(`js/json/${fileName}`)}`;
+  window.location.href = `./mounth.html?file=${encodeURIComponent(`js/json/${fileName}`)}`;
 });
 // Обработчик для ссылки "Посмотреть время намаза на год"
 document.getElementById('yearLinkContainer').addEventListener('click', (event) => {
   const selectedCity = localStorage.getItem('selectedCity') || 'kurah';
-  window.location.href = `/year.html?city=${encodeURIComponent(selectedCity)}`;
+  window.location.href = `./year.html?city=${encodeURIComponent(selectedCity)}`;
 });

@@ -58,7 +58,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/index.js",
-    "revision": "4c1ca475c9be52a232b48d200c84b327"
+    "revision": "2c98b884e6f96434a9d7809168b9bc06"
   },
   {
     "url": "js/jquery-3.6.0.min.js",
@@ -86,7 +86,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/mounth.js",
-    "revision": "1b0915cf973c491161d7f54fab798997"
+    "revision": "2492ae14b858739e2837e047ffa8bb86"
   },
   {
     "url": "js/prefixfree.min.js",
