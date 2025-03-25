@@ -37,8 +37,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "8344930798d1053d8e4f03da3205ee16"
   },
   {
+    "url": "offline.html",
+    "revision": "17beac42de4c5027c953ff83282f4ac9"
+  },
+  {
     "url": "manifest.json",
-    "revision": "e107cc52e5d02752492365b71f8b2db5"
+    "revision": "e5782936c5d4aca25434921bdb15511e"
   },
   {
     "url": "css/styles.css",
@@ -356,6 +360,21 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
+
+// Обработка ошибок
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response;
+      }
+      return fetch(event.request).catch(() => {
+        // Показываем резервную страницу офлайн
+        return caches.match('/offline.html');
+      });
+    })
+  );
+});
 // OTHER EVENTS
 
 // Receive push and show a notification
