@@ -22,7 +22,7 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "051e2ed529bfbac2d0f80984136e6a28"
+    "revision": "dfa4cede5eeb2dd24562cc123c0b56d0"
   },
   {
     "url": "mounth.html",
@@ -46,7 +46,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "9f71cc48d5846ddcc3c22547dd52c88f"
+    "revision": "096ed5892f9d248762272018509af6fc"
   },
   {
     "url": "js/calendar-calendar.js",
@@ -73,6 +73,10 @@ workbox.precaching.precacheAndRoute([
     "revision": "a6c29888d765175ca7f778b3ba9cc837"
   },
   {
+    "url": "js/json/sstalskiy.min.json",
+    "revision": "100da405eb6db7b4019166f911200f4d"
+  },
+  {
     "url": "js/jumma.js",
     "revision": "4ca73997ba1a396515f91316c50cea6a"
   },
@@ -86,7 +90,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/mounth.js",
-    "revision": "2492ae14b858739e2837e047ffa8bb86"
+    "revision": "68cde110f430cc7df2ccc1bcd19e841b"
   },
   {
     "url": "js/prefixfree.min.js",
@@ -98,7 +102,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/year.js",
-    "revision": "671da6e030e922119b01c44620930fe9"
+    "revision": "652b0b26cce2015451640d414128edc4"
   },
   {
     "url": "main.js",

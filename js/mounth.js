@@ -104,7 +104,8 @@ function displayPrayerTimes(data, month, city) {
   // Отображаем название выбранного города на русском языке
   const cityNames = {
     'makhachkala': 'Махачкала',
-    'kurah': 'Курахский район'
+    'kurah': 'Курахский район',
+    'sstalskiy': 'С.Стальский район'
   };
   const cityName = cityNames[city] || 'Неизвестный город';
   document.getElementById('selectedCity').textContent = `${cityName}`;

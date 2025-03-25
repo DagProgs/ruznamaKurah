@@ -92,6 +92,7 @@ const cityNameElement = document.getElementById('cityName');
 const cityNames = {
   makhachkala: 'Махачкала',
   kurah: 'Курахский район',
+  sstalskiy: 'С.Стальский район'
   // Добавьте другие города по необходимости
 };
 const displayedCity = cityNames[city] || 'Неизвестный город';
