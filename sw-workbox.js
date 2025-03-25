@@ -37,12 +37,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "8344930798d1053d8e4f03da3205ee16"
   },
   {
-    "url": "offline.html",
-    "revision": "17beac42de4c5027c953ff83282f4ac9"
-  },
-  {
     "url": "manifest.json",
-    "revision": "0867e8d2334f0a105fa7d6bd8077021c"
+    "revision": "2024cc84df54d1c9c05d66720f1a8464"
   },
   {
     "url": "css/styles.css",
@@ -216,182 +212,34 @@ workbox.precaching.precacheAndRoute([
 
 // RUNTIME CACHING
 
+// Google fonts
+workbox.routing.registerRoute(
+  new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'googleapis',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 30
+      })
+    ]
+  })
+);
 
 // API with network-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
-  workbox.strategies.networkFirst({
-    cacheName: 'timeline-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 50,
-        maxAgeSeconds: 24 * 60 * 60 // 1 день
-      })
-    ]
-  })
-);
+  workbox.strategies.networkFirst()
+)
 
 // API with cache-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)favorites/,
-  workbox.strategies.cacheFirst({
-    cacheName: 'favorites-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 50,
-        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
-      })
-    ]
-  })
-);
-
-// HTML-страницы (StaleWhileRevalidate)
-workbox.routing.registerRoute(
-  /\.(?:html)$/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'html-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 10, // Максимум 10 страниц
-        maxAgeSeconds: 7 * 24 * 60 * 60 // 7 дней
-      })
-    ]
-  })
-);
-
-// JSON-файлы (CacheFirst)
-workbox.routing.registerRoute(
-  /\/js\/json\/.*\.min\.json$/,
-  new workbox.strategies.CacheFirst({
-    cacheName: 'json-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 20, // Максимум 20 JSON-файлов
-        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
-      })
-    ]
-  })
-);
-
-// CSS и JavaScript (StaleWhileRevalidate)
-workbox.routing.registerRoute(
-  /\.(?:css|js)$/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'static-resources-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 50, // Максимум 50 файлов
-        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
-      })
-    ]
-  })
-);
-
-// Изображения (CacheFirst)
-workbox.routing.registerRoute(
-  /\.(?:png|jpg|jpeg|svg|gif|webp|ico)$/,
-  new workbox.strategies.CacheFirst({
-    cacheName: 'images-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 50, // Максимум 50 изображений
-        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
-      })
-    ]
-  })
-);
-
-// Шрифты (CacheFirst)
-workbox.routing.registerRoute(
-  /\.(?:woff|woff2|ttf|eot|otf)$/,
-  new workbox.strategies.CacheFirst({
-    cacheName: 'fonts-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 20, // Максимум 20 шрифтов
-        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
-      })
-    ]
-  })
-);
-
-// Google Fonts (StaleWhileRevalidate)
-workbox.routing.registerRoute(
-  /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'google-fonts-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 30, // Максимум 30 файлов
-        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 дней
-      })
-    ]
-  })
-);
-
-// API (NetworkFirst)
-workbox.routing.registerRoute(
-  /^https:\/\/api\.example\.com\/.*/, // Замените на ваш API URL
-  new workbox.strategies.NetworkFirst({
-    cacheName: 'api-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 50, // Максимум 50 запросов
-        maxAgeSeconds: 24 * 60 * 60 // 1 день
-      })
-    ]
-  })
-);
-
-// 3. ОБРАБОТКА ОШИБОК
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      if (response) {
-        return response;
-      }
-      return fetch(event.request).catch(() => {
-        return new Response('Ошибка загрузки файла. Попробуйте позже.', {
-          status: 503,
-          statusText: 'Service Unavailable'
-        });
-      });
-    })
-  );
-});
-
-
-self.addEventListener('fetch', (event) => {
-  console.log('[Service Worker] Fetch event:', event.request.url);
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      if (response) {
-        console.log('[Service Worker] Found in cache:', event.request.url);
-        return response;
-      }
-      return fetch(event.request)
-        .catch(() => {
-          console.log('[Service Worker] Network request failed, showing offline page');
-          return caches.match('offline.html');
-        });
-    })
-  );
-});
+  workbox.strategies.cacheFirst()
+)
 
 // OTHER EVENTS
 
 // Receive push and show a notification
 self.addEventListener('push', function(event) {
   console.log('[Service Worker]: Received push event', event);
-  
-  const title = 'Новое уведомление!';
-  const options = {
-    body: event.data ? event.data.text() : 'У вас новое уведомление.',
-    icon: 'assets/icons/icon-72x72.png', // Укажите путь к иконке уведомления
-    badge: 'assets/icons/icon-72x72.png' // Укажите путь к значку уведомления
-  };
-
-  event.waitUntil(
-    self.registration.showNotification(title, options)
-  );
 });
