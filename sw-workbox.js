@@ -22,75 +22,87 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "dfa4cede5eeb2dd24562cc123c0b56d0"
+    "revision": "8d906ff8ef51e963304e64ba1244d060"
   },
   {
     "url": "mounth.html",
-    "revision": "c85e56ecce252696cfa0c1420058e904"
+    "revision": "99f71a377f33aa8c2fe51abd501f2282"
   },
   {
     "url": "year.html",
-    "revision": "17e227464c00f0bb703388916fe1a7eb"
-  },
-  {
-    "url": "calendar.html",
-    "revision": "8344930798d1053d8e4f03da3205ee16"
+    "revision": "b6d277943b60fd3a109cb7f1b72951e5"
   },
   {
     "url": "manifest.json",
-    "revision": "2024cc84df54d1c9c05d66720f1a8464"
+    "revision": "5d7010718887ff8e154a276af97d0c97"
+  },
+  {
+    "url": "css/reset.css",
+    "revision": "a4e8ee575d5ceb6554b4b0646aa176c4"
   },
   {
     "url": "css/styles.css",
-    "revision": "ae0ddbbe4f97fab1020de845230f041c"
+    "revision": "1b0a4bf6421a1f7c4dc8c0a00a653fbd"
+  },
+  {
+    "url": "js/accordion.js",
+    "revision": "ef7dadb9a5eb23bf72206844abf005ed"
   },
   {
     "url": "js/calendar-ar.js",
-    "revision": "096ed5892f9d248762272018509af6fc"
+    "revision": "6d4bb981e034772317710de0f5e33536"
   },
   {
-    "url": "js/calendar-calendar.js",
-    "revision": "0a3d3310365545820a52dd94c67ae06c"
+    "url": "js/calendar-ru.js",
+    "revision": "980524c7b06ae90e2b8d3072fc872e51"
   },
   {
-    "url": "js/calendar.js",
-    "revision": "d5ebfb1e75f414efbfaa581207e17c74"
+    "url": "js/clock.js",
+    "revision": "c30623704c7e7fada499b0b3dd3379d4"
   },
   {
-    "url": "js/index.js",
-    "revision": "2d4a3d7a7432c8e801171a2a0ebbf019"
+    "url": "js/end-time.js",
+    "revision": "3cfcf37da71fd6de3b01152c2be3d9a2"
   },
   {
-    "url": "js/jquery-3.6.0.min.js",
-    "revision": "8fb8fee4fcc3cc86ff6c724154c49c42"
+    "url": "js/jquery-3.7.1.min.js",
+    "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
   },
   {
-    "url": "js/json/kurah.min.json",
+    "url": "js/json/prayer-times.json",
     "revision": "9fa73418c1118fd575680d525f2e9eee"
   },
   {
-    "url": "js/json/makhachkala.min.json",
-    "revision": "a6c29888d765175ca7f778b3ba9cc837"
-  },
-  {
-    "url": "js/json/sstalskiy.min.json",
-    "revision": "100da405eb6db7b4019166f911200f4d"
-  },
-  {
     "url": "js/jumma.js",
-    "revision": "4ca73997ba1a396515f91316c50cea6a"
+    "revision": "77083ddef0ac434caf31d17e4894fe3a"
   },
   {
     "url": "js/modal-description-prayer.js",
-    "revision": "fd0d152da3bf655df1a4d8c3bedae136"
+    "revision": "f3bbd02ae731a9bea9b70b25c1a9bf96"
   },
   {
     "url": "js/modernizr.min.js",
     "revision": "65f1d21d5fcc9d21da758adababd0c3c"
   },
   {
-    "url": "js/mounth.js",
-    "revision": "68cde110f430cc7df2ccc1bcd19e841b"
+    "url": "js/mounths-names.js",
+    "revision": "dca606af43f0631a25eb1bbdede7ba5a"
+  },
+  {
+    "url": "js/na-ves-akran.js",
+    "revision": "defa1add28ad656cb0f3baef77609943"
+  },
+  {
+    "url": "js/prayer-days.js",
+    "revision": "ba2f1d5c32300b2a6a1787e80a8687d9"
+  },
+  {
+    "url": "js/prayer-times-mounths.js",
+    "revision": "110b2f2486fb0dffe3fb5739fe4edd22"
+  },
+  {
+    "url": "js/prayer-times-year.js",
+    "revision": "9982a9853e313e1671e51d446096e3b3"
   },
   {
     "url": "js/prefixfree.min.js",
@@ -98,11 +110,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/reklama.js",
-    "revision": "951755aaf9be72e669d3cbe8f5b521a8"
-  },
-  {
-    "url": "js/year.js",
-    "revision": "652b0b26cce2015451640d414128edc4"
+    "revision": "478a0fbbfc979addfbcdfd47fc4c4d42"
   },
   {
     "url": "main.js",
@@ -145,20 +153,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "1dc9f96736b1d9ad0faba8acaec3fb2f"
   },
   {
-    "url": "img/ramadan.png",
+    "url": "img/hiasan.png",
     "revision": "68a642d1aa582d801540584db10abe19"
   },
   {
-    "url": "img/svg/calendar.svg",
-    "revision": "61f05b037be052de95f1020b7dd10b94"
+    "url": "img/mounth.svg",
+    "revision": "28b9786d0a8b41c97a7a7801711a1f8a"
   },
   {
-    "url": "img/svg/menu-close.svg",
-    "revision": "c3e681e21fc603267c213f7b94573b87"
-  },
-  {
-    "url": "img/svg/menu-open.svg",
-    "revision": "122d3ea208c1ec64e1973084437f1d96"
+    "url": "img/year.svg",
+    "revision": "8b97737e3fc289d58f9aaad12ea0d411"
   },
   {
     "url": "fonts/monplesir.otf",

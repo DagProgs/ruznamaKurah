@@ -6,6 +6,7 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta name="google" content="notranslate">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
   <title>Рузнама Курахский район</title>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -29,51 +30,251 @@
 </head>
 
 <body>
+  <!--Header-->
   <header>
     <div class="header_container">
+      <img src="img/hiasan.png" alt="">
       <a href="index.html">
-        <div class="header_icon">
-          <svg width="100px" height="100px" viewBox="0 0 1024 1024" fill="#000000" class="icon" version="1.1"
+        <svg width="100px" height="100px" viewBox="0 0 1024 1024" fill="#000000" class="icon" version="1.1"
             xmlns="http://www.w3.org/2000/svg">
             <path
               d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z"
               fill="" />
           </svg>
-        </div>
       </a>
-      <div class="header_text">
-        <h1 id="cityName">Курахский район</h1>
-        <p>Рузнама</p>
-      </div>
+      <h1>Курахский район <span class="ruznama">Рузнама</span></h1>
     </div>
   </header>
-  <div class="year_list">
-    <ul id="monthsList"></ul>
-  </div>
-  <div class="table_mounth">
-    <table id="prayerTable" style="display: none;">
-      <thead>
-        <tr>
-          <th>...</th>
-          <th>Фаджр</th>
-          <th>Восход</th>
-          <th>Зухр</th>
-          <th>Аср</th>
-          <th>Магриб</th>
-          <th>Иша</th>
-        </tr>
-      </thead>
-      <tbody id="prayerTableBody">
-      </tbody>
-    </table>
-  </div>
+  <!--Main-->
+  <section>
+    <div class="payer_table">
+      <div class="payer_table_container">
+        <button class="accordion" id="1">Январь</button>
+        <div class="panel">
+          <table id="table1">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
 
-  <!-- Script -->
+        <button class="accordion" id="2">Февраль</button>
+        <div class="panel">
+          <table id="table2">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="3">Март</button>
+        <div class="panel">
+          <table id="table3">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="4">Апрель</button>
+        <div class="panel">
+          <table id="table4">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="5">Май</button>
+        <div class="panel">
+          <table id="table5">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="6">Июнь</button>
+        <div class="panel">
+          <table id="table6">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="7">Июль</button>
+        <div class="panel">
+          <table id="table7">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="8">Август</button>
+        <div class="panel">
+          <table id="table8">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="9">Сентябрь</button>
+        <div class="panel">
+          <table id="table9">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="10">Октябрь</button>
+        <div class="panel">
+          <table id="table10">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="11">Ноябрь</button>
+        <div class="panel">
+          <table id="table11">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <button class="accordion" id="12">Декабрь</button>
+        <div class="panel">
+          <table id="table12">
+            <thead>
+              <tr>
+                <th>Чис.</th>
+                <th>Фаджр</th>
+                <th>Шурук</th>
+                <th>Зухр</th>
+                <th>Аср</th>
+                <th>Магриб</th>
+                <th>Иша</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Scripts-->
   <script type="text/javascript" src="runtime.js"></script>
   <script type="text/javascript" src="polyfills.js"></script>
   <script type="text/javascript" src="main.js"></script>
 
-  <script src="js/year.js"></script>
+  <script src="js/accordion.js"></script>
+  <script src="js/prayer-times-year.js"></script>
 
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">

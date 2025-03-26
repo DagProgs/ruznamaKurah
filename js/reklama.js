@@ -1,1 +1,62 @@
-async function loadContent(){let e=document.getElementById("content"),t=document.createElement("p");t.style.color="red";try{let l=await fetch("https://dagprogs.github.io/apidb/reklama.json");if(console.log("Response status:",l.status),!l.ok){t.textContent="Нет подключения к интернету или источник недоступен.",e.appendChild(t);return}let n=await l.json();if(0===n.length){e.style.display="none";return}n.forEach(t=>{if("text"===t.type){let l=document.createElement("p");l.textContent=t.content,e.appendChild(l)}else if("image"===t.type){let n=document.createElement("img");n.src=t.src,e.appendChild(n)}else if("video"===t.type){let a=document.createElement("video");a.src=t.src,a.controls=!0,a.style.width="100%",a.style.height="auto",e.appendChild(a)}else if("audio"===t.type){let o=document.createElement("audio");o.src=t.src,o.controls=!0,e.appendChild(o)}else if("youtube"===t.type){let r=document.createElement("iframe");r.src=t.src,r.width="100%",r.height="315",r.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",r.allowFullscreen=!0,e.appendChild(r)}})}catch(a){console.error("Ошибка при загрузке данных:",a),t.textContent="Ошибка при загрузке данных. Попробуйте позже.",e.appendChild(t)}}loadContent();
+async function loadContent() {
+    const contentDiv = document.getElementById('content');
+    const errorMessage = document.createElement('p');
+    errorMessage.style.color = 'red'; // Стиль для сообщения об ошибке
+
+    try {
+        const response = await fetch('https://dagprogs.github.io/apidb/reklama.json');
+        console.log('Response status:', response.status); // Вывод статуса ответа
+
+        if (!response.ok) {
+            // Если статус ответа не OK, показать сообщение об ошибке
+            errorMessage.textContent = 'Нет подключения к интернету или источник недоступен.';
+            contentDiv.appendChild(errorMessage);
+            return;
+        }
+
+        const data = await response.json();
+
+        if (data.length === 0) {
+            contentDiv.style.display = 'none'; // Скрыть блок, если данных нет
+            return;
+        }
+
+        data.forEach(item => {
+            if (item.type === 'text') {
+                const p = document.createElement('p');
+                p.textContent = item.content;
+                contentDiv.appendChild(p);
+            } else if (item.type === 'image') {
+                const img = document.createElement('img');
+                img.src = item.src;
+                contentDiv.appendChild(img);
+            } else if (item.type === 'video') {
+                const video = document.createElement('video');
+                video.src = item.src;
+                video.controls = true; // Включить управление для видео
+                video.style.width = '100%'; // Установить ширину видео на 100%
+                video.style.height = 'auto'; // Установить высоту на auto
+                contentDiv.appendChild(video);
+            } else if (item.type === 'audio') {
+                const audio = document.createElement('audio');
+                audio.src = item.src;
+                audio.controls = true; // Включить управление для аудио
+                contentDiv.appendChild(audio);
+            } else if (item.type === 'youtube') {
+                const iframe = document.createElement('iframe');
+                iframe.src = item.src;
+                iframe.width = '100%'; // Установить ширину iframe на 100%
+                iframe.height = '315'; // Установить высоту iframe
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'; // Разрешения
+                iframe.allowFullscreen = true; // Разрешить полноэкранный режим
+                contentDiv.appendChild(iframe);
+            }
+        });
+    } catch (error) {
+        console.error('Ошибка при загрузке данных:', error);
+        errorMessage.textContent = 'Ошибка при загрузке данных. Попробуйте позже.';
+        contentDiv.appendChild(errorMessage); // Показать сообщение об ошибке
+    }
+}
+
+loadContent();
