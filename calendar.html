@@ -22,7 +22,6 @@
   <meta name="google-site-verification" content="verification_token">
   <meta name="generator" content="WEB APP">
   <meta content="website">
-  <!--
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <script src="js/jquery-3.7.1.min.js"></script>
@@ -30,7 +29,6 @@
   <script src="js/prefixfree.min.js"></script>
   <script async src="pwacompat.min.js"></script>
   <script defer src="update.js" type="module"></script>
-  -->
 </head>
 
 
@@ -49,7 +47,7 @@
           </svg>
         </a>
         <div class="header_text">
-          <h1>Год</h1>
+          <h1>Календарь</h1>
           <p>Рузнама</p>
         </div>
       </div>
@@ -57,29 +55,56 @@
     </div>
   </div>
   <!-- Main -->
-  <div class="main_container">
-    <main>
-      <div class="main_box">
-        <!-- Left -->
-        <div class="main_left"></div>
-        <!-- Right -->
-        <div class="main_right"></div>
+  <main>
+
+    <div class="calendar_ru_container_full">
+      <h2 id="calendar-title" class="calendar_full_day"></h2>
+      <div class="calendar_full_year">
+        <div class="calendar-container" id="calendar"></div>
       </div>
-    </main>
-  </div>
+    </div>
+
+    <div class="main_box">
+      <!-- Left -->
+      <div class="main_left"></div>
+      <!-- Right -->
+      <div class="main_right"></div>
+    </div>
+
+  </main>
   <!-- Footer -->
   <footer>
     <div class="footer_container"></div>
   </footer>
 
   <!-- Scripts -->
-  <!--
   <script type="text/javascript" src="runtime.js"></script>
   <script type="text/javascript" src="polyfills.js"></script>
   <script type="text/javascript" src="main.js"></script>
-  -->
 
   <script src="js/theme.js"></script>
+  <script src="js/calendar-full.js"></script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(92655412, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true
+  });
+</script>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/92655412" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 </body>
 
 </html>

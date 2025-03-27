@@ -1,0 +1,146 @@
+/*Calendar*/
+.calendar_ru_container {
+  background-color: var(--color-container);
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.calendar_ru_container .active {
+  color: #4ab46a;
+  font-weight: bold;
+}
+
+.calendar_ru_container .days-of-week {
+  border-bottom: 1px solid #cacaca;
+  padding-bottom: 5px;
+}
+
+.calendar_ru_container .days-of-week {
+  color: #cacaca;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.7em;
+}
+
+.calendar_ru_container .time {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5em;
+}
+
+.calendar_ru_container .date {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 2.5em;
+  margin: 9px 0 0 0;
+}
+
+.calendar_ru_container .icon svg {
+  display: flex;
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  border: none;
+}
+
+.calendar_ru_container .icon svg path {
+  fill: none;
+}
+
+/*Calendar Full*/
+.calendar_ru_container_full {}
+
+.calendar_full_year {
+  min-width: 320px;
+}
+
+.calendar_full_year .calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar_full_year .current-month {
+  background-color: var(--color-calendar-bg);
+  box-shadow: 5px 5px 10px var(--color-box-shadow);
+  margin-bottom: 20px;
+}
+
+.calendar_full_year .month {
+  padding: 15px;
+  width: 100vw;
+  min-width: 320px;
+}
+
+.calendar_full_year .month h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.calendar_full_year .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 10px;
+}
+
+.calendar_full_year .day {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.calendar_full_year .day.empty {
+  ..background-color: var(--color-calendar-bg);
+}
+
+.calendar_full_year .today {
+  ..background-color: #dde2ee;
+  font-weight: bold;
+  color: #ff2727;
+}
+
+.calendar_full_year .weekdays {
+  display: contents;
+}
+
+.calendar_full_year .weekday {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.calendar_full_year .weekend {
+  color: #ff2727;
+}
+
+.calendar_full_year .month:not(.current-month) .weekend {
+  color: var(--color-calendar-text);
+}
+
+
+.calendar_full_year .month-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50vw;
+  height: auto;
+}
+
+.calendar_full_day {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 59px;
+  font-size: calc(1vw + 0.7em);
+  font-weight: bold;
+  min-width: 320px;
+  padding: 10px 0;
+  background-color: var(--color-container);
+}

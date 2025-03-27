@@ -1,0 +1,19 @@
+.main_list_sity #cityList {
+  display: none; /* Список изначально скрыт */
+  list-style-type: none;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.main_list_sity ul {
+  background-color: var(--color-bg-list);
+  border-radius: 10px;
+}
+
+.main_list_sity #cityList li {
+  padding-bottom: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--color-border);
+}
