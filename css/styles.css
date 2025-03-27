@@ -1,60 +1,588 @@
-:root {
-  --color-background: #f1f1f1;
-  --color-bg-list: #fff;
-  --color-bg-container: #f1f1f1;
-  --color-container: #fff;
-  --color-bg-container-prayer-day: #fff;
-  --color-text: #000;
-  --color-text-prayer-day: #ff0000;
-  --color-border: #000;
-  --color-box-shadow: #0000002a;
-  --color-svg: #000;
-  --fill: #000;
-  --stroke: #000;
-  --color-calendar-bg: #fff;
-  --color-calendar-text: #000;
-}
-
-.dark-mode body {
-  --color-background: #222222;
-  --color-bg-list: #000;
-  --color-bg-container: #222222;
-  --color-container: #000000;
-  --color-bg-container-prayer-day: #000;
-  --color-text: #fff;
-  --color-text-prayer-day: #ff7474;
-  --color-border: #fff;
-  --color-box-shadow: #ffffff27;
-  --color-svg: #fff;
-  --fill: #fff;
-  --stroke: #fff;
-  --color-calendar-bg: #000;
-  --color-calendar-text: #fff;
-}
-
-@font-face {
-  font-family: 'monplesir';
-  src: url('../fonts/monplesir.woff2') format('woff2'),
-    url('../fonts/monplesir.woff2') format('woff'),
-    url('../fonts/monplesir.otf') format('opentype'),
-    url('../fonts/monplesir.ttf') format('opentype');
-}
-
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 10px;
-  background-color: var(--color-background);
-  color: var(--color-text);
+  font-family: Verdana, Tahoma, sans-serif;
 }
 
-svg {
+a {
+  color: #000;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*Header*/
+header {
+  position: relative;
+  height: 60px;
+}
+
+.header_container {
+  position: fixed;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.header_container img {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 150px;
+  height: auto;
+}
+
+.header_container svg {
   width: 30px;
-  min-width: 30px;
   height: 30px;
-  min-height: 30px;
+  margin: 15px;
 }
 
-svg path {
-  fill: var(--fill);
-  stroke: var(--stroke);
+.header_container h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.ruznama {
+  font-size: 0.7em;
+  font-weight: normal;
+  color: #9b9b9b;
+}
+
+/*Reklama*/
+.reklama {
+  padding: 0 15px;
+}
+
+.content {
+  font-size: 1.5em;
+  color: #11853e;
+  border: 1px solid #11853e;
+  padding: 0 5px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*Main*/
+main {}
+
+.main_container {
+  display: flex;
+  width: 100vw;
+}
+
+/*Main left*/
+.main_left {
+  width: 50vw;
+  min-width: 160px;
+  ..border: 1px solid #1eff00;
+  /*ramka*/
+}
+
+.prayer_times {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.prayer_times .item {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 100vw;
+  margin: 5px;
+  padding: 5px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.item_box {
+  display: flex;
+  align-items: center;
+}
+
+.item_box svg {
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  min-height: 25px;
+  margin-left: 5px;
+}
+
+.item_box svg path {
+  fill: #333333;
+}
+
+.name_time {
+  padding-left: 10px;
+}
+
+.name_time h3 {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+.name_time h4 {
+  font-size: 1.7em;
+}
+
+.highlighted {
+  font-weight: bold;
+  color: #11853e;
+}
+
+/*Main mounth-year*/
+.mounth_year {
+  width: 50vw;
+  min-width: 160px;
+}
+
+.mounth_year .mounth_year_box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.mounth_year_box .item {
+  flex-grow: 1;
+  flex-basis: 40px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.mounth_year_box .mounth,
+.year {
+  display: flex;
+  align-items: center;
+}
+
+.mounth_year_box p {
+  font-size: 1.2em;
+  padding-left: 2px;
+  text-transform: uppercase;
+}
+
+.mounth_year_box .mounth::before {
+  content: url(../img/mounth.svg);
+}
+
+.mounth_year_box .year::before {
+  content: url(../img/year.svg);
+}
+
+/*Main right*/
+.main_right {
+  width: 50vw;
+  min-width: 160px;
+  ..border: 1px solid #1100ff;
+  /*ramka*/
+}
+
+.right_box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.right_box .item {
+  flex-grow: 1;
+  flex-basis: 100px;
+  margin: 5px;
+}
+
+/*Calendar*/
+.calendar {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar .square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 150px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+}
+
+.square .mini_square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 50px;
+  background-color: #0d8f43;
+  border-radius: 10px 10px 0 0;
+}
+
+.name_mounth {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.name_day {
+  font-size: 5em;
+  font-weight: bold;
+}
+
+.name_year {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+/*End Week Clock*/
+.week {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.week .square {
+  width: 120px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+}
+
+.week_clock_square {
+  margin: 10px;
+}
+
+#nextPrayerContainer {
+  margin: 10px 0;
+}
+
+#nextPrayerText {
+  font-size: 1.5em;
+}
+
+#nextPrayerTime {
+  font-size: 2em;
+  font-weight: bold;
+  color: #851111;
+}
+
+#ru-week {
+  font-size: 1.5em;
+}
+
+#clock {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/*Mounth*/
+.payer_table_container h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  width: 100vw;
+  height: 30px;
+  color: #11853e;
+  font-weight: bold;
+}
+
+table {
+  position: relative;
+  border-collapse: collapse;
+  width: 100vw;
+}
+
+table tr th {
+  font-size: calc(2vw + 6px);
+}
+
+table tr td {
+  font-size: calc(3vw + 2px);
+  text-align: center;
+  padding: 5px 0;
+  border: 0;
+}
+
+td,
+th {
+  border-bottom: 1px solid #11853e !important;
+}
+
+tr {
+  color: ;
+}
+
+.main_table_stici,
+th {
+  background-color: #11853e;
+  color: #fff;
+}
+
+th {
+  padding: 10px 0;
+}
+
+.main_table_stici {
+  position: sticky;
+  top: 50px;
+}
+
+#currentMonth {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 40px;
+  font-size: 15px;
+  padding-bottom: 10px;
+  color: #11853e;
+}
+
+/*Year*/
+.accordion,
+.payer_table_container h2 {
+  font-size: 20px;
+  width: 100vw;
+  display: flex
+}
+
+.payer_table_container h2 {
+  justify-content: center;
+  height: 30px
+}
+
+.accordion,
+.accordion:hover,
+.active,
+.footer_container,
+.headermodal-content,
+.mounthmodal-content,
+.panel,
+.yearmodal-content {
+  background-color: var(--bg);
+}
+
+.accordion {
+  justify-content: space-between;
+  color: var(--text);
+  cursor: pointer;
+  padding: 15px;
+  border: none;
+  outline: 0;
+  transition: .4s;
+}
+
+.accordion:after {
+  content: "+";
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "−";
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-out;
+}
+
+/*Footer*/
+footer {
+  position: relative;
+}
+
+/*Jumma*/
+.jumma_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  background-color: #11853e;
+  z-index: 50;
+}
+
+.popup {
+  display: none;
+}
+
+.jumma_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 15px;
+}
+
+.jumma_text {
+  font-family: Monplesir;
+  font-size: 5em;
+  line-height: 55px;
+  color: #fff;
+  padding-bottom: 50px;
+}
+
+.jumma_descr {
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #11853e;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#closeBtn {
+  position: absolute;
+  cursor: pointer;
+  color: #8ce0b6;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+}
+
+/*iPhone*/
+.imodal {
+  position: fixed;
+  left: 0
+}
+
+.imodal {
+  display: none;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, .9);
+  z-index: 10;
+}
+
+.imodal-content {
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  position: relative;
+}
+
+.iclose {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.iclose:focus,
+.iclose:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*На весь экран*/
+.navesakran #overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.navesakran #content {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 4px 20px #ffffff;
+}
+
+.navesakran h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.navesakran img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.navesakran p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+
+/*Modal*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.863);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
+  border: 1px solid #b9b9b9;
+}
+
+.modal-content h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #000;
+  padding: 5px 0;
+}
+
+.modal-content p {
+  font-size: 1.5em;
+  padding: 5px 0;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.openModal {
+  cursor: pointer;
 }
