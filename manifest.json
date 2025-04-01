@@ -1,14 +1,20 @@
 {
-  "manifest_version": 46,
+  "manifest_version": 47,
   "lang": "ru",
   "dir": "ltr",
   "name": "Курахский район",
   "short_name": "Рузнама Курахский р-он",
   "description": "Времена Намазов для Курахского района",
-  "version": "2.3.50",
-  "categories": ["ruznama", "religion", "prayer", "Рузнама", "Курахский район"],
+  "version": "2.3.51",
+  "categories": [
+    "ruznama",
+    "religion",
+    "prayer",
+    "Рузнама",
+    "Курахский район"
+  ],
   "icons": [
-	{
+    {
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"
@@ -55,5 +61,27 @@
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "widgets": [
+    {
+      "name": "Рузнама",
+      "tag": "ruznama",
+      "ms_ac_template": "widget/ac.json",
+      "data": "widget/data.json",
+      "description": "A simple widget example from pwa-starter.",
+      "screenshots": [
+        {
+          "src": "assets/icons/icon-512x512.png",
+          "sizes": "512x512",
+          "label": "Widget screenshot"
+        }
+      ],
+      "icons": [
+        {
+          "src": "assets/icons/48x48.png",
+          "sizes": "48x48"
+        }
+      ]
+    }
+  ]
 }
