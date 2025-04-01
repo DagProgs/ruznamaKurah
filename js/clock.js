@@ -1,1 +1,0 @@
-function currentTime(){var e=new Date,t=e.getHours(),n=e.getMinutes(),r=e.getSeconds();t=updateTime(t),n=updateTime(n),r=updateTime(r),document.getElementById("clock").innerText=t+":"+n+":";var i=document.createElement("span");i.innerText=r,document.getElementById("clock").appendChild(i),setTimeout(currentTime,1e3)}function updateTime(e){return e<10?"0"+e:e}currentTime();
