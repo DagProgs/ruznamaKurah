@@ -1,188 +1,3 @@
-* {
-  padding: 0px;
-  margin: 0px;
-  border: none;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-a,
-a:link,
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-aside,
-nav,
-footer,
-header,
-section,
-main {
-  display: block;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-ul,
-ul li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-img,
-svg {
-  max-width: 100%;
-  height: auto;
-}
-
-address {
-  font-style: normal;
-}
-
-input,
-textarea,
-button,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  background-color: transparent;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button,
-input[type="submit"] {
-  display: inline-block;
-  box-shadow: none;
-  background-color: transparent;
-  background: none;
-  cursor: pointer;
-}
-
-input:focus,
-input:active,
-button:focus,
-button:active {
-  outline: none;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-label {
-  cursor: pointer;
-}
-
-legend {
-  display: block;
-}
-
-/* Отключение выделения текста */
-* {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-/* Удаление стилей выделения текста */
-::selection {
-  background: transparent;
-  color: inherit;
-}
-
-::-moz-selection {
-  background: transparent;
-  color: inherit;
-}
-
-/* Удаление стилей для ссылок */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a::selection {
-  background: transparent;
-  color: inherit;
-}
-
-a::-moz-selection {
-  background: transparent;
-  color: inherit;
-}
-
-/* Убираем стандартные стили фокуса */
-a:focus {
-  outline: none;
-  box-shadow: none;
-  background: transparent;
-}
-
-/* Убираем эффект нажатия на мобильных устройствах */
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Если хотите заменить стиль фокуса на собственный */
-a.custom-focus:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  background: rgba(0, 123, 255, 0.1);
-  border-radius: 4px;
-}
-
-:root {
-  --color-background: #f1f1f1;
-  --color-bg-block: #ffffff;
-  --color-text: #000;
-  --color-active-table: #dbdbdb;
-  --color-active-text-table: #000000;
-  --fill: #000;
-  --stroke: #000;
-
-  --line: #b3b3b3;
-  --red: #ff0000;
-  --bg-footer: #c3fadc;
-}
-
-.dark-mode body {
-  --color-background: #222222;
-  --color-bg-block: #000000;
-  --color-text: #ffffff;
-  --color-active-table: #535353;
-  --color-active-text-table: #ffffff;
-  --fill: #ffffff;
-  --stroke: #ffffff;
-
-  --bg-footer: #167c3d;
-}
-
 @font-face {
   font-family: 'monplesir';
   src: url('../fonts/monplesir.woff2') format('woff2'),
@@ -192,375 +7,464 @@ a.custom-focus:focus {
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 10px;
-  background-color: var(--color-background);
-  color: var(--color-text);
+  font-family: Verdana, Tahoma, sans-serif;
 }
 
-svg {
-  width: 30px;
-  min-width: 30px;
-  height: 30px;
-  min-height: 30px;
+a {
+  color: #000;
 }
 
-svg path {
-  fill: var(--fill);
-  stroke: var(--stroke);
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/*Header*/
 header {
   position: relative;
   height: 60px;
+}
+
+.header_container {
+  position: fixed;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.header_container img {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 150px;
+  height: auto;
+}
+
+.header_container svg {
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+}
+
+.header_container h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+  font-weight: bold;
   z-index: 1;
 }
 
-.menu_icon_text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0px;
-  left: 0;
-  width: 100vw;
-  min-width: 320px;
-  height: 60px;
+.ruznama {
+  font-size: 0.7em;
+  font-weight: normal;
+  color: #9b9b9b;
+}
+
+/*Reklama*/
+.reklama {
   padding: 0 15px;
-  gap: 15px;
-  background-color: var(--color-bg-block);
 }
 
-.menu_text {
-  flex: 1;
-  line-height: 1.2;
-}
-
-.menu_text h1 {
-  font-size: 1.8em;
-  font-weight: bold;
-}
-
-.menu_text p {
+.content {
   font-size: 1.5em;
+  color: #11853e;
+  border: 1px solid #11853e;
+  padding: 0 5px;
 }
 
-.menu_icon_loc {
-  gap: 5px;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.menu_icon_loc svg {
-  width: 20px;
-  min-width: 20px;
-  height: 20px;
-  min-height: 20px;
-}
-
-main {
-  position: relative;
-}
+/*Main*/
+main {}
 
 .main_container {
-  width: calc(100vw - 10px);
-  min-width: calc(320px - 10px);
-  height: calc(100vh - 115px);
-  margin: 5px;
-  padding: 10px;
-  background-color: var(--color-bg-block);
-  border-radius: 15px;
-  overflow: auto;
+  display: flex;
+  width: 100vw;
 }
 
-.start_end_prayer_time {
-  padding: 15px;
-  border-radius: 10px;
-  background-color: var(--color-background);
+/*Main left*/
+.main_left {
+  width: 50vw;
+  min-width: 160px;
+  ..border: 1px solid #1eff00;
+  /*ramka*/
 }
 
-.start_end_time_box {
+.prayer_times {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.prayer_times .item {
   display: flex;
   align-items: center;
-  gap: 20px;
-}
-
-.start_end_time_box {
-  line-height: 1.5;
-}
-
-.start_time {
-  flex: 1;
-  padding: 10px;
+  flex-grow: 1;
+  flex-basis: 100vw;
+  margin: 5px;
+  padding: 5px;
+  background-color: #f1f1f1;
   border-radius: 10px;
-  background-color: var(--color-bg-block);
 }
 
-.start_time h2 {
-  font-size: 1.5em;
+.item_box {
+  display: flex;
+  align-items: center;
 }
 
-.start_time h2~h2 {
-  font-size: 2em;
+.item_box svg {
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  min-height: 25px;
+  margin-left: 5px;
 }
 
-.end_time {
-  flex: 1;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: var(--color-bg-block);
-}
-
-.end_time h2 {
-  font-size: 1.5em;
-}
-
-.end_time h2~h2 {
-  font-size: 2em;
-}
-
-/* Line progress */
-#progressBarContainer {
-  width: 100%;
-  height: 10px;
-  background-color: var(--line);
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-#redLine {
-  height: 100vh;
-  background-color: var(--red);
-  width: 100vw;
-  transition: width 0.5s ease;
-}
-
-.list_container {
-  display: none;
-}
-
-.list_container #cityList {
-  list-style-type: none;
-  padding: 20px;
-  margin: 5px 0;
-}
-
-.list_container ul {
-  border-radius: 10px;
-  background-color: var(--color-background);
-}
-
-.list_container #cityList li {
-  padding-bottom: 5px;
-  margin: 10px 0;
-  cursor: pointer;
-  font-size: 1.5em;
-  border-bottom: 1px solid var(--line);
-}
-
-.main_container .current-prayer {
-  color: var(--red);
-  font-size: 2.5em;
-  font-weight: bold;
+.item_box svg path {
+  fill: #333333;
 }
 
 .name_time {
+  padding-left: 10px;
+}
+
+.name_time h3 {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+.name_time h4 {
+  font-size: 1.7em;
+}
+
+.highlighted {
+  font-weight: bold;
+  color: #11853e;
+}
+
+/*Main mounth-year*/
+.mounth_year {
+  width: 50vw;
+  min-width: 160px;
+}
+
+.mounth_year .mounth_year_box {
   display: flex;
-  align-items: center;
-  margin: 5px 0;
-  padding: 10px;
-  gap: 15px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.mounth_year_box .item {
+  flex-grow: 1;
+  flex-basis: 40px;
+  margin: 5px;
   border-radius: 10px;
-  background-color: var(--color-background);
 }
 
-.name_time svg path {
-  stroke: none;
-}
-
-.prayer_time {
+.mounth_year_box .mounth,
+.year {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100vw;
 }
 
-.prayer_time h3 {
+.mounth_year_box p {
+  font-size: 1.2em;
+  padding-left: 2px;
+  text-transform: uppercase;
+}
+
+.mounth_year_box .mounth::before {
+  content: url(../img/mounth.svg);
+}
+
+.mounth_year_box .year::before {
+  content: url(../img/year.svg);
+}
+
+/*Main right*/
+.main_right {
+  width: 50vw;
+  min-width: 160px;
+  ..border: 1px solid #1100ff;
+  /*ramka*/
+}
+
+.right_box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.right_box .item {
+  flex-grow: 1;
+  flex-basis: 100px;
+  margin: 5px;
+}
+
+/*Calendar*/
+.calendar {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar .square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 150px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+}
+
+.square .mini_square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 50px;
+  background-color: #0d8f43;
+  border-radius: 10px 10px 0 0;
+}
+
+.name_mounth {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.name_day {
+  font-size: 5em;
+  font-weight: bold;
+}
+
+.name_year {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+/*End Week Clock*/
+.week {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.week .square {
+  width: 120px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+}
+
+.week_clock_square {
+  margin: 10px;
+}
+
+#nextPrayerContainer {
+  margin: 10px 0;
+}
+
+#nextPrayerText {
+  font-size: 1.5em;
+}
+
+#nextPrayerTime {
+  font-size: 2em;
+  font-weight: bold;
+  color: #851111;
+}
+
+#ru-week {
+  font-size: 1.5em;
+}
+
+#clock {
   font-size: 1.5em;
   font-weight: bold;
 }
 
-.prayer_time p {
-  font-size: 2em;
+/*Mounth*/
+.payer_table_container h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  width: 100vw;
+  height: 30px;
+  color: #11853e;
+  font-weight: bold;
 }
 
-.month-title {
-  font-size: 1.5em;
-  padding: 0 10px 10px;
-}
-
-.table_container {
-  padding: 10px 0 25px 0;
-  border-radius: 10px;
-  background-color: var(--color-background);
-}
-
-.table_container table {
+table {
   position: relative;
   border-collapse: collapse;
-  width: 100%;
+  width: 100vw;
 }
 
-.table_container thead {
-  position: sticky;
-  top: -15px;
-  background-color: var(--color-background);
+table tr th {
+  font-size: calc(2vw + 6px);
 }
 
-.table_container table tr th {
-  font-size: calc(2vw + 5px);
-}
-
-.table_container table tr td {
+table tr td {
   font-size: calc(3vw + 2px);
   text-align: center;
   padding: 5px 0;
   border: 0;
 }
 
-.table_container th {
+td,
+th {
+  border-bottom: 1px solid #11853e !important;
+}
+
+tr {
+  color: ;
+}
+
+.main_table_stici,
+th {
+  background-color: #11853e;
+  color: #fff;
+}
+
+th {
   padding: 10px 0;
 }
 
-.table_container .prayer-times-table td {
-  border-bottom: 1px solid var(--line);
+.main_table_stici {
+  position: sticky;
+  top: 50px;
 }
 
-.table_container .prayer-times-table td:nth-child(1) {
-  border-right: 1px solid var(--line);
-}
-
-.table_container .current-day {
-  background-color: var(--color-active-table);
-  color: var(--color-active-text-table);
-  font-weight: bold;
-}
-
-.month-selector {
+#currentMonth {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.5em;
-}
-
-.month-selector #monthList {
-  padding-top: 20px;
-}
-
-.month-selector ul {
-  list-style-type: none;
-  padding: 0;
-  display: none;
-}
-
-.month-selector #toggleMonthsButton {
-  text-transform: uppercase;
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  padding: 5px 15px;
-}
-
-.month-selector li {
-  display: flex;
+  align-items: flex-end;
   justify-content: center;
+  height: 40px;
+  font-size: 15px;
+  padding-bottom: 10px;
+  color: #11853e;
+}
+
+/*Year*/
+.accordion,
+.payer_table_container h2 {
+  font-size: 20px;
   width: 100vw;
-  font-size: 0.9em;
-  cursor: pointer;
-  padding: 10px;
-  background-color: var(--color-background);
-  border: 1px solid var(--line);
-  margin-bottom: 5px;
+  display: flex
 }
 
-.month-selector li.active {
-  background-color: var(--color-bg-block);
-  font-weight: bold;
-}
-
-.mounth_day_container {
-  display: flex;
-  flex-direction: column;
+.payer_table_container h2 {
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 15px;
+  height: 30px
 }
 
-.mounth_day_container .table-header {
-  font-size: 1.8em;
-  font-weight: bold;
+.accordion,
+.accordion:hover,
+.active,
+.footer_container,
+.headermodal-content,
+.mounthmodal-content,
+.panel,
+.yearmodal-content {
+  background-color: var(--bg);
 }
 
-.mounth_day_container .selected-month {
-  font-size: 1.6em;
+.accordion {
+  justify-content: space-between;
+  color: var(--text);
+  cursor: pointer;
+  padding: 15px;
+  border: none;
+  outline: 0;
+  transition: .4s;
 }
 
+.accordion:after {
+  content: "+";
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "−";
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-out;
+}
+
+/*Footer*/
 footer {
   position: relative;
 }
 
-.footer_container {
+/*Jumma*/
+.jumma_container {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: fixed;
-  bottom: 5px;
-  left: 0;
-  width: calc(100vw - 10px);
-  min-width: calc(320px - 10px);
-  height: 40px;
-  margin: 0 5px;
-  padding: 0 10px;
-  border-radius: 15px;
-  background-color: var(--color-bg-block);
-}
-
-.mounth_year_pages {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  background-color: #11853e;
+  z-index: 50;
 }
 
-.mounth_year_pages svg {
-  width: 20px;
-  min-width: 20px;
-  height: 20px;
-  min-height: 20px;
+.popup {
+  display: none;
 }
 
-.mounth_year_pages svg path {
-  stroke: none;
-}
-
-.mounth_year_pages p {
-  font-size: 0.8em;
-  text-transform: uppercase;
-}
-
-.mounth_year_pages a {
+.jumma_box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 15px;
 }
 
-.mounth_year_pages .active {
-  color: var(--red-text);
-  border-radius: 5px;
-  padding: 0 50px;
-  margin: 0 -50px;
-  height: 40px;
-  background-color: var(--bg-footer);
+.jumma_text {
+  font-family: Monplesir;
+  font-size: 5em;
+  line-height: 55px;
+  color: #fff;
+  padding-bottom: 50px;
+}
+
+.jumma_descr {
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #11853e;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#closeBtn {
+  position: absolute;
+  cursor: pointer;
+  color: #8ce0b6;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
 }
 
 /*iPhone*/
@@ -600,5 +504,93 @@ footer {
 .iclose:hover {
   color: #000;
   text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*На весь экран*/
+.navesakran #overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.navesakran #content {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 4px 20px #ffffff;
+}
+
+.navesakran h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.navesakran img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.navesakran p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+
+/*Modal*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.863);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
+  border: 1px solid #b9b9b9;
+}
+
+.modal-content h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #000;
+  padding: 5px 0;
+}
+
+.modal-content p {
+  font-size: 1.5em;
+  padding: 5px 0;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.openModal {
   cursor: pointer;
 }
