@@ -173,6 +173,20 @@ workbox.routing.registerRoute(
   })
 );
 
+// Кэширование JSON-файлов с временами намазов
+workbox.routing.registerRoute(
+  ({ url }) => url.pathname.startsWith('/data/') && url.pathname.endsWith('.json'),
+  new workbox.strategies.CacheFirst({
+    cacheName: 'prayer-times-cache', // Имя кэша
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 50, // Максимальное количество файлов в кэше
+        maxAgeSeconds: 30 * 24 * 60 * 60 // Удалять файлы старше 30 дней
+      })
+    ]
+  })
+);
+
 // API with network-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
