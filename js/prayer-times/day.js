@@ -7,9 +7,11 @@ const cityDataCache = {};
 // Функция для загрузки данных JSON
 async function loadPrayerTimes(city) {
   try {
-    // Если данные для города уже загружены, используем их
-    if (cityDataCache[city]) {
-      console.log(`Данные для города ${city} уже загружены. Используем кэш.`);
+    // Проверяем, есть ли данные в localStorage
+    const cachedData = localStorage.getItem(`prayerTimes-${city}`);
+    if (cachedData) {
+      console.log(`Данные для города ${city} загружены из localStorage.`);
+      cityDataCache[city] = JSON.parse(cachedData);
       updateUI(city);
       return;
     }
@@ -30,9 +32,10 @@ async function loadPrayerTimes(city) {
       throw new Error(`Нет данных для даты: ${month}-${day} в городе ${city}`);
     }
 
-    // Сохраняем данные в кэш
+    // Сохраняем данные в кэш и localStorage
     cityDataCache[city] = data;
-    console.log(`Данные для города ${city} успешно загружены и сохранены в кэше.`);
+    localStorage.setItem(`prayerTimes-${city}`, JSON.stringify(data));
+    console.log(`Данные для города ${city} успешно загружены и сохранены в localStorage.`);
 
     // Обновляем интерфейс
     updateUI(city);
