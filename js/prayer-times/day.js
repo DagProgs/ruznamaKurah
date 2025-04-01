@@ -7,35 +7,34 @@ const cityDataCache = {};
 // Функция для загрузки данных JSON
 async function loadPrayerTimes(city) {
   try {
-    // Если данные для города уже загружены, используем их
+    // Если данные для города уже загружены, сразу обновляем интерфейс
     if (cityDataCache[city]) {
       console.log(`Данные для города ${city} уже загружены. Используем кэш.`);
       updateUI(city);
-      return;
+    } else {
+      console.log(`Загрузка данных для города: ${city}`);
+      const response = await fetch(`data/${city}.json`);
+      if (!response.ok) {
+        throw new Error(`Ошибка при загрузке файла: ${response.status}`);
+      }
+      const data = await response.json();
+
+      // Проверяем, что данные содержат информацию для текущего месяца и дня
+      const now = new Date();
+      const month = String(now.getMonth() + 1); // Месяцы начинаются с 0
+      const day = String(now.getDate()); // День месяца без ведущего нуля
+
+      if (!data[month] || !data[month][day]) {
+        throw new Error(`Нет данных для даты: ${month}-${day} в городе ${city}`);
+      }
+
+      // Сохраняем данные в кэш
+      cityDataCache[city] = data;
+      console.log(`Данные для города ${city} успешно загружены и сохранены в кэше.`);
+
+      // Обновляем интерфейс после загрузки данных
+      updateUI(city);
     }
-
-    console.log(`Загрузка данных для города: ${city}`);
-    const response = await fetch(`data/${city}.json`);
-    if (!response.ok) {
-      throw new Error(`Ошибка при загрузке файла: ${response.status}`);
-    }
-    const data = await response.json();
-
-    // Проверяем, что данные содержат информацию для текущего месяца и дня
-    const now = new Date();
-    const month = String(now.getMonth() + 1); // Месяцы начинаются с 0
-    const day = String(now.getDate()); // День месяца без ведущего нуля
-
-    if (!data[month] || !data[month][day]) {
-      throw new Error(`Нет данных для даты: ${month}-${day} в городе ${city}`);
-    }
-
-    // Сохраняем данные в кэш
-    cityDataCache[city] = data;
-    console.log(`Данные для города ${city} успешно загружены и сохранены в кэше.`);
-
-    // Обновляем интерфейс
-    updateUI(city);
   } catch (error) {
     console.error(`Ошибка при загрузке данных для города ${city}:`, error.message);
     alert(`Ошибка: ${error.message}`);

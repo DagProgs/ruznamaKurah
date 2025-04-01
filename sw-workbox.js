@@ -70,7 +70,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/prayer-times/day.js",
-    "revision": "02aeefa18c0580b697b1e3b9055c0908"
+    "revision": "2260713dccddd3dd6009d229bfe3b2d0"
   },
   {
     "url": "js/prayer-times/mounth.js",
@@ -168,20 +168,6 @@ workbox.routing.registerRoute(
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 30
-      })
-    ]
-  })
-);
-
-// Кэширование JSON-файлов с временами намазов
-workbox.routing.registerRoute(
-  ({ url }) => url.pathname.startsWith('/data/') && url.pathname.endsWith('.json'),
-  new workbox.strategies.CacheFirst({
-    cacheName: 'prayer-times-cache', // Имя кэша
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 50, // Максимальное количество файлов в кэше
-        maxAgeSeconds: 30 * 24 * 60 * 60 // Удалять файлы старше 30 дней
       })
     ]
   })
