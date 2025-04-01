@@ -37,16 +37,40 @@ workbox.precaching.precacheAndRoute([
     "revision": "d05c8150a446a26e0d2aa1873ceddaac"
   },
   {
+    "url": "data/derbent.json",
+    "revision": "ecd13ab83a5369e4baad3df7a138f693"
+  },
+  {
+    "url": "data/izberbash.json",
+    "revision": "233f8cbbea5d809f6cb3887c49014534"
+  },
+  {
+    "url": "data/kaspiysk.json",
+    "revision": "412aa8c57e7d88fb559adff034c6e8af"
+  },
+  {
+    "url": "data/kurah.json",
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
+  },
+  {
+    "url": "data/makhachkala.json",
+    "revision": "a6c29888d765175ca7f778b3ba9cc837"
+  },
+  {
+    "url": "data/s.stalsk.json",
+    "revision": "cece35168dea92cca3964394dc4f509e"
+  },
+  {
     "url": "manifest.json",
-    "revision": "c5a5edaab4f2238cd45abc66c4273fcf"
+    "revision": "767cc7295ccac82806f23e264942153a"
   },
   {
     "url": "css/styles.css",
-    "revision": "02f378e9ca6c67d7f599c04699937d55"
+    "revision": "89d6c5d8d063419bcbe814a93a1259d1"
   },
   {
     "url": "js/prayer-times/day.js",
-    "revision": "27767cf153fc83bb3a4966e1d287bc06"
+    "revision": "2964087ddac8f6d4e0987ae932601a6f"
   },
   {
     "url": "js/prayer-times/mounth.js",
@@ -99,42 +123,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "img/svg/year.svg",
     "revision": "8b97737e3fc289d58f9aaad12ea0d411"
-  },
-  {
-    "url": "data/derbent.json",
-    "revision": "ecd13ab83a5369e4baad3df7a138f693"
-  },
-  {
-    "url": "data/izberbash.json",
-    "revision": "233f8cbbea5d809f6cb3887c49014534"
-  },
-  {
-    "url": "data/kaspiysk.json",
-    "revision": "412aa8c57e7d88fb559adff034c6e8af"
-  },
-  {
-    "url": "data/kurah.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
-  },
-  {
-    "url": "data/makhachkala.json",
-    "revision": "a6c29888d765175ca7f778b3ba9cc837"
-  },
-  {
-    "url": "data/s.stalsk.json",
-    "revision": "cece35168dea92cca3964394dc4f509e"
-  },
-  {
-    "url": "widget/ac.json",
-    "revision": "a7591c595c4a231a1f67943e58f3d6eb"
-  },
-  {
-    "url": "widget/adaptive-card.json",
-    "revision": "bad7c7ab372db1bad04a1f3ad821556d"
-  },
-  {
-    "url": "widget/data.json",
-    "revision": "a70ebb50d5f5ab6a37f24795e292547d"
   },
   {
     "url": "assets/icons/icon-128x128.png",

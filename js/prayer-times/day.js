@@ -116,11 +116,7 @@ const toggleButton = document.getElementById('toggleButton');
 const cityList = document.getElementById('cityList');
 
 toggleButton.addEventListener('click', function () {
-  if (cityList.parentElement.style.display === 'none' || cityList.parentElement.style.display === '') {
-    cityList.parentElement.style.display = 'block';
-  } else {
-    cityList.parentElement.style.display = 'none';
-  }
+  cityList.parentElement.style.display = cityList.parentElement.style.display === 'none' ? 'block' : 'none';
 });
 
 // Обработчик выбора города из списка
