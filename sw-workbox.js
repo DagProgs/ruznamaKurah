@@ -173,6 +173,30 @@ workbox.routing.registerRoute(
   })
 );
 
+// Pre-cache critical assets and JSON files
+workbox.precaching.precacheAndRoute([
+  { url: '/data/kurah.json', revision: null },
+  { url: '/data/s.stalsk.json', revision: null },
+  { url: '/data/derbent.json', revision: null },
+  { url: '/data/izberbash.json', revision: null },
+  { url: '/data/makhachkala.json', revision: null },
+  { url: '/data/kaspiysk.json', revision: null }
+]);
+
+// Cache JSON files with stale-while-revalidate strategy
+workbox.routing.registerRoute(
+  /\/data\/.*\.json$/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'prayer-times-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 10, // Limit the number of cached files
+        maxAgeSeconds: 7 * 24 * 60 * 60 // Cache for 7 days
+      })
+    ]
+  })
+);
+
 // API with network-first strategy
 workbox.routing.registerRoute(
   /(http[s]?:\/\/)?([^\/\s]+\/)timeline/,
