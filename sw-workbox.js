@@ -21,80 +21,96 @@ workbox.core.clientsClaim();
 // We inject manifest here using "workbox-build" in workbox-build-inject.js
 workbox.precaching.precacheAndRoute([
   {
-    "url": "img/favicon.ico",
-    "revision": "1d106d6b50c150a91366af73e6f25e0b"
-  },
-  {
     "url": "index.html",
-    "revision": "41da014265755e5060b43fd78ec051bf"
+    "revision": "53b57f46e7ce3e8b6fb6cb14e75a12b5"
   },
   {
     "url": "mounth.html",
-    "revision": "d22c3ce7c144b027cd8dea229ec5e4d7"
+    "revision": "21756a52586784beab045ec0f897e66b"
   },
   {
     "url": "year.html",
-    "revision": "d05c8150a446a26e0d2aa1873ceddaac"
-  },
-  {
-    "url": "dbjson/derbent.json",
-    "revision": "ecd13ab83a5369e4baad3df7a138f693"
-  },
-  {
-    "url": "dbjson/izberbash.json",
-    "revision": "233f8cbbea5d809f6cb3887c49014534"
-  },
-  {
-    "url": "dbjson/kaspiysk.json",
-    "revision": "412aa8c57e7d88fb559adff034c6e8af"
-  },
-  {
-    "url": "dbjson/kurah.json",
-    "revision": "9fa73418c1118fd575680d525f2e9eee"
-  },
-  {
-    "url": "dbjson/makhachkala.json",
-    "revision": "a6c29888d765175ca7f778b3ba9cc837"
-  },
-  {
-    "url": "dbjson/s.stalsk.json",
-    "revision": "cece35168dea92cca3964394dc4f509e"
+    "revision": "fb5104abe8e8b25550a36955c4955f17"
   },
   {
     "url": "manifest.json",
-    "revision": "56ae61044050e771b4ddf2acb5e78295"
+    "revision": "6f5946cc35dda25c36c200525fbaffdc"
+  },
+  {
+    "url": "css/reset.css",
+    "revision": "a4e8ee575d5ceb6554b4b0646aa176c4"
   },
   {
     "url": "css/styles.css",
-    "revision": "02f378e9ca6c67d7f599c04699937d55"
+    "revision": "6d56f4fc4e0f191a2994333dafed1a43"
   },
   {
-    "url": "js/prayer-times/day.js",
-    "revision": "43275d3e54a55a3b6c97e5e6130c2d8c"
+    "url": "js/accordion.js",
+    "revision": "ef7dadb9a5eb23bf72206844abf005ed"
   },
   {
-    "url": "js/prayer-times/mounth.js",
-    "revision": "4a721906e090e6316c84edac72552d99"
+    "url": "js/calendar-ar.js",
+    "revision": "6d4bb981e034772317710de0f5e33536"
   },
   {
-    "url": "js/prayer-times/yer.js",
-    "revision": "3da38d94765868aeacde12f83fd04a8e"
+    "url": "js/calendar-ru.js",
+    "revision": "980524c7b06ae90e2b8d3072fc872e51"
   },
   {
-    "url": "js/system/jquery-3.7.1.min.js",
+    "url": "js/clock.js",
+    "revision": "c30623704c7e7fada499b0b3dd3379d4"
+  },
+  {
+    "url": "js/end-time.js",
+    "revision": "3cfcf37da71fd6de3b01152c2be3d9a2"
+  },
+  {
+    "url": "js/jquery-3.7.1.min.js",
     "revision": "c9a1b0aa0167c8a4df724d18d06814a8"
   },
   {
-    "url": "js/system/modernizr.min.js",
+    "url": "js/json/prayer-times.json",
+    "revision": "9fa73418c1118fd575680d525f2e9eee"
+  },
+  {
+    "url": "js/jumma.js",
+    "revision": "77083ddef0ac434caf31d17e4894fe3a"
+  },
+  {
+    "url": "js/modal-description-prayer.js",
+    "revision": "f3bbd02ae731a9bea9b70b25c1a9bf96"
+  },
+  {
+    "url": "js/modernizr.min.js",
     "revision": "65f1d21d5fcc9d21da758adababd0c3c"
   },
   {
-    "url": "js/system/prefixfree.min.js",
+    "url": "js/mounths-names.js",
+    "revision": "dca606af43f0631a25eb1bbdede7ba5a"
+  },
+  {
+    "url": "js/na-ves-akran.js",
+    "revision": "defa1add28ad656cb0f3baef77609943"
+  },
+  {
+    "url": "js/prayer-days.js",
+    "revision": "ba2f1d5c32300b2a6a1787e80a8687d9"
+  },
+  {
+    "url": "js/prayer-times-mounths.js",
+    "revision": "110b2f2486fb0dffe3fb5739fe4edd22"
+  },
+  {
+    "url": "js/prayer-times-year.js",
+    "revision": "9982a9853e313e1671e51d446096e3b3"
+  },
+  {
+    "url": "js/prefixfree.min.js",
     "revision": "99ea8d1961f9bb4e61f0512d1870aaf4"
   },
   {
-    "url": "js/theme.js",
-    "revision": "4dc2d1bb6cbc416b7ee56dc22a7a7c92"
+    "url": "js/reklama.js",
+    "revision": "478a0fbbfc979addfbcdfd47fc4c4d42"
   },
   {
     "url": "main.js",
@@ -117,12 +133,56 @@ workbox.precaching.precacheAndRoute([
     "revision": "2e37a1e61c0f6c88bddbb61150536944"
   },
   {
-    "url": "img/svg/mounth.svg",
+    "url": "img/1.png",
+    "revision": "2f7d7fd5526d17feda258bc14eacb597"
+  },
+  {
+    "url": "img/2.png",
+    "revision": "0aa1020c2da12b812d297d5cb27416e9"
+  },
+  {
+    "url": "img/3.png",
+    "revision": "cc749dae7aa37ea8f996f07e8cb8ce65"
+  },
+  {
+    "url": "img/4.png",
+    "revision": "d3f2c63cafe9e6a8cb252d59dedac65a"
+  },
+  {
+    "url": "img/5.png",
+    "revision": "1dc9f96736b1d9ad0faba8acaec3fb2f"
+  },
+  {
+    "url": "img/hiasan.png",
+    "revision": "68a642d1aa582d801540584db10abe19"
+  },
+  {
+    "url": "img/mounth.svg",
     "revision": "28b9786d0a8b41c97a7a7801711a1f8a"
   },
   {
-    "url": "img/svg/year.svg",
+    "url": "img/year.svg",
     "revision": "8b97737e3fc289d58f9aaad12ea0d411"
+  },
+  {
+    "url": "fonts/monplesir.otf",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "fonts/monplesir.svg",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "fonts/monplesir.ttf",
+    "revision": "d8954ca9bec9609b3d415e6deb2b6454"
+  },
+  {
+    "url": "fonts/monplesir.woff",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
+  },
+  {
+    "url": "fonts/monplesir.woff2",
+    "revision": "126cb1d646ba54c4a2354879a9f57bcd"
   },
   {
     "url": "assets/icons/icon-128x128.png",
