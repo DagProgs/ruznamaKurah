@@ -11,11 +11,6 @@ function showLoadingIndicator() {
   });
 }
 
-// Функция для скрытия индикатора загрузки
-function hideLoadingIndicator() {
-  // Индикатор загрузки скрывается автоматически при обновлении интерфейса
-}
-
 // Функция для сохранения данных в localStorage
 function saveToLocalStorage(city, data) {
   localStorage.setItem(`prayerTimes_${city}`, JSON.stringify(data));
@@ -29,24 +24,19 @@ function loadFromLocalStorage(city) {
 
 // Функция для загрузки данных JSON
 async function loadPrayerTimes(city) {
-  showLoadingIndicator(); // Показываем индикатор загрузки
+  // Показываем индикатор загрузки
+  showLoadingIndicator();
 
   try {
-    // Если данные для города уже загружены, используем их
-    if (cityDataCache[city]) {
-      console.log(`Данные для города ${city} уже загружены. Используем кэш.`);
-      updateUI(city);
-      return;
-    }
-
-    // Попытка загрузить данные из localStorage
+    // Проверяем, есть ли данные в localStorage
     const cachedData = loadFromLocalStorage(city);
     if (cachedData) {
       console.log(`Данные для города ${city} загружены из localStorage.`);
       cityDataCache[city] = cachedData;
-      updateUI(city);
+      updateUI(city); // Обновляем интерфейс сразу
     }
 
+    // Загружаем данные с сервера (фоновая загрузка)
     console.log(`Загрузка данных для города: ${city}`);
     const response = await fetch(`data/${city}.json`);
     if (!response.ok) {
@@ -68,13 +58,11 @@ async function loadPrayerTimes(city) {
     saveToLocalStorage(city, data);
     console.log(`Данные для города ${city} успешно загружены и сохранены в кэше.`);
 
-    // Обновляем интерфейс
+    // Обновляем интерфейс, если данные изменились
     updateUI(city);
   } catch (error) {
     console.error(`Ошибка при загрузке данных для города ${city}:`, error.message);
     alert(`Ошибка: ${error.message}`);
-  } finally {
-    hideLoadingIndicator(); // Скрываем индикатор загрузки
   }
 }
 
