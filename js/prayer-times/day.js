@@ -4,6 +4,9 @@ let timerInterval = null;
 // Объект для хранения данных всех городов
 const cityDataCache = {};
 
+// Список всех доступных городов
+const allCities = ['kurah', 's.stalsk', 'derbent', 'izberbash', 'makhachkala', 'kaspiysk'];
+
 // Функция для показа индикатора загрузки
 function showLoadingIndicator() {
   document.querySelectorAll('.prayer-time p').forEach(el => {
@@ -13,17 +16,7 @@ function showLoadingIndicator() {
 
 // Функция для загрузки данных JSON
 async function loadPrayerTimes(city) {
-  // Показываем индикатор загрузки
-  showLoadingIndicator();
-
   try {
-    // Если данные для города уже загружены, используем их
-    if (cityDataCache[city]) {
-      console.log(`Данные для города ${city} уже загружены. Используем кэш.`);
-      updateUI(city); // Обновляем интерфейс сразу
-    }
-
-    // Загружаем данные с сервера
     console.log(`Загрузка данных для города: ${city}`);
     const response = await fetch(`data/${city}.json`);
     if (!response.ok) {
@@ -43,12 +36,37 @@ async function loadPrayerTimes(city) {
     // Сохраняем данные в кэш
     cityDataCache[city] = data;
     console.log(`Данные для города ${city} успешно загружены и сохранены в кэше.`);
-
-    // Обновляем интерфейс
-    updateUI(city);
   } catch (error) {
     console.error(`Ошибка при загрузке данных для города ${city}:`, error.message);
+  }
+}
+
+// Функция для загрузки данных для города по умолчанию
+async function loadDefaultCityData(defaultCity) {
+  // Показываем индикатор загрузки
+  showLoadingIndicator();
+
+  try {
+    // Загружаем данные для города по умолчанию
+    await loadPrayerTimes(defaultCity);
+
+    // Обновляем интерфейс
+    updateUI(defaultCity);
+  } catch (error) {
+    console.error(`Ошибка при загрузке данных для города по умолчанию:`, error.message);
     alert(`Ошибка: ${error.message}`);
+  }
+
+  // Загружаем данные для остальных городов в фоновом режиме
+  preloadOtherCities(defaultCity);
+}
+
+// Функция для предварительной загрузки данных для остальных городов
+async function preloadOtherCities(defaultCity) {
+  for (const city of allCities) {
+    if (city !== defaultCity && !cityDataCache[city]) {
+      await loadPrayerTimes(city);
+    }
   }
 }
 
@@ -137,7 +155,11 @@ toggleButton.addEventListener('click', function () {
 cityList.addEventListener('click', function (event) {
   if (event.target.tagName === 'LI') {
     const selectedCity = event.target.getAttribute('data-city');
-    loadPrayerTimes(selectedCity);
+    if (cityDataCache[selectedCity]) {
+      updateUI(selectedCity);
+    } else {
+      loadPrayerTimes(selectedCity).then(() => updateUI(selectedCity));
+    }
     cityList.parentElement.style.display = 'none'; // Скрываем список после выбора
   }
 });
@@ -145,7 +167,7 @@ cityList.addEventListener('click', function (event) {
 // Загрузка данных для первого города при загрузке страницы
 window.onload = function () {
   const defaultCity = 'kurah'; // Первый город по умолчанию
-  loadPrayerTimes(defaultCity);
+  loadDefaultCityData(defaultCity);
 };
 
 // Функция для определения текущего намаза
