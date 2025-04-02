@@ -11,32 +11,19 @@ function showLoadingIndicator() {
   });
 }
 
-// Функция для сохранения данных в localStorage
-function saveToLocalStorage(city, data) {
-  localStorage.setItem(`prayerTimes_${city}`, JSON.stringify(data));
-}
-
-// Функция для загрузки данных из localStorage
-function loadFromLocalStorage(city) {
-  const cachedData = localStorage.getItem(`prayerTimes_${city}`);
-  return cachedData ? JSON.parse(cachedData) : null;
-}
-
 // Функция для загрузки данных JSON
 async function loadPrayerTimes(city) {
   // Показываем индикатор загрузки
   showLoadingIndicator();
 
   try {
-    // Проверяем, есть ли данные в localStorage
-    const cachedData = loadFromLocalStorage(city);
-    if (cachedData) {
-      console.log(`Данные для города ${city} загружены из localStorage.`);
-      cityDataCache[city] = cachedData;
+    // Если данные для города уже загружены, используем их
+    if (cityDataCache[city]) {
+      console.log(`Данные для города ${city} уже загружены. Используем кэш.`);
       updateUI(city); // Обновляем интерфейс сразу
     }
 
-    // Загружаем данные с сервера (фоновая загрузка)
+    // Загружаем данные с сервера
     console.log(`Загрузка данных для города: ${city}`);
     const response = await fetch(`data/${city}.json`);
     if (!response.ok) {
@@ -53,12 +40,11 @@ async function loadPrayerTimes(city) {
       throw new Error(`Нет данных для даты: ${month}-${day} в городе ${city}`);
     }
 
-    // Сохраняем данные в кэш и localStorage
+    // Сохраняем данные в кэш
     cityDataCache[city] = data;
-    saveToLocalStorage(city, data);
     console.log(`Данные для города ${city} успешно загружены и сохранены в кэше.`);
 
-    // Обновляем интерфейс, если данные изменились
+    // Обновляем интерфейс
     updateUI(city);
   } catch (error) {
     console.error(`Ошибка при загрузке данных для города ${city}:`, error.message);
